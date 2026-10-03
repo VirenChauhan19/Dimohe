@@ -1,0 +1,1350 @@
+[
+  {
+    "route": "/",
+    "file": "/index.html",
+    "title": "Dimohe"
+  },
+  {
+    "route": "/blogs/news",
+    "file": "/blogs/news/index.html",
+    "title": "News\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/blogs/news/5-ways-to-style-a-throw-blanket-in-your-living-room",
+    "file": "/blogs/news/5-ways-to-style-a-throw-blanket-in-your-living-room/index.html",
+    "title": "5 Ways to Style a Throw Blanket in Your Living Room | Dimohe"
+  },
+  {
+    "route": "/blogs/news/the-art-of-chikankari-why-hand-embroidered-bags-are-worth-every-penny",
+    "file": "/blogs/news/the-art-of-chikankari-why-hand-embroidered-bags-are-worth-every-penny/index.html",
+    "title": "The Art of Chikankari: Why Hand-Embroidered Bags Are Worth Every Penny | Dimohe"
+  },
+  {
+    "route": "/cart",
+    "file": "/cart/index.html",
+    "title": "Your Shopping Cart\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections",
+    "file": "/collections/index.html",
+    "title": "Collections\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections?page=1",
+    "file": "/collections/page-1/index.html",
+    "title": "Collections\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections?page=2",
+    "file": "/collections/page-2/index.html",
+    "title": "Collections\n\n        &ndash; Page 2\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections?page=3",
+    "file": "/collections/page-3/index.html",
+    "title": "Collections\n\n        &ndash; Page 3\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections?page=4",
+    "file": "/collections/page-4/index.html",
+    "title": "Collections\n\n        &ndash; Page 4\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/all",
+    "file": "/collections/all/index.html",
+    "title": "Products\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/all?page=1",
+    "file": "/collections/all/page-1/index.html",
+    "title": "Products\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/all?page=2",
+    "file": "/collections/all/page-2/index.html",
+    "title": "Products\n\n        &ndash; Page 2\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/all?page=3",
+    "file": "/collections/all/page-3/index.html",
+    "title": "Products\n\n        &ndash; Page 3\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/antique-handle-handbags",
+    "file": "/collections/antique-handle-handbags/index.html",
+    "title": "Antique Handle Handbags\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/bathing-powder",
+    "file": "/collections/bathing-powder/index.html",
+    "title": "Bathing Powder\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/bathsheet",
+    "file": "/collections/bathsheet/index.html",
+    "title": "BathSheet\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/bathtowel",
+    "file": "/collections/bathtowel/index.html",
+    "title": "BathTowel\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/best-seller",
+    "file": "/collections/best-seller/index.html",
+    "title": "Best Seller\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/bougainvillea",
+    "file": "/collections/bougainvillea/index.html",
+    "title": "Bougainvillea\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/boys",
+    "file": "/collections/boys/index.html",
+    "title": "Boys\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/bundi-kurta-sets",
+    "file": "/collections/bundi-kurta-sets/index.html",
+    "title": "Bundi Kurta Sets\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/clutches-full-flap",
+    "file": "/collections/clutches-full-flap/index.html",
+    "title": "Clutches Full Flap\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/cock-tail-napkin-set-of-12",
+    "file": "/collections/cock-tail-napkin-set-of-12/index.html",
+    "title": "Cock Tail Napkin (Set of 12)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/conditioner",
+    "file": "/collections/conditioner/index.html",
+    "title": "Conditioner\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/cushion-cover",
+    "file": "/collections/cushion-cover/index.html",
+    "title": "Cushion Cover\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/dhoti-kurta-set",
+    "file": "/collections/dhoti-kurta-set/index.html",
+    "title": "Dhoti Kurta Set\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/dinner-napkin-set-of-6",
+    "file": "/collections/dinner-napkin-set-of-6/index.html",
+    "title": "Dinner Napkin (Set of 6)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/dresses",
+    "file": "/collections/dresses/index.html",
+    "title": "Dresses\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/facetowel-set-of-4",
+    "file": "/collections/facetowel-set-of-4/index.html",
+    "title": "FaceTowel (set of 4)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/floranza",
+    "file": "/collections/floranza/index.html",
+    "title": "Floranza\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/frontpage",
+    "file": "/collections/frontpage/index.html",
+    "title": "Home page\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/girls",
+    "file": "/collections/girls/index.html",
+    "title": "Girls\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/gulmarg",
+    "file": "/collections/gulmarg/index.html",
+    "title": "Gulmarg\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/hair-oil",
+    "file": "/collections/hair-oil/index.html",
+    "title": "Hair Oil\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/hand-bags",
+    "file": "/collections/hand-bags/index.html",
+    "title": "Luxury Handbag\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/handtowel-set-of-2",
+    "file": "/collections/handtowel-set-of-2/index.html",
+    "title": "HandTowel (set of 2)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/home-furnishing",
+    "file": "/collections/home-furnishing/index.html",
+    "title": "Home Furnishing\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/home-furnishing?page=1",
+    "file": "/collections/home-furnishing/page-1/index.html",
+    "title": "Home Furnishing\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/home-furnishing?page=2",
+    "file": "/collections/home-furnishing/page-2/index.html",
+    "title": "Home Furnishing\n\n        &ndash; Page 2\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/homepage-bestsellers",
+    "file": "/collections/homepage-bestsellers/index.html",
+    "title": "Homepage BestSellers\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/jute-clutches",
+    "file": "/collections/jute-clutches/index.html",
+    "title": "Jute Clutches\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/kali-mirchi-laal-mirchi",
+    "file": "/collections/kali-mirchi-laal-mirchi/index.html",
+    "title": "Kali Mirchi Laal Mirchi\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/kids-clothing",
+    "file": "/collections/kids-clothing/index.html",
+    "title": "Kids Clothing\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/kurta-set",
+    "file": "/collections/kurta-set/index.html",
+    "title": "Kurta Set\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/kurta-sets",
+    "file": "/collections/kurta-sets/index.html",
+    "title": "Kurta Sets\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/massage-oil",
+    "file": "/collections/massage-oil/index.html",
+    "title": "Massage Oil\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/oh-frida",
+    "file": "/collections/oh-frida/index.html",
+    "title": "Oh Frida !!!\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/potli",
+    "file": "/collections/potli/index.html",
+    "title": "Potli\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/round-bags",
+    "file": "/collections/round-bags/index.html",
+    "title": "Round Bags\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/satrangi",
+    "file": "/collections/satrangi/index.html",
+    "title": "Satrangi\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/shampoo",
+    "file": "/collections/shampoo/index.html",
+    "title": "Shampoo\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/sharara-and-palazzo-sets",
+    "file": "/collections/sharara-and-palazzo-sets/index.html",
+    "title": "Sharara and Palazzo Sets\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/sherwani-sets",
+    "file": "/collections/sherwani-sets/index.html",
+    "title": "Sherwani Sets\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/skirt-sets",
+    "file": "/collections/skirt-sets/index.html",
+    "title": "Skirt Sets\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/table-cover",
+    "file": "/collections/table-cover/index.html",
+    "title": "Table Cover\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/table-mats-dinner-napkins",
+    "file": "/collections/table-mats-dinner-napkins/index.html",
+    "title": "Table Mats &amp; Dinner Napkins (Set of 4+4)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/table-runner",
+    "file": "/collections/table-runner/index.html",
+    "title": "Table Runner\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/throw",
+    "file": "/collections/throw/index.html",
+    "title": "Throw\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/tote-bag",
+    "file": "/collections/tote-bag/index.html",
+    "title": "Tote Bag\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/vanraj",
+    "file": "/collections/vanraj/index.html",
+    "title": "Vanraaj\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/collections/wellness",
+    "file": "/collections/wellness/index.html",
+    "title": "Wellness\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/pages/contact",
+    "file": "/pages/contact/index.html",
+    "title": "Contact\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/pages/data-sharing-opt-out",
+    "file": "/pages/data-sharing-opt-out/index.html",
+    "title": "Your Privacy Choices\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/pages/faqs",
+    "file": "/pages/faqs/index.html",
+    "title": "FAQs\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/pages/our-founder",
+    "file": "/pages/our-founder/index.html",
+    "title": "Our Founder\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/pages/our-story",
+    "file": "/pages/our-story/index.html",
+    "title": "Our Story\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/pages/privacy-policy",
+    "file": "/pages/privacy-policy/index.html",
+    "title": "Privacy Policy\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/pages/refund-returns-exchange-and-cancellations-policy",
+    "file": "/pages/refund-returns-exchange-and-cancellations-policy/index.html",
+    "title": "Refund, Returns, Exchange and Cancellations Policy\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/pages/shipping-returns",
+    "file": "/pages/shipping-returns/index.html",
+    "title": "Shipping &amp; Returns\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/pages/terms-of-service",
+    "file": "/pages/terms-of-service/index.html",
+    "title": "Terms of Service\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/pages/us-laws-compliance",
+    "file": "/pages/us-laws-compliance/index.html",
+    "title": "US Laws Compliance\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/policies/privacy-policy",
+    "file": "/policies/privacy-policy/index.html",
+    "title": "Privacy policy\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/policies/refund-policy",
+    "file": "/policies/refund-policy/index.html",
+    "title": "Refund policy\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/policies/shipping-policy",
+    "file": "/policies/shipping-policy/index.html",
+    "title": "Shipping policy\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/aqua-bloom-meadow-quilted-cushion-cover",
+    "file": "/products/aqua-bloom-meadow-quilted-cushion-cover/index.html",
+    "title": "Aqua Bloom Meadow Quilted Cushion Cover\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/berry-olive-table-mat-dinner-napkin-set",
+    "file": "/products/berry-olive-table-mat-dinner-napkin-set/index.html",
+    "title": "Berry &amp; Olive Table Mat &amp; Dinner Napkin Set\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/black-tulip-square-tote",
+    "file": "/products/black-tulip-square-tote/index.html",
+    "title": "Black Tulip Square Tote\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/blush-cypress-waffle-bath-sheet",
+    "file": "/products/blush-cypress-waffle-bath-sheet/index.html",
+    "title": "Blush Cypress Waffle Bath Sheet\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/blush-cypress-waffle-bath-towel",
+    "file": "/products/blush-cypress-waffle-bath-towel/index.html",
+    "title": "Blush Cypress Waffle Bath Towel\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/blush-garden-3-layer-throw",
+    "file": "/products/blush-garden-3-layer-throw/index.html",
+    "title": "Blush Garden 3-Layer Throw\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/blush-garden-table-mat-dinner-napkin-set",
+    "file": "/products/blush-garden-table-mat-dinner-napkin-set/index.html",
+    "title": "Blush Garden Table Mat &amp; Dinner Napkin Set\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/blush-sprig-square-tote",
+    "file": "/products/blush-sprig-square-tote/index.html",
+    "title": "Blush Sprig Square Tote\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/botanical-garden-quilted-cushion-cover",
+    "file": "/products/botanical-garden-quilted-cushion-cover/index.html",
+    "title": "Botanical Garden Quilted Cushion Cover\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/botanical-grove-square-tote",
+    "file": "/products/botanical-grove-square-tote/index.html",
+    "title": "Botanical Grove Square Tote\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/botanical-quartet-waffle-face-towels-set-of-4",
+    "file": "/products/botanical-quartet-waffle-face-towels-set-of-4/index.html",
+    "title": "Botanical Quartet Waffle Face Towels (Set of 4)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/boy-3-pc-embroidery-bundy-set-beige",
+    "file": "/products/boy-3-pc-embroidery-bundy-set-beige/index.html",
+    "title": "Boy 3 Pc Embroidery Bundy Set - Beige\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/boy-3-pc-embroidery-bundy-set-beige-1",
+    "file": "/products/boy-3-pc-embroidery-bundy-set-beige-1/index.html",
+    "title": "Boy 3 Pc Embroidery Bundy Set - Beige\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/boy-3-pc-royal-zardozi-bundy-set-white",
+    "file": "/products/boy-3-pc-royal-zardozi-bundy-set-white/index.html",
+    "title": "Boy 3 Pc Royal Zardozi Bundy Set - White\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/boy-dhola-maru-embroidery-bundy-set-beige",
+    "file": "/products/boy-dhola-maru-embroidery-bundy-set-beige/index.html",
+    "title": "Boy Dhola Maru Embroidery Bundy Set - Beige\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/boy-stripe-zari-embroidered-kurta-set-minty-green",
+    "file": "/products/boy-stripe-zari-embroidered-kurta-set-minty-green/index.html",
+    "title": "Boy Stripe Zari Embroidered Kurta Set - Minty Green\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/boy-stripe-zari-embroidered-kurta-set-teal-blue",
+    "file": "/products/boy-stripe-zari-embroidered-kurta-set-teal-blue/index.html",
+    "title": "Boy Stripe Zari Embroidered Kurta Set - Teal Blue\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/coral-bloom-cocktail-napkins-set-of-12",
+    "file": "/products/coral-bloom-cocktail-napkins-set-of-12/index.html",
+    "title": "Coral Bloom Cocktail Napkins (Set of 12)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/crimson-bloom-waffle-bath-sheet",
+    "file": "/products/crimson-bloom-waffle-bath-sheet/index.html",
+    "title": "Crimson Bloom Waffle Bath Sheet\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/crimson-botanica-waffle-face-towels-set-of-4",
+    "file": "/products/crimson-botanica-waffle-face-towels-set-of-4/index.html",
+    "title": "Crimson Botanica Waffle Face Towels (Set of 4)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/crimson-tulip-waffle-hand-towels-set-of-2",
+    "file": "/products/crimson-tulip-waffle-hand-towels-set-of-2/index.html",
+    "title": "Crimson Tulip Waffle Hand Towels (Set of 2)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/crimson-vine-waffle-bath-towel",
+    "file": "/products/crimson-vine-waffle-bath-towel/index.html",
+    "title": "Crimson Vine Waffle Bath Towel\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/cypress-bloom-quilted-cushion-cover",
+    "file": "/products/cypress-bloom-quilted-cushion-cover/index.html",
+    "title": "Cypress &amp; Bloom Quilted Cushion Cover\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/cypress-duo-waffle-face-towels-set-of-4",
+    "file": "/products/cypress-duo-waffle-face-towels-set-of-4/index.html",
+    "title": "Cypress Duo Waffle Face Towels (Set of 4)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/cypress-grove-round-tote",
+    "file": "/products/cypress-grove-round-tote/index.html",
+    "title": "Cypress Grove Round Tote\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/cypress-row-lumbar-cushion-cover",
+    "file": "/products/cypress-row-lumbar-cushion-cover/index.html",
+    "title": "Cypress Row Lumbar Cushion Cover\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/elephant-parade-quilted-cushion-cover",
+    "file": "/products/elephant-parade-quilted-cushion-cover/index.html",
+    "title": "Elephant Parade Quilted Cushion Cover\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/emerald-cypress-waffle-bath-sheet",
+    "file": "/products/emerald-cypress-waffle-bath-sheet/index.html",
+    "title": "Emerald Cypress Waffle Bath Sheet\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/flamingo-quilted-cushion-cover",
+    "file": "/products/flamingo-quilted-cushion-cover/index.html",
+    "title": "Flamingo Quilted Cushion Cover\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/fuchsia-sage-reversible-table-runner",
+    "file": "/products/fuchsia-sage-reversible-table-runner/index.html",
+    "title": "Cotton Cambric Table Runner Design 4\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/fuchsia-vine-reversible-table-runner",
+    "file": "/products/fuchsia-vine-reversible-table-runner/index.html",
+    "title": "Fuchsia Vine Reversible Table Runner\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/garden-arch-square-tote",
+    "file": "/products/garden-arch-square-tote/index.html",
+    "title": "Garden Arch Square Tote\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/girl-dhola-maru-floral-embroidered-skirt-top-set-beige-green",
+    "file": "/products/girl-dhola-maru-floral-embroidered-skirt-top-set-beige-green/index.html",
+    "title": "Girl Dhola Maru Floral Embroidered Skirt Top Set - Beige &amp; Green\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/girl-panelled-bandhani-skirt-set-red",
+    "file": "/products/girl-panelled-bandhani-skirt-set-red/index.html",
+    "title": "Girl Panelled Bandhani Skirt Set-Red\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/girl-striped-fancy-zari-embroidered-top-with-cowl-dhoti-pants-minty-green",
+    "file": "/products/girl-striped-fancy-zari-embroidered-top-with-cowl-dhoti-pants-minty-green/index.html",
+    "title": "Girl Striped Fancy Zari Embroidered Top with Cowl Dhoti Pants- Minty G\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/gulnaar-floral-linen-cushion-cover-earth-brown",
+    "file": "/products/gulnaar-floral-linen-cushion-cover-earth-brown/index.html",
+    "title": "Gulnaar Floral Linen Cushion Cover – Earth Brown\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/hibiscus-hair-oil-100ml",
+    "file": "/products/hibiscus-hair-oil-100ml/index.html",
+    "title": "Hibiscus Hair Oil 100ml\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/himalayan-hair-repair-shampoo-deodhar-hibiscus-250ml",
+    "file": "/products/himalayan-hair-repair-shampoo-deodhar-hibiscus-250ml/index.html",
+    "title": "Himalayan Hair Repair Shampoo (Deodhar &amp; Hibiscus) 250ml\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/imperial-garden-table-cover",
+    "file": "/products/imperial-garden-table-cover/index.html",
+    "title": "Imperial Garden Table Cover\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/indigo-bloom-round-tote",
+    "file": "/products/indigo-bloom-round-tote/index.html",
+    "title": "Indigo Bloom Round Tote\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/indigo-blossom-cocktail-napkins-set-of-12",
+    "file": "/products/indigo-blossom-cocktail-napkins-set-of-12/index.html",
+    "title": "Indigo Blossom Cocktail Napkins (Set of 12)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/indigo-garden-waffle-face-towels-set-of-4",
+    "file": "/products/indigo-garden-waffle-face-towels-set-of-4/index.html",
+    "title": "Indigo Garden Waffle Face Towels (Set of 4)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/indigo-garden-waffle-hand-towels-set-of-2",
+    "file": "/products/indigo-garden-waffle-hand-towels-set-of-2/index.html",
+    "title": "Indigo Garden Waffle Hand Towels (Set of 2)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/indigo-palm-round-tote",
+    "file": "/products/indigo-palm-round-tote/index.html",
+    "title": "Indigo Palm Round Tote\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/indigo-peacock-3-layer-throw",
+    "file": "/products/indigo-peacock-3-layer-throw/index.html",
+    "title": "Indigo Peacock 3-Layer Throw\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/indigo-vine-cocktail-napkins-set-of-12",
+    "file": "/products/indigo-vine-cocktail-napkins-set-of-12/index.html",
+    "title": "Indigo Vine Cocktail Napkins (Set of 12)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/keshamrit-anti-dandruff-shampoo-lemon-250ml",
+    "file": "/products/keshamrit-anti-dandruff-shampoo-lemon-250ml/index.html",
+    "title": "Keshamrit Anti Dandruff Shampoo Lemon 250ml\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/keshamrit-conditioning-cleansing-shampoo-coconut-milk-250ml",
+    "file": "/products/keshamrit-conditioning-cleansing-shampoo-coconut-milk-250ml/index.html",
+    "title": "Keshamrit Conditioning &amp; Cleansing Shampoo Coconut Milk 250ml\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/lavender-bloom-3-layer-throw",
+    "file": "/products/lavender-bloom-3-layer-throw/index.html",
+    "title": "Lavender Bloom 3-Layer Throw\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/lavender-garden-quilted-cushion-cover",
+    "file": "/products/lavender-garden-quilted-cushion-cover/index.html",
+    "title": "Lavender Garden Quilted Cushion Cover\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/lavender-smoothening-conditioner-150gm-glass-jar",
+    "file": "/products/lavender-smoothening-conditioner-150gm-glass-jar/index.html",
+    "title": "Lavender Smoothening Conditioner 150gm (Glass Jar)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/meadow-bloom-round-tote",
+    "file": "/products/meadow-bloom-round-tote/index.html",
+    "title": "Meadow Bloom Round Tote\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/mystic-hair-oil-100ml",
+    "file": "/products/mystic-hair-oil-100ml/index.html",
+    "title": "Mystic Hair Oil 100ml\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/nava-pre-shower-body-glow-oil-rose-almond-100ml",
+    "file": "/products/nava-pre-shower-body-glow-oil-rose-almond-100ml/index.html",
+    "title": "Nava Pre Shower Body Glow Oil Rose Almond 100ml\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/olive-cypress-waffle-hand-towels-set-of-2",
+    "file": "/products/olive-cypress-waffle-hand-towels-set-of-2/index.html",
+    "title": "Olive Cypress Waffle Hand Towels (Set of 2)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/olive-willow-cocktail-napkins-set-of-6",
+    "file": "/products/olive-willow-cocktail-napkins-set-of-6/index.html",
+    "title": "Olive Willow Cocktail Napkins (Set of 6)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/palace-elephant-table-cover",
+    "file": "/products/palace-elephant-table-cover/index.html",
+    "title": "Palace Elephant Table Cover\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/protein-building-hair-mask-150gm",
+    "file": "/products/protein-building-hair-mask-150gm/index.html",
+    "title": "Protein Building Hair Mask 150gm\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/raspberry-bloom-cocktail-napkins-set-of-6",
+    "file": "/products/raspberry-bloom-cocktail-napkins-set-of-6/index.html",
+    "title": "Raspberry Bloom Cocktail Napkins (Set of 6)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/rose-garden-square-tote",
+    "file": "/products/rose-garden-square-tote/index.html",
+    "title": "Rose Garden Square Tote\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/rosemary-hair-masque-150gm",
+    "file": "/products/rosemary-hair-masque-150gm/index.html",
+    "title": "Rosemary Hair Masque 150gm\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/royal-cypress-table-cover",
+    "file": "/products/royal-cypress-table-cover/index.html",
+    "title": "Royal Cypress Table Cover\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/ruby-cypress-waffle-hand-towels-set-of-2",
+    "file": "/products/ruby-cypress-waffle-hand-towels-set-of-2/index.html",
+    "title": "Ruby Cypress Waffle Hand Towels (Set of 2)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/sage-blossom-table-mat-dinner-napkin-set",
+    "file": "/products/sage-blossom-table-mat-dinner-napkin-set/index.html",
+    "title": "Sage Blossom Table Mat &amp; Dinner Napkin Set\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/sage-botanica-3-layer-throw",
+    "file": "/products/sage-botanica-3-layer-throw/index.html",
+    "title": "Sage Botanica 3-Layer Throw\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/sage-coral-garden-quilted-cushion-cover",
+    "file": "/products/sage-coral-garden-quilted-cushion-cover/index.html",
+    "title": "Sage &amp; Coral Garden Quilted Cushion Cover\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/sage-garden-waffle-bath-sheet",
+    "file": "/products/sage-garden-waffle-bath-sheet/index.html",
+    "title": "Sage Garden Waffle Bath Sheet\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/sage-garden-waffle-bath-towel",
+    "file": "/products/sage-garden-waffle-bath-towel/index.html",
+    "title": "Sage Garden Waffle Bath Towel\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/sage-vine-reversible-table-runner",
+    "file": "/products/sage-vine-reversible-table-runner/index.html",
+    "title": "Sage Vine Reversible Table Runner\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/scarlet-garden-waffle-face-towels-set-of-4",
+    "file": "/products/scarlet-garden-waffle-face-towels-set-of-4/index.html",
+    "title": "Scarlet Garden Waffle Face Towels (Set of 4)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/scarlet-garden-waffle-hand-towels-set-of-2",
+    "file": "/products/scarlet-garden-waffle-hand-towels-set-of-2/index.html",
+    "title": "Scarlet Garden Waffle Hand Towels (Set of 2)\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/snanamrit-ubtan-natural-bathing-powder-250gm",
+    "file": "/products/snanamrit-ubtan-natural-bathing-powder-250gm/index.html",
+    "title": "Snanamrit Ubtan Natural Bathing Powder 250gm\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/spice-garden-table-runner",
+    "file": "/products/spice-garden-table-runner/index.html",
+    "title": "Spice Garden Table Runner\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/terracotta-bloom-quilted-cushion-cover",
+    "file": "/products/terracotta-bloom-quilted-cushion-cover/index.html",
+    "title": "Terracotta Bloom Quilted Cushion Cover\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/the-altair-bijou-clutch",
+    "file": "/products/the-altair-bijou-clutch/index.html",
+    "title": "The Altair Bijou Clutch\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/the-aurelia-noir-envelope",
+    "file": "/products/the-aurelia-noir-envelope/index.html",
+    "title": "The Aurelia Noir Envelope\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/the-desert-pearl-pochette",
+    "file": "/products/the-desert-pearl-pochette/index.html",
+    "title": "The Desert Pearl Pochette\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/the-lyra-bijou-clutch",
+    "file": "/products/the-lyra-bijou-clutch/index.html",
+    "title": "The Lyra Bijou Clutch\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/the-maia-bijou-clutch",
+    "file": "/products/the-maia-bijou-clutch/index.html",
+    "title": "The Maia Bijou Clutch\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/the-mayura-noir-heirloom",
+    "file": "/products/the-mayura-noir-heirloom/index.html",
+    "title": "The Mayura Noir Heirloom Minaudière\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/the-midnight-pearl-pochette",
+    "file": "/products/the-midnight-pearl-pochette/index.html",
+    "title": "The Midnight Pearl Pochette\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/the-moonlight-pearl-pochette",
+    "file": "/products/the-moonlight-pearl-pochette/index.html",
+    "title": "The Moonlight Pearl Pochette\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/the-noor-bagh-heirloom-minaudi",
+    "file": "/products/the-noor-bagh-heirloom-minaudi/index.html",
+    "title": "The Noor Bagh Heirloom Minaudière\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/the-noor-e-sahar-clutch",
+    "file": "/products/the-noor-e-sahar-clutch/index.html",
+    "title": "The Noor-e-Sahar Clutch\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/the-rose-pearl-pochette",
+    "file": "/products/the-rose-pearl-pochette/index.html",
+    "title": "The Rose Pearl Pochette\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/the-vallari-noir-clutch",
+    "file": "/products/the-vallari-noir-clutch/index.html",
+    "title": "The Vallari Noir Clutch\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/the-vega-bijou-clutch",
+    "file": "/products/the-vega-bijou-clutch/index.html",
+    "title": "The Vega Bijou Clutch\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/vintage-garden-3-layer-throw",
+    "file": "/products/vintage-garden-3-layer-throw/index.html",
+    "title": "Vintage Garden 3-Layer Throw\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/search",
+    "file": "/search/index.html",
+    "title": "Search\n\n        &ndash; Dimohe"
+  },
+  {
+    "route": "/products/boy-dhola-maru-embroidery-bundy-set-beige?section_id=quick-view",
+    "file": "/products/boy-dhola-maru-embroidery-bundy-set-beige/quick-view/index.html",
+    "title": "Boy Dhola Maru Embroidery Bundy Set - Beige quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/boy-3-pc-royal-zardozi-bundy-set-white?section_id=quick-view",
+    "file": "/products/boy-3-pc-royal-zardozi-bundy-set-white/quick-view/index.html",
+    "title": "Boy 3 Pc Royal Zardozi Bundy Set - White quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/boy-stripe-zari-embroidered-kurta-set-teal-blue?section_id=quick-view",
+    "file": "/products/boy-stripe-zari-embroidered-kurta-set-teal-blue/quick-view/index.html",
+    "title": "Boy Stripe Zari Embroidered Kurta Set - Teal Blue quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/boy-stripe-zari-embroidered-kurta-set-minty-green?section_id=quick-view",
+    "file": "/products/boy-stripe-zari-embroidered-kurta-set-minty-green/quick-view/index.html",
+    "title": "Boy Stripe Zari Embroidered Kurta Set - Minty Green quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/girl-dhola-maru-floral-embroidered-skirt-top-set-beige-green?section_id=quick-view",
+    "file": "/products/girl-dhola-maru-floral-embroidered-skirt-top-set-beige-green/quick-view/index.html",
+    "title": "Girl Dhola Maru Floral Embroidered Skirt Top Set - Beige & Green quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/girl-striped-fancy-zari-embroidered-top-with-cowl-dhoti-pants-minty-green?section_id=quick-view",
+    "file": "/products/girl-striped-fancy-zari-embroidered-top-with-cowl-dhoti-pants-minty-green/quick-view/index.html",
+    "title": "Girl Striped Fancy Zari Embroidered Top with Cowl Dhoti Pants- Minty Green quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/girl-panelled-bandhani-skirt-set-red?section_id=quick-view",
+    "file": "/products/girl-panelled-bandhani-skirt-set-red/quick-view/index.html",
+    "title": "Girl Panelled Bandhani Skirt Set-Red quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/boy-3-pc-embroidery-bundy-set-beige-1?section_id=quick-view",
+    "file": "/products/boy-3-pc-embroidery-bundy-set-beige-1/quick-view/index.html",
+    "title": "Boy 3 Pc Embroidery Bundy Set - Beige quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/boy-3-pc-embroidery-bundy-set-beige?section_id=quick-view",
+    "file": "/products/boy-3-pc-embroidery-bundy-set-beige/quick-view/index.html",
+    "title": "Boy 3 Pc Embroidery Bundy Set - Beige quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/himalayan-hair-repair-shampoo-deodhar-hibiscus-250ml?section_id=quick-view",
+    "file": "/products/himalayan-hair-repair-shampoo-deodhar-hibiscus-250ml/quick-view/index.html",
+    "title": "Himalayan Hair Repair Shampoo (Deodhar & Hibiscus) 250ml quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/rosemary-hair-masque-150gm?section_id=quick-view",
+    "file": "/products/rosemary-hair-masque-150gm/quick-view/index.html",
+    "title": "Rosemary Hair Masque 150gm quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/nava-pre-shower-body-glow-oil-rose-almond-100ml?section_id=quick-view",
+    "file": "/products/nava-pre-shower-body-glow-oil-rose-almond-100ml/quick-view/index.html",
+    "title": "Nava Pre Shower Body Glow Oil Rose Almond 100ml quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/protein-building-hair-mask-150gm?section_id=quick-view",
+    "file": "/products/protein-building-hair-mask-150gm/quick-view/index.html",
+    "title": "Protein Building Hair Mask 150gm quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/lavender-smoothening-conditioner-150gm-glass-jar?section_id=quick-view",
+    "file": "/products/lavender-smoothening-conditioner-150gm-glass-jar/quick-view/index.html",
+    "title": "Lavender Smoothening Conditioner 150gm (Glass Jar) quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/the-desert-pearl-pochette?section_id=quick-view",
+    "file": "/products/the-desert-pearl-pochette/quick-view/index.html",
+    "title": "The Desert Pearl Pochette quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/the-midnight-pearl-pochette?section_id=quick-view",
+    "file": "/products/the-midnight-pearl-pochette/quick-view/index.html",
+    "title": "The Midnight Pearl Pochette quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/the-rose-pearl-pochette?section_id=quick-view",
+    "file": "/products/the-rose-pearl-pochette/quick-view/index.html",
+    "title": "The Rose Pearl Pochette quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/the-noor-bagh-heirloom-minaudi?section_id=quick-view",
+    "file": "/products/the-noor-bagh-heirloom-minaudi/quick-view/index.html",
+    "title": "The Noor Bagh Heirloom Minaudière quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/the-noor-e-sahar-clutch?section_id=quick-view",
+    "file": "/products/the-noor-e-sahar-clutch/quick-view/index.html",
+    "title": "The Noor-e-Sahar Clutch quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/the-lyra-bijou-clutch?section_id=quick-view",
+    "file": "/products/the-lyra-bijou-clutch/quick-view/index.html",
+    "title": "The Lyra Bijou Clutch quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/the-vega-bijou-clutch?section_id=quick-view",
+    "file": "/products/the-vega-bijou-clutch/quick-view/index.html",
+    "title": "The Vega Bijou Clutch quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/the-altair-bijou-clutch?section_id=quick-view",
+    "file": "/products/the-altair-bijou-clutch/quick-view/index.html",
+    "title": "The Altair Bijou Clutch quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/the-mayura-noir-heirloom?section_id=quick-view",
+    "file": "/products/the-mayura-noir-heirloom/quick-view/index.html",
+    "title": "The Mayura Noir Heirloom Minaudière quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/the-moonlight-pearl-pochette?section_id=quick-view",
+    "file": "/products/the-moonlight-pearl-pochette/quick-view/index.html",
+    "title": "The Moonlight Pearl Pochette quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/the-vallari-noir-clutch?section_id=quick-view",
+    "file": "/products/the-vallari-noir-clutch/quick-view/index.html",
+    "title": "The Vallari Noir Clutch quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/the-aurelia-noir-envelope?section_id=quick-view",
+    "file": "/products/the-aurelia-noir-envelope/quick-view/index.html",
+    "title": "The Aurelia Noir Envelope quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/the-maia-bijou-clutch?section_id=quick-view",
+    "file": "/products/the-maia-bijou-clutch/quick-view/index.html",
+    "title": "The Maia Bijou Clutch quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/keshamrit-anti-dandruff-shampoo-lemon-250ml?section_id=quick-view",
+    "file": "/products/keshamrit-anti-dandruff-shampoo-lemon-250ml/quick-view/index.html",
+    "title": "Keshamrit Anti Dandruff Shampoo Lemon 250ml quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/keshamrit-conditioning-cleansing-shampoo-coconut-milk-250ml?section_id=quick-view",
+    "file": "/products/keshamrit-conditioning-cleansing-shampoo-coconut-milk-250ml/quick-view/index.html",
+    "title": "Keshamrit Conditioning & Cleansing Shampoo Coconut Milk 250ml quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/blush-garden-3-layer-throw?section_id=quick-view",
+    "file": "/products/blush-garden-3-layer-throw/quick-view/index.html",
+    "title": "Blush Garden 3-Layer Throw quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/indigo-peacock-3-layer-throw?section_id=quick-view",
+    "file": "/products/indigo-peacock-3-layer-throw/quick-view/index.html",
+    "title": "Indigo Peacock 3-Layer Throw quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/lavender-bloom-3-layer-throw?section_id=quick-view",
+    "file": "/products/lavender-bloom-3-layer-throw/quick-view/index.html",
+    "title": "Lavender Bloom 3-Layer Throw quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/vintage-garden-3-layer-throw?section_id=quick-view",
+    "file": "/products/vintage-garden-3-layer-throw/quick-view/index.html",
+    "title": "Vintage Garden 3-Layer Throw quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/sage-botanica-3-layer-throw?section_id=quick-view",
+    "file": "/products/sage-botanica-3-layer-throw/quick-view/index.html",
+    "title": "Sage Botanica 3-Layer Throw quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/gulnaar-floral-linen-cushion-cover-earth-brown?section_id=quick-view",
+    "file": "/products/gulnaar-floral-linen-cushion-cover-earth-brown/quick-view/index.html",
+    "title": "Gulnaar Floral Linen Cushion Cover – Earth Brown quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/indigo-garden-waffle-hand-towels-set-of-2?section_id=quick-view",
+    "file": "/products/indigo-garden-waffle-hand-towels-set-of-2/quick-view/index.html",
+    "title": "Indigo Garden Waffle Hand Towels (Set of 2) quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/olive-cypress-waffle-hand-towels-set-of-2?section_id=quick-view",
+    "file": "/products/olive-cypress-waffle-hand-towels-set-of-2/quick-view/index.html",
+    "title": "Olive Cypress Waffle Hand Towels (Set of 2) quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/ruby-cypress-waffle-hand-towels-set-of-2?section_id=quick-view",
+    "file": "/products/ruby-cypress-waffle-hand-towels-set-of-2/quick-view/index.html",
+    "title": "Ruby Cypress Waffle Hand Towels (Set of 2) quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/scarlet-garden-waffle-hand-towels-set-of-2?section_id=quick-view",
+    "file": "/products/scarlet-garden-waffle-hand-towels-set-of-2/quick-view/index.html",
+    "title": "Scarlet Garden Waffle Hand Towels (Set of 2) quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/crimson-tulip-waffle-hand-towels-set-of-2?section_id=quick-view",
+    "file": "/products/crimson-tulip-waffle-hand-towels-set-of-2/quick-view/index.html",
+    "title": "Crimson Tulip Waffle Hand Towels (Set of 2) quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/cypress-grove-round-tote?section_id=quick-view",
+    "file": "/products/cypress-grove-round-tote/quick-view/index.html",
+    "title": "Cypress Grove Round Tote quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/indigo-palm-round-tote?section_id=quick-view",
+    "file": "/products/indigo-palm-round-tote/quick-view/index.html",
+    "title": "Indigo Palm Round Tote quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/indigo-bloom-round-tote?section_id=quick-view",
+    "file": "/products/indigo-bloom-round-tote/quick-view/index.html",
+    "title": "Indigo Bloom Round Tote quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/black-tulip-square-tote?section_id=quick-view",
+    "file": "/products/black-tulip-square-tote/quick-view/index.html",
+    "title": "Black Tulip Square Tote quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/botanical-grove-square-tote?section_id=quick-view",
+    "file": "/products/botanical-grove-square-tote/quick-view/index.html",
+    "title": "Botanical Grove Square Tote quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/rose-garden-square-tote?section_id=quick-view",
+    "file": "/products/rose-garden-square-tote/quick-view/index.html",
+    "title": "Rose Garden Square Tote quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/garden-arch-square-tote?section_id=quick-view",
+    "file": "/products/garden-arch-square-tote/quick-view/index.html",
+    "title": "Garden Arch Square Tote quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/scarlet-garden-waffle-face-towels-set-of-4?section_id=quick-view",
+    "file": "/products/scarlet-garden-waffle-face-towels-set-of-4/quick-view/index.html",
+    "title": "Scarlet Garden Waffle Face Towels (Set of 4) quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/blush-sprig-square-tote?section_id=quick-view",
+    "file": "/products/blush-sprig-square-tote/quick-view/index.html",
+    "title": "Blush Sprig Square Tote quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/cypress-duo-waffle-face-towels-set-of-4?section_id=quick-view",
+    "file": "/products/cypress-duo-waffle-face-towels-set-of-4/quick-view/index.html",
+    "title": "Cypress Duo Waffle Face Towels (Set of 4) quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/indigo-garden-waffle-face-towels-set-of-4?section_id=quick-view",
+    "file": "/products/indigo-garden-waffle-face-towels-set-of-4/quick-view/index.html",
+    "title": "Indigo Garden Waffle Face Towels (Set of 4) quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/crimson-botanica-waffle-face-towels-set-of-4?section_id=quick-view",
+    "file": "/products/crimson-botanica-waffle-face-towels-set-of-4/quick-view/index.html",
+    "title": "Crimson Botanica Waffle Face Towels (Set of 4) quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/botanical-quartet-waffle-face-towels-set-of-4?section_id=quick-view",
+    "file": "/products/botanical-quartet-waffle-face-towels-set-of-4/quick-view/index.html",
+    "title": "Botanical Quartet Waffle Face Towels (Set of 4) quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/royal-cypress-table-cover?section_id=quick-view",
+    "file": "/products/royal-cypress-table-cover/quick-view/index.html",
+    "title": "Royal Cypress Table Cover quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/palace-elephant-table-cover?section_id=quick-view",
+    "file": "/products/palace-elephant-table-cover/quick-view/index.html",
+    "title": "Palace Elephant Table Cover quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/imperial-garden-table-cover?section_id=quick-view",
+    "file": "/products/imperial-garden-table-cover/quick-view/index.html",
+    "title": "Imperial Garden Table Cover quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/raspberry-bloom-cocktail-napkins-set-of-6?section_id=quick-view",
+    "file": "/products/raspberry-bloom-cocktail-napkins-set-of-6/quick-view/index.html",
+    "title": "Raspberry Bloom Cocktail Napkins (Set of 6) quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/olive-willow-cocktail-napkins-set-of-6?section_id=quick-view",
+    "file": "/products/olive-willow-cocktail-napkins-set-of-6/quick-view/index.html",
+    "title": "Olive Willow Cocktail Napkins (Set of 6) quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/botanical-garden-quilted-cushion-cover?section_id=quick-view",
+    "file": "/products/botanical-garden-quilted-cushion-cover/quick-view/index.html",
+    "title": "Botanical Garden Quilted Cushion Cover quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/cypress-bloom-quilted-cushion-cover?section_id=quick-view",
+    "file": "/products/cypress-bloom-quilted-cushion-cover/quick-view/index.html",
+    "title": "Cypress & Bloom Quilted Cushion Cover quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/lavender-garden-quilted-cushion-cover?section_id=quick-view",
+    "file": "/products/lavender-garden-quilted-cushion-cover/quick-view/index.html",
+    "title": "Lavender Garden Quilted Cushion Cover quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/flamingo-quilted-cushion-cover?section_id=quick-view",
+    "file": "/products/flamingo-quilted-cushion-cover/quick-view/index.html",
+    "title": "Flamingo Quilted Cushion Cover quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/sage-coral-garden-quilted-cushion-cover?section_id=quick-view",
+    "file": "/products/sage-coral-garden-quilted-cushion-cover/quick-view/index.html",
+    "title": "Sage & Coral Garden Quilted Cushion Cover quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/terracotta-bloom-quilted-cushion-cover?section_id=quick-view",
+    "file": "/products/terracotta-bloom-quilted-cushion-cover/quick-view/index.html",
+    "title": "Terracotta Bloom Quilted Cushion Cover quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/aqua-bloom-meadow-quilted-cushion-cover?section_id=quick-view",
+    "file": "/products/aqua-bloom-meadow-quilted-cushion-cover/quick-view/index.html",
+    "title": "Aqua Bloom Meadow Quilted Cushion Cover quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/elephant-parade-quilted-cushion-cover?section_id=quick-view",
+    "file": "/products/elephant-parade-quilted-cushion-cover/quick-view/index.html",
+    "title": "Elephant Parade Quilted Cushion Cover quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/indigo-blossom-cocktail-napkins-set-of-12?section_id=quick-view",
+    "file": "/products/indigo-blossom-cocktail-napkins-set-of-12/quick-view/index.html",
+    "title": "Indigo Blossom Cocktail Napkins (Set of 12) quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/coral-bloom-cocktail-napkins-set-of-12?section_id=quick-view",
+    "file": "/products/coral-bloom-cocktail-napkins-set-of-12/quick-view/index.html",
+    "title": "Coral Bloom Cocktail Napkins (Set of 12) quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/indigo-vine-cocktail-napkins-set-of-12?section_id=quick-view",
+    "file": "/products/indigo-vine-cocktail-napkins-set-of-12/quick-view/index.html",
+    "title": "Indigo Vine Cocktail Napkins (Set of 12) quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/sage-blossom-table-mat-dinner-napkin-set?section_id=quick-view",
+    "file": "/products/sage-blossom-table-mat-dinner-napkin-set/quick-view/index.html",
+    "title": "Sage Blossom Table Mat & Dinner Napkin Set quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/berry-olive-table-mat-dinner-napkin-set?section_id=quick-view",
+    "file": "/products/berry-olive-table-mat-dinner-napkin-set/quick-view/index.html",
+    "title": "Berry & Olive Table Mat & Dinner Napkin Set quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/blush-cypress-waffle-bath-towel?section_id=quick-view",
+    "file": "/products/blush-cypress-waffle-bath-towel/quick-view/index.html",
+    "title": "Blush Cypress Waffle Bath Towel quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/blush-garden-table-mat-dinner-napkin-set?section_id=quick-view",
+    "file": "/products/blush-garden-table-mat-dinner-napkin-set/quick-view/index.html",
+    "title": "Blush Garden Table Mat & Dinner Napkin Set quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/crimson-vine-waffle-bath-towel?section_id=quick-view",
+    "file": "/products/crimson-vine-waffle-bath-towel/quick-view/index.html",
+    "title": "Crimson Vine Waffle Bath Towel quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/sage-garden-waffle-bath-towel?section_id=quick-view",
+    "file": "/products/sage-garden-waffle-bath-towel/quick-view/index.html",
+    "title": "Sage Garden Waffle Bath Towel quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/fuchsia-sage-reversible-table-runner?section_id=quick-view",
+    "file": "/products/fuchsia-sage-reversible-table-runner/quick-view/index.html",
+    "title": "Fuchsia & Sage Reversible Table Runner quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/fuchsia-vine-reversible-table-runner?section_id=quick-view",
+    "file": "/products/fuchsia-vine-reversible-table-runner/quick-view/index.html",
+    "title": "Fuchsia Vine Reversible Table Runner quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/spice-garden-table-runner?section_id=quick-view",
+    "file": "/products/spice-garden-table-runner/quick-view/index.html",
+    "title": "Spice Garden Table Runner quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/sage-vine-reversible-table-runner?section_id=quick-view",
+    "file": "/products/sage-vine-reversible-table-runner/quick-view/index.html",
+    "title": "Sage Vine Reversible Table Runner quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/emerald-cypress-waffle-bath-sheet?section_id=quick-view",
+    "file": "/products/emerald-cypress-waffle-bath-sheet/quick-view/index.html",
+    "title": "Emerald Cypress Waffle Bath Sheet quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/blush-cypress-waffle-bath-sheet?section_id=quick-view",
+    "file": "/products/blush-cypress-waffle-bath-sheet/quick-view/index.html",
+    "title": "Blush Cypress Waffle Bath Sheet quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/sage-garden-waffle-bath-sheet?section_id=quick-view",
+    "file": "/products/sage-garden-waffle-bath-sheet/quick-view/index.html",
+    "title": "Sage Garden Waffle Bath Sheet quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/mystic-hair-oil-100ml?section_id=quick-view",
+    "file": "/products/mystic-hair-oil-100ml/quick-view/index.html",
+    "title": "Mystic Hair Oil 100ml quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/hibiscus-hair-oil-100ml?section_id=quick-view",
+    "file": "/products/hibiscus-hair-oil-100ml/quick-view/index.html",
+    "title": "Hibiscus Hair Oil 100ml quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/snanamrit-ubtan-natural-bathing-powder-250gm?section_id=quick-view",
+    "file": "/products/snanamrit-ubtan-natural-bathing-powder-250gm/quick-view/index.html",
+    "title": "Snanamrit Ubtan Natural Bathing Powder 250gm quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/cypress-row-lumbar-cushion-cover?section_id=quick-view",
+    "file": "/products/cypress-row-lumbar-cushion-cover/quick-view/index.html",
+    "title": "Cypress Row Lumbar Cushion Cover quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/meadow-bloom-round-tote?section_id=quick-view",
+    "file": "/products/meadow-bloom-round-tote/quick-view/index.html",
+    "title": "Meadow Bloom Round Tote quick view",
+    "kind": "section"
+  },
+  {
+    "route": "/products/crimson-bloom-waffle-bath-sheet?section_id=quick-view",
+    "file": "/products/crimson-bloom-waffle-bath-sheet/quick-view/index.html",
+    "title": "Crimson Bloom Waffle Bath Sheet quick view",
+    "kind": "section"
+  }
+]

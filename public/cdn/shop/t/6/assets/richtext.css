@@ -1,0 +1,24 @@
+.rich-text {
+  display: grid;
+}
+
+.rich-text-desc {
+  margin-bottom: 24px;
+}
+
+.rich-text.card-enabled {
+  padding: 40px;
+  background-color: rgb(var(--color-background-foreground));
+  border-radius: var(--block-card-radius);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .rich-text.heading-left {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 80px;
+  }
+  .rich-text.heading-left p {
+    margin-top: 2px;
+  }
+}

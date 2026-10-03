@@ -1,0 +1,25 @@
+.replica-cart-items { padding: 0 24px; }
+.replica-cart-item { display: grid; grid-template-columns: 90px 1fr auto; gap: 16px; padding: 22px 0; border-bottom: 1px solid #ded8cf; }
+.replica-cart-item img { width: 90px; height: 110px; object-fit: cover; }
+.replica-cart-item p { margin: 7px 0; font-size: 14px; }
+.replica-cart-quantity { display: flex; align-items: center; gap: 12px; }
+.replica-cart-quantity button { padding: 4px 10px; background: transparent; border: 1px solid #ded8cf; cursor: pointer; color: inherit; }
+.replica-cart-quantity .replica-remove { border: 0; font-size: 12px; text-decoration: underline; }
+.replica-cart-footer { padding: 24px; }
+.replica-cart-total { display: flex; justify-content: space-between; }
+.replica-cart-footer p { font-size: 13px; margin: 16px 0; }
+.replica-cart-footer .button { width: 100%; }
+.replica-view-cart { display: block; text-align: center; margin-top: 18px; text-decoration: underline; }
+.replica-cart-page { max-width: 1100px; margin: 40px auto; }
+.replica-cart-page h1 { margin-bottom: 28px; }
+.replica-search-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.replica-predictive-results > a { display: flex; gap: 18px; align-items: center; padding: 12px 0; border-bottom: 1px solid #ddd; }
+.replica-predictive-results img { object-fit: cover; }
+.replica-predictive-results small { display: block; margin-top: 8px; }
+.replica-service-page { text-align: center; min-height: 50vh; padding-top: 80px; }
+.replica-service-page p { margin: 24px auto; }
+.replica-shop-button { display: flex; align-items: center; justify-content: center; gap: 4px; width: 100%; height: 56px; border-radius: 30px; background: #5433eb; color: #fff; font: 600 14px Inter, sans-serif; text-decoration: none; }
+.replica-shop-button strong { font: 700 23px Inter, sans-serif; letter-spacing: -1.2px; }
+.replica-payment-options { display: block; margin: 16px 0 0; text-align: center; font-size: 14px; text-decoration: underline; }
+#replica-status { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 10000; background: #101010; color: #fff; max-width: min(540px, 90vw); padding: 18px 24px; border-radius: 6px; box-shadow: 0 4px 20px #0002; }
+@media (max-width: 767px) { .replica-search-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } .replica-cart-item { grid-template-columns: 70px 1fr; gap: 12px; } .replica-cart-item img { width: 70px; height: 90px; } .replica-cart-item > strong { grid-column: 2; } }

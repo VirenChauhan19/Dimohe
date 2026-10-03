@@ -1,0 +1,23 @@
+.collection-tabs-wrapper tabs-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.section-button-wrapper {
+  margin-top: 30px;
+}
+
+.tab-collections-content {
+  display: none;
+}
+
+.tab-collections-content.active {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .tab-collections-content:not(:hover) .swiper-button {
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+}

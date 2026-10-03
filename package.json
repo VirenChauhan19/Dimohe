@@ -1,0 +1,18 @@
+{
+  "name": "dimohe-storefront-replica",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "sync": "node scripts/sync.mjs && node scripts/sync-quickviews.mjs && node scripts/vendor-external.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0"
+  }
+}
