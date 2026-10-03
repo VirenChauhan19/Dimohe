@@ -13,6 +13,10 @@ npm run dev
 
 Open http://localhost:3000. `PORT` and `HOST` configure the preview address. The default server listens only on this computer.
 
+## GitHub Pages
+
+Every push to `main` runs `.github/workflows/pages.yml`, which builds a static copy with `npm run build:pages` and deploys it to https://virenchauhan19.github.io/Dimohe/. The static site has no server: the shopping bag is kept in the browser's localStorage, and filtered collection and search views render in the browser with `lib/storefront.mjs`. To build locally, set `PAGES_BASE_PATH` (for example `/Dimohe`) and the site is written to `dist/`.
+
 ## Merchandising and navigation
 
 All 88 captured products have one primary department and product type:

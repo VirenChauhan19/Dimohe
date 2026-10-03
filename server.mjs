@@ -4,6 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { load } from 'cheerio';
 import { createStorefront } from './lib/storefront.mjs';
+import { merchandise } from './lib/merchandising.mjs';
 
 const root = path.resolve('public');
 const products = JSON.parse(await fs.readFile('data/products.json', 'utf8')).products;
@@ -42,7 +43,7 @@ for (const r of routes.filter(r => /^\/collections\/[^/?]+(?:\?page=\d+)?$/.test
     if (handle) memberships.get(collectionHandle).add(handle);
   });
 }
-const storefront = createStorefront(products, memberships, snapshot);
+const storefront = createStorefront(merchandise(products), memberships, snapshot, { load });
 function card(p) {
   return cards.get(p.handle) ?? `<product-card-item class="product-card-item"><a href="/products/${escape(p.handle)}"><img src="${escape(localImage(p.images[0]?.src ?? ''))}" alt="${escape(p.title)}"><h6>${escape(p.title)}</h6></a><span>${money(Math.round(Number(p.variants[0].price) * 100))}</span></product-card-item>`;
 }
