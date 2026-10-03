@@ -1,6 +1,6 @@
-# Dimohe storefront replica
+# Dimohe — the art of everyday
 
-A local replica of the public storefront at https://dimohe.com/, captured on October 3, 2026. The original page markup, theme CSS, theme JavaScript, fonts, photographs, and video are stored in this repository.
+A redesigned local storefront built around Dimohe’s botanical textiles, artisan bags, wellness rituals, and children’s occasionwear. The design uses ivory, deep olive, terracotta, editorial typography, and original product photography.
 
 ## Run
 
@@ -11,44 +11,39 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000. On Windows PowerShell, use `npm.cmd` if execution policy blocks `npm.ps1`. The server listens on the local computer by default. `PORT` and `HOST` can configure its address.
+Open http://localhost:3000. `PORT` and `HOST` configure the preview address. The default server listens only on this computer.
 
-## Included
+## Merchandising and navigation
 
-- Home page with the original animated slides, collection panels, product tabs, and footer.
-- All 88 public product detail pages, their galleries, descriptions, variants, and prices.
-- All 46 collections listed in the reference sitemap, plus the all-products collection and collection pagination.
-- Story, founder, contact, shipping and returns, other informational pages, blog pages, and published policies.
-- Original desktop and mobile navigation, menus, search drawer, quick views, and image zoom.
-- Local predictive search, full search results, collection sorting, and price filtering.
-- A local cart with native theme drawer behavior, add/remove actions, quantity controls, and calculated totals. Carts survive page navigation and reloads; the preview server keeps cart sessions in memory and resets them when restarted.
+All 88 captured products have one primary department and product type:
 
-The inventory in `data/routes.json` contains 164 complete pages and 88 product quick-view sections. Product data is in `data/products.json`.
+| Department | Products | Navigation |
+|---|---:|---|
+| Home & Living | 47 | Cushions, throws, table linens, bath textiles |
+| Bags | 22 | Everyday totes, antique-handle bags, potlis, round evening bags, clutches |
+| Wellness | 10 | Shampoo, conditioners and masks, hair oils, body oils, bathing powder |
+| Kids | 9 | Boys’ and girls’ occasionwear |
 
-## Service connections
+The catalog has 23 product types. Everyday totes now belong with bags. Collection pages offer category, material, color family, size, stock, and price filters, plus sorting. Product pages include actual variants, prices, availability, image galleries, source descriptions, verified attributes, and related pieces. Quick view, predictive search, and the shopping bag work on desktop and mobile.
 
-This is a public storefront snapshot with a local preview backend. The original store's private Shopify theme source, admin data, and hosted services cannot be retrieved from its public website. Customer authentication, checkout/payment processing, contact email delivery, live inventory, currency conversion, and review submission require actual service connections. Account and checkout routes explain that connection requirement. Contact forms report that messages have not been sent. The preview never creates orders or submits messages to the original store.
+`lib/merchandising.mjs` derives attributes from `data/products.json`. Explicit fabric specifications take precedence over general marketing prose; packaging material is excluded. Material filters group cotton and silk variants together, while the product details retain specific fabrics. Color filters use practical color families and product details retain the source’s exact wording. Bag shapes and print styles are relabeled rather than presented as sizes. Unknown attributes are omitted. `data/merchandising.json` is a reviewable export of the resulting catalog.
 
-The source currently returns 404 for `/policies/terms-of-service` and `/collections/luxury-handbag`; local requests also return a branded 404. The functioning handbag collection is `/collections/hand-bags`. A decorative arrow that was missing on the original asset host has a local SVG replacement.
+`lib/storefront.mjs`, `public/storefront.css`, and `public/storefront.js` implement the redesign. The original 164 page snapshots and 88 quick-view sections remain stored for reference and compatible section endpoints. Original informational content is rendered inside the new design.
 
-## Verify and refresh
+## Verification
 
-With the development server running:
+With the preview running:
 
 ```sh
 npm run check
 ```
 
-Checks all captured pages and local assets, and exercises cart totals, add/change/remove actions, invalid variants, search, sorting, price filtering, and variant prices. Desktop and mobile layouts, the native cart drawer, predictive search, and native sorting were also checked in the browser.
+Checks 252 captured routes, 725 original local asset references, all product cart images, variant prices and availability, cart validation/totals, search, sorting, price limits, complete department/type membership, and material/color/size filters. See `QA.md` for browser verification and limitations.
 
-Run `npm run compare-source` to compare representative homepage, collection, product, and story-page headings, image filenames, and internal destination links with the live original. This requires internet access and intentionally excludes fragment-only controls and live hosted-service widgets.
+`npm run compare-source` compares the retained source snapshots with representative live original pages. It does not compare the redesigned interface, which intentionally differs from the original.
 
-The October 3 audit corrected catalog image URL mapping in cart/search, zero and excessive cart quantities, direct sold-out variant purchase controls, price-slider values after filtering, and mobile submenu close behavior. Regression checks cover all 88 product cart images. Browser checks covered desktop search, size selection, cart totals and removal, mobile navigation, quick-view add-to-cart, and price filtering. See `QA.md` for the verification scope and service limitations.
+`npm run sync` refreshes public source snapshots and assets without changing the original store. Restart the server after refreshing and review the derived attributes when the catalog changes.
 
-To recapture the current public site and its assets:
+## Service connections
 
-```sh
-npm run sync
-```
-
-The sync script downloads public pages and assets. It does not access Shopify admin or modify the original store. The download report is written to `data/sync-report.json`. Restart the preview server after recapturing pages.
+This is a local preview using captured public catalog data, with an in-memory session cart. Carts survive navigation and reloads but reset when the server restarts. Live inventory, account authentication, checkout, and payments require Shopify connections. The account and checkout pages explain that requirement. Contact links open an email to the published support address; the preview does not send messages or create orders.

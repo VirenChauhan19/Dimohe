@@ -1,25 +1,29 @@
-# Storefront audit — October 3, 2026
+# Dimohe redesign verification — October 3, 2026
 
-## Fixed
+## Design and merchandising
 
-- Shopify catalog image paths now resolve to downloaded local images in carts and predictive search. All 88 product cart images respond successfully.
-- Zero quantities are rejected instead of adding one item. Missing quantities default to one for batch additions. Requests exceeding 99 units per variant are rejected before changing the cart.
-- Direct links to unavailable variants disable purchase controls and show “Sold out.”
-- Filtering keeps the selected price limit in the slider after a response or reload.
-- Closing a mobile submenu no longer references an undefined variable. Submenu arrows now have accessible names and keyboard controls.
+The new storefront uses original photography with ivory, olive, and terracotta, local Inter and Playfair fonts, an editorial homepage, four primary departments, 23 product types, collection filters, and redesigned product, search, quick-view, cart, contact, and information pages.
 
-## Verified
+All 88 products belong to one primary department: Home & Living 47, Bags 22, Wellness 10, Kids 9. Tote bags are grouped with bags. Shapes and print styles are relabeled from misleading source “Size” fields. Fabric specifications take precedence over marketing prose, packaging is excluded, and unknown materials are omitted. Cotton and silk subtypes share useful material filters. Color families simplify discovery while exact source colors appear in product details.
 
-`node scripts/check.mjs` passed: 252 page/section responses, 725 local asset references, all product cart thumbnails, cart quantities/totals/add/change/remove, invalid and unavailable variants, search, price sorting/filtering, selected variant prices and IDs, sold-out buttons, and retained slider values.
+The captured source has some inconsistent wellness labels (for example, a 150gm title with a 150ml variant). Original variant identifiers and labels are preserved so purchase selections remain consistent with the captured catalog. These source inconsistencies need merchant review before production.
 
-`node scripts/compare-source.mjs` passed for the homepage, home-furnishing collection, Boy Dhola Maru product, and Our Story page. Headings, image filenames, and internal destinations match the original public markup, with fragment controls excluded. This is a content comparison, not a complete pixel comparison.
+## Automated checks
 
-Browser checks covered desktop and mobile layouts, predictive/full search, size changes, a direct selected-size URL, quick-view add-to-cart, cart image loading, increases and totals, removal and empty state, mobile submenus, sorting, and mobile price filtering. No JavaScript errors were observed during these flows. The copied carousel code can emit warnings about insufficient slides for looping.
+`node scripts/check.mjs` verifies:
 
-Screenshots are saved locally under the ignored `reference/qa/` directory.
+- 252 captured page/section responses and 725 original local asset references.
+- Cart images for all 88 products; quantities, totals, add/change/remove, and atomic rejection of invalid requests.
+- Search, price sorting/filtering, and retained filter values.
+- Selected variant prices/IDs and unavailable variant purchase controls.
+- Complete, non-overlapping department membership, all 23 product type collections, material/color/size filters, and specific material/shape classification regressions.
 
-## Remaining differences
+## Browser checks
 
-The preview uses the original public theme assets and snapshots, with a local cart/search backend. Filled cart and search content use local templates. Authentication, payments, contact delivery, live inventory, currency conversion, and review submission still require the original Shopify/service connections. Checkout and account routes explain that requirement. Carts currently reset on server restart.
+Reviewed desktop at 1440 × 900 and mobile at 390 × 844. Verified homepage composition, collection layout, linen filtering, product size/price changes, quick-view addition, cart increases/totals/removal, mobile navigation to everyday totes, predictive search and full potli search results, and mobile filters/sorting. No JavaScript errors observed in these flows. Checked for horizontal overflow and broken loaded images.
 
-An audit cannot establish that every possible interaction is bug-free. Exact production parity requires the store's theme source, service configuration, and authenticated test access; these checks cover the public local replica.
+Screenshots are saved under the ignored `reference/redesign/` directory.
+
+## Preview limits
+
+Live inventory, customer accounts, payments, and checkout require Shopify connections. The preview cart resets on server restart. Contact uses the published email address. The earlier source comparison applies to retained snapshots, not to the new visual design. These checks cover the listed flows; they do not establish that every possible interaction is bug-free.

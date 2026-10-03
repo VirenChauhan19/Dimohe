@@ -1,0 +1,4049 @@
+{
+  "provenance": "Derived from captured product titles, descriptions, options and variants. Explicit fabric specifications take precedence over marketing prose. Source catalog is preserved.",
+  "products": [
+    {
+      "handle": "boy-dhola-maru-embroidery-bundy-set-beige",
+      "group": "kids",
+      "groupName": "Kids",
+      "type": "boys",
+      "typeName": "Boys’ occasionwear",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Boys’ occasionwear"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Care",
+          "Dry clean only"
+        ],
+        [
+          "Available sizes",
+          "6-12M · 1-2Y · 2-3Y · 3-4Y · 4-5Y · 5-6Y · 6-7Y"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "6-12M",
+        "1-2Y",
+        "2-3Y",
+        "3-4Y",
+        "4-5Y",
+        "5-6Y",
+        "6-7Y"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "cotton",
+      "text": "Dress your gentleman in this unique 3-piece bundi kurta set in most preferred all time wear color. The hand work jacket adds an ethnic touch to this attire with classic floral print kurta and plain bottom. This is perfect for sophisticated looks on any festivities. This set can be worn without jacket also. 3 Pc Set : 1Kurta , 1Jacket , 1pantKurta: Made of 100% cotton with smart front buttons.Jacket : Made of 100% cotton flex with smart front buttons and soft lining.Bottom: Made of cotton flex with elasticated waist. Dry Clean Only",
+      "minPrice": 58,
+      "maxPrice": 85,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "boy-3-pc-royal-zardozi-bundy-set-white",
+      "group": "kids",
+      "groupName": "Kids",
+      "type": "boys",
+      "typeName": "Boys’ occasionwear",
+      "materials": [
+        "cotton",
+        "silk"
+      ],
+      "primaryMaterial": "cotton",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Boys’ occasionwear"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Care",
+          "Dry clean only"
+        ],
+        [
+          "Available sizes",
+          "6-12M · 1-2Y · 2-3Y · 3-4Y · 4-5Y · 5-6Y · 6-7Y"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "6-12M",
+        "1-2Y",
+        "2-3Y",
+        "3-4Y",
+        "4-5Y",
+        "5-6Y",
+        "6-7Y"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "cotton",
+      "text": "Dress your gentleman in this unique 3-piece bundi kurta set in most preferred all time wear color. The hand work jacket adds an ethnic touch to this attire with classic lurex print kurta and plain bottom. This is perfect for sophisticated looks on any festivities. This set can be worn without jacket also. 3 Pc Set : 1Kurta , 1Jacket , 1pantKurta: Made of 100% cotton lurex with smart front buttons.Jacket : Made of 100% cotton silk with smart front buttons and soft lining.Churidar : Made of cotton with elasticated waist. Dry Clean Only",
+      "minPrice": 71,
+      "maxPrice": 98,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "boy-stripe-zari-embroidered-kurta-set-teal-blue",
+      "group": "kids",
+      "groupName": "Kids",
+      "type": "boys",
+      "typeName": "Boys’ occasionwear",
+      "materials": [
+        "silk",
+        "cotton"
+      ],
+      "primaryMaterial": "silk",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Boys’ occasionwear"
+        ],
+        [
+          "Material",
+          "silk"
+        ],
+        [
+          "Care",
+          "Dry clean only"
+        ],
+        [
+          "Available sizes",
+          "6-12M · 1-2Y · 2-3Y · 3-4Y · 4-5Y · 5-6Y · 6-7Y"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "6-12M",
+        "1-2Y",
+        "2-3Y",
+        "3-4Y",
+        "4-5Y",
+        "5-6Y",
+        "6-7Y"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "silk",
+      "text": "Is it a shirt set or is it a kurta set ? Doesn't matter ! Because it's the most stylish thing you could dress your little one up for any events. Detailed motif work yolk by pearls and zari thread at one side panel with fancy buttons accompanied by balloon pants makes it a must have set. .2 Pc Set : 1 Kurta ,1 Balloon pantKurta : Made of striped fancy silk fabric with side fancy buttons and motif detailing.Bottom : Made of cotton fabric with elasticated band for comfort. Dry Clean",
+      "minPrice": 62,
+      "maxPrice": 93,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "boy-stripe-zari-embroidered-kurta-set-minty-green",
+      "group": "kids",
+      "groupName": "Kids",
+      "type": "boys",
+      "typeName": "Boys’ occasionwear",
+      "materials": [
+        "silk",
+        "cotton"
+      ],
+      "primaryMaterial": "silk",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Boys’ occasionwear"
+        ],
+        [
+          "Material",
+          "silk"
+        ],
+        [
+          "Care",
+          "Dry clean only"
+        ],
+        [
+          "Available sizes",
+          "6-12M · 1-2Y · 2-3Y · 3-4Y · 4-5Y · 5-6Y · 6-7Y"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "6-12M",
+        "1-2Y",
+        "2-3Y",
+        "3-4Y",
+        "4-5Y",
+        "5-6Y",
+        "6-7Y"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "silk",
+      "text": "Is it a shirt set or is it a kurta set ? Doesn't matter ! Because it's the most stylish thing you could dress your little one up for any events. Detailed motif work yolk by pearls and zari thread at one side panel with fancy buttons accompanied by balloon pants makes it a must have set. 2 Pc Set : 1 Kurta ,1Balloon pantKurta : Made of striped fancy silk fabric with side fancy buttons and motif detailing.Bottom : Made of cotton fabric with elasticated band for comfort. Dry Clean",
+      "minPrice": 62,
+      "maxPrice": 93,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "girl-dhola-maru-floral-embroidered-skirt-top-set-beige-green",
+      "group": "kids",
+      "groupName": "Kids",
+      "type": "girls",
+      "typeName": "Girls’ occasionwear",
+      "materials": [
+        "silk"
+      ],
+      "primaryMaterial": "silk",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Girls’ occasionwear"
+        ],
+        [
+          "Material",
+          "silk"
+        ],
+        [
+          "Care",
+          "Dry clean only"
+        ],
+        [
+          "Available sizes",
+          "1-2Y · 2-3Y · 3-4Y · 4-5Y · 5-6Y · 6-7Y"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "1-2Y",
+        "2-3Y",
+        "3-4Y",
+        "4-5Y",
+        "5-6Y",
+        "6-7Y"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "silk",
+      "text": "Mirror Embellishments and unique neckline in indo-western garments looks as beautiful as your princess is . This set of super comfort and style is apt for all day occasions and festivities.This coord set features smart top and dhoti style pants with smart zari motif and lacing to give it most wanted look. 2 Pc set : 1Top ,1 dhoti style pant Top: Made of fancy silk with lining , laces and back opening.Bottom: Made of fancy silk with flare and elasticated waist. Dry Clean",
+      "minPrice": 64,
+      "maxPrice": 82,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "girl-striped-fancy-zari-embroidered-top-with-cowl-dhoti-pants-minty-green",
+      "group": "kids",
+      "groupName": "Kids",
+      "type": "girls",
+      "typeName": "Girls’ occasionwear",
+      "materials": [
+        "silk"
+      ],
+      "primaryMaterial": "silk",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Girls’ occasionwear"
+        ],
+        [
+          "Material",
+          "silk"
+        ],
+        [
+          "Care",
+          "Dry clean only"
+        ],
+        [
+          "Available sizes",
+          "1-2Y · 2-3Y · 3-4Y · 4-5Y · 5-6Y · 6-7Y"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "1-2Y",
+        "2-3Y",
+        "3-4Y",
+        "4-5Y",
+        "5-6Y",
+        "6-7Y"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "silk",
+      "text": "Mirror Embellishments and unique neckline in indo-western garments looks as beautiful as your princess is . This set of super comfort and style is apt for all day occasions and festivities. This coord set features smart top and dhoti style pants with smart zari motif and lacing to give it most wanted look. 2 Pc set : 1Top ,1 dhoti style pant Top: Made of fancy silk with lining , laces and back opening.Bottom: Made of fancy silk with flare and elasticated waist. Dry Clean",
+      "minPrice": 62,
+      "maxPrice": 80,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "girl-panelled-bandhani-skirt-set-red",
+      "group": "kids",
+      "groupName": "Kids",
+      "type": "girls",
+      "typeName": "Girls’ occasionwear",
+      "materials": [
+        "silk"
+      ],
+      "primaryMaterial": "silk",
+      "craft": "Hand embroidered",
+      "attributes": [
+        [
+          "Category",
+          "Girls’ occasionwear"
+        ],
+        [
+          "Material",
+          "silk"
+        ],
+        [
+          "Craft",
+          "Hand embroidered"
+        ],
+        [
+          "Care",
+          "Dry clean only"
+        ],
+        [
+          "Available sizes",
+          "0-3 Months · 3-6 Months · 6-12 Months · 1-2 Years · 2-3 Years · 3-4 Years · 4-5 Years · 5-6 Years · 6-7 Years · 7-8 Years · 8-9 Years · 9-10 Years"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "0-3 Months",
+        "3-6 Months",
+        "6-12 Months",
+        "1-2 Years",
+        "2-3 Years",
+        "3-4 Years",
+        "4-5 Years",
+        "5-6 Years",
+        "6-7 Years",
+        "7-8 Years",
+        "8-9 Years",
+        "9-10 Years"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand embroidered · silk",
+      "text": "Light , breathable and beautiful skirt set is divas first pick for any occasions. The skirt is made of panels in bandhani print in silk fabric with a broad gota border at belt accompanied by muslin silk stylish top with flared long sleeves . The comfortable fabric ensure most comfort to kids so that they are in jolly moods. Top made in muslin silk and has hand embroidered marodi gota neckline with lining and strings for gathers at navel line. Skirt is of silk fabric, flared with a lace attached at belt and edging at bottom with tassels. Dry Clean Only",
+      "minPrice": 83,
+      "maxPrice": 5100,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "boy-3-pc-embroidery-bundy-set-beige-1",
+      "group": "kids",
+      "groupName": "Kids",
+      "type": "boys",
+      "typeName": "Boys’ occasionwear",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Boys’ occasionwear"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Care",
+          "Dry clean only"
+        ],
+        [
+          "Available sizes",
+          "6-12M · 1-2 Years · 2-3 Years · 3-4 Years · 4-5 Years · 5-6 Years · 6-7 Years · 7-8 Years · 8-9 Years · 9-10 Years"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "6-12M",
+        "1-2 Years",
+        "2-3 Years",
+        "3-4 Years",
+        "4-5 Years",
+        "5-6 Years",
+        "6-7 Years",
+        "7-8 Years",
+        "8-9 Years",
+        "9-10 Years"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "cotton",
+      "text": "Dress your gentleman in this unique 3-piece bundi kurta set in most preferred all time wear color. The hand work jacket adds an ethnic touch to this attire with classic lurex print kurta and plain bottom. This is perfect for sophisticated looks on any festivities. This set can be worn without jacket also. 3 Pc Set : 1Kurta , 1Jacket , 1pantKurta: Made of 100% cotton lurex with smart front buttons.Jacket : Made of 100% cotton lurex with smart front buttons and soft lining.Dhoti : Made of cotton with elasticated waist. Dry Clean Only",
+      "minPrice": 56,
+      "maxPrice": 80,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "boy-3-pc-embroidery-bundy-set-beige",
+      "group": "kids",
+      "groupName": "Kids",
+      "type": "boys",
+      "typeName": "Boys’ occasionwear",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Boys’ occasionwear"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Care",
+          "Dry clean only"
+        ],
+        [
+          "Available sizes",
+          "6-12M · 1-2 Years · 2-3 Years · 3-4 Years · 4-5 Years · 5-6 Years · 6-7 Years · 7-8 Years · 8-9 Years · 9-10 Years"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "6-12M",
+        "1-2 Years",
+        "2-3 Years",
+        "3-4 Years",
+        "4-5 Years",
+        "5-6 Years",
+        "6-7 Years",
+        "7-8 Years",
+        "8-9 Years",
+        "9-10 Years"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "cotton",
+      "text": "Dress your gentleman in this unique 3-piece bundi kurta set in most preferred all time wear color. The hand work jacket adds an ethnic touch to this attire with classic floral print kurta and plain bottom. This is perfect for sophisticated looks on any festivities. This set can be worn without jacket also. 3 Pc Set : 1Kurta , 1Jacket , 1pantKurta: Made of 100% cotton with smart front buttons.Jacket : Made of 100% cotton flex with smart front buttons and soft lining.Dhoti : Made of cotton flex with elasticated waist. Dry Clean Only",
+      "minPrice": 57,
+      "maxPrice": 79,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "himalayan-hair-repair-shampoo-deodhar-hibiscus-250ml",
+      "group": "wellness",
+      "groupName": "Wellness",
+      "type": "shampoo",
+      "typeName": "Shampoo",
+      "materials": [],
+      "primaryMaterial": "",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Shampoo"
+        ],
+        [
+          "Size",
+          "250 ml"
+        ],
+        [
+          "Size options",
+          "250ml"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "250ml"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "250 ml",
+      "text": "A traditional Indic formulation with natural bioactive compounds like iron, biotin, Vitamin C and Vitamin B, the Himalayan Hair Repair Shampoo is a boon for the hair. The properties of hibiscus & Himalayan deodhar have an instant densifying action on the hair fibre, leaving it looking thicker and fuller. Enriched with healing herbs like Gokshura, Neem, Curry Leaves, Bhringraj, Shatavari & Amla, this shampoo helps reduce hair fall, soothe the scalp and improve hair health effortlessly.",
+      "minPrice": 31,
+      "maxPrice": 31,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "rosemary-hair-masque-150gm",
+      "group": "wellness",
+      "groupName": "Wellness",
+      "type": "conditioner",
+      "typeName": "Conditioners & masks",
+      "materials": [],
+      "primaryMaterial": "",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Conditioners & masks"
+        ],
+        [
+          "Size",
+          "150 g"
+        ],
+        [
+          "Size options",
+          "150ml"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "150ml"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "150 g",
+      "text": "Experience a smooth, nourished mane with our Rosemary & Vit E hair conditioner. A potent blend of natural hair softening ingredients, it will help manage frizzy hair and reduce split ends. Regular use post shampooing will also help strengthen hair and reduce any limpness overall.",
+      "minPrice": 28,
+      "maxPrice": 28,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "nava-pre-shower-body-glow-oil-rose-almond-100ml",
+      "group": "wellness",
+      "groupName": "Wellness",
+      "type": "massage-oil",
+      "typeName": "Body oils",
+      "materials": [],
+      "primaryMaterial": "",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Body oils"
+        ],
+        [
+          "Size",
+          "100 ml"
+        ],
+        [
+          "Size options",
+          "100ml"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "100ml"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "100 ml",
+      "text": "Indulge in a luxurious and fragrant massage experience with the Rose & Almond Body Glow Oil. Its natural goodness hydrates the skin, reduces dryness and improves skin texture. It is the perfect pre-shower massage oil that will leave your skin feeling soft and nourished.",
+      "minPrice": 27,
+      "maxPrice": 27,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "protein-building-hair-mask-150gm",
+      "group": "wellness",
+      "groupName": "Wellness",
+      "type": "conditioner",
+      "typeName": "Conditioners & masks",
+      "materials": [],
+      "primaryMaterial": "",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Conditioners & masks"
+        ],
+        [
+          "Size",
+          "150 g"
+        ],
+        [
+          "Size options",
+          "150ml"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "150ml"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "150 g",
+      "text": "Rich in amino acids and proteins that form the building blocks of your hair, this conditioner is an essential. It deeply nourishes hair from root to tip and adds shine, volume and smoothness. Regular use will help strengthen brittle hair and will also protect your hair from split ends.",
+      "minPrice": 28,
+      "maxPrice": 28,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "lavender-smoothening-conditioner-150gm-glass-jar",
+      "group": "wellness",
+      "groupName": "Wellness",
+      "type": "conditioner",
+      "typeName": "Conditioners & masks",
+      "materials": [],
+      "primaryMaterial": "",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Conditioners & masks"
+        ],
+        [
+          "Size",
+          "150 g"
+        ],
+        [
+          "Size options",
+          "150ml"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "150ml"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "150 g",
+      "text": "Experience salon smoothness with our natural Lavender conditioner. A gentle blend of pure lavender, shea butter and olive oil, it reduces frizz, detangles the hair and smoothens it. Its hair friendly properties will add volume and keep your hair soft, shiny and healthy.",
+      "minPrice": 28,
+      "maxPrice": 28,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "the-desert-pearl-pochette",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "potli",
+      "typeName": "Potli bags",
+      "materials": [
+        "silk"
+      ],
+      "primaryMaterial": "raw silk",
+      "craft": "Hand embroidered",
+      "attributes": [
+        [
+          "Category",
+          "Potli bags"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ],
+        [
+          "Craft",
+          "Hand embroidered"
+        ],
+        [
+          "Dimensions",
+          "Length: 9.0 inch · Width: 9.0 inch"
+        ],
+        [
+          "Color",
+          "Tan Yellow"
+        ]
+      ],
+      "colors": [
+        "Beige",
+        "Yellow"
+      ],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Color"
+      },
+      "subtitle": "Hand embroidered · raw silk",
+      "text": "Indulge in the opulence of Zardozi Potli Bag, where timeless tradition meets luxurious craftsmanship. Each potli bag is a stunning piece of art, meticulously hand-embroidered with intricate Zardozi work, making it the perfect accessory for weddings, festive occasions, and elegant soirées. Key Features: Exquisite Zardozi Embroidery: Showcasing detailed and intricate Zardozi embroidery, each potli bag reflects the rich heritage of Indian craftsmanship. Premium Fabrics: Made from luxurious silk and tussar silk, these potli bags offer a sumptuous feel and a sophisticated look. Unique Designs: Every potli features unique patterns and embellishments, ensuring that each piece is a one-of-a-kind masterpiece. Elegant and Functional: Designed with a spacious interior to hold your essentials, these potli bags combine beauty with practicality. Secure Closure: Features a drawstring closure adorned with decorative tassels, keeping your belongings secure while adding an extra touch of elegance. Dimensions: Colour: Tan Yellow Length: 9.0 inch Width: 9.0 inch Fabric: Raw Silk",
+      "minPrice": 245,
+      "maxPrice": 245,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "the-rose-pearl-pochette",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "potli",
+      "typeName": "Potli bags",
+      "materials": [
+        "silk"
+      ],
+      "primaryMaterial": "raw silk",
+      "craft": "Hand embroidered",
+      "attributes": [
+        [
+          "Category",
+          "Potli bags"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ],
+        [
+          "Craft",
+          "Hand embroidered"
+        ],
+        [
+          "Dimensions",
+          "Length: 9.0 inch · Width: 9.0 inch"
+        ],
+        [
+          "Color",
+          "Light Pink"
+        ]
+      ],
+      "colors": [
+        "Pink"
+      ],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Color"
+      },
+      "subtitle": "Hand embroidered · raw silk",
+      "text": "Indulge in the opulence of Zardozi Potli Bag, where timeless tradition meets luxurious craftsmanship. Each potli bag is a stunning piece of art, meticulously hand-embroidered with intricate Zardozi work, making it the perfect accessory for weddings, festive occasions, and elegant soirées. Key Features: Exquisite Zardozi Embroidery: Showcasing detailed and intricate Zardozi embroidery, each potli bag reflects the rich heritage of Indian craftsmanship. Premium Fabrics: Made from luxurious silk and tussar silk, these potli bags offer a sumptuous feel and a sophisticated look. Unique Designs: Every potli features unique patterns and embellishments, ensuring that each piece is a one-of-a-kind masterpiece. Elegant and Functional: Designed with a spacious interior to hold your essentials, these potli bags combine beauty with practicality. Secure Closure: Features a drawstring closure adorned with decorative tassels, keeping your belongings secure while adding an extra touch of elegance. Dimensions: Colour: Light Pink Length: 9.0 inch Width: 9.0 inch Fabric: Raw Silk",
+      "minPrice": 245,
+      "maxPrice": 245,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "the-midnight-pearl-pochette",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "potli",
+      "typeName": "Potli bags",
+      "materials": [
+        "silk"
+      ],
+      "primaryMaterial": "raw silk",
+      "craft": "Hand embroidered",
+      "attributes": [
+        [
+          "Category",
+          "Potli bags"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ],
+        [
+          "Craft",
+          "Hand embroidered"
+        ],
+        [
+          "Dimensions",
+          "Length: 9.0 inch · Width: 9.0 inch"
+        ],
+        [
+          "Color",
+          "Black"
+        ]
+      ],
+      "colors": [
+        "Black"
+      ],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Color"
+      },
+      "subtitle": "Hand embroidered · raw silk",
+      "text": "Indulge in the opulence of Zardozi Potli Bag, where timeless tradition meets luxurious craftsmanship. Each potli bag is a stunning piece of art, meticulously hand-embroidered with intricate Zardozi work, making it the perfect accessory for weddings, festive occasions, and elegant soirées. Key Features: Exquisite Zardozi Embroidery: Showcasing detailed and intricate Zardozi embroidery, each potli bag reflects the rich heritage of Indian craftsmanship. Premium Fabrics: Made from luxurious silk and tussar silk, these potli bags offer a sumptuous feel and a sophisticated look. Unique Designs: Every potli features unique patterns and embellishments, ensuring that each piece is a one-of-a-kind masterpiece. Elegant and Functional: Designed with a spacious interior to hold your essentials, these potli bags combine beauty with practicality. Secure Closure: Features a drawstring closure adorned with decorative tassels, keeping your belongings secure while adding an extra touch of elegance. Dimensions: Colour: Black Length: 9.0 inch Width: 9.0 inch Fabric: Raw Silk",
+      "minPrice": 245,
+      "maxPrice": 245,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "the-noor-bagh-heirloom-minaudi",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "round-bags",
+      "typeName": "Round evening bags",
+      "materials": [
+        "silk"
+      ],
+      "primaryMaterial": "raw silk",
+      "craft": "Hand embroidered",
+      "attributes": [
+        [
+          "Category",
+          "Round evening bags"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ],
+        [
+          "Craft",
+          "Hand embroidered"
+        ],
+        [
+          "Color",
+          "Beige Cream"
+        ]
+      ],
+      "colors": [
+        "Ivory & cream",
+        "Beige"
+      ],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Color"
+      },
+      "subtitle": "Hand embroidered · raw silk",
+      "text": "Hand-embroidered raw silk minaudière with heritage Chikankari and crystal-set hardware. Soft, luminous, and intricately detailed, this Beige Chikankari Round Bag brings together heritage craftsmanship and contemporary elegance. Its compact circular silhouette is covered in delicate botanical embroidery, creating a beautifully textured statement piece in an understated neutral palette. Set against warm beige fabric, intricate Chikankari embroidery flows across the bag in ivory, champagne, and muted gold tones. Graceful vines, leaves, and floral motifs intertwine across the surface, while fine metallic accents add just the right amount of shimmer. The tonal color story gives the elaborate handwork a refined, modern quality that pairs effortlessly with both Indian and Western occasion wear.A structured gold-tone frame and crystal-embellished circular handle give the bag a jewelry-like finish, while the accompanying crossbody strap offers an easy hands-free styling option. Key Features Intricate Botanical Embroidery: Delicate florals, leafy vines, and ornamental motifs create an all-over embroidered composition rich in texture and detail. Heritage Craftsmanship: Fine Chikankari embroidery is elevated with subtle metallic detailing, celebrating the artistry and intricacy of traditional Indian handwork.Elegant Neutral Palette: Layers of ivory, champagne, beige, and muted gold create a sophisticated tonal look that's exceptionally versatile. Versatile Carry: Carry it by the crystal-embellished circular handle for an elegant statement look, or attach the crossbody strap for effortless hands-free styling. Artisan Crafted: Each bag is individually handcrafted, with subtle variations that make every piece unique. Occasion Ready: A refined statement accessory for weddings, celebrations, dinners, vacations, and evening occasions—equally beautiful with a dress, jumpsuit, or traditional ensemble. Dimensions & Details Color: Beige with Ivory & Gold-Tone Embroidery Length: 5.5\"\" Width: 5.5\"\" Shape: Round Fabric: Raw Silk Carry: Circular Hand-Carry Handle + Crossbody Strap",
+      "minPrice": 675,
+      "maxPrice": 675,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "the-noor-e-sahar-clutch",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "clutches-full-flap",
+      "typeName": "Embroidered clutches",
+      "materials": [
+        "silk"
+      ],
+      "primaryMaterial": "silk",
+      "craft": "Hand embroidered",
+      "attributes": [
+        [
+          "Category",
+          "Embroidered clutches"
+        ],
+        [
+          "Material",
+          "silk"
+        ],
+        [
+          "Craft",
+          "Hand embroidered"
+        ],
+        [
+          "Color",
+          "Beige Cream"
+        ]
+      ],
+      "colors": [
+        "Ivory & cream",
+        "Beige"
+      ],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Color"
+      },
+      "subtitle": "Hand embroidered · silk",
+      "text": "Quietly luminous, The Noor-e-Sahar Clutch brings the delicacy of Lucknow's Chikankari tradition to a contemporary statement silhouette. Crafted in a soft champagne-ivory silk, the bag is intricately hand-embroidered with Chikankari and elevated with Zardozi and light-catching Mukaish detailing. The neutral palette allows the craftsmanship to take center stage, creating subtle dimension and radiance with every movement. Versatile Carry: Designed for versatility, The Noor-e-Sahar transitions effortlessly from an elegant clutch to a shoulder or crossbody bag with its gold-tone chain.",
+      "minPrice": 322,
+      "maxPrice": 322,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "the-lyra-bijou-clutch",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "antique-handle-handbags",
+      "typeName": "Antique-handle bags",
+      "materials": [
+        "silk"
+      ],
+      "primaryMaterial": "raw silk",
+      "craft": "Hand embroidered",
+      "attributes": [
+        [
+          "Category",
+          "Antique-handle bags"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ],
+        [
+          "Craft",
+          "Hand embroidered"
+        ],
+        [
+          "Dimensions",
+          "Length: 9.5 inch · Width: 9.0 inch"
+        ],
+        [
+          "Color",
+          "Light Pink"
+        ]
+      ],
+      "colors": [
+        "Pink"
+      ],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Color"
+      },
+      "subtitle": "Hand embroidered · raw silk",
+      "text": "Step into a world of vintage charm and contemporary elegance with Antique Handle Handbags. These exquisite handbags are a harmonious blend of traditional artistry and modern sophistication, designed to be the perfect accessory for any special occasion. Key Features: Vintage Appeal: Each handbag features an antique frame that adds a touch of timeless elegance and sophistication. Intricate Embroidery: Adorned with detailed Chikankaari, Zardozi, and Mukaish embroidery, showcasing the rich heritage of Indian craftsmanship. Luxurious Materials: Crafted from premium fabrics, ensuring a high-quality and luxurious feel. Unique Designs: Each handbag is a unique piece of art, meticulously hand-crafted by skilled artisans. Functional Design: Spacious interior with a secure clasp closure, designed to hold your essentials while making a style statement. Versatile Carry: Style it two ways—carry it in hand using the short, wide strap for an elegant statement look, or attach the long crossbody strap for comfortable, hands-free styling. Dimensions: Colour: Light Pink Length: 9.5 inch Width: 9.0 inch Fabric: Raw Silk",
+      "minPrice": 549,
+      "maxPrice": 549,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "the-vega-bijou-clutch",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "antique-handle-handbags",
+      "typeName": "Antique-handle bags",
+      "materials": [
+        "silk"
+      ],
+      "primaryMaterial": "raw silk",
+      "craft": "Hand embroidered",
+      "attributes": [
+        [
+          "Category",
+          "Antique-handle bags"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ],
+        [
+          "Craft",
+          "Hand embroidered"
+        ],
+        [
+          "Dimensions",
+          "Length: 9.5 inch · Width: 9.0 inch"
+        ],
+        [
+          "Color",
+          "Black"
+        ]
+      ],
+      "colors": [
+        "Black"
+      ],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Color"
+      },
+      "subtitle": "Hand embroidered · raw silk",
+      "text": "Step into a world of vintage charm and contemporary elegance with Antique Handle Handbags. These exquisite handbags are a harmonious blend of traditional artistry and modern sophistication, designed to be the perfect accessory for any special occasion. Key Features: Vintage Appeal: Each handbag features an antique frame that adds a touch of timeless elegance and sophistication. Intricate Embroidery: Adorned with detailed Chikankaari, Zardozi, and Mukaish embroidery, showcasing the rich heritage of Indian craftsmanship. Luxurious Materials: Crafted from premium fabrics, ensuring a high-quality and luxurious feel. Unique Designs: Each handbag is a unique piece of art, meticulously hand-crafted by skilled artisans. Functional Design: Spacious interior with a secure clasp closure, designed to hold your essentials while making a style statement. Versatile Carry: Style it two ways—carry it in hand using the short, wide strap for an elegant statement look, or attach the long crossbody strap for comfortable, hands-free styling. Dimensions: Colour: Black Length: 9.5 inch Width: 9.0 inch Fabric: Raw Silk",
+      "minPrice": 549,
+      "maxPrice": 549,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "the-altair-bijou-clutch",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "antique-handle-handbags",
+      "typeName": "Antique-handle bags",
+      "materials": [
+        "silk"
+      ],
+      "primaryMaterial": "raw silk",
+      "craft": "Hand embroidered",
+      "attributes": [
+        [
+          "Category",
+          "Antique-handle bags"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ],
+        [
+          "Craft",
+          "Hand embroidered"
+        ],
+        [
+          "Dimensions",
+          "Length: 9.5 inch · Width: 9.0 inch"
+        ],
+        [
+          "Color",
+          "Sage Green"
+        ]
+      ],
+      "colors": [
+        "Green"
+      ],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Color"
+      },
+      "subtitle": "Hand embroidered · raw silk",
+      "text": "Step into a world of vintage charm and contemporary elegance with Antique Handle Handbags. These exquisite handbags are a harmonious blend of traditional artistry and modern sophistication, designed to be the perfect accessory for any special occasion. Key Features: Vintage Appeal: Each handbag features an antique frame that adds a touch of timeless elegance and sophistication. Intricate Embroidery: Adorned with detailed Chikankaari, Zardozi, and Mukaish embroidery, showcasing the rich heritage of Indian craftsmanship. Luxurious Materials: Crafted from premium fabrics, ensuring a high-quality and luxurious feel. Unique Designs: Each handbag is a unique piece of art, meticulously hand-crafted by skilled artisans. Functional Design: Spacious interior with a secure clasp closure, designed to hold your essentials while making a style statement. Versatile Carry: Style it two ways—carry it in hand using the short, wide strap for an elegant statement look, or attach the long crossbody strap for comfortable, hands-free styling. Dimensions: Colour: Sage Green Length: 9.5 inch Width: 9.0 inch Fabric: Raw Silk",
+      "minPrice": 549,
+      "maxPrice": 549,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "the-mayura-noir-heirloom",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "round-bags",
+      "typeName": "Round evening bags",
+      "materials": [
+        "silk"
+      ],
+      "primaryMaterial": "raw silk",
+      "craft": "Hand embroidered",
+      "attributes": [
+        [
+          "Category",
+          "Round evening bags"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ],
+        [
+          "Craft",
+          "Hand embroidered"
+        ],
+        [
+          "Color",
+          "Black"
+        ]
+      ],
+      "colors": [
+        "Black"
+      ],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Color"
+      },
+      "subtitle": "Hand embroidered · raw silk",
+      "text": "Hand-embroidered raw silk evening bag with heritage thread-work and crystal-embellished hardware.A striking blend of heritage craftsmanship and contemporary elegance, this Black Peacock Chikankari Round Bag is designed to make a statement. Its compact circular silhouette is adorned with an intricately embroidered peacock motif, a timeless symbol of beauty and grace in Indian art. The rich black fabric creates a dramatic canvas for the intricate Chikankari, Zardozi, and Mukaish-inspired hand embroidery, rendered in luminous gold tones. Delicate feather detailing and metallic threadwork bring the peacock to life, while scattered gold accents on the reverse add a subtle touch of shimmer. A structured antique-style metal frame and embellished circular handle complete the jewel-like design. Handcrafted by skilled artisans, this petite statement bag pairs beautifully with both Indian occasion wear and contemporary Western dresses, making it an elegant choice for weddings, dinners, festive celebrations, and evening occasions. Key Features Peacock Motif: An intricately embroidered peacock takes center stage, bringing an artful and distinctive character to the design. Heritage Embroidery: Detailed Chikankari, Zardozi, and Mukaish-inspired embroidery celebrates traditional Indian craftsmanship. Versatile Carry: Carry it elegantly by the crystal-embellished circular handle for a statement evening look, or attach the crossbody strap for effortless, hands-free styling. Statement Hardware: A structured gold-tone frame and circular handle give the bag an elegant, jewelry-like finish. Artisan Crafted: Each bag is individually handcrafted, with subtle variations that make every piece unique. Occasion Ready: A compact statement piece designed to carry your small essentials while complementing both traditional and contemporary looks. Dimensions & Details Color: Black with Gold EmbroideryLength: 5.5\"\"Width: 5.5\"\"Shape: RoundFabric: Raw SilkCarry: Circular Hand-Carry Handle + Crossbody Strap",
+      "minPrice": 675,
+      "maxPrice": 675,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "the-moonlight-pearl-pochette",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "potli",
+      "typeName": "Potli bags",
+      "materials": [
+        "silk"
+      ],
+      "primaryMaterial": "silk",
+      "craft": "Hand embroidered",
+      "attributes": [
+        [
+          "Category",
+          "Potli bags"
+        ],
+        [
+          "Material",
+          "silk"
+        ],
+        [
+          "Craft",
+          "Hand embroidered"
+        ],
+        [
+          "Dimensions",
+          "Length: 9.25 inch · Width: 9.0 inch"
+        ],
+        [
+          "Color",
+          "Beige Cream"
+        ]
+      ],
+      "colors": [
+        "Ivory & cream",
+        "Beige"
+      ],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Color"
+      },
+      "subtitle": "Hand embroidered · silk",
+      "text": "Elevate your accessory collection with exquisite Chikankaari Hand-Crafted Potlis. Each potli is a masterpiece, meticulously hand-embroidered by skilled artisans who bring the timeless art of Chikankaari to life on luxurious silk and tussar silk fabrics. Our potlis feature intricate, traditional designs that showcase the heritage and elegance of Lucknow's renowned embroidery techniques. Perfectly blending tradition with contemporary style, these potlis are adorned with delicate beads, sequins, and tassels, adding a touch of opulence to your ensemble. Key Features: Handcrafted Excellence: Each potli is painstakingly hand-embroidered, ensuring a unique and authentic piece of art. Luxurious Materials: Made from premium silk and tussar silk, these potlis exude elegance and sophistication. Intricate Designs: Featuring traditional Chikankaari embroidery, complemented by delicate embellishments. Versatile Use: Ideal for weddings, festive occasions, and special events, adding a touch of glamour to any outfit. Spacious Interior: Designed to be functional, with enough space to carry your essentials in style. Dimensions: Colour: Beige Cream Length: 9.25 inch Width: 9.0 inch Fabric: Tusser Silk",
+      "minPrice": 245,
+      "maxPrice": 245,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "the-vallari-noir-clutch",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "clutches-full-flap",
+      "typeName": "Embroidered clutches",
+      "materials": [
+        "silk"
+      ],
+      "primaryMaterial": "silk",
+      "craft": "Hand embroidered",
+      "attributes": [
+        [
+          "Category",
+          "Embroidered clutches"
+        ],
+        [
+          "Material",
+          "silk"
+        ],
+        [
+          "Craft",
+          "Hand embroidered"
+        ],
+        [
+          "Color",
+          "Black"
+        ]
+      ],
+      "colors": [
+        "Black"
+      ],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Color"
+      },
+      "subtitle": "Hand embroidered · silk",
+      "text": "Dark, refined and intricately detailed, The Vallari Noir Clutch celebrates the striking contrast of black silk against luminous hand embroidery. The structured silhouette is brought to life through Chikankari, Zardozi and Mukaish work, with delicate ivory vines and florals creating rhythm and dimension across the deep black ground. Metallic accents catch the light subtly, allowing the craftsmanship to reveal itself with every movement. Versatile Carry: A gold-tone chain allows The Vallari Noir to be styled over the shoulder or worn crossbody, while its refined silhouette makes an equally striking statement carried as a clutch.",
+      "minPrice": 322,
+      "maxPrice": 322,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "the-aurelia-noir-envelope",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "jute-clutches",
+      "typeName": "Jute clutches",
+      "materials": [
+        "jute",
+        "silk"
+      ],
+      "primaryMaterial": "jute",
+      "craft": "Hand embroidered",
+      "attributes": [
+        [
+          "Category",
+          "Jute clutches"
+        ],
+        [
+          "Material",
+          "jute"
+        ],
+        [
+          "Craft",
+          "Hand embroidered"
+        ],
+        [
+          "Color",
+          "Black"
+        ]
+      ],
+      "colors": [
+        "Black"
+      ],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Color"
+      },
+      "subtitle": "Hand embroidered · jute",
+      "text": "A study in contrast, The Aurelia Noir Envelope brings together the natural texture of jute with the richness of embroidered silk in a clean, contemporary silhouette. The structured jute body is finished with a black silk flap, intricately worked with traditional Chikankari embroidery. Ivory florals and flowing botanical details are touched with warm metallic accents, creating a striking interplay between raw texture and delicate needlework. Versatile Carry: Finished with a gold-tone chain, The Aurelia Noir Envelope can be worn over the shoulder, styled crossbody, or carried as a clutch.",
+      "minPrice": 225,
+      "maxPrice": 225,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "the-maia-bijou-clutch",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "antique-handle-handbags",
+      "typeName": "Antique-handle bags",
+      "materials": [
+        "silk"
+      ],
+      "primaryMaterial": "raw silk",
+      "craft": "Hand embroidered",
+      "attributes": [
+        [
+          "Category",
+          "Antique-handle bags"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ],
+        [
+          "Craft",
+          "Hand embroidered"
+        ],
+        [
+          "Dimensions",
+          "Length: 9.5 inch · Width: 9.0 inch"
+        ],
+        [
+          "Color",
+          "Beige Cream"
+        ]
+      ],
+      "colors": [
+        "Ivory & cream",
+        "Beige"
+      ],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Color"
+      },
+      "subtitle": "Hand embroidered · raw silk",
+      "text": "Step into a world of vintage charm and contemporary elegance with Antique Handle Handbags. These exquisite handbags are a harmonious blend of traditional artistry and modern sophistication, designed to be the perfect accessory for any special occasion. Key Features: Vintage Appeal: Each handbag features an antique frame that adds a touch of timeless elegance and sophistication. Intricate Embroidery: Adorned with detailed Chikankaari, Zardozi, and Mukaish embroidery, showcasing the rich heritage of Indian craftsmanship. Luxurious Materials: Crafted from premium fabrics, ensuring a high-quality and luxurious feel. Unique Designs: Each handbag is a unique piece of art, meticulously hand-crafted by skilled artisans. Functional Design: Spacious interior with a secure clasp closure, designed to hold your essentials while making a style statement. Versatile Carry: Style it two ways—carry it in hand using the short, wide strap for an elegant statement look, or attach the long crossbody strap for comfortable, hands-free styling. Dimensions: Colour: Beige Cream Length: 9.5 inch Width: 9.0 inch Fabric: Raw Silk",
+      "minPrice": 549,
+      "maxPrice": 549,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "keshamrit-anti-dandruff-shampoo-lemon-250ml",
+      "group": "wellness",
+      "groupName": "Wellness",
+      "type": "shampoo",
+      "typeName": "Shampoo",
+      "materials": [],
+      "primaryMaterial": "",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Shampoo"
+        ],
+        [
+          "Size",
+          "250 ml"
+        ],
+        [
+          "Size options",
+          "250ml"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "250ml"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "250 ml",
+      "text": "A blend of aloe vera, lemon, vitamin E and almond oil, the Lemon Anti-Dandruff Shampoo is naturally hair-friendly. Lemon balances the pH level of the scalp, reducing dryness, flakes and dandruff, while aloevera is excellent for conditioning and restoring hair. The shampoo is light & fragrant and will keep your scalp fresh throughout the day.",
+      "minPrice": 28,
+      "maxPrice": 28,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "keshamrit-conditioning-cleansing-shampoo-coconut-milk-250ml",
+      "group": "wellness",
+      "groupName": "Wellness",
+      "type": "shampoo",
+      "typeName": "Shampoo",
+      "materials": [],
+      "primaryMaterial": "",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Shampoo"
+        ],
+        [
+          "Size",
+          "250 ml"
+        ],
+        [
+          "Size options",
+          "250ml"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "250ml"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "250 ml",
+      "text": "The Keshamrit Coconut Milk Conditioning Shampoo is a sulphate-free, blend, infused with coconut milk, aloe vera, sandalwood and rose water. Packed with natural hair growth minerals such as iron, selenium & calcium, it deeply moisturizes the hair and prevents split-ends. Its gentle ingredients restore dry & damaged hair back to its natural smoothness.",
+      "minPrice": 30,
+      "maxPrice": 30,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "blush-garden-3-layer-throw",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "throw",
+      "typeName": "Throws",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "muslin cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Throws"
+        ],
+        [
+          "Material",
+          "muslin cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Size options",
+          "60x90"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "60x90"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · muslin cotton",
+      "text": "Crafted from three layers of breathable muslin cotton, the Blush Garden 3-Layer Throw features delicate hand-block printed motifs set within graceful arched patterns and framed by a subtle border with striped edges. Light, airy, and effortlessly elegant, it drapes beautifully and offers year-round comfort—perfect for AC rooms, under a fan, relaxed afternoons, crisp mornings, or as a cozy travel companion. Packaging: Comes in a reusable cotton muslin bag, perfect for storing laundry or linens. Net Quantity: 1 Unit (Dohar)",
+      "minPrice": 155,
+      "maxPrice": 155,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "indigo-peacock-3-layer-throw",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "throw",
+      "typeName": "Throws",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "muslin cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Throws"
+        ],
+        [
+          "Material",
+          "muslin cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Size options",
+          "60x90"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "60x90"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · muslin cotton",
+      "text": "Crafted from three layers of breathable muslin cotton, the Indigo Peacock 3-Layer Throw features delicate hand-block printed motifs set within graceful arched patterns and framed by a subtle border with striped edges. Light, airy, and effortlessly elegant, it drapes beautifully and offers year-round comfort—perfect for AC rooms, under a fan, relaxed afternoons, crisp mornings, or as a cozy travel companion. Packaging: Comes in a reusable cotton muslin bag, perfect for storing laundry or linens. Net Quantity: 1 Unit (Dohar)",
+      "minPrice": 155,
+      "maxPrice": 155,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "lavender-bloom-3-layer-throw",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "throw",
+      "typeName": "Throws",
+      "materials": [],
+      "primaryMaterial": "",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Throws"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Size options",
+          "60x90"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "60x90"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed",
+      "text": "Lavender Bloom 3-Layer Throw carrying hand block prints that murmur rather than call for attention. Soft, breathable, and quietly comforting - it belongs to slow mornings, long, unhurried afternoons with a book, cool air-conditioned nights, and the kind of journeys where you travel light, yet never without ease. Packaging: Comes in a reusable cotton muslin bag, perfect for storing laundry or linens. Net Quantity: 1 Unit (Dohar)",
+      "minPrice": 155,
+      "maxPrice": 155,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "vintage-garden-3-layer-throw",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "throw",
+      "typeName": "Throws",
+      "materials": [],
+      "primaryMaterial": "",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Throws"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Size options",
+          "60x90"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "60x90"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed",
+      "text": "Three whisper-light layers of Vintage Garden Throw come together in this dohar, carrying hand block prints that murmur rather than call for attention. Soft, breathable, and quietly comforting - it belongs to slow mornings, long, unhurried afternoons with a book, cool air-conditioned nights, and the kind of journeys where you travel light, yet never without ease. Packaging: Comes in a reusable cotton muslin bag, perfect for storing laundry or linens. Net Quantity: 1 Unit (Dohar)",
+      "minPrice": 155,
+      "maxPrice": 155,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "sage-botanica-3-layer-throw",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "throw",
+      "typeName": "Throws",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "muslin cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Throws"
+        ],
+        [
+          "Material",
+          "muslin cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Size options",
+          "60x90"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "60x90"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · muslin cotton",
+      "text": "Three layers of Sage Botanica Throw are stitched together, in which the middle layer is hand block printed, and edged with a striped flange. Soft, versatile, and incredibly light, a dohar works all year round - as a covering for an afternoon nap, a gentle layer when watching a movie, a shawl for early mornings, and even as a personal comforter while travelling. Material: Cotton Muslin Packaging: Cotton muslin bag that can be reused to hold laundry or linens Net Quantity : 1 Unit (Dohar)",
+      "minPrice": 155,
+      "maxPrice": 155,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "gulnaar-floral-linen-cushion-cover-earth-brown",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "cushion-cover",
+      "typeName": "Cushion covers",
+      "materials": [
+        "linen"
+      ],
+      "primaryMaterial": "linen",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Cushion covers"
+        ],
+        [
+          "Material",
+          "linen"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Size options",
+          "20x20"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "20x20"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · linen",
+      "text": "Bring the warmth of Mughal-inspired florals into your home with this handcrafted linen cushion cover. Set against a natural earthy-brown base, delicate botanical motifs in deep red, muted green, and warm ochre are thoughtfully arranged across the fabric, creating a look that feels timeless yet beautifully understated. Each floral motif is hand block printed using traditional Indian techniques, giving the pattern the subtle variations and character that distinguish true artisan-made textiles. Inspired by the stylized flowers found in Mughal art and architecture, the design brings a sense of heritage to a relaxed, contemporary palette. Crafted from thick, textured linen, the cushion cover has a substantial, premium feel while retaining linen’s naturally relaxed character. A contrasting red-and-ivory twisted piping frames the edges, adding a refined finishing detail and a subtle touch of color. Style it on a neutral sofa, an accent chair, or layered with solids and complementary prints for an effortlessly collected look. Specifications Fabric: Thick Linen Craft: Hand Block Printed Pattern: Mughal-Inspired Floral Motifs Colors: Natural Brown, Deep Red, Muted Green & Ochre Detailing: Contrast Twisted Piping Closure: Invisible Zipper for a Seamless Finish",
+      "minPrice": 118,
+      "maxPrice": 118,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "indigo-garden-waffle-hand-towels-set-of-2",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "handtowel-set-of-2",
+      "typeName": "Hand towels",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Hand towels"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Set quantity",
+          "2 pieces"
+        ],
+        [
+          "Size options",
+          "16x24"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "16x24"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · waffle cotton",
+      "text": "Set of 2 hand block printed cotton-waffle hand towels. Delicate florals on organic waffle cotton — this towel set is hand block printed with natural dyes, bringing a thoughtful touch to your bathroom. Soft, absorbent, and made without harsh chemicals. 100% organic waffle cotton — soft, absorbent & quick-drying Hand block printed with natural, skin-safe dyes No harsh chemicals or synthetic dyes Crafted by artisans in Jaipur, Rajasthan Care: Machine wash cold on a gentle cycle. Tumble dry low.",
+      "minPrice": 116,
+      "maxPrice": 116,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "olive-cypress-waffle-hand-towels-set-of-2",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "handtowel-set-of-2",
+      "typeName": "Hand towels",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Hand towels"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Set quantity",
+          "2 pieces"
+        ],
+        [
+          "Size options",
+          "16x24"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "16x24"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · waffle cotton",
+      "text": "Set of 2 hand block printed cotton-waffle hand towels. Delicate florals on organic waffle cotton — this towel set is hand block printed with natural dyes, bringing a thoughtful touch to your bathroom. Soft, absorbent, and made without harsh chemicals. 100% organic waffle cotton — soft, absorbent & quick-drying Hand block printed with natural, skin-safe dyes No harsh chemicals or synthetic dyes Crafted by artisans in Jaipur, Rajasthan",
+      "minPrice": 116,
+      "maxPrice": 116,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "ruby-cypress-waffle-hand-towels-set-of-2",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "handtowel-set-of-2",
+      "typeName": "Hand towels",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Hand towels"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Set quantity",
+          "2 pieces"
+        ],
+        [
+          "Size options",
+          "16x24"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "16x24"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · waffle cotton",
+      "text": "Set of 2 hand block printed cotton-waffle hand towels. Delicate florals on organic waffle cotton — this towel set is hand block printed with natural dyes, bringing a thoughtful touch to your bathroom. Soft, absorbent, and made without harsh chemicals. 100% organic waffle cotton — soft, absorbent & quick-drying Hand block printed with natural, skin-safe dyes No harsh chemicals or synthetic dyes Crafted by artisans in Jaipur, Rajasthan",
+      "minPrice": 116,
+      "maxPrice": 116,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "scarlet-garden-waffle-hand-towels-set-of-2",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "handtowel-set-of-2",
+      "typeName": "Hand towels",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Hand towels"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Set quantity",
+          "2 pieces"
+        ],
+        [
+          "Size options",
+          "16x24"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "16x24"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · waffle cotton",
+      "text": "Set of 2 hand block printed cotton-waffle hand towels. Delicate florals on organic waffle cotton — this towel set is hand block printed with natural dyes, bringing a thoughtful touch to your bathroom. Soft, absorbent, and made without harsh chemicals. 100% organic waffle cotton — soft, absorbent & quick-drying Hand block printed with natural, skin-safe dyes No harsh chemicals or synthetic dyes Crafted by artisans in Jaipur, Rajasthan",
+      "minPrice": 116,
+      "maxPrice": 116,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "crimson-tulip-waffle-hand-towels-set-of-2",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "handtowel-set-of-2",
+      "typeName": "Hand towels",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Hand towels"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Set quantity",
+          "2 pieces"
+        ],
+        [
+          "Size options",
+          "16x24"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "16x24"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · waffle cotton",
+      "text": "Set of 2 hand block printed cotton-waffle hand towels. Delicate florals on organic waffle cotton — this towel set is hand block printed with natural dyes, bringing a thoughtful touch to your bathroom. Soft, absorbent, and made without harsh chemicals. 100% organic waffle cotton — soft, absorbent &amp; quick-drying Hand block printed with natural, skin-safe dyes No harsh chemicals or synthetic dyes Crafted by artisans in Jaipur, Rajasthan",
+      "minPrice": 116,
+      "maxPrice": 116,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "cypress-grove-round-tote",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "tote-bag",
+      "typeName": "Everyday totes",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton piqué",
+      "craft": "Handcrafted",
+      "attributes": [
+        [
+          "Category",
+          "Everyday totes"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ],
+        [
+          "Craft",
+          "Handcrafted"
+        ],
+        [
+          "Shape",
+          "Round"
+        ]
+      ],
+      "colors": [],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Shape"
+      },
+      "subtitle": "Handcrafted · cotton piqué",
+      "text": "Step out in bohemian style with our handmade Cypress Grove Round Tote bag featuring an elegant floral print pattern. This lightweight Cypress Grove Round Tote bag is crafted from premium cotton with intricate self-woven designs. Perfect for casual outings, shopping trips, or as a unique everyday accessory. 🧵 Premium Self-Woven Cotton Piqué Fabric Crafted from thick, patterned cotton piqué, this bag offers a unique woven texture that enhances both durability and visual appeal. 🎨 Artisan Handcrafted Design Showcasing beautiful handcrafted patterns, each bag reflects the skill and attention to detail of experienced artisans, making every piece truly unique. 💼 Durable & Reliable for Daily Use Made with sturdy, long-lasting material, this shoulder bag is ideal for carrying your everyday essentials comfortably and securely. 👜 Functional Medium-Sized Tote Designed for convenience, this medium-sized shoulder bag provides ample space while remaining lightweight and easy to carry. 🌿 Traditional Craft Meets Modern Style A seamless blend of classic weaving and printing techniques, creating a sophisticated accessory that complements both casual and elegant outfits. 💖 Why You’ll Love It This Cypress Grove Round Tote bag combines durability, versatility, and handcrafted charm—making it a perfect everyday accessory with a refined, artisanal touch.",
+      "minPrice": 110,
+      "maxPrice": 110,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "indigo-palm-round-tote",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "tote-bag",
+      "typeName": "Everyday totes",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton piqué",
+      "craft": "Handcrafted",
+      "attributes": [
+        [
+          "Category",
+          "Everyday totes"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ],
+        [
+          "Craft",
+          "Handcrafted"
+        ],
+        [
+          "Shape",
+          "Round"
+        ]
+      ],
+      "colors": [],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Shape"
+      },
+      "subtitle": "Handcrafted · cotton piqué",
+      "text": "Step out in bohemian style with our handmade Indigo Palm Round Tote bag featuring an elegant floral print pattern. This lightweight tote bag is crafted from premium cotton with intricate self-woven designs. Perfect for casual outings, shopping trips, or as a unique everyday accessory. 🧵 Premium Self-Woven Cotton Piqué Fabric Crafted from thick, patterned cotton piqué, this bag offers a unique woven texture that enhances both durability and visual appeal. 🎨 Artisan Handcrafted Design Showcasing beautiful handcrafted patterns, each bag reflects the skill and attention to detail of experienced artisans, making every piece truly unique. 💼 Durable & Reliable for Daily Use Made with sturdy, long-lasting material, this shoulder bag is ideal for carrying your everyday essentials comfortably and securely. 👜 Functional Medium-Sized Tote Designed for convenience, this medium-sized shoulder bag provides ample space while remaining lightweight and easy to carry. 🌿 Traditional Craft Meets Modern Style A seamless blend of classic weaving and printing techniques, creating a sophisticated accessory that complements both casual and elegant outfits. 💖 Why You’ll Love It This Indigo Palm Round Tote bag combines durability, versatility, and handcrafted charm—making it a perfect everyday accessory with a refined, artisanal touch.",
+      "minPrice": 110,
+      "maxPrice": 110,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "indigo-bloom-round-tote",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "tote-bag",
+      "typeName": "Everyday totes",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton piqué",
+      "craft": "Handcrafted",
+      "attributes": [
+        [
+          "Category",
+          "Everyday totes"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ],
+        [
+          "Craft",
+          "Handcrafted"
+        ],
+        [
+          "Shape",
+          "Round"
+        ]
+      ],
+      "colors": [],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Shape"
+      },
+      "subtitle": "Handcrafted · cotton piqué",
+      "text": "Step out in bohemian style with our handmade Indigo Bloom Round Tote bag featuring an elegant floral print pattern. This lightweight tote bag is crafted from premium cotton with intricate self-woven designs. Perfect for casual outings, shopping trips, or as a unique everyday accessory. 🧵 Premium Self-Woven Cotton Piqué Fabric Crafted from thick, patterned cotton piqué, this bag offers a unique woven texture that enhances both durability and visual appeal. 🎨 Artisan Handcrafted Design Showcasing beautiful handcrafted patterns, each bag reflects the skill and attention to detail of experienced artisans, making every piece truly unique. 💼 Durable & Reliable for Daily Use Made with sturdy, long-lasting material, this shoulder bag is ideal for carrying your everyday essentials comfortably and securely. 👜 Functional Medium-Sized Tote Designed for convenience, this medium-sized shoulder bag provides ample space while remaining lightweight and easy to carry. 🌿 Traditional Craft Meets Modern Style A seamless blend of classic weaving and printing techniques, creating a sophisticated accessory that complements both casual and elegant outfits. 💖 Why You’ll Love It This Indigo Bloom Round Tote bag combines durability, versatility, and handcrafted charm—making it a perfect everyday accessory with a refined, artisanal touch.",
+      "minPrice": 110,
+      "maxPrice": 110,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "black-tulip-square-tote",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "tote-bag",
+      "typeName": "Everyday totes",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton piqué",
+      "craft": "Handcrafted",
+      "attributes": [
+        [
+          "Category",
+          "Everyday totes"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ],
+        [
+          "Craft",
+          "Handcrafted"
+        ],
+        [
+          "Shape",
+          "Square"
+        ]
+      ],
+      "colors": [],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Shape"
+      },
+      "subtitle": "Handcrafted · cotton piqué",
+      "text": "Carry your work or studies in style with our handmade Black Tulip Square Tote. Featuring self-woven cotton patterns on a spacious design. The traditional weaving techniques create a unique texture that sets it apart from ordinary tote bags. ✨ Handwoven Black Tulip Square Tote Bag - Stylish & Spacious Everyday Shoulder Bag ✨ Looking for a stylish and practical tote bag to elevate your daily look? This handwoven Black Tulip Square Tote bag is designed to combine durability, functionality, and artisanal elegance—perfect for work, college, or everyday use. 🧵 Premium Self-Woven Cotton Piqué Fabric Crafted from thick, high-quality Jaquard, offering a luxurious texture along with exceptional strength and durability. 🎨 Artisan-Crafted Patterns Featuring intricate, eye-catching designs, carefully handcrafted by skilled artisans to create a unique and refined finish. 💼 Spacious & Functional Interior Designed with a roomy main compartment, making it ideal for carrying everything you need throughout the day. 🔑 Convenient Storage Pockets Includes thoughtfully placed pockets for quick and easy access to your phone, keys, and smaller essentials while on the go. 🌿 Traditional Craft Meets Modern Style A beautiful blend of weaving and printing techniques, making this tote a sophisticated accessory that complements both casual and polished looks. 💖 Why You’ll Love It This Black Tulip Square Tote bag combines spacious design, durability, and handcrafted charm—making it a reliable and stylish companion for your everyday routine.",
+      "minPrice": 110,
+      "maxPrice": 110,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "botanical-grove-square-tote",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "tote-bag",
+      "typeName": "Everyday totes",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton piqué",
+      "craft": "Handcrafted",
+      "attributes": [
+        [
+          "Category",
+          "Everyday totes"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ],
+        [
+          "Craft",
+          "Handcrafted"
+        ],
+        [
+          "Shape",
+          "Square"
+        ]
+      ],
+      "colors": [],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Shape"
+      },
+      "subtitle": "Handcrafted · cotton piqué",
+      "text": "Carry your work or studies in style with our handmade Botanical Grove Square Tote bag. Featuring self-woven cotton patterns on a spacious design. The traditional weaving techniques create a unique texture that sets it apart from ordinary tote bags. ✨ Handwoven Botanical Grove Square Tote Bag - Stylish & Spacious Everyday Shoulder Bag ✨ Looking for a stylish and practical tote bag to elevate your daily look? This handwoven Botanical Grove Square Tote bag is designed to combine durability, functionality, and artisanal elegance—perfect for work, college, or everyday use. 🧵 Premium Self-Woven Cotton Piqué Fabric Crafted from thick, high-quality Jaquard, offering a luxurious texture along with exceptional strength and durability. 🎨 Artisan-Crafted Patterns Featuring intricate, eye-catching designs, carefully handcrafted by skilled artisans to create a unique and refined finish. 💼 Spacious & Functional Interior Designed with a roomy main compartment, making it ideal for carrying everything you need throughout the day. 🔑 Convenient Storage Pockets Includes thoughtfully placed pockets for quick and easy access to your phone, keys, and smaller essentials while on the go. 🌿 Traditional Craft Meets Modern Style A beautiful blend of weaving and printing techniques, making this tote a sophisticated accessory that complements both casual and polished looks. 💖 Why You’ll Love It This Botanical Grove Square Tote bag combines spacious design, durability, and handcrafted charm—making it a reliable and stylish companion for your everyday routine.",
+      "minPrice": 110,
+      "maxPrice": 110,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "rose-garden-square-tote",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "tote-bag",
+      "typeName": "Everyday totes",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton piqué",
+      "craft": "Handcrafted",
+      "attributes": [
+        [
+          "Category",
+          "Everyday totes"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ],
+        [
+          "Craft",
+          "Handcrafted"
+        ],
+        [
+          "Shape",
+          "Square"
+        ]
+      ],
+      "colors": [],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Shape"
+      },
+      "subtitle": "Handcrafted · cotton piqué",
+      "text": "Carry your work or studies in style with our handmade Rose Garden Square Tote bag. Featuring self-woven cotton patterns on a spacious design. The traditional weaving techniques create a unique texture that sets it apart from ordinary tote bags. ✨ Handwoven Rose Garden Square Tote Bag - Stylish & Spacious Everyday Shoulder Bag ✨ Looking for a stylish and practical tote bag to elevate your daily look? This handwoven Jaquard tote bag is designed to combine durability, functionality, and artisanal elegance—perfect for work, college, or everyday use. 🧵 Premium Self-Woven Cotton Piqué Fabric Crafted from thick, high-quality Jaquard, offering a luxurious texture along with exceptional strength and durability. 🎨 Artisan-Crafted Patterns Featuring intricate, eye-catching designs, carefully handcrafted by skilled artisans to create a unique and refined finish. 💼 Spacious & Functional Interior Designed with a roomy main compartment, making it ideal for carrying everything you need throughout the day. 🔑 Convenient Storage Pockets Includes thoughtfully placed pockets for quick and easy access to your phone, keys, and smaller essentials while on the go. 🌿 Traditional Craft Meets Modern Style A beautiful blend of weaving and printing techniques, making this tote a sophisticated accessory that complements both casual and polished looks. 💖 Why You’ll Love It This Rose Garden Square Tote bag combines spacious design, durability, and handcrafted charm—making it a reliable and stylish companion for your everyday routine.",
+      "minPrice": 110,
+      "maxPrice": 110,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "garden-arch-square-tote",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "tote-bag",
+      "typeName": "Everyday totes",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton piqué",
+      "craft": "Handcrafted",
+      "attributes": [
+        [
+          "Category",
+          "Everyday totes"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ],
+        [
+          "Craft",
+          "Handcrafted"
+        ],
+        [
+          "Shape",
+          "Square"
+        ]
+      ],
+      "colors": [],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Shape"
+      },
+      "subtitle": "Handcrafted · cotton piqué",
+      "text": "Carry your work or studies in style with our handmade Garden Arch Square Tote bag. Featuring self-woven cotton patterns on a spacious design. The traditional weaving techniques create a unique texture that sets it apart from ordinary tote bags. ✨ Handwoven Garden Arch Square Tote Bag - Stylish & Spacious Everyday Shoulder Bag ✨ Looking for a stylish and practical tote bag to elevate your daily look? This handwoven Jaquard tote bag is designed to combine durability, functionality, and artisanal elegance—perfect for work, college, or everyday use. 🧵 Premium Self-Woven Cotton Piqué Fabric Crafted from thick, high-quality Jaquard, offering a luxurious texture along with exceptional strength and durability. 🎨 Artisan-Crafted Patterns Featuring intricate, eye-catching designs, carefully handcrafted by skilled artisans to create a unique and refined finish. 💼 Spacious & Functional Interior Designed with a roomy main compartment, making it ideal for carrying everything you need throughout the day. 🔑 Convenient Storage Pockets Includes thoughtfully placed pockets for quick and easy access to your phone, keys, and smaller essentials while on the go. 🌿 Traditional Craft Meets Modern Style A beautiful blend of weaving and printing techniques, making this tote a sophisticated accessory that complements both casual and polished looks. 💖 Why You’ll Love It This Garden Arch Square Tote bag combines spacious design, durability, and handcrafted charm—making it a reliable and stylish companion for your everyday routine.",
+      "minPrice": 110,
+      "maxPrice": 110,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "blush-sprig-square-tote",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "tote-bag",
+      "typeName": "Everyday totes",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton piqué",
+      "craft": "Handcrafted",
+      "attributes": [
+        [
+          "Category",
+          "Everyday totes"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ],
+        [
+          "Craft",
+          "Handcrafted"
+        ],
+        [
+          "Shape",
+          "Square"
+        ]
+      ],
+      "colors": [],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Shape"
+      },
+      "subtitle": "Handcrafted · cotton piqué",
+      "text": "Carry your work or studies in style with our handmade Blush Sprig Square Tote bag. Featuring self-woven cotton patterns on a spacious design. The traditional weaving techniques create a unique texture that sets it apart from ordinary tote bags. ✨ Handwoven Blush Sprig Square Tote Bag - Stylish & Spacious Everyday Shoulder Bag ✨ Looking for a stylish and practical tote bag to elevate your daily look? This handwoven Blush Sprig Square Tote bag is designed to combine durability, functionality, and artisanal elegance—perfect for work, college, or everyday use. 🧵 Premium Self-Woven Cotton Piqué Fabric Crafted from thick, high-quality Jaquard, offering a luxurious texture along with exceptional strength and durability. 🎨 Artisan-Crafted Patterns Featuring intricate, eye-catching designs, carefully handcrafted by skilled artisans to create a unique and refined finish. 💼 Spacious & Functional Interior Designed with a roomy main compartment, making it ideal for carrying everything you need throughout the day. 🔑 Convenient Storage Pockets Includes thoughtfully placed pockets for quick and easy access to your phone, keys, and smaller essentials while on the go. 🌿 Traditional Craft Meets Modern Style A beautiful blend of weaving and printing techniques, making this tote a sophisticated accessory that complements both casual and polished looks. 💖 Why You’ll Love It This Blush Sprig Square Tote bag combines spacious design, durability, and handcrafted charm—making it a reliable and stylish companion for your everyday routine.",
+      "minPrice": 110,
+      "maxPrice": 110,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "scarlet-garden-waffle-face-towels-set-of-4",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "facetowel-set-of-4",
+      "typeName": "Face towels",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Face towels"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Set quantity",
+          "4 pieces"
+        ],
+        [
+          "Size options",
+          "12x12"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "12x12"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · waffle cotton",
+      "text": "Set of 4 hand block printed cotton-waffle face towels. Delicate florals on organic waffle cotton — this towel set is hand block printed with natural dyes, bringing a thoughtful touch to your bathroom. Soft, absorbent, and made without harsh chemicals. 100% organic waffle cotton — soft, absorbent & quick-drying Hand block printed with natural, skin-safe dyes No harsh chemicals or synthetic dyes Crafted by artisans in Jaipur, Rajasthan",
+      "minPrice": 118,
+      "maxPrice": 118,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "cypress-duo-waffle-face-towels-set-of-4",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "facetowel-set-of-4",
+      "typeName": "Face towels",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Face towels"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Set quantity",
+          "4 pieces"
+        ],
+        [
+          "Size options",
+          "12x12"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "12x12"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · waffle cotton",
+      "text": "Set of 4 hand block printed cotton-waffle face towels. Delicate florals on organic waffle cotton — this towel set is hand block printed with natural dyes, bringing a thoughtful touch to your bathroom. Soft, absorbent, and made without harsh chemicals. 100% organic waffle cotton — soft, absorbent & quick-drying Hand block printed with natural, skin-safe dyes No harsh chemicals or synthetic dyes Crafted by artisans in Jaipur, Rajasthan",
+      "minPrice": 118,
+      "maxPrice": 118,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "indigo-garden-waffle-face-towels-set-of-4",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "facetowel-set-of-4",
+      "typeName": "Face towels",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Face towels"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Set quantity",
+          "4 pieces"
+        ],
+        [
+          "Size options",
+          "12x12"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "12x12"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · waffle cotton",
+      "text": "Set of 4 hand block printed cotton-waffle face towels. Delicate florals on organic waffle cotton — this towel set is hand block printed with natural dyes, bringing a thoughtful touch to your bathroom. Soft, absorbent, and made without harsh chemicals. 100% organic waffle cotton — soft, absorbent & quick-drying Hand block printed with natural, skin-safe dyes No harsh chemicals or synthetic dyes Crafted by artisans in Jaipur, Rajasthan",
+      "minPrice": 118,
+      "maxPrice": 118,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "crimson-botanica-waffle-face-towels-set-of-4",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "facetowel-set-of-4",
+      "typeName": "Face towels",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Face towels"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Set quantity",
+          "4 pieces"
+        ],
+        [
+          "Size options",
+          "12x12"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "12x12"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · waffle cotton",
+      "text": "Set of 4 hand block printed cotton-waffle face towels. Delicate florals on organic waffle cotton — this towel set is hand block printed with natural dyes, bringing a thoughtful touch to your bathroom. Soft, absorbent, and made without harsh chemicals. 100% organic waffle cotton — soft, absorbent & quick-drying Hand block printed with natural, skin-safe dyes No harsh chemicals or synthetic dyes Crafted by artisans in Jaipur, Rajasthan",
+      "minPrice": 118,
+      "maxPrice": 118,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "botanical-quartet-waffle-face-towels-set-of-4",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "facetowel-set-of-4",
+      "typeName": "Face towels",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Face towels"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Set quantity",
+          "4 pieces"
+        ],
+        [
+          "Size options",
+          "12x12"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "12x12"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · waffle cotton",
+      "text": "Set of 4 hand block printed cotton-waffle face towels. Delicate florals on organic waffle cotton — this towel set is hand block printed with natural dyes, bringing a thoughtful touch to your bathroom. Soft, absorbent, and made without harsh chemicals. 100% organic waffle cotton — soft, absorbent & quick-drying Hand block printed with natural, skin-safe dyes No harsh chemicals or synthetic dyes Crafted by artisans in Jaipur, Rajasthan",
+      "minPrice": 118,
+      "maxPrice": 118,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "royal-cypress-table-cover",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "table-cover",
+      "typeName": "Tablecloths",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Tablecloths"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Color",
+          "Ivory, Olive & Deep Blue"
+        ],
+        [
+          "Size options",
+          "60x90 · 72x108"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Blue",
+        "Ivory & cream"
+      ],
+      "sizes": [
+        "60x90",
+        "72x108"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton",
+      "text": "A refined expression of Mughal-inspired artistry and traditional Indian craftsmanship, this hand block-printed table cover brings an understated sense of grandeur to the table. Inspired by the elegant botanical forms and ornamental borders found in Mughal art and architecture, the restrained palette of ivory, olive, and blue gives the piece a sophisticated, almost heirloom quality. The elaborate border beautifully anchors the airy center, creating a composition that feels regal without being ornate. The design is meticulously created using multiple hand-carved wooden blocks, with graceful botanical sprigs and slender leaf motifs individually printed across the soft ivory center. The decorative side panels are printed separately, building a series of intricate floral borders in muted olive and deep blue. Bringing these individual patterns together with consistent spacing, alignment, and symmetry requires exceptional precision and artistry from the block-printing artisans. Handcrafted by skilled artisans in Rajasthan, subtle variations in every impression are part of the beauty of the handmade process. Elegant, timeless, and rich in craftsmanship, this table cover brings a quietly luxurious character to everyday dining and special gatherings alike. Specifications Fabric: 100% Cotton Craft: Multi-Block Hand Block Printing Design: Mughal-Inspired Botanical Motifs with Ornamental Border Color: Ivory, Olive & Deep Blue",
+      "minPrice": 151,
+      "maxPrice": 168,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "palace-elephant-table-cover",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "table-cover",
+      "typeName": "Tablecloths",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Tablecloths"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Color",
+          "Ivory, Aqua & Warm Ochre"
+        ],
+        [
+          "Size options",
+          "60x90 · 72x108"
+        ]
+      ],
+      "colors": [
+        "Blue",
+        "Ivory & cream",
+        "Yellow"
+      ],
+      "sizes": [
+        "60x90",
+        "72x108"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton",
+      "text": "A striking expression of heritage craftsmanship and playful grandeur, this hand block-printed table cover brings the beauty of Indian artistry to the modern table. Inspired by the elephant motifs and decorative patterns seen throughout traditional Indian and Mughal art, the combination of crisp ivory, luminous aqua, and warm ochre feels regal yet fresh. Look closely and even the elephants reveal intricate patterns within their silhouettes—an added layer of detail that makes the design especially distinctive. The design is meticulously created in multiple stages using different hand-carved wooden blocks. The center features a rhythmic all-over motif in refreshing aqua and warm ochre, while the side panels are printed separately with beautifully detailed elephant motifs. An intricate ornamental border is then carefully aligned along the edges, bringing the different elements together into one seamless composition. Achieving this level of symmetry and continuity entirely by hand requires exceptional precision and artistry. Handcrafted by skilled artisans in Rajasthan, subtle variations in color and alignment are signatures of the handmade process. Bold, elegant, and rich in character, this table cover turns everyday dining and special gatherings into a beautifully curated setting. Specifications Fabric: 100% Cotton Craft: Multi-Block Hand Block Printing Design: Elephant Motifs with Ornamental Border Color: Ivory, Aqua & Warm Ochre",
+      "minPrice": 151,
+      "maxPrice": 168,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "imperial-garden-table-cover",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "table-cover",
+      "typeName": "Tablecloths",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Tablecloths"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Color",
+          "Ivory with Sage Green & Pink"
+        ],
+        [
+          "Size options",
+          "60x90 · 72x108"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Pink",
+        "Ivory & cream"
+      ],
+      "sizes": [
+        "60x90",
+        "72x108"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton",
+      "text": "A celebration of Mughal-inspired design and masterful Indian craftsmanship, this hand block-printed table cover transforms the table into a beautifully composed work of textile art. Inspired by the refined florals and botanical forms of Mughal art, soft ivory is accented with sage green, delicate pink, and touches of deeper green. The detailed border frames the lighter center beautifully, giving the table cover an elegant, almost architectural quality. The design is created in multiple stages, requiring remarkable precision from skilled artisans. The ornamental side panels are printed separately, building an intricate floral border in layers, while the spacious center is printed using different hand-carved wooden blocks to create its alternating botanical motifs. Aligning these individual elements by hand while maintaining the symmetry and flow of the overall composition requires exceptional skill and artistry. Handcrafted by artisans in Rajasthan, every subtle variation in the print is a signature of the human hand behind it. Elegant, regal, and rich in heritage, this is a statement textile designed to bring the beauty of centuries-old Indian craftsmanship to the modern table. Specifications Fabric: 100% Cotton Craft: Multi-Block Hand Block Printing Design: Mughal-Inspired Botanical Motifs with Ornamental Border Color: Ivory with Sage Green & Pink",
+      "minPrice": 151,
+      "maxPrice": 168,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "raspberry-bloom-cocktail-napkins-set-of-6",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "cock-tail-napkin-set-of-12",
+      "typeName": "Cocktail napkins",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton cambric",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Cocktail napkins"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Set quantity",
+          "6 pieces"
+        ],
+        [
+          "Size options",
+          "8x8"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "8x8"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton cambric",
+      "text": "Raspberry Bloom Cocktail Napkins (Set of 6), hand block printed with vibrant floral motifs and a turquoise border, crafted from fine cotton. Material: Cotton Cambric Dimensions: 8 × 8\" Net Quantity: 4 Units (Napkins)",
+      "minPrice": 125,
+      "maxPrice": 125,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "olive-willow-cocktail-napkins-set-of-6",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "cock-tail-napkin-set-of-12",
+      "typeName": "Cocktail napkins",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton cambric",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Cocktail napkins"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Set quantity",
+          "6 pieces"
+        ],
+        [
+          "Size options",
+          "8x8"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "8x8"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton cambric",
+      "text": "Olive Willow Cocktail Napkins (Set of 6), hand block printed with vibrant floral motifs and a turquoise border, crafted from fine cotton. Material: Cotton CambricDimensions: 8 × 8\"Net Quantity: 4 Units (Napkins)",
+      "minPrice": 125,
+      "maxPrice": 125,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "botanical-garden-quilted-cushion-cover",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "cushion-cover",
+      "typeName": "Cushion covers",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton percale",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Cushion covers"
+        ],
+        [
+          "Material",
+          "cotton percale"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Includes",
+          "Cover only; insert not included"
+        ],
+        [
+          "Color",
+          "White with Olive Green & Deep Red Accents"
+        ],
+        [
+          "Size options",
+          "18x18"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Red",
+        "White"
+      ],
+      "sizes": [
+        "18x18"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton percale",
+      "text": "Bring timeless botanical elegance to your space with this handcrafted quilted cushion cover. Set against a crisp white backdrop, delicate olive-green foliage and deep red florals are framed by an intricately block-printed ornamental border, giving the piece the charm of a vintage botanical illustration. Crafted from 100% cotton percale, the front is finished with fine hand-stitched quilting for subtle texture and dimension. Hand block printed by skilled artisans in Rajasthan, each piece carries slight variations that celebrate the beauty of traditional craftsmanship. Refined yet relaxed, it brings artisanal character and an effortlessly collected feel to sofas, beds, and accent chairs. Specifications Fabric: 100% Cotton Percale Craft: Hand Block Printed & Hand-Quilted Pattern: Botanical Floral with Ornamental Border Color: White with Olive Green & Deep Red Accents Includes: Cushion Cover Only; Insert Not Included",
+      "minPrice": 118,
+      "maxPrice": 118,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "cypress-bloom-quilted-cushion-cover",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "cushion-cover",
+      "typeName": "Cushion covers",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Cushion covers"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Includes",
+          "Cover only; insert not included"
+        ],
+        [
+          "Color",
+          "Ivory with Olive, Burgundy & Orange Accents"
+        ],
+        [
+          "Size options",
+          "18x18"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Red",
+        "Ivory & cream",
+        "Orange"
+      ],
+      "sizes": [
+        "18x18"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton",
+      "text": "Bring understated botanical charm to your space with this handcrafted cushion cover. Against a soft ivory backdrop, slender cypress trees, leafy sprigs, and petite floral motifs in deep olive, burgundy, and warm orange create an artful composition with a beautifully collected feel. Hand block printed by skilled artisans in Rajasthan, each motif carries the subtle variations that make handcrafted textiles unique. Contrast twisted piping frames the cushion, adding a tailored finishing touch. Elegant and versatile, this cushion brings natural warmth, artisanal character, and quiet sophistication to sofas, beds, and accent chairs. Specifications Fabric: 100% Cotton Craft: Hand Block Printed Pattern: Botanical & Cypress Motifs Color: Ivory with Olive, Burgundy & Orange Accents Detailing: Contrast Twisted Piping Includes: Cushion Cover Only; Insert Not Included",
+      "minPrice": 111,
+      "maxPrice": 111,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "lavender-garden-quilted-cushion-cover",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "cushion-cover",
+      "typeName": "Cushion covers",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Cushion covers"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Includes",
+          "Cover only; insert not included"
+        ],
+        [
+          "Color",
+          "Ivory with Violet & Olive"
+        ],
+        [
+          "Size options",
+          "18x18"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Ivory & cream",
+        "Purple"
+      ],
+      "sizes": [
+        "18x18"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton",
+      "text": "Add a refined touch of color and craftsmanship to your space with this handcrafted floral cushion cover. Set against a soft ivory backdrop, elegant botanical motifs in rich violet and earthy olive create a graceful, rhythmic pattern, finished with delicate twisted piping along the edges. Crafted from 100% cotton, the design is hand block printed by skilled artisans in Rajasthan, giving each piece the subtle variations and character of traditional craftsmanship. Elegant yet easy to style, this cushion brings artisanal detail, rich color, and timeless charm to sofas, beds, and accent chairs. Specifications Fabric: 100% Cotton Craft: Hand Block Printed Pattern: Botanical Floral Motif Color: Ivory with Violet & Olive Detailing: Contrast Twisted Piping Includes: Cushion Cover Only; Insert Not Included",
+      "minPrice": 111,
+      "maxPrice": 111,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "flamingo-quilted-cushion-cover",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "cushion-cover",
+      "typeName": "Cushion covers",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton percale",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Cushion covers"
+        ],
+        [
+          "Material",
+          "cotton percale"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Includes",
+          "Cover only; insert not included"
+        ],
+        [
+          "Color",
+          "Ivory with Teal, Aqua, Blue & Orange Accents"
+        ],
+        [
+          "Size options",
+          "20x20"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Blue",
+        "Ivory & cream",
+        "Orange"
+      ],
+      "sizes": [
+        "20x20"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton percale",
+      "text": "Bring a touch of whimsy to your space with this handcrafted Flamingo Cotton Cushion Cover, where playful design meets the beauty of traditional Indian craftsmanship. Set against a soft ivory backdrop, hand block-printed flamingos in refreshing shades of teal, aqua, deep blue, and vibrant orange create a lively yet artful pattern. The unexpected motif adds personality without overwhelming your space—perfect for brightening a sofa, accent chair, reading nook, or bedroom. Crafted from 100% cotton percale, the front is finished with delicate hand-stitched quilting, adding subtle texture and dimension to the fabric. Each flamingo is created using the centuries-old tradition of hand block printing, a craft deeply rooted in Rajasthan, India. Skilled artisans carve individual designs into wooden blocks before carefully printing them onto the fabric by hand, making the slight variations in every piece part of its unique character. Playful, distinctive, and rich in craftsmanship, this cushion cover is an effortless way to introduce color, texture, and a little unexpected charm into your home. Specifications Fabric: 100% Cotton Percale Craft: Hand Block Printed & Hand-Quilted Pattern: Flamingo Color: Ivory with Teal, Aqua, Blue & Orange Accents Includes: Cushion Cover Only; Insert Not Included",
+      "minPrice": 116,
+      "maxPrice": 116,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "sage-coral-garden-quilted-cushion-cover",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "cushion-cover",
+      "typeName": "Cushion covers",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Cushion covers"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Includes",
+          "Cover only; insert not included"
+        ],
+        [
+          "Color",
+          "Ivory with Sage Green & Coral Pink"
+        ],
+        [
+          "Size options",
+          "18x18"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Pink",
+        "Ivory & cream"
+      ],
+      "sizes": [
+        "18x18"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton",
+      "text": "Bring an artful sense of heritage to your space with this handcrafted botanical cushion cover. Set against a soft ivory backdrop, intricate floral motifs in sage green and warm coral pink create a beautifully balanced pattern with an elegant, vintage-inspired character. Crafted from soft 100% cotton, the front is finished with delicate hand-stitched quilting for subtle texture and dimension. Each motif is hand block printed by skilled artisans in Rajasthan, celebrating the beauty and individuality of this centuries-old craft. Distinctive yet easy to style, this cushion adds color, artisanal character, and timeless charm to sofas, beds, and accent chairs. Specifications Fabric: 100% Cotton Craft: Hand Block Printed & Hand-Quilted Pattern: Botanical Floral Motif Color: Ivory with Sage Green & Coral Pink Includes: Cushion Cover Only; Insert Not Included",
+      "minPrice": 114,
+      "maxPrice": 114,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "aqua-bloom-meadow-quilted-cushion-cover",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "cushion-cover",
+      "typeName": "Cushion covers",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Cushion covers"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Includes",
+          "Cover only; insert not included"
+        ],
+        [
+          "Color",
+          "White with Aqua & Olive Green"
+        ],
+        [
+          "Size options",
+          "18x18"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Blue",
+        "White"
+      ],
+      "sizes": [
+        "18x18"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton",
+      "text": "Bring a refreshing botanical touch to your space with this handcrafted floral cushion cover. Set against a soft white backdrop, stylized blooms in vibrant aqua and muted olive green create a striking yet serene pattern inspired by nature. Crafted from soft 100% cotton, the front is finished with delicate hand-stitched quilting for subtle texture and dimension. Each floral motif is hand block printed by skilled artisans in Rajasthan, giving every piece the distinctive character of traditional craftsmanship. Fresh, artful, and easy to style, this cushion brings color, texture, and relaxed elegance to sofas, beds, and accent chairs. Specifications Fabric: 100% Cotton Craft: Hand Block Printed & Hand-Quilted Pattern: Botanical Floral Color: White with Aqua & Olive Green Includes: Cushion Cover Only; Insert Not Included",
+      "minPrice": 114,
+      "maxPrice": 114,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "terracotta-bloom-quilted-cushion-cover",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "cushion-cover",
+      "typeName": "Cushion covers",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Cushion covers"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Includes",
+          "Cover only; insert not included"
+        ],
+        [
+          "Color",
+          "White with Terracotta, Green & Aqua"
+        ],
+        [
+          "Size options",
+          "18x18"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Blue",
+        "White",
+        "Orange"
+      ],
+      "sizes": [
+        "18x18"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton",
+      "text": "Bring an artful touch of nature indoors with this handcrafted floral cushion cover. Set against a soft white backdrop, a graceful botanical motif in warm terracotta, leafy green, and subtle aqua creates an elegant focal point inspired by traditional floral illustrations. Crafted from soft 100% cotton, the front features delicate hand-stitched quilting for subtle texture and dimension. The botanical design is hand block printed by skilled artisans in Rajasthan, celebrating the beauty and character of this centuries-old craft. Fresh yet timeless, this cushion adds warmth, color, and artisanal charm to a sofa, bed, or accent chair. Specifications Fabric: 100% Cotton Craft: Hand Block Printed & Hand-Quilted Pattern: Botanical Floral Color: White with Terracotta, Green & Aqua Includes: Cushion Cover Only; Insert Not Included",
+      "minPrice": 114,
+      "maxPrice": 114,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "elephant-parade-quilted-cushion-cover",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "cushion-cover",
+      "typeName": "Cushion covers",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Cushion covers"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Includes",
+          "Cover only; insert not included"
+        ],
+        [
+          "Color",
+          "Ivory with Aqua & Deep Blue"
+        ],
+        [
+          "Size options",
+          "18x18"
+        ]
+      ],
+      "colors": [
+        "Blue",
+        "Ivory & cream"
+      ],
+      "sizes": [
+        "18x18"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton",
+      "text": "Add a playful yet refined touch to your space with this handcrafted Elephant Cushion Cover. Set against a soft ivory backdrop, charming elephants in aqua and deep blue feature intricate hand block-printed patterns, creating a design that feels whimsical yet sophisticated. Crafted from soft 100% cotton, the front is finished with delicate hand-stitched quilting for added texture and dimension. Hand block printed by skilled artisans in Rajasthan, each cushion carries subtle variations that make every piece uniquely its own. A beautiful blend of heritage craft and contemporary design, it brings personality and artisanal charm to sofas, beds, reading nooks, and accent chairs. Specifications Fabric: 100% Cotton Craft: Hand Block Printed & Hand-Quilted Pattern: Elephant Motif Color: Ivory with Aqua & Deep Blue Includes: Cushion Cover Only; Insert Not Included",
+      "minPrice": 114,
+      "maxPrice": 114,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "indigo-blossom-cocktail-napkins-set-of-12",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "cock-tail-napkin-set-of-12",
+      "typeName": "Cocktail napkins",
+      "materials": [],
+      "primaryMaterial": "",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Cocktail napkins"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Set quantity",
+          "12 pieces"
+        ],
+        [
+          "Size options",
+          "6x6"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "6x6"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed",
+      "text": "Our Indigo Blossom Cocktail Napkins (Set of 12) feature delicate floral motifs with a classic navy-blue border, hand block printed on fine fabric. A charming addition to your table setting, perfect for entertaining and everyday use. Net Quantity: 12 UnitsDimensions: 6 × 6\"",
+      "minPrice": 133,
+      "maxPrice": 133,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "indigo-vine-cocktail-napkins-set-of-12",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "cock-tail-napkin-set-of-12",
+      "typeName": "Cocktail napkins",
+      "materials": [],
+      "primaryMaterial": "",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Cocktail napkins"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Set quantity",
+          "12 pieces"
+        ],
+        [
+          "Size options",
+          "6x6"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "6x6"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed",
+      "text": "Our Indigo Vine Cocktail Napkins (Set of 12) feature delicate floral motifs with a classic navy-blue border, hand block printed on fine fabric. A charming addition to your table setting, perfect for entertaining and everyday use. Net Quantity: 12 UnitsDimensions: 6 × 6\"",
+      "minPrice": 133,
+      "maxPrice": 133,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "coral-bloom-cocktail-napkins-set-of-12",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "cock-tail-napkin-set-of-12",
+      "typeName": "Cocktail napkins",
+      "materials": [],
+      "primaryMaterial": "",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Cocktail napkins"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Set quantity",
+          "12 pieces"
+        ],
+        [
+          "Size options",
+          "6x6"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "6x6"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed",
+      "text": "Our Coral Bloom Cocktail Napkins (Set of 12) feature delicate floral motifs with a classic navy-blue border, hand block printed on fine fabric. A charming addition to your table setting, perfect for entertaining and everyday use. Net Quantity: 12 UnitsDimensions: 6 × 6\"",
+      "minPrice": 133,
+      "maxPrice": 133,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "berry-olive-table-mat-dinner-napkin-set",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "table-mats-dinner-napkins",
+      "typeName": "Placemats & dinner napkins",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton cambric",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Placemats & dinner napkins"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ],
+        [
+          "Print style",
+          "Digital"
+        ],
+        [
+          "Set includes",
+          "4 Placemats + 4 Dinner Napkins"
+        ],
+        [
+          "Color",
+          "Ivory, Olive & Berry Pink"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Pink",
+        "Red",
+        "Ivory & cream"
+      ],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Print style"
+      },
+      "subtitle": "cotton cambric",
+      "text": "Bring quiet botanical elegance to your table with this block-printed placemat and dinner napkin set, made by skilled artisans in Rajasthan.The placemats feature graceful floral sprigs in earthy olive with delicate berry-pink blossoms, thoughtfully spaced across a soft ivory backdrop and framed with a contrasting olive border. The coordinating dinner napkins echo the same botanical motif for a beautifully cohesive yet understated tablescape.Crafted from lightweight 100% cotton cambric, each motif is individually printed , giving every piece the subtle variations and character of traditional craftsmanship.Elegant, earthy, and effortlessly versatile, this set brings artisanal detail and refined botanical beauty to everyday meals, intimate dinners, and special gatherings.Specifications Set Includes: 4 Placemats + 4 Dinner Napkins Fabric: 100% Cotton Cambric Color: Ivory, Olive & Berry Pink",
+      "minPrice": 135,
+      "maxPrice": 135,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "sage-blossom-table-mat-dinner-napkin-set",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "table-mats-dinner-napkins",
+      "typeName": "Placemats & dinner napkins",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton cambric",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Placemats & dinner napkins"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Print style",
+          "Block Print"
+        ],
+        [
+          "Set includes",
+          "4 Placemats + 4 Dinner NapkinsFabric: 100% Cotton CambricCraft: Hand Block PrintedColor: Ivory, Sage Green & Soft Pink\""
+        ],
+        [
+          "Color",
+          "Ivory, Sage Green & Soft Pink"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Pink",
+        "Ivory & cream"
+      ],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Print style"
+      },
+      "subtitle": "Hand-block printed · cotton cambric",
+      "text": "Bring understated botanical elegance to your table with this hand block-printed placemat and dinner napkin set, handcrafted by skilled artisans in Rajasthan.The placemats feature delicately detailed green floral medallions with soft pink centers, thoughtfully spaced across an ivory backdrop and finished with a muted sage border. The coordinating dinner napkins carry the same botanical motif in a denser all-over pattern, creating a beautifully layered table setting while keeping the look cohesive.Crafted from lightweight 100% cotton cambric, each motif is individually printed using hand-carved wooden blocks. Subtle variations in every impression are part of the beauty of this centuries-old handmade process.Fresh, versatile, and quietly sophisticated, this set brings artisanal craftsmanship and botanical charm to everyday dining, brunches, and elegant gatherings.Specifications Set Includes: 4 Placemats + 4 Dinner NapkinsFabric: 100% Cotton CambricCraft: Hand Block PrintedColor: Ivory, Sage Green & Soft Pink\"",
+      "minPrice": 145,
+      "maxPrice": 145,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "blush-garden-table-mat-dinner-napkin-set",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "table-mats-dinner-napkins",
+      "typeName": "Placemats & dinner napkins",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton cambric",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Placemats & dinner napkins"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Print style",
+          "Block Print"
+        ],
+        [
+          "Set includes",
+          "4 Placemats + 4 Dinner NapkinsFabric: 100% Cotton CambricCraft: Hand Block PrintedColor: Ivory, Pink & Green"
+        ],
+        [
+          "Color",
+          "Ivory, Pink & Green"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Pink",
+        "Ivory & cream"
+      ],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Print style"
+      },
+      "subtitle": "Hand-block printed · cotton cambric",
+      "text": "Set a beautifully coordinated table with this hand block-printed placemat and dinner napkin set, handcrafted in Rajasthan using traditional artisan techniques. The placemats feature graceful pink floral motifs with fresh green foliage arranged against a soft ivory base and framed with a dusty-pink border. Complementing them, the dinner napkins feature a contrasting all-over botanical print in layered greens with delicate pink centers—designed to coordinate rather than match exactly for a more artfully collected tablescape.Crafted from lightweight 100% cotton cambric, each motif is individually impressed onto the fabric using hand-carved wooden blocks. The subtle variations in color and placement are signatures of the handmade process, making every set uniquely its own.Fresh, elegant, and effortlessly versatile, this coordinated set brings Indian craftsmanship and botanical charm to everyday meals, brunches, dinner parties, and special gatherings. Specifications Set Includes: 4 Placemats + 4 Dinner NapkinsFabric: 100% Cotton CambricCraft: Hand Block PrintedColor: Ivory, Pink & Green",
+      "minPrice": 145,
+      "maxPrice": 145,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "blush-cypress-waffle-bath-towel",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "bathtowel",
+      "typeName": "Bath towels",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "organic waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Bath towels"
+        ],
+        [
+          "Material",
+          "organic waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Size options",
+          "30x60"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "30x60"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · organic waffle cotton",
+      "text": "Delicate florals on organic waffle cotton — this towel is hand block printed with natural dyes, bringing a thoughtful touch to your bathroom. Soft, absorbent, and made without harsh chemicals. 100% organic waffle cotton — soft, absorbent & quick-drying Hand block printed with natural, skin-safe dyes No harsh chemicals or synthetic dyes Crafted by artisans in Jaipur, Rajasthan",
+      "minPrice": 118,
+      "maxPrice": 118,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "crimson-vine-waffle-bath-towel",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "bathtowel",
+      "typeName": "Bath towels",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "organic waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Bath towels"
+        ],
+        [
+          "Material",
+          "organic waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Size options",
+          "30x60"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "30x60"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · organic waffle cotton",
+      "text": "Delicate florals on organic waffle cotton — this towel is hand block printed with natural dyes, bringing a thoughtful touch to your bathroom. Soft, absorbent, and made without harsh chemicals. 100% organic waffle cotton — soft, absorbent & quick-drying Hand block printed with natural, skin-safe dyes No harsh chemicals or synthetic dyes Crafted by artisans in Jaipur, Rajasthan",
+      "minPrice": 118,
+      "maxPrice": 118,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "sage-garden-waffle-bath-towel",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "bathtowel",
+      "typeName": "Bath towels",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "organic waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Bath towels"
+        ],
+        [
+          "Material",
+          "organic waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Size options",
+          "30x60"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "30x60"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · organic waffle cotton",
+      "text": "Delicate florals on organic waffle cotton — this towel is hand block printed with natural dyes, bringing a thoughtful touch to your bathroom. Soft, absorbent, and made without harsh chemicals. 100% organic waffle cotton — soft, absorbent & quick-drying Hand block printed with natural, skin-safe dyes No harsh chemicals or synthetic dyes Crafted by artisans in Jaipur, Rajasthan",
+      "minPrice": 118,
+      "maxPrice": 118,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "fuchsia-sage-reversible-table-runner",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "table-runner",
+      "typeName": "Table runners",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton cambric",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Table runners"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Color",
+          "Fuchsia Pink / Ivory with Sage Green & Pink"
+        ],
+        [
+          "Size options",
+          "18x90"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Pink",
+        "Ivory & cream"
+      ],
+      "sizes": [
+        "18x90"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton cambric",
+      "text": "Bring versatility and vibrant color to your table with this reversible hand block-printed table runner. One side features a bold fuchsia pink botanical lattice, while the reverse reveals the same delicate motif in sage green and soft pink against an ivory backdrop—two beautifully contrasting looks in one piece. Crafted from lightweight 100% cotton cambric, each runner is hand block printed by skilled artisans in Rajasthan, giving every piece the subtle variations and character of traditional craftsmanship. Style the fuchsia side for a bold statement or flip to ivory for a softer, more understated setting—perfect for everyday dining, entertaining, and festive gatherings. Specifications Fabric: 100% Cotton Cambric Craft: Hand Block Printed Design: Reversible Color: Fuchsia Pink / Ivory with Sage Green & Pink",
+      "minPrice": 126,
+      "maxPrice": 126,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "fuchsia-vine-reversible-table-runner",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "table-runner",
+      "typeName": "Table runners",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton cambric",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Table runners"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Color",
+          "Fuchsia Pink & Sage Green / Ivory & Sage Green"
+        ],
+        [
+          "Size options",
+          "18x90"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Pink",
+        "Ivory & cream"
+      ],
+      "sizes": [
+        "18x90"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton cambric",
+      "text": "Set a vibrant, artfully layered table with this reversible hand block-printed table runner. One side features a rich fuchsia pink backdrop with a delicate sage-green botanical lattice, while the reverse offers the same intricate motif against a soft ivory base—giving you two distinct looks in one beautifully crafted piece. Made from 100% cotton cambric, the runner is hand block printed by skilled artisans in Rajasthan, celebrating the subtle variations and character of this centuries-old craft. Style the bold pink side for a colorful statement or flip to the ivory side for a softer, more understated setting. Perfect for everyday dining, festive gatherings, or effortless entertaining, it brings color, craftsmanship, and versatility to your table. Specifications Fabric: 100% Cotton Cambric Craft: Hand Block Printed Design: Reversible Color: Fuchsia Pink & Sage Green / Ivory & Sage Green",
+      "minPrice": 126,
+      "maxPrice": 126,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "sage-vine-reversible-table-runner",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "table-runner",
+      "typeName": "Table runners",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton cambric",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Table runners"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Color",
+          "Ivory / Charcoal with Sage Green & Pink"
+        ],
+        [
+          "Size options",
+          "18x90"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Pink",
+        "Ivory & cream",
+        "Black"
+      ],
+      "sizes": [
+        "18x90"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton cambric",
+      "text": "Refresh your table with this reversible hand block-printed table runner, designed to offer two distinct looks in one versatile piece. One side features a delicate sage-green botanical lattice with soft pink accents on an ivory base, while the reverse transforms the same motif against a dramatic deep charcoal backdrop. Crafted from lightweight 100% cotton cambric, each runner is hand block printed by skilled artisans in Rajasthan, giving every piece the subtle variations and character of traditional craftsmanship. Style the ivory side for a light, airy tablescape or flip to the darker side for a bolder setting—perfect for everyday dining, entertaining, and seasonal gatherings. Specifications Fabric: 100% Cotton Cambric Craft: Hand Block Printed Design: Reversible Color: Ivory / Charcoal with Sage Green & Pink",
+      "minPrice": 126,
+      "maxPrice": 126,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "spice-garden-table-runner",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "table-runner",
+      "typeName": "Table runners",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton cambric",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Table runners"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Color",
+          "Ivory with Red, Ochre, Olive & Orange"
+        ],
+        [
+          "Size options",
+          "18x90"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Red",
+        "Ivory & cream",
+        "Orange",
+        "Yellow"
+      ],
+      "sizes": [
+        "18x90"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton cambric",
+      "text": "Bring warmth and character to your table with this hand block-printed cotton table runner. Intricate floral vines unfold across a warm ivory base, framed by rhythmic stripes in deep red, ochre, olive, and earthy orange, creating a richly detailed yet beautifully balanced design. Crafted from lightweight 100% cotton cambric, each runner is hand block printed by skilled artisans in Rajasthan, giving every piece the subtle variations and character of traditional craftsmanship. Perfect for everyday dining or festive gatherings, it adds warm color, artisanal detail, and a collected feel to your tablescape. Specifications Fabric: 100% Cotton Cambric Craft: Hand Block Printed Pattern: Floral Stripe Color: Ivory with Red, Ochre, Olive & Orange",
+      "minPrice": 126,
+      "maxPrice": 126,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "emerald-cypress-waffle-bath-sheet",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "bathsheet",
+      "typeName": "Bath sheets",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Bath sheets"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Size options",
+          "36x72"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "36x72"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · waffle cotton",
+      "text": "Hand block printed on soft cotton-waffle fabric, this bath sheet combines beautiful floral detailing with everyday comfort. Lightweight, absorbent, and quick-drying, it brings an artisanal touch to your space while remaining practical for daily use. Soft cotton-waffle fabric — absorbent & quick-drying Hand block printed with a delicate floral design Lightweight and comfortable for everyday use Packed in a reusable muslin bag Crafted with an artisanal touch",
+      "minPrice": 125,
+      "maxPrice": 125,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "blush-cypress-waffle-bath-sheet",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "bathsheet",
+      "typeName": "Bath sheets",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Bath sheets"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Size options",
+          "36x72"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "36x72"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · waffle cotton",
+      "text": "Hand block printed on soft cotton-waffle fabric, this bath sheet combines beautiful floral detailing with everyday comfort. Lightweight, absorbent, and quick-drying, it brings an artisanal touch to your space while remaining practical for daily use. Soft cotton-waffle fabric — absorbent & quick-drying Hand block printed with a delicate floral design Lightweight and comfortable for everyday use Packed in a reusable muslin bag Crafted with an artisanal touch",
+      "minPrice": 125,
+      "maxPrice": 125,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "crimson-bloom-waffle-bath-sheet",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "bathsheet",
+      "typeName": "Bath sheets",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Bath sheets"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Size options",
+          "36x72"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "36x72"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · waffle cotton",
+      "text": "Hand block printed on soft cotton-waffle fabric, this bath sheet combines beautiful floral detailing with everyday comfort. Lightweight, absorbent, and quick-drying, it brings an artisanal touch to your space while remaining practical for daily use. Soft cotton-waffle fabric — absorbent & quick-drying Hand block printed with a delicate floral design Lightweight and comfortable for everyday use Packed in a reusable muslin bag Crafted with an artisanal touch",
+      "minPrice": 125,
+      "maxPrice": 125,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "sage-garden-waffle-bath-sheet",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "bathsheet",
+      "typeName": "Bath sheets",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "waffle cotton",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Bath sheets"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Size options",
+          "36x72"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "36x72"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · waffle cotton",
+      "text": "Hand block printed on soft cotton-waffle fabric, this bath sheet combines beautiful floral detailing with everyday comfort. Lightweight, absorbent, and quick-drying, it brings an artisanal touch to your space while remaining practical for daily use. Soft cotton-waffle fabric — absorbent & quick-drying Hand block printed with a delicate floral design Lightweight and comfortable for everyday use Packed in a reusable muslin bag Crafted with an artisanal touch",
+      "minPrice": 125,
+      "maxPrice": 125,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "mystic-hair-oil-100ml",
+      "group": "wellness",
+      "groupName": "Wellness",
+      "type": "hair-oil",
+      "typeName": "Hair oils",
+      "materials": [],
+      "primaryMaterial": "",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Hair oils"
+        ],
+        [
+          "Size",
+          "100 ml"
+        ],
+        [
+          "Size options",
+          "100ml"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "100ml"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "100 ml",
+      "text": "An ancient Himalayan recipe made with Indic hair growth herbs, Mystic Hair Oil is our bestseller. A botanical blend of neem, amla, hibiscus & marjoram, it helps reduce hairfall & balding, stimulates dormant hair follicles & and is guaranteed to make the hair thick, long and lustrous.",
+      "minPrice": 25,
+      "maxPrice": 25,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "hibiscus-hair-oil-100ml",
+      "group": "wellness",
+      "groupName": "Wellness",
+      "type": "hair-oil",
+      "typeName": "Hair oils",
+      "materials": [],
+      "primaryMaterial": "",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Hair oils"
+        ],
+        [
+          "Size",
+          "100 ml"
+        ],
+        [
+          "Size options",
+          "100ml"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "100ml"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "100 ml",
+      "text": "Hibiscus has been revered in Ayurveda for its hair strengthening properties This hair oil fights premature greying, revives dull hair and cleanses the scalp. An herbal infusion in a blend of premium oils, it is rich in amino acids that builds strong hair, restores its natural colour and provides deep conditioning.",
+      "minPrice": 25,
+      "maxPrice": 25,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "snanamrit-ubtan-natural-bathing-powder-250gm",
+      "group": "wellness",
+      "groupName": "Wellness",
+      "type": "bathing-powder",
+      "typeName": "Bathing powder",
+      "materials": [],
+      "primaryMaterial": "",
+      "craft": "",
+      "attributes": [
+        [
+          "Category",
+          "Bathing powder"
+        ],
+        [
+          "Size",
+          "250 g"
+        ],
+        [
+          "Size options",
+          "250gm"
+        ]
+      ],
+      "colors": [],
+      "sizes": [
+        "250gm"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "250 g",
+      "text": "The Anahata Snanamrit Bathing Powder and Scrub is a handcrafted beauty blend, made from traditional, skin friendly ingredients. Infused with healing herbs, pulses and flowers, it smoothens the skin, reduces inflammation and keeps the skin blemish free, elastic and young. An excellent alternative to soaps and body wash, this powder is a fully organic mixture, that nourishes and cleanses the body.",
+      "minPrice": 29,
+      "maxPrice": 29,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "cypress-row-lumbar-cushion-cover",
+      "group": "home",
+      "groupName": "Home & Living",
+      "type": "cushion-cover",
+      "typeName": "Cushion covers",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton percale",
+      "craft": "Hand-block printed",
+      "attributes": [
+        [
+          "Category",
+          "Cushion covers"
+        ],
+        [
+          "Material",
+          "cotton percale"
+        ],
+        [
+          "Craft",
+          "Hand-block printed"
+        ],
+        [
+          "Includes",
+          "Cover only; insert not included"
+        ],
+        [
+          "Color",
+          "Off-White with Teal & Green"
+        ],
+        [
+          "Size options",
+          "14x26"
+        ]
+      ],
+      "colors": [
+        "Green",
+        "Blue",
+        "Ivory & cream",
+        "White"
+      ],
+      "sizes": [
+        "14x26"
+      ],
+      "optionLabels": {
+        "1": "Size"
+      },
+      "subtitle": "Hand-block printed · cotton percale",
+      "text": "Bring a sense of quiet, botanical elegance to your space with this handcrafted Cypress Tree Lumbar Cushion Cover, inspired by the graceful forms of nature and the enduring beauty of traditional Indian craftsmanship. Set against a soft off-white cotton backdrop, a row of slender cypress trees in layered shades of teal and green creates a striking yet serene composition. Fine detailing within each tree gives the motif an almost illustrative quality, while the elongated lumbar silhouette lends a modern, architectural feel. Crafted from 100% cotton percale, the front is finished with delicate hand-stitched quilting, adding subtle texture and dimension. Each cypress motif is created using the centuries-old tradition of hand block printing in Rajasthan, India, where designs are carved into wooden blocks and carefully printed onto the fabric by skilled artisans. The subtle variations created by this handmade process make every piece uniquely its own. Elegant on its own or layered with coordinating cushions, this lumbar cover brings natural color, artisanal texture, and timeless character to a sofa, bed, bench, or accent chair. Specifications Fabric: 100% Cotton Percale Craft: Hand Block Printed & Hand-Quilted Pattern: Cypress Tree Color: Off-White with Teal & Green Includes: Cushion Cover Only; Insert Not Included",
+      "minPrice": 116,
+      "maxPrice": 116,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    },
+    {
+      "handle": "meadow-bloom-round-tote",
+      "group": "bags",
+      "groupName": "Bags",
+      "type": "tote-bag",
+      "typeName": "Everyday totes",
+      "materials": [
+        "cotton"
+      ],
+      "primaryMaterial": "cotton piqué",
+      "craft": "Handcrafted",
+      "attributes": [
+        [
+          "Category",
+          "Everyday totes"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ],
+        [
+          "Craft",
+          "Handcrafted"
+        ],
+        [
+          "Shape",
+          "Round"
+        ]
+      ],
+      "colors": [],
+      "sizes": [],
+      "optionLabels": {
+        "1": "Shape"
+      },
+      "subtitle": "Handcrafted · cotton piqué",
+      "text": "Step out in bohemian style with our handmade Meadow Bloom Round Tote bag featuring an elegant floral print pattern. This lightweight tote bag is crafted from premium cotton with intricate self-woven designs. Perfect for casual outings, shopping trips, or as a unique everyday accessory. 🧵 Premium Self-Woven Cotton Piqué Fabric Crafted from thick, patterned cotton piqué, this bag offers a unique woven texture that enhances both durability and visual appeal. 🎨 Artisan Handcrafted Design Showcasing beautiful handcrafted patterns, each bag reflects the skill and attention to detail of experienced artisans, making every piece truly unique. 💼 Durable & Reliable for Daily Use Made with sturdy, long-lasting material, this shoulder bag is ideal for carrying your everyday essentials comfortably and securely. 👜 Functional Medium-Sized Tote Designed for convenience, this medium-sized shoulder bag provides ample space while remaining lightweight and easy to carry. 🌿 Traditional Craft Meets Modern Style A seamless blend of classic weaving and printing techniques, creating a sophisticated accessory that complements both casual and elegant outfits. 💖 Why You’ll Love It This Meadow Bloom Round Tote bag combines durability, versatility, and handcrafted charm—making it a perfect everyday accessory with a refined, artisanal touch.",
+      "minPrice": 110,
+      "maxPrice": 110,
+      "available": true,
+      "source": "data/products.json: title, description, options and variants"
+    }
+  ]
+}

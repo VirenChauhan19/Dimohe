@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { load } from 'cheerio';
+import { createStorefront } from './lib/storefront.mjs';
 
 const root = path.resolve('public');
 const products = JSON.parse(await fs.readFile('data/products.json', 'utf8')).products;
@@ -13,6 +14,7 @@ const variants = new Map(products.flatMap(p => p.variants.map(v => [String(v.id)
 const sessions = new Map();
 const htmlCache = new Map();
 const cards = new Map();
+const memberships = new Map();
 const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.avif': 'image/avif', '.svg': 'image/svg+xml', '.woff': 'font/woff', '.woff2': 'font/woff2', '.ico': 'image/x-icon', '.mp4': 'video/mp4' };
 const escape = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const money = n => '$' + (n / 100).toFixed(2);
@@ -35,8 +37,12 @@ for (const r of routes.filter(r => /^\/collections\/[^/?]+(?:\?page=\d+)?$/.test
   $('#products-container product-card-item').each((i, el) => {
     const handle = $(el).find('a[href*="/products/"]').first().attr('href')?.split('/products/')[1]?.split('?')[0];
     if (handle && !cards.has(handle)) cards.set(handle, $.html(el));
+    const collectionHandle = r.route.split('/')[2].split('?')[0];
+    if (!memberships.has(collectionHandle)) memberships.set(collectionHandle, new Set());
+    if (handle) memberships.get(collectionHandle).add(handle);
   });
 }
+const storefront = createStorefront(products, memberships, snapshot);
 function card(p) {
   return cards.get(p.handle) ?? `<product-card-item class="product-card-item"><a href="/products/${escape(p.handle)}"><img src="${escape(localImage(p.images[0]?.src ?? ''))}" alt="${escape(p.title)}"><h6>${escape(p.title)}</h6></a><span>${money(Math.round(Number(p.variants[0].price) * 100))}</span></product-card-item>`;
 }
@@ -120,7 +126,7 @@ const server = http.createServer(async (req, res) => {
     const url = new URL(req.url, 'http://localhost');
     const pathname = decodeURIComponent(url.pathname).replace(/\/$/, '') || '/';
     // Assets never create a cart session. Paths are constrained to the public directory.
-    if (/^\/(cdn|external)\//.test(pathname) || /^\/replica.*\.(js|css)$/.test(pathname)) {
+    if (/^\/(cdn|external)\//.test(pathname) || /^\/(replica.*|storefront)\.(js|css)$/.test(pathname)) {
       const file = path.resolve(root, '.' + pathname);
       if (!file.startsWith(root + path.sep)) return html('Not found', 404);
       try { const bytes = await fs.readFile(file); res.writeHead(200, { 'Content-Type': mime[path.extname(file)] || 'application/octet-stream', 'Cache-Control': 'no-store' }); return res.end(bytes); } catch { return html('Not found', 404); }
@@ -147,7 +153,7 @@ const server = http.createServer(async (req, res) => {
       cart.items = cart.items.filter(i => i.quantity > 0);
       return json({ ...cartJSON(cart), ...(data.sections ? { sections: await sections(cart, data.sections) } : {}) });
     }
-    if (pathname === '/api/products') return json({ products });
+    if (pathname === '/api/products') return json({ products: storefront.products });
     if (/^\/products\/[^/]+\.(js|json)$/.test(pathname)) {
       const p = productMap.get(pathname.split('/')[2].replace(/\.(js|json)$/, ''));
       if (!p) return json({ error: 'Not found' }, 404);
@@ -163,6 +169,10 @@ const server = http.createServer(async (req, res) => {
     if (pathname === '/recommendations/products') return html('<product-recommendations></product-recommendations>');
     if (pathname === '/localization' && req.method === 'POST') { res.writeHead(303, { Location: req.headers.referer ? new URL(req.headers.referer).pathname : '/' }); return res.end(); }
     if (pathname === '/contact' && req.method === 'POST') return json({ error: 'Contact delivery requires an email service connection. Your message has not been sent.' }, 503);
+    if (req.method === 'GET' && !url.searchParams.has('section_id') && !url.searchParams.has('sections')) {
+      const redesigned = await storefront.render(url, cartJSON(cart));
+      if (redesigned) return html(redesigned);
+    }
     let route = pathname.replace(/^\/collections\/[^/]+\/products\//, '/products/');
     const pagination = url.searchParams.get('page');
     if (pagination && routeMap.has(route + '?page=' + pagination)) route += '?page=' + pagination;

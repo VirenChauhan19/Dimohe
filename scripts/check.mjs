@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import { load } from 'cheerio';
+import { merchandise, groups, types } from '../lib/merchandising.mjs';
 const base = process.env.CHECK_URL || 'http://localhost:3000';
 const routes = JSON.parse(await fs.readFile('data/routes.json', 'utf8'));
 const products = JSON.parse(await fs.readFile('data/products.json', 'utf8')).products;
@@ -25,15 +26,21 @@ console.log('External assets:', [...external]);
 assert.equal(missing.size, 0, 'All referenced images, scripts, and styles must exist locally');
 assert.equal(external.size, 0, 'Page scripts and images must load locally');
 let cursor = 0;
+const renderedAssets=new Set();
 await Promise.all(Array.from({ length: 5 }, async () => {
   while (cursor < routes.length) {
     const route = routes[cursor++];
     const response = await fetch(base + route.route);
     assert.equal(response.status, 200, route.route);
-    assert.match(await response.text(), route.kind === 'section' ? /quickview-body-content/ : /id="MainContent"/, route.route);
+    const rendered=await response.text();
+    assert.match(rendered, route.kind === 'section' ? /quickview-body-content/ : /id="MainContent"/, route.route);
+    const doc=load(rendered);
+    doc('img[src],script[src],link[rel="stylesheet"][href]').each((i,el)=>{const asset=doc(el).attr('src')||doc(el).attr('href');if(asset?.startsWith('/'))renderedAssets.add(asset.split('?')[0]);});
   }
 }));
 console.log(`Passed: ${routes.length} pages and ${localLinks.size} local asset references.`);
+for(const asset of renderedAssets) await fs.access(path.resolve('public','.'+asset));
+console.log(`Passed: ${renderedAssets.size} rendered image/script/style assets exist locally.`);
 let cookie = '';
 async function api(route, data) {
   const response = await fetch(base + route, { method: data ? 'POST' : 'GET', headers: { ...(data ? { 'Content-Type': 'application/json' } : {}), ...(cookie ? { Cookie: cookie } : {}) }, ...(data ? { body: JSON.stringify(data) } : {}) });
@@ -71,16 +78,16 @@ for (const image of imageUrls) {
 await api('/cart/clear.js', {});
 console.log(`Passed: all ${products.length} product cart images and cart quantity validation.`);
 const search = await fetch(base + '/search?q=cushion');
-assert.match(await search.text(), /results for/);
+assert.match(await search.text(), /Results for/);
 const filtered = load(await (await fetch(base + '/collections/home-furnishing?sort_by=price-ascending&filter.v.price.lte=120')).text());
-const values = filtered('#product-card-grid product-card-item').map((i, el) => {
-  const handle = filtered(el).find('a[href*="/products/"]').first().attr('href').split('/products/')[1].split('?')[0];
-  return Number(products.find(p => p.handle === handle).variants[0].price);
+const values = filtered('#product-card-grid [data-product-handle]').map((i, el) => {
+  const handle = filtered(el).attr('data-product-handle');
+  return Math.min(...products.find(p => p.handle === handle).variants.map(v=>Number(v.price)));
 }).get();
 assert.ok(values.length > 0);
 assert.ok(values.every(n => n <= 120));
 assert.deepEqual(values, [...values].sort((a, b) => a - b));
-assert.equal(filtered('.range-slider').attr('data-max-value'), '120', 'Slider initialization must preserve the applied price filter');
+assert.equal(filtered('input[name="filter.v.price.lte"]').val(), '120', 'The applied price filter must be retained');
 console.log('Passed: cart add/change/remove, invalid variant handling, cart totals, search, sorting, and price filtering.');
 const variable = products.find(p => new Set(p.variants.map(v => v.price)).size > 1);
 const selected = variable.variants.at(-1);
@@ -90,8 +97,36 @@ assert.equal(variantHTML('#MainContent input[name="id"]').first().val(), String(
 for (const product of products.filter(p => p.variants.some(v => !v.available))) {
   const soldOut = product.variants.find(v => !v.available);
   const doc = load(await (await fetch(base + '/products/' + product.handle + '?variant=' + soldOut.id)).text());
-  assert.ok(doc('#MainContent [data-addtocart-main]').first().is('[disabled]'));
-  assert.equal(doc('#MainContent [data-addtocart-text]').first().text().trim(), 'Sold out');
+  assert.ok(doc('#MainContent [data-add-button]').first().is('[disabled]'));
+  assert.match(doc('#MainContent [data-add-button]').first().text().trim(), /^Sold out/);
   assert.equal((await api('/cart/add.js', { id: soldOut.id, quantity: 1 })).status, 422);
 }
 console.log('Passed: selected product variant updates the displayed price and form variant ID.');
+const enriched=merchandise(products);
+assert.equal(enriched.find(p=>p.handle==='sage-botanica-3-layer-throw').merch.primaryMaterial,'muslin cotton','Packaging prose must not be mistaken for product material');
+assert.equal(enriched.find(p=>p.handle==='lavender-bloom-3-layer-throw').merch.primaryMaterial,'','Missing material specifications must not be invented');
+assert.equal(enriched.find(p=>p.handle==='cypress-grove-round-tote').merch.group,'bags','Everyday totes belong with bags');
+assert.equal(enriched.find(p=>p.handle==='cypress-grove-round-tote').merch.optionLabels[1],'Shape','A bag shape is not a size');
+assert.deepEqual(enriched.find(p=>p.handle==='gulnaar-floral-linen-cushion-cover-earth-brown').merch.materials,['linen']);
+const groupCounts={};
+for(const group of groups){
+  const doc=load(await (await fetch(base+'/collections/'+group.handle)).text());
+  const expected=enriched.filter(p=>p.merch.group===group.id).map(p=>p.handle).sort();
+  const actual=doc('#product-card-grid [data-product-handle]').map((i,el)=>doc(el).attr('data-product-handle')).get().sort();
+  assert.deepEqual(actual,expected,group.name);
+  groupCounts[group.name]=expected.length;
+}
+assert.equal(Object.values(groupCounts).reduce((a,b)=>a+b,0),88);
+for(const type of types){
+  const doc=load(await (await fetch(base+'/collections/'+type.handle)).text());
+  assert.equal(doc('#product-card-grid [data-product-handle]').length,enriched.filter(p=>p.merch.type===type.handle).length,type.name);
+}
+for(const field of ['material','color','size']){
+  const values=enriched.flatMap(p=>p.merch[field==='material'?'materials':field==='color'?'colors':'sizes']);
+  const value=values[0];
+  const doc=load(await (await fetch(base+'/collections/all?'+new URLSearchParams({[field]:value}))).text());
+  const expected=enriched.filter(p=>p.merch[field==='material'?'materials':field==='color'?'colors':'sizes'].includes(value)).map(p=>p.handle).sort();
+  assert.deepEqual(doc('#product-card-grid [data-product-handle]').map((i,el)=>doc(el).attr('data-product-handle')).get().sort(),expected,field);
+  assert.equal(doc('select[name="'+field+'"]').val(),value);
+}
+console.log('Passed: all 88 products categorized once, all 23 subcategories, and material/color/size filters.',groupCounts);
