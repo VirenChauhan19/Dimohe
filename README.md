@@ -47,3 +47,17 @@ Checks 252 captured routes, 725 original local asset references, all product car
 ## Service connections
 
 This is a local preview using captured public catalog data, with an in-memory session cart. Carts survive navigation and reloads but reset when the server restarts. Live inventory, account authentication, checkout, and payments require Shopify connections. The account and checkout pages explain that requirement. Contact links open an email to the published support address; the preview does not send messages or create orders.
+
+## GitHub Pages
+
+The repository includes `.github/workflows/pages.yml`. In GitHub **Settings → Pages → Build and deployment**, select **GitHub Actions** as the source. Pushing `main` then builds, checks, and publishes the website automatically.
+
+```sh
+npm run build:pages
+npm run check:pages
+npm run preview:pages
+```
+
+The default preview is http://localhost:3001/Dimohe/. `PAGES_BASE_PATH` sets the repository path; the workflow uses GitHub’s own Pages configuration. The generated `dist/` directory is ignored and uploaded as a deployment artifact rather than committed.
+
+The public build preserves the redesigned pages, product options, search, filters, sorting, quick views, and bag totals. Its shopping bag is saved in the visitor’s browser rather than the local Node server. Checkout remains a preview until connected to Shopify. GitHub Pages does not run the Node server.

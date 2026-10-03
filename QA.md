@@ -27,3 +27,7 @@ Screenshots are saved under the ignored `reference/redesign/` directory.
 ## Preview limits
 
 Live inventory, customer accounts, payments, and checkout require Shopify connections. The preview cart resets on server restart. Contact uses the published email address. The earlier source comparison applies to retained snapshots, not to the new visual design. These checks cover the listed flows; they do not establish that every possible interaction is bug-free.
+
+## GitHub Pages build
+
+`npm run build:pages` exports 160 redesigned pages, 598 assets, and all 88 products under the repository base path. `npm run check:pages` passed: all 160 generated routes, 2,655 asset references, base-prefixed links and actions, static cart persistence, totals, quantity validation, unavailable variants, and rejection without mutating the cart. The deployment workflow runs these build checks before publishing. Browser testing of this build was blocked by the in-app browser’s local URL access restriction; the earlier browser checks cover the shared redesign components.
