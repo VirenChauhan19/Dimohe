@@ -7,7 +7,8 @@
     "dev": "node server.mjs",
     "start": "node server.mjs",
     "sync": "node scripts/sync.mjs && node scripts/sync-quickviews.mjs && node scripts/vendor-external.mjs",
-    "check": "node scripts/check.mjs"
+    "check": "node scripts/check.mjs",
+    "compare-source": "node scripts/compare-source.mjs"
   },
   "engines": {
     "node": ">=22"

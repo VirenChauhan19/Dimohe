@@ -52,6 +52,24 @@ assert.equal((await api('/cart.js')).value.item_count, 2);
 assert.equal((await api('/cart/change.js', { id: variant.id, quantity: 1 })).value.item_count, 1);
 assert.equal((await api('/cart/change.js', { id: variant.id, quantity: 0 })).value.item_count, 0);
 assert.equal((await api('/cart/add.js', { id: 'invalid', quantity: 1 })).status, 422);
+for (const quantity of [0, -1, 1.5, 100]) assert.equal((await api('/cart/add.js', { id: variant.id, quantity })).status, 422);
+assert.equal((await api('/cart/add.js', { items: [{ id: variant.id }] })).value.item_count, 1);
+assert.equal((await api('/cart/add.js', { items: [{ id: variant.id, quantity: 99 }] })).status, 422);
+assert.equal((await api('/cart.js')).value.item_count, 1, 'Rejected additions must not change the cart');
+await api('/cart/clear.js', {});
+const imageUrls = new Set();
+for (const product of products) {
+  const added = await api('/cart/add.js', { id: product.variants.find(v => v.available).id, quantity: 1 });
+  assert.equal(added.status, 200);
+  imageUrls.add(added.value.items.at(-1).image);
+}
+for (const image of imageUrls) {
+  const response = await fetch(base + image);
+  assert.equal(response.status, 200, image);
+  assert.match(response.headers.get('content-type'), /^image\//, image);
+}
+await api('/cart/clear.js', {});
+console.log(`Passed: all ${products.length} product cart images and cart quantity validation.`);
 const search = await fetch(base + '/search?q=cushion');
 assert.match(await search.text(), /results for/);
 const filtered = load(await (await fetch(base + '/collections/home-furnishing?sort_by=price-ascending&filter.v.price.lte=120')).text());
@@ -62,10 +80,18 @@ const values = filtered('#product-card-grid product-card-item').map((i, el) => {
 assert.ok(values.length > 0);
 assert.ok(values.every(n => n <= 120));
 assert.deepEqual(values, [...values].sort((a, b) => a - b));
+assert.equal(filtered('.range-slider').attr('data-max-value'), '120', 'Slider initialization must preserve the applied price filter');
 console.log('Passed: cart add/change/remove, invalid variant handling, cart totals, search, sorting, and price filtering.');
 const variable = products.find(p => new Set(p.variants.map(v => v.price)).size > 1);
 const selected = variable.variants.at(-1);
 const variantHTML = load(await (await fetch(base + '/products/' + variable.handle + '?variant=' + selected.id)).text());
 assert.equal(variantHTML('#MainContent [data-product-actual-price]').first().text().trim(), '$' + Number(selected.price).toFixed(2));
 assert.equal(variantHTML('#MainContent input[name="id"]').first().val(), String(selected.id));
+for (const product of products.filter(p => p.variants.some(v => !v.available))) {
+  const soldOut = product.variants.find(v => !v.available);
+  const doc = load(await (await fetch(base + '/products/' + product.handle + '?variant=' + soldOut.id)).text());
+  assert.ok(doc('#MainContent [data-addtocart-main]').first().is('[disabled]'));
+  assert.equal(doc('#MainContent [data-addtocart-text]').first().text().trim(), 'Sold out');
+  assert.equal((await api('/cart/add.js', { id: soldOut.id, quantity: 1 })).status, 422);
+}
 console.log('Passed: selected product variant updates the displayed price and form variant ID.');

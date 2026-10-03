@@ -41,6 +41,10 @@ npm run check
 
 Checks all captured pages and local assets, and exercises cart totals, add/change/remove actions, invalid variants, search, sorting, price filtering, and variant prices. Desktop and mobile layouts, the native cart drawer, predictive search, and native sorting were also checked in the browser.
 
+Run `npm run compare-source` to compare representative homepage, collection, product, and story-page headings, image filenames, and internal destination links with the live original. This requires internet access and intentionally excludes fragment-only controls and live hosted-service widgets.
+
+The October 3 audit corrected catalog image URL mapping in cart/search, zero and excessive cart quantities, direct sold-out variant purchase controls, price-slider values after filtering, and mobile submenu close behavior. Regression checks cover all 88 product cart images. Browser checks covered desktop search, size selection, cart totals and removal, mobile navigation, quick-view add-to-cart, and price filtering. See `QA.md` for the verification scope and service limitations.
+
 To recapture the current public site and its assets:
 
 ```sh

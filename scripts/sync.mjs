@@ -119,6 +119,7 @@ while ([...assets.keys()].some(key => !assetSeen.has(key))) {
       let buffer = Buffer.from(await r.arrayBuffer());
       if (/\.(css|js|mjs)$/i.test(dest)) {
         let text = buffer.toString('utf8');
+        if (dest.endsWith('/header.js')) text = text.replace('function(subMenu){subMenuWrapper.classList.remove("open")}', 'function(subMenu){subMenu.classList.remove("open")}');
         if (dest.endsWith('.css')) text = text.replace(/url\((['"]?)([^)'"\s]+)\1\)/gi, (full, q, value) => value.startsWith('data:') ? full : `url(${q}${localURL(value, url)}${q})`);
         // Preserve relative module imports and download the dependencies.
         for (const m of text.matchAll(/(?:from\s*|import\s*\()['"](\.[^'"]+\.js(?:\?[^'"]*)?)['"]/g)) localURL(m[1], url);

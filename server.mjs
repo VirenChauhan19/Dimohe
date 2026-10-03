@@ -16,7 +16,14 @@ const cards = new Map();
 const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.avif': 'image/avif', '.svg': 'image/svg+xml', '.woff': 'font/woff', '.woff2': 'font/woff2', '.ico': 'image/x-icon', '.mp4': 'video/mp4' };
 const escape = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const money = n => '$' + (n / 100).toFixed(2);
-const localImage = u => { try { return new URL(u).pathname; } catch { return u; } };
+const localImage = u => {
+  if (!u) return '';
+  try {
+    const pathname = new URL(u, 'https://dimohe.com').pathname;
+    // Catalog JSON uses Shopify's /s/files/... URLs; snapshots use /cdn/shop/files/.
+    return pathname.replace(/^\/s\/files\/[^]+\/(files|products)\//, '/cdn/shop/$1/');
+  } catch { return u; }
+};
 async function snapshot(route) {
   const file = routeMap.get(route);
   if (!file) return null;
@@ -98,6 +105,11 @@ async function collection(html, url) {
     $('.pagination-wrapper, infinite-scroll').remove();
     $('input[name="sort_by"]').each((i, el) => { $(el).prop('checked', $(el).attr('value') === url.searchParams.get('sort_by')); });
     for (const key of ['filter.v.price.gte', 'filter.v.price.lte']) $(`input[name="${key}"]`).attr('value', url.searchParams.get(key) || '');
+    $('.range-slider').each((i, el) => {
+      const slider = $(el);
+      slider.attr('data-min-value', url.searchParams.get('filter.v.price.gte') || slider.attr('data-min'));
+      slider.attr('data-max-value', url.searchParams.get('filter.v.price.lte') || slider.attr('data-max'));
+    });
   }
   return $;
 }
@@ -119,12 +131,16 @@ const server = http.createServer(async (req, res) => {
       const data = await body(req); const action = pathname.split('/')[2].replace('.js', '');
       if (action === 'clear') cart.items = [];
       if (action === 'add') {
-        const additions = data.items || [{ id: data.id, quantity: data.quantity || 1 }];
+        const additions = data.items ?? [{ id: data.id, quantity: data.quantity ?? 1 }];
+        if (!Array.isArray(additions) || !additions.length || additions.some(item => !item || typeof item !== 'object')) return json({ status: 422, description: 'Choose at least one available product.' }, 422);
+        const quantities = new Map();
         for (const item of additions) {
-          const id = String(item.id), record = variants.get(id); const qty = Number(item.quantity);
+          const id = String(item.id), record = variants.get(id); const qty = Number(item.quantity ?? 1);
           if (!record || !record.variant.available || !Number.isInteger(qty) || qty < 1 || qty > 99) return json({ status: 422, message: 'Cart error', description: 'Choose an available product and a quantity between 1 and 99.' }, 422);
+          quantities.set(id, (quantities.get(id) ?? cart.items.find(i => i.id === id)?.quantity ?? 0) + qty);
+          if (quantities.get(id) > 99) return json({ status: 422, description: 'The maximum quantity per product is 99.' }, 422);
         }
-        for (const item of additions) { const id = String(item.id), existing = cart.items.find(i => i.id === id); if (existing) existing.quantity = Math.min(99, existing.quantity + Number(item.quantity)); else cart.items.push({ id, quantity: Number(item.quantity) }); }
+        for (const [id, quantity] of quantities) { const existing = cart.items.find(i => i.id === id); if (existing) existing.quantity = quantity; else cart.items.push({ id, quantity }); }
       }
       if (action === 'change') { const item = data.line ? cart.items[Number(data.line) - 1] : cart.items.find(i => i.id === String(data.id).split(':')[0]); if (!item) return json({ status: 422, description: 'Item not found.' }, 422); const quantity = Number(data.quantity); if (!Number.isInteger(quantity) || quantity < 0 || quantity > 99) return json({ status: 422, description: 'Invalid quantity.' }, 422); item.quantity = quantity; cart.items = cart.items.filter(i => i.quantity); }
       if (action === 'update') for (const [id, quantity] of Object.entries(data.updates || {})) { const i = cart.items.find(i => i.id === id); if (i && Number.isInteger(Number(quantity)) && Number(quantity) >= 0 && Number(quantity) <= 99) i.quantity = Number(quantity); }
@@ -187,6 +203,9 @@ const server = http.createServer(async (req, res) => {
         $(`${scope} input[name="id"]`).attr('value', v.id);
         $(`${scope} input[type="radio"]`).each((i, el) => { if ([v.option1, v.option2, v.option3].includes($(el).attr('value'))) $(el).prop('checked', true); else $(el).prop('checked', false); });
         $(`${scope} [data-product-actual-price]`).text(money(Math.round(Number(v.price) * 100)));
+        $(`${scope} [data-addtocart-main]`).prop('disabled', !v.available);
+        $(`${scope} [data-addtocart-text]`).text(v.available ? 'Add to cart' : 'Sold out');
+        $(`${scope} [data-product-soldout]`).toggleClass('hidden', v.available).text(v.available ? '' : 'Sold out');
         $(`${scope} [selected-option-value]`).each((i, el) => $(el).text(v['option' + ((i % record.product.options.length) + 1)] || v.title));
         $(`${scope} script[data-name="main-product"]`).each((i, el) => {
           let previous = {}; try { previous = JSON.parse($(el).text()); } catch {}

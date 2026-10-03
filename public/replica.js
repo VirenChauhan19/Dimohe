@@ -29,6 +29,15 @@
   }, true);
   // Give the theme's custom search trigger a keyboard-accessible name.
   document.querySelectorAll('search-drawer-trigger').forEach(el => { el.setAttribute('role', 'button'); el.setAttribute('aria-label', 'Search'); });
+  document.querySelectorAll('header-drawer-menu [data-submenu-open]').forEach(el => {
+    const name = el.closest('[data-menu-link]')?.querySelector('.header-drawer-menu-link')?.textContent.trim();
+    el.setAttribute('role', 'button');
+    el.setAttribute('tabindex', '0');
+    el.setAttribute('aria-label', `Open ${name || 'category'} submenu`);
+    el.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); el.click(); }
+    });
+  });
   const renderPayments = () => document.querySelectorAll('shopify-accelerated-checkout').forEach(el => {
     el.replaceWith(Object.assign(document.createElement('div'), { innerHTML: '<a class="replica-shop-button" href="/checkout">Buy with <strong>shop</strong></a><a class="replica-payment-options" href="/checkout">More payment options</a>' }));
   });
