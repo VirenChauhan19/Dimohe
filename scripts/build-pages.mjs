@@ -5,6 +5,8 @@ import path from 'node:path';
 import { load } from 'cheerio';
 import { createStorefront, imagePath } from '../lib/storefront.mjs';
 import { merchandise, groups, types } from '../lib/merchandising.mjs';
+import { crafts } from '../lib/editorial.mjs';
+import { chapters, curatedCollections } from '../lib/commerce.mjs';
 import { withBase, scriptWithBase } from '../lib/base-path.mjs';
 
 const base = (process.env.PAGES_BASE_PATH || '').replace(/\/+$/, '');
@@ -27,11 +29,13 @@ for (const r of routes.filter(r => /^\/collections\/[^/?]+(?:\?page=\d+)?$/.test
   });
 }
 
-const storefront = createStorefront(products, memberships, snapshot, { load });
+const siteURL=(process.env.PAGES_SITE_URL||'https://virenchauhan19.github.io'+base).replace(/\/$/,'');
+const storefront = createStorefront(products, memberships, snapshot, { load, siteURL });
 const emptyCart = { items: [], item_count: 0, total_price: 0 };
-const collections = new Set(['all', 'table-linen', 'bath-linen', 'hand-bags', ...groups.map(g => g.handle), ...types.map(t => t.handle), ...memberships.keys()]);
+const collections = new Set(['all', 'table-linen', 'bath-linen', 'hand-bags', ...curatedCollections.map(c=>c.handle), ...crafts.map(c=>c.handle), ...groups.map(g => g.handle), ...types.map(t => t.handle), ...memberships.keys()]);
 const pageRoutes = [
-  '/', '/collections', '/search', '/cart', '/checkout', '/account', '/pages/contact',
+  '/', '/collections', '/search', '/cart', '/checkout', '/account', '/pages/contact', '/pages/our-craft', '/pages/saved-pieces',
+  ...chapters.map(c=>'/pages/chapter-'+c.slug),
   ...[...collections].map(h => '/collections/' + h),
   ...products.map(p => '/products/' + p.handle),
   ...routes.map(r => r.route).filter(r => /^\/(pages|policies|blogs)\/[^?]+$/.test(r) && r !== '/pages/contact'),
@@ -53,7 +57,7 @@ async function writePage(file, html) {
   await fs.writeFile(target, withBase(html, base));
 }
 
-for (const route of pageRoutes) {
+for (const route of new Set(pageRoutes)) {
   const html = await storefront.render(new URL(route, 'http://localhost'), emptyCart);
   if (!html) throw new Error(`No page rendered for ${route}`);
   await writePage(route === '/' ? 'index.html' : route.slice(1) + '/index.html', html);
@@ -68,7 +72,7 @@ await fs.writeFile(path.join(out, 'api/memberships.json'), JSON.stringify(Object
 for (const p of products) for (const src of [...p.images.map(i => i.src), ...p.variants.map(v => v.featured_image?.src)]) if (src) assets.add(imagePath(src));
 
 // Scripts and styles. Browser modules are published as .js so every host serves a JavaScript MIME type.
-for (const name of ['storefront.mjs', 'taxonomy.mjs', 'base-path.mjs', 'pages-runtime.mjs']) {
+for (const name of ['storefront.mjs', 'taxonomy.mjs', 'base-path.mjs', 'pages-runtime.mjs', 'editorial.mjs', 'commerce.mjs']) {
   const source = await fs.readFile(path.join('lib', name), 'utf8');
   await fs.mkdir(path.join(out, 'lib'), { recursive: true });
   await fs.writeFile(path.join(out, 'lib', name.replace(/\.mjs$/, '.js')), source.replace(/(from '\.\/[\w-]+)\.mjs'/g, "$1.js'"));
@@ -86,4 +90,7 @@ for (const asset of assets) {
   catch { missing.push(asset); }
 }
 if (missing.length) console.warn(`Missing ${missing.length} assets:\n  ${missing.join('\n  ')}`);
-console.log(`Built ${pageRoutes.length + 1} pages and ${assets.size - missing.length} assets into dist/ (base path "${base || '/'}")`);
+const sitemapRoutes=[...new Set(pageRoutes)].filter(r=>!/^\/(search|cart|checkout|account|pages\/saved-pieces)$/.test(r));
+await fs.writeFile(path.join(out,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+sitemapRoutes.map(r=>'<url><loc>'+siteURL+(r==='/'?'/':r+'/')+'</loc></url>').join('')+'</urlset>');
+await fs.writeFile(path.join(out,'robots.txt'),'User-agent: *\nAllow: /\nSitemap: '+siteURL+'/sitemap.xml\n');
+console.log(`Built ${new Set(pageRoutes).size + 1} pages and ${assets.size - missing.length} assets into dist/ (base path "${base || '/'}")`);

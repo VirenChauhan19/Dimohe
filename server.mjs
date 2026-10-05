@@ -44,6 +44,7 @@ for (const r of routes.filter(r => /^\/collections\/[^/?]+(?:\?page=\d+)?$/.test
   });
 }
 const storefront = createStorefront(merchandise(products), memberships, snapshot, { load });
+for(const p of storefront.products) for(const variant of p.variants) variants.set(String(variant.id),{product:p,variant});
 function card(p) {
   return cards.get(p.handle) ?? `<product-card-item class="product-card-item"><a href="/products/${escape(p.handle)}"><img src="${escape(localImage(p.images[0]?.src ?? ''))}" alt="${escape(p.title)}"><h6>${escape(p.title)}</h6></a><span>${money(Math.round(Number(p.variants[0].price) * 100))}</span></product-card-item>`;
 }

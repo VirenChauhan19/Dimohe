@@ -27,3 +27,47 @@ Screenshots are saved under the ignored `reference/redesign/` directory.
 ## Preview limits
 
 Live inventory, customer accounts, payments, and checkout require Shopify connections. The preview cart resets on server restart. Contact uses the published email address. The earlier source comparison applies to retained snapshots, not to the new visual design. These checks cover the listed flows; they do not establish that every possible interaction is bug-free.
+
+## Craft and copy iteration — October 5, 2026
+
+Updated brand messaging, department copy, product introductions, selected display names, craft stories, and category-first navigation with a parallel craft path. Colors are retained. Source catalog records, variant IDs, prices, and option values are unchanged.
+
+The regression suite passed its existing checks plus all three craft collections, distinct Chikankari/Zardozi assignments, the new craft story page, and consistent display names in cart responses. The GitHub Pages build produced 165 pages and 594 assets. Browser review covered the revised homepage, mobile menu, Chikankari collection count, craft story page, and mobile overflow/image loading. Publishing has not been performed for this iteration.
+
+## Minimal copy iteration, October 5, 2026
+
+Shortened the homepage to four sections, removed repeated slogans and labels, and simplified department, craft, product, search, and contact copy. Kept the palette and original photography. Long dashes are removed from display names and retained prose without changing source catalog data or variant values.
+
+The regression suite passed. A rendered-text audit of all captured ordinary page routes found no em dashes, en dashes, or double hyphens. The Pages build produced 165 pages and 594 assets. Desktop and 390px mobile review confirmed no horizontal overflow; the mobile craft menu led to the 10-product Chikankari collection. This revision is available in the local preview and has not been published.
+
+## Competitor reference iteration, October 5, 2026
+
+Retained the four-section homepage and palette. Replaced the mixed product selection with four complementary cushion covers, added shorter card names with explicit type/colour subtitles, grouped home navigation by sofa/table/bath, and used close-up gallery photography in the craft section. Added ten individual product notes, five selected cushion pairing lists, specific product-type introductions, and shorter About/founder copy.
+
+The existing regression suite passed. The static build produced 165 pages and 594 assets. A rendered-text audit found no long dashes. Browser review verified desktop room navigation, loaded craft images, the selected cushion pairings, and mobile navigation to Tablecloths. At 390px, product and collection pages had no horizontal overflow. Added Gulnaar to the local bag, verified its full title and $118 total, then removed the test item. This revision has not been published.
+
+## Supplied commerce brief, October 5, 2026
+
+Applied the six-section homepage, eight-piece edit, four chapter pages, six curated collections, product Craft Passports, context filters, browser-local wishlist, and mobile purchase bar. Preserved the palette, original photography, source prices, IDs, option values, and source records.
+
+Regression checks passed for all 88 products, existing cart and variant behavior, chapter membership, curated collections, schema prices, passports, wellness claim removal, bag description correction, selected-filter chips, and the wishlist route. Static Pages build produced 176 pages and 594 assets. Rendered-text audit returned no long dashes. Browser review verified wishlist persistence, 390px product layout without overflow, and sticky Add to Bag at the correct $549 price. Fixed a fast-scroll case that could skip the purchase bar. Removed the test bag item afterward. Desktop viewport was restored and the homepage left open.
+
+This revision is local only. Shipping/returns reconciliation, verified labels and maker details, founder imagery, and live service connections remain listed in IMPLEMENTATION.md.
+
+## Our Picks navigation refinement
+
+Renamed the selected collection to Our Picks, removed it from the main and mobile navigation, moved shopping category tiles before the homepage picks, and added working category buttons to show one department at a time. Our Stories groups crafts and collection chapters in separate columns. Founder Story is a separate navigation link. Existing collection URLs remain compatible.
+
+Regression checks and the 176-page build passed. Browser review confirmed the Bags button displays only three bag picks, desktop story groups are clearly separated, and the 390px mobile menu has no horizontal overflow. This revision remains local.
+
+## Subtle scroll motion
+
+Added eased scroll-linked image scale (up to 4% on desktop and 3% on mobile), small vertical image movement inside existing frames, and one-time 12px section/product reveals. Only nearby images are updated; animation frames stop after settling and while the document is hidden. Reduced-motion preferences disable the new movement and reveal effects. Content stays readable without animation, and focus restores full opacity immediately.
+
+Browser review confirmed photo scale changes in both scroll directions, mobile image movement, category switching with fully visible products, and no overflow at 390px. JavaScript syntax, diff checks, and the 176-page static build passed. The reduced-motion branch is implemented but was not tested by changing the user's system preference. Local preview only.
+
+## Product motion refinement
+
+Product cards now rise with a short stagger, gently scale towards full size as they pass through the viewing area, and have a small photo lift on pointer hover. Changing the homepage picks animates the newly selected products. Added restrained scroll depth to the main product photograph. Reduced-motion preferences disable these additions; keyboard focus restores steady card scale.
+
+Browser review verified changing card scale and vertical position during scrolling, fully visible category selections, quick-view interaction, and 390px mobile layout without overflow. No browser errors were captured. JavaScript syntax and diff checks passed. Viewport restored after review. Local only.

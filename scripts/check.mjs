@@ -3,6 +3,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import { load } from 'cheerio';
 import { merchandise, groups, types } from '../lib/merchandising.mjs';
+import { crafts } from '../lib/editorial.mjs';
 const base = process.env.CHECK_URL || 'http://localhost:3000';
 const routes = JSON.parse(await fs.readFile('data/routes.json', 'utf8'));
 const products = JSON.parse(await fs.readFile('data/products.json', 'utf8')).products;
@@ -130,3 +131,30 @@ for(const field of ['material','color','size']){
   assert.equal(doc('select[name="'+field+'"]').val(),value);
 }
 console.log('Passed: all 88 products categorized once, all 23 subcategories, and material/color/size filters.',groupCounts);
+for(const craft of crafts){
+  const response=await fetch(base+'/collections/'+craft.handle);
+  assert.equal(response.status,200);
+  const doc=load(await response.text());
+  const actual=doc('#product-card-grid [data-product-handle]').map((i,el)=>doc(el).attr('data-product-handle')).get().sort();
+  const expected=enriched.filter(p=>p.merch.crafts.includes(craft.id)).map(p=>p.handle).sort();
+  assert.ok(expected.length>0);
+  assert.deepEqual(actual,expected,craft.name);
+}
+assert.ok(!enriched.find(p=>p.handle==='the-desert-pearl-pochette').merch.crafts.includes('chikankari'),'Zardozi alone must not imply Chikankari');
+assert.ok(enriched.find(p=>p.handle==='the-moonlight-pearl-pochette').merch.crafts.includes('chikankari'));
+const renamed=enriched.find(p=>p.handle==='boy-dhola-maru-embroidery-bundy-set-beige');
+assert.notEqual(renamed.title,renamed.merch.originalTitle);
+const line=(await api('/cart/add.js',{id:renamed.variants.find(v=>v.available).id,quantity:1})).value.items[0];
+assert.equal(line.title,renamed.title,'Editorial names must be consistent in the cart');
+await api('/cart/clear.js',{});
+const craftPage=await fetch(base+'/pages/our-craft');assert.equal(craftPage.status,200);assert.match(await craftPage.text(),/Our craft traditions/);
+console.log('Passed: all three craft collections, evidence-based craft assignments, consistent editorial cart names, and craft story page.');
+const {chapters,curatedCollections,editHandles}=await import('../lib/commerce.mjs');
+for(const chapter of chapters){const response=await fetch(base+'/pages/chapter-'+chapter.slug);assert.equal(response.status,200);const doc=load(await response.text());assert.ok(doc('h1').text().includes(chapter.title));assert.equal(doc('[data-product-handle]').length,Math.min(8,enriched.filter(chapter.match).length));}
+for(const collection of curatedCollections){const doc=load(await(await fetch(base+'/collections/'+collection.handle)).text());assert.deepEqual(doc('#product-card-grid [data-product-handle]').map((i,e)=>doc(e).attr('data-product-handle')).get().sort(),enriched.filter(collection.match).map(p=>p.handle).sort());}
+const home=load(await(await fetch(base+'/')).text());assert.equal(home('[data-product-handle]').length,8);assert.deepEqual(home('[data-product-handle]').map((i,e)=>home(e).attr('data-product-handle')).get().sort(),[...editHandles].sort());
+for(const p of enriched){const doc=load(await(await fetch(base+'/products/'+p.handle)).text());const graph=JSON.parse(doc('script[type="application/ld+json"]').text())['@graph'];const schema=graph.find(x=>x['@type']==='Product');assert.equal(schema.name,p.title);assert.deepEqual(schema.offers.map(v=>v.price),p.variants.map(v=>Number(v.price)));assert.equal(doc('.craft-passport').length,1);if(p.merch.group==='wellness'){assert.doesNotMatch(doc('#MainContent').text(),/hair growth|hair loss|anti.dandruff|treats|cures/i);}if(p.merch.group==='bags'){assert.doesNotMatch(doc('.prose').text(),/wooden block|hand.chiseled/i);}}
+const altair=enriched.find(p=>p.handle==='the-altair-bijou-clutch');assert.ok(!altair.merch.passport.some(([key])=>key==='Place of making'),'Tradition is not workshop evidence');
+const chips=load(await(await fetch(base+'/collections/hand-block-printing?craft=block-printing&filter.v.price.gte=20')).text());assert.ok(chips('.selected-filters a').length>=2);
+assert.equal((await fetch(base+'/pages/saved-pieces')).status,200);
+console.log('Passed: four chapters, six curated collections, eight-piece edit, all product schemas and passports, wellness claims, craft boilerplate cleanup, selected filters, and wishlist page.');
