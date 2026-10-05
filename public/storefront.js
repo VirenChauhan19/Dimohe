@@ -89,9 +89,20 @@
   }
   const brandVideo=document.querySelector('[data-brand-film]');
   if(brandVideo){
-    brandVideo.addEventListener('error',()=>{document.querySelector('[data-film-status]').hidden=false;});
-    brandVideo.querySelector('source')?.addEventListener('error',()=>{document.querySelector('[data-film-status]').hidden=false;});
-    if('IntersectionObserver' in window)new IntersectionObserver(entries=>{if(!entries[0].isIntersecting&&!brandVideo.paused)brandVideo.pause();},{threshold:.05}).observe(brandVideo);
-    document.addEventListener('visibilitychange',()=>{if(document.hidden)brandVideo.pause();});
+    const toggle=document.querySelector('[data-film-toggle]');let filmVisible=false,userPaused=false,systemPause=false;
+    const syncFilm=()=>{toggle.hidden=false;toggle.textContent=brandVideo.ended?'Replay film':brandVideo.paused?'Play film':'Pause film';};
+    const pauseFilm=()=>{if(!brandVideo.paused){systemPause=true;brandVideo.pause();}};
+    const updateFilm=()=>{if(document.hidden||!filmVisible){pauseFilm();return;}if(!motionPreference.matches&&!userPaused&&!brandVideo.ended)brandVideo.play().then(syncFilm).catch(syncFilm);};
+    brandVideo.muted=true;
+    brandVideo.addEventListener('play',()=>{userPaused=false;syncFilm();});
+    brandVideo.addEventListener('pause',()=>{if(systemPause)systemPause=false;else if(!brandVideo.ended)userPaused=true;syncFilm();});
+    brandVideo.addEventListener('ended',syncFilm);
+    toggle.addEventListener('click',()=>{if(brandVideo.paused){userPaused=false;brandVideo.play().then(syncFilm).catch(syncFilm);}else{userPaused=true;brandVideo.pause();}});
+    brandVideo.addEventListener('error',()=>{document.querySelector('[data-film-status]').hidden=false;syncFilm();});
+    brandVideo.querySelector('source')?.addEventListener('error',()=>{document.querySelector('[data-film-status]').hidden=false;syncFilm();});
+    if('IntersectionObserver' in window)new IntersectionObserver(entries=>{filmVisible=entries[0].isIntersecting&&entries[0].intersectionRatio>=.2;updateFilm();},{threshold:[0,.2]}).observe(brandVideo);else syncFilm();
+    document.addEventListener('visibilitychange',updateFilm);
+    motionPreference.addEventListener('change',()=>{if(motionPreference.matches)pauseFilm();else updateFilm();});
+
   }
 })();

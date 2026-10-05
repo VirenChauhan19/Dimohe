@@ -81,3 +81,7 @@ Simplified hero, chapter, and founder headlines; removed repetitive editorial la
 Live-source comparison found the same homepage sections/media and the same 88 product records, without new products or changed descriptions, images, variant prices, or availability. Existing original-site shopping groups and journal content remain represented in the redesign.
 
 Regression checks passed, including original video source, native controls, no autoplay, placement, video HEAD metadata, first-byte and suffix range requests, invalid-range responses, and no cart cookie on video requests. Browser review confirmed local playback, automatic pause after scrolling away, 390px layout with no overflow, and complete 320px-by-570px portrait framing. Rendered-text audit found no long dashes. Static build produced 176 pages and 595 assets, including the MP4. This revision has not been published.
+
+## Muted viewport autoplay
+
+The film now starts muted as it comes into view, with a visible Pause film control. Browser checks confirmed manual pause persists across scrolling away and back, while playback paused automatically offscreen resumes on return. The 390px mobile layout has no horizontal overflow and the caption controls fit within the 320px film width. Reduced-motion preferences disable automatic playback. Regression checks passed, including video streaming and storefront commerce. Static build produced 176 pages and 595 assets. This revision remains local.

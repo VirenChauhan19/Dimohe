@@ -164,11 +164,11 @@ assert.equal(home('video[data-brand-film]').length,1);
 assert.equal(home('video source').attr('src'),brandFilm.src);
 assert.equal(home('video').attr('preload'),'metadata');
 assert.ok(home('video').is('[controls][playsinline]'));
-assert.ok(!home('video').is('[autoplay]'));
+assert.ok(home('video').is('[muted][data-autoplay]'));assert.equal(home('[data-film-toggle]').length,1);
 assert.ok(home('.film-section').index()>home('.edit-section').index());
 assert.ok(home('.film-section').index()<home('.chapter-panel').first().index());
 assert.ok(home('.desktop-nav a[href="/blogs/news"]').length);
-console.log('Passed: original film source, accessible inline controls, click-to-play behavior, editorial placement, and journal navigation.');
+console.log('Passed: original film source, accessible inline controls, muted viewport autoplay configuration, editorial placement, and journal navigation.');
 
 const filmSize=(await fs.stat('public'+brandFilm.src)).size;
 const filmHead=await fetch(base+brandFilm.src,{method:'HEAD'});assert.equal(filmHead.status,200);assert.equal(Number(filmHead.headers.get('content-length')),filmSize);assert.equal(filmHead.headers.get('content-type'),'video/mp4');assert.equal(filmHead.headers.get('set-cookie'),null);
