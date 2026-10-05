@@ -46,7 +46,7 @@
   // Scroll motion stays inside image frames so layouts and click targets remain steady.
   const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
   const photoFrames=[...document.querySelectorAll('.hero-photo,.chapter-photo,.category-photo,.product-image,.main-photo,.craft-tile>a:first-child')];
-  const revealItems=[...document.querySelectorAll('.section-title,.product-card,.category-tile,.chapter-copy,.founder-note,.craft-tile')];
+  const revealItems=[...document.querySelectorAll('.section-title,.product-card,.category-tile,.chapter-copy,.film-copy,.founder-note,.craft-tile')];
   const movingFrames=new Map();let motionFrame=0,motionMeasure=true,motionTime=0,photoObserver,revealObserver;
   function scheduleMotion(){if(motionPreference.matches||document.hidden||motionFrame)return;motionFrame=requestAnimationFrame(animatePhotos);}
   function animatePhotos(time){
@@ -86,5 +86,12 @@
     if(motionPreference.matches)return;
     cards.forEach((card,index)=>{card.getAnimations().forEach(animation=>animation.cancel());card.animate([{opacity:.72,transform:'translateY(18px)'},{opacity:1,transform:'translateY(0)'}],{duration:620,delay:index*65,easing:'cubic-bezier(.2,.65,.25,1)'});});
     motionMeasure=true;scheduleMotion();
+  }
+  const brandVideo=document.querySelector('[data-brand-film]');
+  if(brandVideo){
+    brandVideo.addEventListener('error',()=>{document.querySelector('[data-film-status]').hidden=false;});
+    brandVideo.querySelector('source')?.addEventListener('error',()=>{document.querySelector('[data-film-status]').hidden=false;});
+    if('IntersectionObserver' in window)new IntersectionObserver(entries=>{if(!entries[0].isIntersecting&&!brandVideo.paused)brandVideo.pause();},{threshold:.05}).observe(brandVideo);
+    document.addEventListener('visibilitychange',()=>{if(document.hidden)brandVideo.pause();});
   }
 })();

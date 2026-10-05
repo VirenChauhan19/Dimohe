@@ -158,3 +158,20 @@ const altair=enriched.find(p=>p.handle==='the-altair-bijou-clutch');assert.ok(!a
 const chips=load(await(await fetch(base+'/collections/hand-block-printing?craft=block-printing&filter.v.price.gte=20')).text());assert.ok(chips('.selected-filters a').length>=2);
 assert.equal((await fetch(base+'/pages/saved-pieces')).status,200);
 console.log('Passed: four chapters, six curated collections, eight-piece edit, all product schemas and passports, wellness claims, craft boilerplate cleanup, selected filters, and wishlist page.');
+
+const {brandFilm}=await import('../lib/commerce.mjs');
+assert.equal(home('video[data-brand-film]').length,1);
+assert.equal(home('video source').attr('src'),brandFilm.src);
+assert.equal(home('video').attr('preload'),'metadata');
+assert.ok(home('video').is('[controls][playsinline]'));
+assert.ok(!home('video').is('[autoplay]'));
+assert.ok(home('.film-section').index()>home('.edit-section').index());
+assert.ok(home('.film-section').index()<home('.chapter-panel').first().index());
+assert.ok(home('.desktop-nav a[href="/blogs/news"]').length);
+console.log('Passed: original film source, accessible inline controls, click-to-play behavior, editorial placement, and journal navigation.');
+
+const filmSize=(await fs.stat('public'+brandFilm.src)).size;
+const filmHead=await fetch(base+brandFilm.src,{method:'HEAD'});assert.equal(filmHead.status,200);assert.equal(Number(filmHead.headers.get('content-length')),filmSize);assert.equal(filmHead.headers.get('content-type'),'video/mp4');assert.equal(filmHead.headers.get('set-cookie'),null);
+for(const [range,length] of [['bytes=0-511',512],['bytes=-32',32]]){const response=await fetch(base+brandFilm.src,{headers:{Range:range}});assert.equal(response.status,206);assert.equal((await response.arrayBuffer()).byteLength,length);assert.ok(response.headers.get('content-range').endsWith('/'+filmSize));}
+assert.equal((await fetch(base+brandFilm.src,{headers:{Range:'bytes='+filmSize+'-'}})).status,416);
+console.log('Passed: film metadata, byte-range seeking, suffix requests, invalid ranges, and no cart cookie for video requests.');

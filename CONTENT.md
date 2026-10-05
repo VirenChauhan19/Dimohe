@@ -2,7 +2,7 @@
 
 The collection connects Indian craft with everyday use. Keep the existing ivory, olive, and terracotta palette, original photography, and serif typography. Write simply and let the products carry the mood.
 
-The latest supplied brief replaces the previous four-section homepage with an eight-piece edit, Lucknow chapter, department tiles, Jaipur chapter, and founder introduction. The hero uses the brief’s “Living craft, for modern life.” line. The palette and original photography remain. Product departments are primary; Stories contains four editorial chapters and craft discovery.
+The homepage starts with “Printed linens. Embroidered bags.” Shopping category tiles and category-specific Our Picks follow. The original 96-second Dimohe film bridges shopping and the Lucknow/Jaipur craft stories, preserving its portrait framing. The founder introduction remains separate. The palette, original photography, and restrained product motion are retained. Our Stories includes the journal alongside crafts and collection stories.
 
 The edit is an initial merchandising selection, not a claim about sales, margin, or current live stock. Collector bags are grouped by the captured prices at $500 and above. Saved pieces use browser storage, without accounts or email collection.
 
@@ -36,3 +36,7 @@ The founder biography remains in place. The founder will provide her portrait; n
 ## Navigation refinement
 
 Home, Bags, Wellness, and Kids are the four shopping departments. Our Stories groups craft traditions and collection chapters. Founder Story is a separate link. Our Picks replaces The Dimohe Edit and appears on the homepage and in the footer, with category buttons so products are not mixed in one row. Shopping category tiles now precede Our Picks. The existing collection URL is retained for compatibility.
+
+## Original-site refresh
+
+Compared the current live homepage section headings, normalized media paths, navigation links, and public 88-product catalogue against the captured source. No new products or changed product specifications, prices, availability, or images were found. The live film matches the original asset already stored in the project. The redesigned homepage now includes it, using the local MP4 file. The player has native controls, no autoplay, inline playback, and pauses offscreen. Source: https://dimohe.com/

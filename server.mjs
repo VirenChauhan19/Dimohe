@@ -1,5 +1,6 @@
 import http from 'node:http';
 import fs from 'node:fs/promises';
+import { createReadStream } from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { load } from 'cheerio';
@@ -131,6 +132,22 @@ const server = http.createServer(async (req, res) => {
     if (/^\/(cdn|external)\//.test(pathname) || /^\/(replica.*|storefront)\.(js|css)$/.test(pathname)) {
       const file = path.resolve(root, '.' + pathname);
       if (!file.startsWith(root + path.sep)) return html('Not found', 404);
+      if(path.extname(file)==='.mp4'){
+        let size;try{size=(await fs.stat(file)).size;}catch{return html('Not found',404);}
+        const headers={'Content-Type':'video/mp4','Accept-Ranges':'bytes','Cache-Control':'public, max-age=3600'};
+        let start=0,end=size-1,status=200;
+        if(req.headers.range&&req.method!=='HEAD'){
+          const match=/^bytes=(\d*)-(\d*)$/.exec(req.headers.range);
+          const first=match?.[1]?Number(match[1]):null,last=match?.[2]?Number(match[2]):null;
+          const invalid=!match||(first===null&&last===null)||(first!==null&&!Number.isSafeInteger(first))||(last!==null&&!Number.isSafeInteger(last))||(first===null&&last===0);
+          if(!invalid){start=first===null?Math.max(0,size-last):first;end=first===null?size-1:Math.min(last??size-1,size-1);}
+          if(invalid||start>=size||start>end){res.writeHead(416,{...headers,'Content-Range':`bytes */${size}`});return res.end();}
+          status=206;headers['Content-Range']=`bytes ${start}-${end}/${size}`;
+        }
+        res.writeHead(status,{...headers,'Content-Length':end-start+1});
+        if(req.method==='HEAD')return res.end();
+        const stream=createReadStream(file,{start,end});stream.on('error',()=>res.destroy());res.on('close',()=>stream.destroy());stream.pipe(res);return;
+      }
       try { const bytes = await fs.readFile(file); res.writeHead(200, { 'Content-Type': mime[path.extname(file)] || 'application/octet-stream', 'Cache-Control': 'no-store' }); return res.end(bytes); } catch { return html('Not found', 404); }
     }
     const cart = session(req, res);

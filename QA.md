@@ -71,3 +71,13 @@ Browser review confirmed photo scale changes in both scroll directions, mobile i
 Product cards now rise with a short stagger, gently scale towards full size as they pass through the viewing area, and have a small photo lift on pointer hover. Changing the homepage picks animates the newly selected products. Added restrained scroll depth to the main product photograph. Reduced-motion preferences disable these additions; keyboard focus restores steady card scale.
 
 Browser review verified changing card scale and vertical position during scrolling, fully visible category selections, quick-view interaction, and 390px mobile layout without overflow. No browser errors were captured. JavaScript syntax and diff checks passed. Viewport restored after review. Local only.
+
+## Original brand film and homepage refinement
+
+Added the original 96-second, 606-by-1080 Dimohe film between Our Picks and the craft chapters. Preserved its complete portrait framing, provided native playback/fullscreen controls, and used the existing local MP4 asset. Playback is user-initiated and pauses when the video leaves the viewport. Added byte-range streaming to the local preview server for efficient loading and seeking.
+
+Simplified hero, chapter, and founder headlines; removed repetitive editorial labels; added the original journal to Our Stories; and made selected product grids fill their category layout. Preserved colours, original images, craft details, product data, and navigation hierarchy.
+
+Live-source comparison found the same homepage sections/media and the same 88 product records, without new products or changed descriptions, images, variant prices, or availability. Existing original-site shopping groups and journal content remain represented in the redesign.
+
+Regression checks passed, including original video source, native controls, no autoplay, placement, video HEAD metadata, first-byte and suffix range requests, invalid-range responses, and no cart cookie on video requests. Browser review confirmed local playback, automatic pause after scrolling away, 390px layout with no overflow, and complete 320px-by-570px portrait framing. Rendered-text audit found no long dashes. Static build produced 176 pages and 595 assets, including the MP4. This revision has not been published.

@@ -2,7 +2,7 @@
 
 ## Applied in the local preview
 
-- Six-section homepage with eight products, two craft chapters, four departments, and founder introduction.
+- Homepage with four departments, category-specific Our Picks, the original Dimohe brand film, two craft chapters, and a separate founder introduction.
 - Four chapter pages: Lucknow, Jaipur, The Ritual Edit, Little Celebrations.
 - Six curated collections, including Collector bags, Gifts under $100, and For the host.
 - Reusable Craft Passport on all 88 products. Unknown makers, production time, and workshop location are omitted. A tradition’s association with a place does not establish product provenance.
