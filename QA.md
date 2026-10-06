@@ -85,3 +85,7 @@ Regression checks passed, including original video source, native controls, no a
 ## Muted viewport autoplay
 
 The film now starts muted as it comes into view, with a visible Pause film control. Browser checks confirmed manual pause persists across scrolling away and back, while playback paused automatically offscreen resumes on return. The 390px mobile layout has no horizontal overflow and the caption controls fit within the 320px film width. Reduced-motion preferences disable automatic playback. Regression checks passed, including video streaming and storefront commerce. Static build produced 176 pages and 595 assets. This revision remains local.
+
+## Craft clarity and wellness detail restoration
+
+Verified all ten wellness pages against their captured source: every usage step, ingredient highlight, benefit, FAQ question and answer, and original information accordion is retained. All restored media files exist locally. Browser review confirmed ingredient and FAQ accordions work, and the homepage and wellness pages fit the 390px viewport without horizontal overflow. Craft labels appear on product cards and product pages. Complete storefront checks passed. Static Pages build produced 176 pages and 624 assets. These changes remain local.
