@@ -101,6 +101,17 @@
     cards.forEach((card,index)=>{card.getAnimations().forEach(animation=>animation.cancel());card.animate([{opacity:.72,transform:'translateY(18px)'},{opacity:1,transform:'translateY(0)'}],{duration:620,delay:index*65,easing:'cubic-bezier(.2,.65,.25,1)'});});
     motionMeasure=true;scheduleMotion();
   }
+  const embroideryPanels=[...document.querySelectorAll('.embroidery-panel')];
+  function highlightEmbroidery(panel){embroideryPanels.forEach(item=>item.classList.toggle('is-active',item===panel));}
+  let embroideryPointer;
+  embroideryPanels.forEach(panel=>{
+    panel.addEventListener('pointerenter',event=>{
+      if(!hoverNavigation.matches||document.activeElement?.closest('.embroidery-panel')&&document.activeElement.matches(':focus-visible'))return;
+      if(embroideryPointer&&Math.abs(event.clientX-embroideryPointer.x)+Math.abs(event.clientY-embroideryPointer.y)<2)return;
+      embroideryPointer={x:event.clientX,y:event.clientY};highlightEmbroidery(panel);
+    });
+    panel.addEventListener('focusin',()=>highlightEmbroidery(panel));
+  });
   const brandVideo=document.querySelector('[data-brand-film]');
   if(brandVideo){
     const toggle=document.querySelector('[data-film-toggle]');let filmVisible=false,userPaused=false,systemPause=false;

@@ -46,3 +46,9 @@ Compared the current live homepage section headings, normalized media paths, nav
 Craft wording now names block printing and hand embroidery explicitly in the hero, craft chapters, craft collection names, product cards, and product pages. Chikankari and Zardozi explanations introduce the techniques for shoppers unfamiliar with Indian craft. Product identifiers and source descriptions are preserved.
 
 Wellness pages retain the original description and source-page information: Who needs it, Ingredients, What is it, Why is it Unique, Disclaimer, numbered How to use steps, demonstration videos, ingredient highlights, Benefits, and FAQs. These are extracted from the captured product pages, not generated. Wellness no longer displays the generic Craft Passport. Shipping continues to link to the existing policy.
+
+## Original homepage image showcases
+
+Added the original five bag cutouts directly after the Chikankari chapter. The gallery is titled Explore hand-embroidered bags because the pictured selection includes both Chikankari and Zardozi; a separate link goes to the Chikankari collection, while each shape links to its matching bag category. Panels expand on hover or keyboard focus. Mobile shows all five images in a two-column layout without cropping.
+
+Explore Dimohe was removed at the user’s request. The block-printing chapter leads directly into the founder introduction again; the bag showcase remains.

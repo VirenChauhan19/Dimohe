@@ -210,3 +210,10 @@ for(const handle of ['hair-care','bath-body']){
  assert.equal(doc('.filter-fields select[name="material"]').length,0);
 }
 console.log('Passed: persistent department categories, filtered empty states, active category links, all wellness product navigation, and complete wellness menus.');
+
+// Image-led navigation must lead to the intended craft and departments.
+const {embroideryShowcase}=await import('../lib/commerce.mjs');
+assert.equal(home('.explore-dimohe').length,0);assert.equal(home('.embroidery-panel').length,5);
+for(const item of embroideryShowcase){const doc=load(await(await fetch(base+'/collections/'+item.handle)).text());const handles=doc('#product-card-grid [data-product-handle]').map((i,e)=>doc(e).attr('data-product-handle')).get();assert.ok(handles.length>0);assert.ok(handles.every(h=>enriched.find(p=>p.handle===h).merch.crafts.some(c=>['chikankari','zardozi'].includes(c))));}
+const homeMarkup=home.html();assert.ok(homeMarkup.indexOf('embroidery-showcase-heading')>homeMarkup.indexOf('Chikankari hand embroidery.'));
+console.log('Passed: Explore Dimohe removed, five bag shapes, hand-embroidered bag destinations, and homepage section placement.');
