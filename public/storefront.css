@@ -52,3 +52,45 @@
 /* Craft is visible before opening a product; wellness keeps its original information structure. */
 .product-craft{font-size:11px;letter-spacing:.035em;color:var(--ink);margin:12px 0 7px}.product-info>.product-craft{font-size:12px;margin:15px 0}.product-craft a{border-bottom:1px solid var(--line);padding-bottom:4px}.wellness-guide h2{font:400 36px/1.25 var(--serif);margin:0 0 28px}.wellness-guide>section{padding:45px 0;border-top:1px solid var(--line)}.wellness-use{display:grid;grid-template-columns:1fr 340px;gap:70px;align-items:start}.wellness-use .eyebrow{margin-bottom:15px}.wellness-use video{width:100%;max-height:540px;object-fit:contain;background:#171b15}.wellness-steps{list-style:none;padding:0;margin:0}.wellness-steps li{display:flex;gap:22px;border-top:1px solid var(--line);padding:22px 0;font-size:14px;line-height:1.8}.wellness-steps p{margin:0}.wellness-step-number{font:400 26px var(--serif);color:var(--muted);min-width:25px}.wellness-ingredient-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}.wellness-ingredient-grid img{width:100px;height:100px;object-fit:cover;border-radius:50%;margin-bottom:20px}.wellness-ingredient-grid h3{font:400 23px/1.35 var(--serif);margin-bottom:14px}.wellness-ingredient-grid .prose{font-size:13px;line-height:1.8}.wellness-benefits ul{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 35px;padding-left:18px;font-size:14px;line-height:1.8}.wellness-faq{max-width:800px}.wellness-detail .prose{overflow-wrap:anywhere}.wellness-guide video:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
 @media(max-width:767px){.wellness-use{grid-template-columns:1fr;gap:25px}.wellness-use video{max-height:460px;width:100%;max-width:320px;justify-self:center}.wellness-guide h2{font-size:29px}.wellness-guide>section{padding:30px 0}.wellness-ingredient-grid{grid-template-columns:repeat(2,1fr);gap:30px 20px}.wellness-ingredient-grid h3{font-size:20px}.wellness-benefits ul{grid-template-columns:1fr;gap:12px}.product-craft{font-size:10px}.wellness-steps li{gap:16px}}
+
+/* Keep shopping paths visible as customers move between related collections. */
+.nav-group summary{min-height:104px;display:flex;align-items:center;padding:0;gap:5px}
+.nav-group[open]>summary{color:var(--rose)}
+.category-chips a{min-height:44px;display:flex;align-items:center;transition:background .18s,color .18s,border-color .18s}
+.category-chips a.active{border-color:var(--ink)}
+.product-section>.category-chips{margin:-8px 0 30px}
+.wellness-discovery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;max-width:850px}
+.wellness-discovery>a{display:grid;grid-template-columns:1fr auto;gap:8px 20px;border-top:1px solid var(--line);padding:20px 0 0}
+.wellness-discovery .eyebrow{color:var(--rose)}
+.wellness-discovery>a>span:nth-child(2){grid-column:1;font-size:12px;color:var(--muted)}
+.wellness-discovery>a>span:last-child{grid-column:2;grid-row:1/3;align-self:center;font-size:22px}
+.wellness-discovery>a:hover .eyebrow{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:767px){.category-chips{gap:8px}.category-chips a{padding:10px 12px;font-size:11px}.wellness-discovery{grid-template-columns:1fr;gap:8px}.product-section>.category-chips{margin:0 0 26px}.mobile-nav .nav-room{padding-bottom:12px}.mobile-nav .nav-room h3{font-family:inherit;font-size:13px}}
+@media(prefers-reduced-motion:reduce){.category-chips a{transition:none}}
+
+.collection-intro.section{padding-top:36px;padding-bottom:32px}
+.catalog-section.section{padding-top:0}
+@media(max-width:767px){.collection-intro.section{padding-top:25px;padding-bottom:25px}}
+
+/* One shared rhythm for every desktop menu and header link. */
+.desktop-nav{gap:24px}
+.desktop-nav .nav-group>summary,.desktop-nav>.founder-nav{min-height:104px;display:flex;align-items:center;padding:0;font:400 12px/1.5 var(--sans);letter-spacing:0;white-space:nowrap;border:0;margin:0;gap:6px}
+.desktop-nav .nav-group>summary span{margin:0;font-size:11px}
+.desktop-nav>.founder-nav:hover{color:var(--rose)}
+.desktop-nav .nav-panel{top:100%;display:block;padding:24px 5% 28px}
+.nav-panel-inner{width:100%;max-width:900px;margin:0 auto}
+.nav-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:18px}
+.nav-panel-heading .eyebrow{font:500 11px/1.5 var(--sans);letter-spacing:.8px;text-transform:uppercase;color:var(--rose)}
+.nav-panel-heading .nav-all{display:flex;align-items:center;gap:8px;font:400 12px/1.5 var(--sans);margin:0;padding:4px 0}
+.nav-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;align-items:start}
+.desktop-nav .nav-room,.desktop-nav .story-group{display:flex;flex-direction:column;gap:0;min-width:0}
+.desktop-nav .nav-room h3{font:500 12px/1.5 var(--sans);letter-spacing:0;text-transform:none;color:var(--ink);margin:0 0 8px}
+.desktop-nav .nav-room>a{display:block;font:400 12px/1.5 var(--sans);letter-spacing:0;text-transform:none;margin:0;padding:5px 0;color:var(--muted)}
+.desktop-nav .nav-room>a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+@media(min-width:768px) and (max-width:1100px){.desktop-nav{gap:16px}.desktop-nav .nav-group>summary,.desktop-nav>.founder-nav{font-size:11px}.nav-columns{gap:24px}}
+
+.desktop-nav .nav-room h3>a{font:inherit;color:inherit;margin:0;padding:0;letter-spacing:inherit;text-transform:inherit}
+
+/* Separate the founder story from the shopping and editorial categories. */
+.desktop-nav>.founder-nav{gap:16px}
+.desktop-nav>.founder-nav::before{content:'';display:block;width:1px;height:20px;background:var(--line);flex:none}

@@ -9,8 +9,22 @@
   for(const d of dialogs){d.addEventListener('click',event=>{if(event.target===d){const r=d.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)d.close();}});d.addEventListener('close',()=>focusBeforeDialog?.focus());}
   document.querySelectorAll('[data-close-dialog]').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));
   document.querySelector('[data-menu-toggle]')?.addEventListener('click',event=>{const nav=document.querySelector('.mobile-nav');nav.hidden=!nav.hidden;event.currentTarget.setAttribute('aria-expanded',String(!nav.hidden));event.currentTarget.setAttribute('aria-label',nav.hidden?'Open menu':'Close menu');});
-  document.querySelectorAll('.desktop-nav details').forEach(details=>details.addEventListener('toggle',()=>{if(details.open)document.querySelectorAll('.desktop-nav details').forEach(other=>{if(other!==details)other.open=false;});}));
-  document.addEventListener('click',event=>{if(!event.target.closest('.desktop-nav'))document.querySelectorAll('.desktop-nav details').forEach(d=>d.open=false);});
+  const navGroups=[...document.querySelectorAll('.desktop-nav .nav-group')];
+  const hoverNavigation=window.matchMedia('(hover: hover) and (pointer: fine)');
+  let navCloseTimer;
+  function closeNavigation(){clearTimeout(navCloseTimer);navGroups.forEach(group=>group.open=false);}
+  function openNavigation(group){clearTimeout(navCloseTimer);navGroups.forEach(other=>{other.open=other===group;});}
+  navGroups.forEach(group=>{
+    group.addEventListener('pointerenter',()=>{if(hoverNavigation.matches)openNavigation(group);});
+    group.addEventListener('pointerleave',()=>{if(hoverNavigation.matches){clearTimeout(navCloseTimer);navCloseTimer=setTimeout(()=>{if(!group.contains(document.activeElement))group.open=false;},180);}});
+    group.addEventListener('focusin',()=>clearTimeout(navCloseTimer));
+    group.addEventListener('focusout',event=>{if(!group.contains(event.relatedTarget))group.open=false;});
+    group.querySelector('summary').addEventListener('click',()=>{clearTimeout(navCloseTimer);navGroups.forEach(other=>{if(other!==group)other.open=false;});});
+  });
+  document.querySelector('.desktop-nav .founder-nav')?.addEventListener('pointerenter',closeNavigation);
+  document.addEventListener('click',event=>{if(!event.target.closest('.desktop-nav'))closeNavigation();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'){const openGroup=navGroups.find(group=>group.open);if(openGroup){closeNavigation();if(openGroup.contains(document.activeElement))openGroup.querySelector('summary').focus();}}});
+  hoverNavigation.addEventListener('change',closeNavigation);
   document.querySelector('[data-sort]')?.addEventListener('change',event=>event.target.form.requestSubmit());
   async function api(path,data){const response=await fetch(path,{method:data?'POST':'GET',headers:data?{'Content-Type':'application/json'}:{},body:data?JSON.stringify(data):undefined});const value=await response.json();if(!response.ok)throw new Error(value.description||value.error||'We couldn’t complete that request. Please try again.');return value;}
   function renderCart(cart){document.querySelectorAll('[data-bag-count]').forEach(el=>el.textContent=cart.item_count);const html=cart.items.length?`${cart.items.map(i=>`<article class="cart-item"><a href="${esc(i.url)}"><img src="${esc(i.image)}" alt="${esc(i.title)}" width="90" height="110"></a><div><a href="${esc(i.url)}"><h3>${esc(i.title)}</h3></a>${i.variant_title!=='Default Title'?`<p>${esc(i.variant_title)}</p>`:''}<p>${money(i.price/100)} <span>· ${money(i.line_price/100)} total</span></p><div class="cart-quantity"><button aria-label="Decrease ${esc(i.title)}" data-cart-id="${i.id}" data-cart-quantity="${i.quantity-1}">−</button><span>${i.quantity}</span><button aria-label="Increase ${esc(i.title)}" data-cart-id="${i.id}" data-cart-quantity="${i.quantity+1}"${i.quantity>=99?' disabled':''}>+</button><button class="remove" data-cart-id="${i.id}" data-cart-quantity="0">Remove</button></div></div></article>`).join('')}<div class="cart-footer"><div class="cart-subtotal"><span>Subtotal</span><span>${money(cart.total_price/100)}</span></div><p>Prices in USD.</p><a class="text-link" href="/pages/shipping-returns">Shipping & return policy →</a><a class="button" href="/checkout">Continue to checkout ↗</a><a class="text-link" href="/cart">View shopping bag →</a></div>`:`<div class="empty-state"><h2>Your bag is empty.</h2><a class="button" href="/collections/all">Explore the collection ↗</a></div>`;document.querySelectorAll('[data-cart-content]').forEach(el=>el.innerHTML=html);}

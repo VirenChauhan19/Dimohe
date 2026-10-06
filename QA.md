@@ -89,3 +89,17 @@ The film now starts muted as it comes into view, with a visible Pause film contr
 ## Craft clarity and wellness detail restoration
 
 Verified all ten wellness pages against their captured source: every usage step, ingredient highlight, benefit, FAQ question and answer, and original information accordion is retained. All restored media files exist locally. Browser review confirmed ingredient and FAQ accordions work, and the homepage and wellness pages fit the 390px viewport without horizontal overflow. Craft labels appear on product cards and product pages. Complete storefront checks passed. Static Pages build produced 176 pages and 624 assets. These changes remain local.
+
+## Persistent categories and hover navigation
+
+Department category navigation now persists on the main and individual type collections, with the current category highlighted. All Wellness collections, Hair care, Bath & body, and the ten wellness product pages retain the same six category links. Product breadcrumbs link back to their category. Wellness menus group all five product types under Hair care and Bath & body on desktop and mobile. Added concise collection introductions and two browsing paths on the Wellness landing page.
+
+Desktop dropdowns open on pointer entry, close after a short pointer-exit grace period, switch between departments, and support click, keyboard activation, Escape, and outside-click dismissal. Touch menus retain disclosure controls. Corrected collection spacing where later generic section styles overrode the collection intro and catalog padding.
+
+Regression checks passed for all 252 captured routes, 88 products, asset references, commerce, source wellness details, and new persistent navigation checks, including filtered empty states. Browser review confirmed Shampoo-to-Hair oils navigation, pointer entry opening Wellness and Bags menus, Escape dismissal, and mobile category and product layouts at 390px without horizontal overflow. Add-to-bag displayed the correct $25 product and subtotal; the test item was removed. No browser errors were captured. Static build completed with 176 pages and 624 assets at /Dimohe. Local changes only; not published.
+
+## Consistent navigation spacing
+
+All desktop dropdowns now use one shared panel renderer, a centered 900px content area, the same heading/action row, and a three-column grid with 32px gutters. Section headings and links use 12px sans-serif type; links have consistent 5px vertical padding. Bags are grouped into totes, clutches, and evening bags. Kids has an occasionwear section. Wellness and story groups share the same headings and link rhythm. Header labels, including Our founder, share the same font, baseline, height, and gaps; removed the founder-only divider and oversized Wellness headings.
+
+Browser measurements at 1280px confirmed identical panel insets, padding, column widths, and font sizes across all five dropdowns. At 820px every header item shared the same baseline and font size without horizontal overflow. Mobile Wellness disclosures and all category links worked at 390px without overflow. All 252-route commerce and navigation regressions passed, and the static build completed with 176 pages and 624 assets. Changes remain local.

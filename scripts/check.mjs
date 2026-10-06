@@ -182,3 +182,31 @@ const filmHead=await fetch(base+brandFilm.src,{method:'HEAD'});assert.equal(film
 for(const [range,length] of [['bytes=0-511',512],['bytes=-32',32]]){const response=await fetch(base+brandFilm.src,{headers:{Range:range}});assert.equal(response.status,206);assert.equal((await response.arrayBuffer()).byteLength,length);assert.ok(response.headers.get('content-range').endsWith('/'+filmSize));}
 assert.equal((await fetch(base+brandFilm.src,{headers:{Range:'bytes='+filmSize+'-'}})).status,416);
 console.log('Passed: film metadata, byte-range seeking, suffix requests, invalid ranges, and no cart cookie for video requests.');
+
+// Category switching must preserve the full department navigation, including empty filtered views.
+for(const department of groups){
+ const departmentTypes=types.filter(type=>type.group===department.id);
+ const handles=[department.handle,...departmentTypes.map(type=>type.handle),...(department.id==='wellness'?['hair-care','bath-body']:[])];
+ const expected=['/collections/'+department.handle,...departmentTypes.map(type=>'/collections/'+type.handle)];
+ for(const handle of handles){
+  const doc=load(await(await fetch(base+'/collections/'+handle+'?filter.v.price.lte=0')).text());
+  assert.deepEqual(doc('#MainContent .category-chips a').map((i,e)=>doc(e).attr('href')).get(),expected,handle+' keeps sibling categories');
+  const current=doc('#MainContent .category-chips [aria-current="page"]');
+  assert.equal(current.length,expected.includes('/collections/'+handle)?1:0);
+  if(current.length)assert.equal(current.attr('href'),'/collections/'+handle);
+ }
+}
+for(const product of enriched.filter(p=>p.merch.group==='wellness')){
+ const doc=load(await(await fetch(base+'/products/'+product.handle)).text());
+ assert.equal(doc('.product-section .category-chips a').length,6);
+ assert.equal(doc('.product-section .category-chips .active').attr('href'),'/collections/'+product.merch.type);
+ assert.equal(doc('.breadcrumbs a').last().attr('href'),'/collections/'+product.merch.type);
+}
+const wellnessMenu=home('.desktop-nav .nav-wellness');
+for(const type of types.filter(t=>t.group==='wellness'))assert.equal(wellnessMenu.find('a[href="/collections/'+type.handle+'"]').length,1);
+for(const handle of ['hair-care','bath-body']){
+ const doc=load(await(await fetch(base+'/collections/'+handle)).text());
+ assert.equal(doc('.desktop-nav summary.current').text().trim(),'Wellness ⌄');
+ assert.equal(doc('.filter-fields select[name="material"]').length,0);
+}
+console.log('Passed: persistent department categories, filtered empty states, active category links, all wellness product navigation, and complete wellness menus.');
