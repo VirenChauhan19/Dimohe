@@ -111,3 +111,7 @@ All five desktop dropdowns use identical horizontal column positions and top ali
 ## Explore Dimohe and hand-embroidered bag gallery
 
 Verified original homepage image paths against the live source. All nine foreground images and the background are available locally. Checked all five bag-category destinations have products with Chikankari or Zardozi and that the four Explore Dimohe cards lead to their departments. Browser review confirmed keyboard focus activates the matching bag panel. At 390px the bag gallery has two columns, all five images load and use contain framing, and there is no horizontal overflow. Explore Dimohe also uses two columns on mobile. Reduced-motion CSS disables transitions. Complete storefront checks passed; Pages build generated 176 pages and 633 assets. Changes remain local.
+
+## Centered final bag card on phones
+
+Centered the final unpaired Round bags card in the homepage hand-embroidery gallery, with centered caption text and the same card width as the paired rows. The rule applies only below 768px and handles an odd final card without changing the desktop expanding gallery. Browser review confirmed exact horizontal centering at 390px and 320px with no horizontal overflow. Static build passed with 176 pages and 629 assets. Local only.

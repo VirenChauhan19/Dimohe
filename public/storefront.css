@@ -112,3 +112,8 @@
 @media(min-width:768px) and (max-width:1100px){.embroidery-panel{padding-left:12px;padding-right:12px}.embroidery-caption h3{font-size:17px}.embroidery-photo{height:280px}}
 @media(max-width:767px){.embroidery-showcase .section-title{display:block}.embroidery-showcase .section-title .text-link{margin-top:22px}.embroidery-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:0;gap:28px 18px}.embroidery-panel,.embroidery-panel:last-child{padding:0 0 20px;border:0;border-bottom:1px solid var(--line)}.embroidery-photo{height:210px}.embroidery-caption{padding-top:15px}.embroidery-caption h3{font-size:19px;min-height:0}.embroidery-caption p,.embroidery-panel.is-active .embroidery-caption p{opacity:1;font-size:11px;height:auto}}
 @media(prefers-reduced-motion:reduce){.embroidery-panel,.embroidery-caption p{transition:none}}
+
+/* Balance the final bag shape in the two-column phone gallery. */
+@media(max-width:767px){
+  .embroidery-panels>.embroidery-panel:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc((100% - 18px)/2);text-align:center}
+}
