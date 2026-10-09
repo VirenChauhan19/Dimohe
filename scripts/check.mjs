@@ -3,6 +3,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import { load } from 'cheerio';
 import { merchandise, groups, types } from '../lib/merchandising.mjs';
+import { crafts } from '../lib/editorial.mjs';
 const base = process.env.CHECK_URL || 'http://localhost:3000';
 const routes = JSON.parse(await fs.readFile('data/routes.json', 'utf8'));
 const products = JSON.parse(await fs.readFile('data/products.json', 'utf8')).products;
@@ -130,3 +131,127 @@ for(const field of ['material','color','size']){
   assert.equal(doc('select[name="'+field+'"]').val(),value);
 }
 console.log('Passed: all 88 products categorized once, all 23 subcategories, and material/color/size filters.',groupCounts);
+for(const craft of crafts){
+  const response=await fetch(base+'/collections/'+craft.handle);
+  assert.equal(response.status,200);
+  const doc=load(await response.text());
+  const actual=doc('#product-card-grid [data-product-handle]').map((i,el)=>doc(el).attr('data-product-handle')).get().sort();
+  const expected=enriched.filter(p=>p.merch.crafts.includes(craft.id)).map(p=>p.handle).sort();
+  assert.ok(expected.length>0);
+  assert.deepEqual(actual,expected,craft.name);
+}
+assert.ok(!enriched.find(p=>p.handle==='the-desert-pearl-pochette').merch.crafts.includes('chikankari'),'Zardozi alone must not imply Chikankari');
+assert.ok(enriched.find(p=>p.handle==='the-moonlight-pearl-pochette').merch.crafts.includes('chikankari'));
+const renamed=enriched.find(p=>p.handle==='boy-dhola-maru-embroidery-bundy-set-beige');
+assert.notEqual(renamed.title,renamed.merch.originalTitle);
+const line=(await api('/cart/add.js',{id:renamed.variants.find(v=>v.available).id,quantity:1})).value.items[0];
+assert.equal(line.title,renamed.title,'Editorial names must be consistent in the cart');
+await api('/cart/clear.js',{});
+const craftPage=await fetch(base+'/pages/our-craft');assert.equal(craftPage.status,200);assert.match(await craftPage.text(),/Our craft traditions/);
+console.log('Passed: all three craft collections, evidence-based craft assignments, consistent editorial cart names, and craft story page.');
+const {chapters,curatedCollections,editHandles}=await import('../lib/commerce.mjs');
+for(const chapter of chapters){const response=await fetch(base+'/pages/chapter-'+chapter.slug);assert.equal(response.status,200);const doc=load(await response.text());assert.ok(doc('h1').text().includes(chapter.title));assert.equal(doc('[data-product-handle]').length,Math.min(8,enriched.filter(chapter.match).length));}
+for(const collection of curatedCollections){const doc=load(await(await fetch(base+'/collections/'+collection.handle)).text());assert.deepEqual(doc('#product-card-grid [data-product-handle]').map((i,e)=>doc(e).attr('data-product-handle')).get().sort(),enriched.filter(collection.match).map(p=>p.handle).sort());}
+const home=load(await(await fetch(base+'/')).text());assert.equal(home('[data-product-handle]').length,8);assert.deepEqual(home('[data-product-handle]').map((i,e)=>home(e).attr('data-product-handle')).get().sort(),[...editHandles].sort());
+for(const p of enriched){const doc=load(await(await fetch(base+'/products/'+p.handle)).text());const graph=JSON.parse(doc('script[type="application/ld+json"]').text())['@graph'];const schema=graph.find(x=>x['@type']==='Product');assert.equal(schema.name,p.title);assert.deepEqual(schema.offers.map(v=>v.price),p.variants.map(v=>Number(v.price)));assert.equal(doc('.craft-passport').length,p.merch.group==='wellness'?0:1);if(p.merch.group==='wellness'){
+ const source=load(await fs.readFile('public/products/'+p.handle+'/index.html','utf8'));
+ const normalized=text=>text.replace(/\s*[—–]\s*|\s*--\s*/g,', ').replace(/\s+/g,'').trim();
+ const pairs=[['.custom-product-step-content','.wellness-steps'],['.kis-ingredient-item','.wellness-ingredients'],['.custom-product-benefit-title','.wellness-benefits'],['.custom-product-faq-question','.wellness-faq'],['.custom-product-faq-answer','.wellness-faq']];
+ for(const [selector,target] of pairs)source(selector).each((i,el)=>assert.ok(normalized(doc(target).text()).includes(normalized(source(el).text())),p.handle+' retains '+selector+' '+i));
+ source('.product-accordion-item').each((i,el)=>{const title=source(el).find('[detail-summary]').clone().children().remove().end().text().trim();if(title&&title!=='Shipping & Delivery')assert.ok(normalized(doc('.wellness-detail').text()).includes(normalized(source(el).find('[detail-expand]').text())),p.handle+' retains '+title);});
+ for(const src of doc('.wellness-guide [src]').map((i,e)=>doc(e).attr('src')).get())assert.ok(await fs.stat('public'+src).then(()=>true).catch(()=>false),'Wellness asset exists: '+src);
+}if(p.merch.crafts.length)assert.match(doc('.product-info>.product-craft').text(),/Hand-block printed|Hand embroidered/);if(p.merch.group==='bags'){assert.doesNotMatch(doc('.prose').text(),/wooden block|hand.chiseled/i);}}
+const altair=enriched.find(p=>p.handle==='the-altair-bijou-clutch');assert.ok(!altair.merch.passport.some(([key])=>key==='Place of making'),'Tradition is not workshop evidence');
+const chips=load(await(await fetch(base+'/collections/hand-block-printing?craft=block-printing&filter.v.price.gte=20')).text());assert.ok(chips('.selected-filters a').length>=2);
+assert.equal((await fetch(base+'/pages/saved-pieces')).status,200);
+console.log('Passed: four chapters, six curated collections, eight-piece edit, all product schemas and passports, original wellness usage/ingredients/benefits/FAQs, visible craft labels, craft boilerplate cleanup, selected filters, and wishlist page.');
+
+const {brandFilm}=await import('../lib/commerce.mjs');
+assert.equal(home('video[data-brand-film]').length,1);
+assert.equal(home('video source').attr('src'),'/media/craft-preview.mp4');
+assert.equal(home('video').attr('preload'),'metadata');
+assert.ok(home('video').is('[controls][playsinline]'));
+assert.ok(home('video').is('[muted][data-autoplay]'));assert.equal(home('[data-film-toggle]').length,0);
+assert.ok(home('.film-section').index()>home('.edit-section').index());
+assert.ok(home('.film-section').index()<home('.chapter-panel').first().index());
+assert.ok(home('.desktop-nav a[href="/blogs/news"]').length);
+assert.equal(home('.film-media a').first().attr('href'),'/pages/our-craft#craft-film');
+const filmCraftPage=load(await (await fetch(base+'/pages/our-craft')).text());
+assert.equal(filmCraftPage('#craft-film video source').attr('src'),brandFilm.src);
+assert.equal(filmCraftPage('[data-film-toggle]').length,0);
+assert.ok(!filmCraftPage('video').is('[data-autoplay]'));
+assert.ok(home('.chapter-panel').first().index()<home('.embroidery-showcase').index());
+assert.ok(home('.embroidery-showcase').index()<home('.chapter-panel').last().index());
+assert.ok(home('.chapter-panel').first().next().is('.embroidery-showcase'));
+assert.equal(home('.chapter-panel').first().find('img').attr('src'),'/cdn/shop/files/AVAHSG_1.png');
+const blogs=load(await (await fetch(base+'/blogs/news')).text());
+assert.equal(blogs('.journal-card').length,2);
+assert.equal(blogs('.journal-card h2').length,2);
+assert.equal(blogs('.journal-image img').length,2);
+console.log('Passed: eight-second preview, full craft film, native controls, chapter order, and equal blog cards.');
+
+const previewHead=await fetch(base+'/media/craft-preview.mp4',{method:'HEAD'});assert.equal(previewHead.status,200);assert.equal(previewHead.headers.get('content-type'),'video/mp4');
+const filmSize=(await fs.stat('public'+brandFilm.src)).size;
+const filmHead=await fetch(base+brandFilm.src,{method:'HEAD'});assert.equal(filmHead.status,200);assert.equal(Number(filmHead.headers.get('content-length')),filmSize);assert.equal(filmHead.headers.get('content-type'),'video/mp4');assert.equal(filmHead.headers.get('set-cookie'),null);
+for(const [range,length] of [['bytes=0-511',512],['bytes=-32',32]]){const response=await fetch(base+brandFilm.src,{headers:{Range:range}});assert.equal(response.status,206);assert.equal((await response.arrayBuffer()).byteLength,length);assert.ok(response.headers.get('content-range').endsWith('/'+filmSize));}
+assert.equal((await fetch(base+brandFilm.src,{headers:{Range:'bytes='+filmSize+'-'}})).status,416);
+console.log('Passed: film metadata, byte-range seeking, suffix requests, invalid ranges, and no cart cookie for video requests.');
+
+// Category switching must preserve the full department navigation, including empty filtered views.
+for(const department of groups){
+ const departmentTypes=types.filter(type=>type.group===department.id);
+ const handles=[department.handle,...departmentTypes.map(type=>type.handle),...(department.id==='wellness'?['hair-care','bath-body']:[])];
+ const expected=['/collections/'+department.handle,...departmentTypes.map(type=>'/collections/'+type.handle)];
+ for(const handle of handles){
+  const doc=load(await(await fetch(base+'/collections/'+handle+'?filter.v.price.lte=0')).text());
+  assert.deepEqual(doc('#MainContent .category-chips a').map((i,e)=>doc(e).attr('href')).get(),expected,handle+' keeps sibling categories');
+  const current=doc('#MainContent .category-chips [aria-current="page"]');
+  assert.equal(current.length,expected.includes('/collections/'+handle)?1:0);
+  if(current.length)assert.equal(current.attr('href'),'/collections/'+handle);
+ }
+}
+for(const product of enriched.filter(p=>p.merch.group==='wellness')){
+ const doc=load(await(await fetch(base+'/products/'+product.handle)).text());
+ assert.equal(doc('.product-section .category-chips a').length,6);
+ assert.equal(doc('.product-section .category-chips .active').attr('href'),'/collections/'+product.merch.type);
+ assert.equal(doc('.breadcrumbs a').last().attr('href'),'/collections/'+product.merch.type);
+}
+const wellnessMenu=home('.desktop-nav .nav-wellness');
+for(const type of types.filter(t=>t.group==='wellness'))assert.equal(wellnessMenu.find('a[href="/collections/'+type.handle+'"]').length,1);
+for(const handle of ['hair-care','bath-body']){
+ const doc=load(await(await fetch(base+'/collections/'+handle)).text());
+ assert.equal(doc('.desktop-nav summary.current').text().trim(),'Wellness ⌄');
+ assert.equal(doc('.filter-fields select[name="material"]').length,0);
+}
+console.log('Passed: persistent department categories, filtered empty states, active category links, all wellness product navigation, and complete wellness menus.');
+
+// Image-led navigation must lead to the intended craft and departments.
+const {embroideryShowcase}=await import('../lib/commerce.mjs');
+assert.equal(home('.explore-dimohe').length,0);assert.equal(home('.embroidery-panel').length,5);
+for(const item of embroideryShowcase){const doc=load(await(await fetch(base+'/collections/'+item.handle)).text());const handles=doc('#product-card-grid [data-product-handle]').map((i,e)=>doc(e).attr('data-product-handle')).get();assert.ok(handles.length>0);assert.ok(handles.every(h=>enriched.find(p=>p.handle===h).merch.crafts.some(c=>['chikankari','zardozi'].includes(c))));}
+const homeMarkup=home.html();assert.ok(homeMarkup.indexOf('embroidery-showcase-heading')>homeMarkup.indexOf('Chikankari hand embroidery.'));
+console.log('Passed: Explore Dimohe removed, five bag shapes, hand-embroidered bag destinations, and homepage section placement.');
+
+const updatedHome=load(await(await fetch(base+'/')).text());
+assert.equal(updatedHome('.site-header .wordmark img').attr('src'),'/cdn/shop/files/1_8f26be1f-aae1-4e55-af0a-9903f2de5213.png');
+assert.equal(updatedHome('.hero-copy>.eyebrow').length,0);
+assert.match(updatedHome('.hero h1').text(),/Ayurveda/);
+assert.equal(updatedHome('.hero-copy a[href="/pages/our-craft"]').length,0);
+assert.equal(updatedHome('.film-copy a[href="/pages/our-craft"]').text().trim(),'Discover the craft');
+assert.equal(updatedHome('.desktop-nav .founder-nav a[href="/pages/our-story"]').length,2);
+assert.equal(updatedHome('.desktop-nav .founder-nav a[href="/pages/our-founder"]').text(),'Founder Story');
+assert.equal(updatedHome('.embroidery-panel').first().find('a').first().attr('href'),'/collections/round-bags');
+assert.equal(updatedHome('.embroidery-showcase .section-title>div>.text-link').text(),'Explore bags');
+const desert=load(await(await fetch(base+'/products/the-desert-pearl-pochette')).text());
+assert.equal((desert('.product-info').text().match(/tan[ -]yellow/gi)||[]).length,1);
+assert.doesNotMatch(desert('.product-summary').text(),/inches|measures|9\.0|9 by 9/i);
+assert.equal(desert('.gallery-scale').length,0);
+assert.equal(desert('.product-info dt').filter((i,e)=>desert(e).text()==='Dimensions').length,1);
+assert.doesNotMatch(desert('#product-story').text(),/Dimensions|Length:|Width:|Tan Yellow|Zardozi/i);
+assert.doesNotMatch(desert('.craft-passport').text(),/Dimohe selection|Curated/);
+assert.equal(desert('.craft-passport a').text().trim(),'Read about the product');
+assert.equal(desert('#shipping-returns a[href="/pages/shipping-returns"]').length,0);
+assert.match(desert('#shipping-returns').text(),/5-7 business days/);
+assert.match(desert('#shipping-returns').text(),/10 days of delivery/);
+assert.match(desert('#shipping-returns').text(),/\$9/);
+console.log('Passed: original logo, Ayurveda hero, craft banner, founder/story menu, round bags first, closer bag captions, single product color/dimensions, descriptive craft, and inline delivery/returns.');

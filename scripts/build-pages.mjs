@@ -1,43 +1,97 @@
+// Builds a static copy of the storefront into dist/ for GitHub Pages.
+// PAGES_BASE_PATH is the sub-path the site is served from, for example "/Dimohe".
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { load } from 'cheerio';
-import { createStorefront } from '../lib/storefront.mjs';
-import { types, groups } from '../lib/merchandising.mjs';
-const output=path.resolve('dist');
-const base=('/'+(process.env.PAGES_BASE_PATH??'Dimohe').replace(/^\/+|\/+$/g,'')).replace(/^\/$/,'');
-const products=JSON.parse(await fs.readFile('data/products.json','utf8')).products;
-const routes=JSON.parse(await fs.readFile('data/routes.json','utf8'));
-const routeMap=new Map(routes.map(r=>[r.route,r.file]));
-const snapshot=async route=>routeMap.has(route)?fs.readFile('public'+routeMap.get(route),'utf8'):null;
-const memberships=new Map();
-for(const r of routes.filter(r=>/^\/collections\/[^/?]+(?:\?page=\d+)?$/.test(r.route))){
- const $=load(await snapshot(r.route));const handle=r.route.split('/')[2].split('?')[0];
- if(!memberships.has(handle))memberships.set(handle,new Set());
- $('#products-container product-card-item').each((i,el)=>{const p=$(el).find('a[href*="/products/"]').first().attr('href')?.split('/products/')[1]?.split('?')[0];if(p)memberships.get(handle).add(p);});
+import { createStorefront, imagePath } from '../lib/storefront.mjs';
+import { merchandise, groups, types } from '../lib/merchandising.mjs';
+import { crafts } from '../lib/editorial.mjs';
+import { chapters, curatedCollections } from '../lib/commerce.mjs';
+import { withBase, scriptWithBase } from '../lib/base-path.mjs';
+
+const base = (process.env.PAGES_BASE_PATH || '').replace(/\/+$/, '');
+if (base && !/^\/[\w.-]+(\/[\w.-]+)*$/.test(base)) throw new Error(`Invalid PAGES_BASE_PATH: ${base}`);
+const out = path.resolve('dist');
+const routes = JSON.parse(await fs.readFile('data/routes.json', 'utf8'));
+const routeMap = new Map(routes.map(r => [r.route, r.file]));
+const products = merchandise(JSON.parse(await fs.readFile('data/products.json', 'utf8')).products);
+const snapshot = async route => routeMap.has(route) ? fs.readFile('public' + routeMap.get(route), 'utf8') : null;
+
+// Same collection memberships the server derives from the captured collection pages.
+const memberships = new Map();
+for (const r of routes.filter(r => /^\/collections\/[^/?]+(?:\?page=\d+)?$/.test(r.route))) {
+  const $ = load(await snapshot(r.route));
+  const collection = r.route.split('/')[2].split('?')[0];
+  if (!memberships.has(collection)) memberships.set(collection, new Set());
+  $('#products-container product-card-item').each((i, el) => {
+    const handle = $(el).find('a[href*="/products/"]').first().attr('href')?.split('/products/')[1]?.split('?')[0];
+    if (handle) memberships.get(collection).add(handle);
+  });
 }
-const shop=createStorefront(products,memberships,snapshot);
-const destinations=new Set(['/', '/search','/cart','/checkout','/account','/collections',...routes.filter(r=>r.kind!=='section').map(r=>r.route.split('?')[0]),...types.map(t=>'/collections/'+t.handle),...groups.map(g=>'/collections/'+g.handle),'/collections/table-linen','/collections/bath-linen']);
-await fs.rm(output,{recursive:true,force:true});await fs.mkdir(output,{recursive:true});
-const assets=new Set(['/storefront.css','/storefront.js','/static-storefront.js','/cdn/shop/files/dimohe-favicon.png']);
-let count=0;
-for(const route of destinations){
- let html=await shop.render(new URL(route==='/search'?'/collections/all':route,'https://preview.invalid'),{items:[],item_count:0,total_price:0});
- if(!html)continue;
- const $=load(html);
- $('head').append(`<meta name="storefront-base" content="${base}"><script src="/static-storefront.js" defer></script>`);
- $('head script[src="/storefront.js"]').remove();$('head').append('<script src="/storefront.js" defer></script>');
- if(route.startsWith('/collections')||route==='/search'){
-  const handles=$('#product-card-grid [data-product-handle]').map((i,el)=>$(el).attr('data-product-handle')).get();
-  $('body').append(`<script id="collection-data" type="application/json">${JSON.stringify({handles,search:route==='/search'})}</script>`);
-  if(route==='/search'){
-   $('.collection-intro h1').text('Find your next lovely thing');$('.collection-intro>p').not('.breadcrumbs,.eyebrow').text('Search the Dimohe collection.');$('.collection-intro').append('<form class="search-form" action="/search"><input aria-label="Search products" name="q" type="search" placeholder="What are you looking for?"><button class="button">Search ↗</button></form>');$('.catalog-filters').attr('action','/search').prepend('<input name="q" type="hidden">');$('.filter-actions a').attr('href','/search');$('#product-card-grid').empty();
-  }
- }
- $('[href],[src],[action],[poster],[data-image]').each((i,el)=>{for(const attr of ['href','src','action','poster','data-image']){const value=$(el).attr(attr);if(!value?.startsWith('/')||value.startsWith('//'))continue;if(['src','poster','data-image'].includes(attr)||attr==='href'&&(/\.(css|woff2?|png|svg)(\?|$)/.test(value))) assets.add(value.split('?')[0]);$(el).attr(attr,base+value);}});
- $('[srcset]').removeAttr('srcset');
- const file=path.join(output,route==='/'?'index.html':route.slice(1)+'/index.html');await fs.mkdir(path.dirname(file),{recursive:true});await fs.writeFile(file,$.html());count++;
+
+const siteURL=(process.env.PAGES_SITE_URL||'https://virenchauhan19.github.io'+base).replace(/\/$/,'');
+const storefront = createStorefront(products, memberships, snapshot, { load, siteURL });
+const emptyCart = { items: [], item_count: 0, total_price: 0 };
+const collections = new Set(['all', 'table-linen', 'bath-linen', 'hand-bags', ...curatedCollections.map(c=>c.handle), ...crafts.map(c=>c.handle), ...groups.map(g => g.handle), ...types.map(t => t.handle), ...memberships.keys()]);
+const pageRoutes = [
+  '/', '/collections', '/search', '/cart', '/checkout', '/account', '/pages/contact', '/pages/our-craft', '/pages/saved-pieces',
+  ...chapters.map(c=>'/pages/chapter-'+c.slug),
+  ...[...collections].map(h => '/collections/' + h),
+  ...products.map(p => '/products/' + p.handle),
+  ...routes.map(r => r.route).filter(r => /^\/(pages|policies|blogs)\/[^?]+$/.test(r) && r !== '/pages/contact'),
+];
+
+await fs.rm(out, { recursive: true, force: true });
+const assets = new Set();
+const collectAssets = html => {
+  for (const [, url] of html.matchAll(/(?:src|href|data-image|poster)=["'](\/(?:cdn|external|media)\/[^"'?#]+)/g)) assets.add(url);
+  for (const [, set] of html.matchAll(/srcset=["']([^"']+)/g)) for (const part of set.split(',')) { const url = part.trim().split(/\s+/)[0]; if (/^\/(cdn|external|media)\//.test(url)) assets.add(url.split('?')[0]); }
+};
+async function writePage(file, html) {
+  collectAssets(html);
+  html = html
+    .replace('<html lang="en">', `<html lang="en" data-base="${base}">`)
+    .replace('<script src="/storefront.js" defer></script>', '<script src="/lib/pages-runtime.js" type="module"></script>');
+  const target = path.join(out, file);
+  await fs.mkdir(path.dirname(target), { recursive: true });
+  await fs.writeFile(target, withBase(html, base));
 }
-const css=await fs.readFile('public/storefront.css','utf8');for(const m of css.matchAll(/url\(['"]?(\/[^)'"\s]+)['"]?\)/g))assets.add(m[1]);
-for(const asset of assets){const file=path.join(output,asset.slice(1));await fs.mkdir(path.dirname(file),{recursive:true});if(asset==='/storefront.css')await fs.writeFile(file,css.replace(/url\(['"]?(\/[^)'"\s]+)['"]?\)/g,(match,url)=>`url('${base}${url}')`));else await fs.copyFile('public'+asset,file);}
-await fs.mkdir(path.join(output,'api'),{recursive:true});await fs.writeFile(path.join(output,'api/products.json'),JSON.stringify({products:shop.products}));await fs.writeFile(path.join(output,'.nojekyll'),'');const notFound=load(await fs.readFile(path.join(output,'index.html'),'utf8'));notFound('title').text('Page not found · Dimohe');notFound('#MainContent').html(`<section class="section empty-state"><h1>A little lost?</h1><p>This page could not be found.</p><a class="button" href="${base}/">Explore Dimohe ↗</a></section>`);await fs.writeFile(path.join(output,'404.html'),notFound.html());
-await fs.writeFile(path.join(output,'build-report.json'),JSON.stringify({base,pages:count,assets:assets.size,products:products.length},null,2));console.log(`GitHub Pages build: ${count} pages, ${assets.size} local assets, ${products.length} products; base path ${base||'/'}`);
+
+for (const route of new Set(pageRoutes)) {
+  const html = await storefront.render(new URL(route, 'http://localhost'), emptyCart);
+  if (!html) throw new Error(`No page rendered for ${route}`);
+  await writePage(route === '/' ? 'index.html' : route.slice(1) + '/index.html', html);
+}
+const arrow = '<span aria-hidden="true">↗</span>';
+await writePage('404.html', storefront.shell('Page not found', `<section class="section empty-state"><p class="eyebrow">DIMOHE</p><h1>Page not found</h1><p>We couldn’t find that page. It may have moved.</p><a class="button" href="/">Continue exploring ${arrow}</a></section>`, emptyCart));
+
+// Catalog data used by search, quick view, the shopping bag, and in-browser filtering.
+await fs.mkdir(path.join(out, 'api'), { recursive: true });
+await fs.writeFile(path.join(out, 'api/products.json'), JSON.stringify({ products }));
+await fs.writeFile(path.join(out, 'api/memberships.json'), JSON.stringify(Object.fromEntries([...memberships].map(([k, v]) => [k, [...v]]))));
+for (const p of products) for (const src of [...p.images.map(i => i.src), ...p.variants.map(v => v.featured_image?.src)]) if (src) assets.add(imagePath(src));
+
+// Scripts and styles. Browser modules are published as .js so every host serves a JavaScript MIME type.
+for (const name of ['storefront.mjs', 'taxonomy.mjs', 'base-path.mjs', 'pages-runtime.mjs', 'editorial.mjs', 'commerce.mjs']) {
+  const source = await fs.readFile(path.join('lib', name), 'utf8');
+  await fs.mkdir(path.join(out, 'lib'), { recursive: true });
+  await fs.writeFile(path.join(out, 'lib', name.replace(/\.mjs$/, '.js')), source.replace(/(from '\.\/[\w-]+)\.mjs'/g, "$1.js'"));
+}
+await fs.writeFile(path.join(out, 'storefront.js'), scriptWithBase(await fs.readFile('public/storefront.js', 'utf8'), base));
+const css = await fs.readFile('public/storefront.css', 'utf8');
+for (const [, url] of css.matchAll(/url\(['"]?(\/[^'")]+)/g)) assets.add(url.split('?')[0]);
+await fs.writeFile(path.join(out, 'storefront.css'), withBase(css, base));
+
+const missing = [];
+for (const asset of assets) {
+  const relative = '.' + decodeURI(asset), source = path.resolve('public', relative), target = path.resolve(out, relative);
+  if (!source.startsWith(path.resolve('public') + path.sep)) continue;
+  try { await fs.mkdir(path.dirname(target), { recursive: true }); await fs.copyFile(source, target); }
+  catch { missing.push(asset); }
+}
+if (missing.length) console.warn(`Missing ${missing.length} assets:\n  ${missing.join('\n  ')}`);
+const sitemapRoutes=[...new Set(pageRoutes)].filter(r=>!/^\/(search|cart|checkout|account|pages\/saved-pieces)$/.test(r));
+await fs.writeFile(path.join(out,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+sitemapRoutes.map(r=>'<url><loc>'+siteURL+(r==='/'?'/':r+'/')+'</loc></url>').join('')+'</urlset>');
+await fs.writeFile(path.join(out,'robots.txt'),'User-agent: *\nAllow: /\nSitemap: '+siteURL+'/sitemap.xml\n');
+await fs.writeFile(path.join(out,'build-report.json'),JSON.stringify({base,pages:new Set(pageRoutes).size+1,assets:assets.size-missing.length,products:products.length},null,2));
+console.log(`Built ${new Set(pageRoutes).size + 1} pages and ${assets.size - missing.length} assets into dist/ (base path "${base || '/'}")`);

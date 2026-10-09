@@ -1,8 +1,10 @@
 {
-  "provenance": "Derived from captured product titles, descriptions, options and variants. Explicit fabric specifications take precedence over marketing prose. Source catalog is preserved.",
+  "provenance": "Source descriptions, titles and variants; editorial display names preserve source titles in originalTitle.",
   "products": [
     {
       "handle": "boy-dhola-maru-embroidery-bundy-set-beige",
+      "originalTitle": "Boy Dhola Maru Embroidery Bundy Set - Beige",
+      "crafts": [],
       "group": "kids",
       "groupName": "Kids",
       "type": "boys",
@@ -48,10 +50,27 @@
       "minPrice": 58,
       "maxPrice": 85,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Occasionwear for family gatherings and celebrations.",
+      "passport": [
+        [
+          "Material",
+          "cotton"
+        ]
+      ],
+      "evidence": {
+        "care": "Dry clean only",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover"
     },
     {
       "handle": "boy-3-pc-royal-zardozi-bundy-set-white",
+      "originalTitle": "Boy 3 Pc Royal Zardozi Bundy Set - White",
+      "crafts": [
+        "zardozi"
+      ],
       "group": "kids",
       "groupName": "Kids",
       "type": "boys",
@@ -98,10 +117,33 @@
       "minPrice": 71,
       "maxPrice": 98,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand embroidered with Zardozi, an ornate technique with raised stitching. The stitching adds texture to the fabric.",
+      "passport": [
+        [
+          "Craft",
+          "Ornate, raised embroidery stitched by hand"
+        ],
+        [
+          "Technique",
+          "Hand embroidery"
+        ],
+        [
+          "Material",
+          "cotton"
+        ]
+      ],
+      "evidence": {
+        "care": "Dry clean only",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover"
     },
     {
       "handle": "boy-stripe-zari-embroidered-kurta-set-teal-blue",
+      "originalTitle": "Boy Stripe Zari Embroidered Kurta Set - Teal Blue",
+      "crafts": [],
       "group": "kids",
       "groupName": "Kids",
       "type": "boys",
@@ -148,10 +190,25 @@
       "minPrice": 62,
       "maxPrice": 93,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Occasionwear for family gatherings and celebrations.",
+      "passport": [
+        [
+          "Material",
+          "silk"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover"
     },
     {
       "handle": "boy-stripe-zari-embroidered-kurta-set-minty-green",
+      "originalTitle": "Boy Stripe Zari Embroidered Kurta Set - Minty Green",
+      "crafts": [],
       "group": "kids",
       "groupName": "Kids",
       "type": "boys",
@@ -198,10 +255,25 @@
       "minPrice": 62,
       "maxPrice": 93,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Occasionwear for family gatherings and celebrations.",
+      "passport": [
+        [
+          "Material",
+          "silk"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover"
     },
     {
       "handle": "girl-dhola-maru-floral-embroidered-skirt-top-set-beige-green",
+      "originalTitle": "Girl Dhola Maru Floral Embroidered Skirt Top Set - Beige & Green",
+      "crafts": [],
       "group": "kids",
       "groupName": "Kids",
       "type": "girls",
@@ -246,10 +318,25 @@
       "minPrice": 64,
       "maxPrice": 82,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Occasionwear for family gatherings and celebrations.",
+      "passport": [
+        [
+          "Material",
+          "silk"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover"
     },
     {
       "handle": "girl-striped-fancy-zari-embroidered-top-with-cowl-dhoti-pants-minty-green",
+      "originalTitle": "Girl Striped Fancy Zari Embroidered Top with Cowl Dhoti Pants- Minty Green",
+      "crafts": [],
       "group": "kids",
       "groupName": "Kids",
       "type": "girls",
@@ -294,10 +381,25 @@
       "minPrice": 62,
       "maxPrice": 80,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Occasionwear for family gatherings and celebrations.",
+      "passport": [
+        [
+          "Material",
+          "silk"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover"
     },
     {
       "handle": "girl-panelled-bandhani-skirt-set-red",
+      "originalTitle": "Girl Panelled Bandhani Skirt Set-Red",
+      "crafts": [],
       "group": "kids",
       "groupName": "Kids",
       "type": "girls",
@@ -352,10 +454,29 @@
       "minPrice": 83,
       "maxPrice": 5100,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Occasionwear for family gatherings and celebrations.",
+      "passport": [
+        [
+          "Technique",
+          "Hand embroidered"
+        ],
+        [
+          "Material",
+          "silk"
+        ]
+      ],
+      "evidence": {
+        "care": "Dry clean only",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover"
     },
     {
       "handle": "boy-3-pc-embroidery-bundy-set-beige-1",
+      "originalTitle": "Boy 3 Pc Embroidery Bundy Set - Beige",
+      "crafts": [],
       "group": "kids",
       "groupName": "Kids",
       "type": "boys",
@@ -404,10 +525,25 @@
       "minPrice": 56,
       "maxPrice": 80,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Occasionwear for family gatherings and celebrations.",
+      "passport": [
+        [
+          "Material",
+          "cotton"
+        ]
+      ],
+      "evidence": {
+        "care": "Dry clean only",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover"
     },
     {
       "handle": "boy-3-pc-embroidery-bundy-set-beige",
+      "originalTitle": "Boy 3 Pc Embroidery Bundy Set - Beige",
+      "crafts": [],
       "group": "kids",
       "groupName": "Kids",
       "type": "boys",
@@ -456,10 +592,25 @@
       "minPrice": 57,
       "maxPrice": 79,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Occasionwear for family gatherings and celebrations.",
+      "passport": [
+        [
+          "Material",
+          "cotton"
+        ]
+      ],
+      "evidence": {
+        "care": "Dry clean only",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover"
     },
     {
       "handle": "himalayan-hair-repair-shampoo-deodhar-hibiscus-250ml",
+      "originalTitle": "Himalayan Hair Repair Shampoo (Deodhar & Hibiscus) 250ml",
+      "crafts": [],
       "group": "wellness",
       "groupName": "Wellness",
       "type": "shampoo",
@@ -489,14 +640,26 @@
         "1": "Size"
       },
       "subtitle": "250 ml",
-      "text": "A traditional Indic formulation with natural bioactive compounds like iron, biotin, Vitamin C and Vitamin B, the Himalayan Hair Repair Shampoo is a boon for the hair. The properties of hibiscus & Himalayan deodhar have an instant densifying action on the hair fibre, leaving it looking thicker and fuller. Enriched with healing herbs like Gokshura, Neem, Curry Leaves, Bhringraj, Shatavari & Amla, this shampoo helps reduce hair fall, soothe the scalp and improve hair health effortlessly.",
+      "text": "A shampoo with hibiscus and deodhar, in a 250 ml size.",
       "minPrice": 31,
       "maxPrice": 31,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A shampoo with hibiscus and deodhar, in a 250 ml size.",
+      "passport": [],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover",
+      "cardName": "Himalayan Shampoo · Deodhar & Hibiscus",
+      "cardDetail": "Shampoo"
     },
     {
       "handle": "rosemary-hair-masque-150gm",
+      "originalTitle": "Rosemary Hair Masque 150gm",
+      "crafts": [],
       "group": "wellness",
       "groupName": "Wellness",
       "type": "conditioner",
@@ -526,14 +689,26 @@
         "1": "Size"
       },
       "subtitle": "150 g",
-      "text": "Experience a smooth, nourished mane with our Rosemary & Vit E hair conditioner. A potent blend of natural hair softening ingredients, it will help manage frizzy hair and reduce split ends. Regular use post shampooing will also help strengthen hair and reduce any limpness overall.",
+      "text": "A hair conditioner with rosemary and vitamin E.",
       "minPrice": 28,
       "maxPrice": 28,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A hair conditioner with rosemary and vitamin E.",
+      "passport": [],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover",
+      "cardName": "Rosemary Hair Masque · 150 g",
+      "cardDetail": "Conditioners & masks"
     },
     {
       "handle": "nava-pre-shower-body-glow-oil-rose-almond-100ml",
+      "originalTitle": "Nava Pre Shower Body Glow Oil Rose Almond 100ml",
+      "crafts": [],
       "group": "wellness",
       "groupName": "Wellness",
       "type": "massage-oil",
@@ -563,14 +738,26 @@
         "1": "Size"
       },
       "subtitle": "100 ml",
-      "text": "Indulge in a luxurious and fragrant massage experience with the Rose & Almond Body Glow Oil. Its natural goodness hydrates the skin, reduces dryness and improves skin texture. It is the perfect pre-shower massage oil that will leave your skin feeling soft and nourished.",
+      "text": "A rose and almond blend for a pre-shower body massage, in a 100 ml size.",
       "minPrice": 27,
       "maxPrice": 27,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A rose and almond blend for a pre-shower body massage, in a 100 ml size.",
+      "passport": [],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover",
+      "cardName": "Nava Body Oil · Rose & Almond",
+      "cardDetail": "Body oils"
     },
     {
       "handle": "protein-building-hair-mask-150gm",
+      "originalTitle": "Protein Building Hair Mask 150gm",
+      "crafts": [],
       "group": "wellness",
       "groupName": "Wellness",
       "type": "conditioner",
@@ -600,14 +787,26 @@
         "1": "Size"
       },
       "subtitle": "150 g",
-      "text": "Rich in amino acids and proteins that form the building blocks of your hair, this conditioner is an essential. It deeply nourishes hair from root to tip and adds shine, volume and smoothness. Regular use will help strengthen brittle hair and will also protect your hair from split ends.",
+      "text": "A conditioning hair mask, in a 150 g size.",
       "minPrice": 28,
       "maxPrice": 28,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A conditioning hair mask, in a 150 g size.",
+      "passport": [],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover",
+      "cardName": "Protein Hair Mask · 150 g",
+      "cardDetail": "Conditioners & masks"
     },
     {
       "handle": "lavender-smoothening-conditioner-150gm-glass-jar",
+      "originalTitle": "Lavender Smoothening Conditioner 150gm (Glass Jar)",
+      "crafts": [],
       "group": "wellness",
       "groupName": "Wellness",
       "type": "conditioner",
@@ -637,18 +836,32 @@
         "1": "Size"
       },
       "subtitle": "150 g",
-      "text": "Experience salon smoothness with our natural Lavender conditioner. A gentle blend of pure lavender, shea butter and olive oil, it reduces frizz, detangles the hair and smoothens it. Its hair friendly properties will add volume and keep your hair soft, shiny and healthy.",
+      "text": "A conditioner with lavender, shea butter, and olive oil, packaged in a glass jar.",
       "minPrice": 28,
       "maxPrice": 28,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A conditioner with lavender, shea butter, and olive oil, packaged in a glass jar.",
+      "passport": [],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover",
+      "cardName": "Lavender Conditioner · 150 g",
+      "cardDetail": "Conditioners & masks"
     },
     {
       "handle": "the-desert-pearl-pochette",
+      "originalTitle": "The Desert Pearl Pochette",
+      "crafts": [
+        "zardozi"
+      ],
       "group": "bags",
       "groupName": "Bags",
       "type": "potli",
-      "typeName": "Potli bags",
+      "typeName": "Potli (Pochette) bags",
       "materials": [
         "silk"
       ],
@@ -657,7 +870,7 @@
       "attributes": [
         [
           "Category",
-          "Potli bags"
+          "Potli (Pochette) bags"
         ],
         [
           "Material",
@@ -689,14 +902,43 @@
       "minPrice": 245,
       "maxPrice": 245,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Raised hand embroidery on raw silk, finished with a tasselled drawstring.",
+      "cardName": "Desert Pearl · Potli (Pochette) bag",
+      "cardDetail": "Raw silk potli · Tan yellow",
+      "stylingNote": "A small bag for a wedding or festive evening. The drawstring closes around what you’re carrying.",
+      "pairWith": [],
+      "passport": [
+        [
+          "Craft",
+          "Ornate, raised embroidery stitched by hand"
+        ],
+        [
+          "Technique",
+          "Hand embroidery"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "Drawstring",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "the-rose-pearl-pochette",
+      "originalTitle": "The Rose Pearl Pochette",
+      "crafts": [
+        "zardozi"
+      ],
       "group": "bags",
       "groupName": "Bags",
       "type": "potli",
-      "typeName": "Potli bags",
+      "typeName": "Potli (Pochette) bags",
       "materials": [
         "silk"
       ],
@@ -705,7 +947,7 @@
       "attributes": [
         [
           "Category",
-          "Potli bags"
+          "Potli (Pochette) bags"
         ],
         [
           "Material",
@@ -736,14 +978,40 @@
       "minPrice": 245,
       "maxPrice": 245,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand embroidered with Zardozi, an ornate technique with raised stitching. The stitching adds texture to the fabric.",
+      "cardName": "Rose Pearl · Potli (Pochette) bag",
+      "passport": [
+        [
+          "Craft",
+          "Ornate, raised embroidery stitched by hand"
+        ],
+        [
+          "Technique",
+          "Hand embroidery"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "Drawstring",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "the-midnight-pearl-pochette",
+      "originalTitle": "The Midnight Pearl Pochette",
+      "crafts": [
+        "zardozi"
+      ],
       "group": "bags",
       "groupName": "Bags",
       "type": "potli",
-      "typeName": "Potli bags",
+      "typeName": "Potli (Pochette) bags",
       "materials": [
         "silk"
       ],
@@ -752,7 +1020,7 @@
       "attributes": [
         [
           "Category",
-          "Potli bags"
+          "Potli (Pochette) bags"
         ],
         [
           "Material",
@@ -783,10 +1051,36 @@
       "minPrice": 245,
       "maxPrice": 245,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand embroidered with Zardozi, an ornate technique with raised stitching. The stitching adds texture to the fabric.",
+      "cardName": "Midnight Pearl · Potli (Pochette) bag",
+      "passport": [
+        [
+          "Craft",
+          "Ornate, raised embroidery stitched by hand"
+        ],
+        [
+          "Technique",
+          "Hand embroidery"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "Drawstring",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "the-noor-bagh-heirloom-minaudi",
+      "originalTitle": "The Noor Bagh Heirloom Minaudière",
+      "crafts": [
+        "chikankari"
+      ],
       "group": "bags",
       "groupName": "Bags",
       "type": "round-bags",
@@ -827,10 +1121,40 @@
       "minPrice": 675,
       "maxPrice": 675,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Ivory and gold-toned botanical hand embroidery on beige raw silk. A crystal-set circular handle sits above the round frame.",
+      "cardName": "Noor Bagh",
+      "cardDetail": "Raw silk evening bag · Beige",
+      "stylingNote": "Carry it by the handle for dinner, or use the crossbody strap when you need both hands free.",
+      "pairWith": [],
+      "passport": [
+        [
+          "Craft",
+          "Fine floral needlework stitched by hand"
+        ],
+        [
+          "Technique",
+          "Hand embroidery"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": "Circular handle, Crossbody strap"
+      },
+      "tier": "collector"
     },
     {
       "handle": "the-noor-e-sahar-clutch",
+      "originalTitle": "The Noor-e-Sahar Clutch",
+      "crafts": [
+        "chikankari",
+        "zardozi"
+      ],
       "group": "bags",
       "groupName": "Bags",
       "type": "clutches-full-flap",
@@ -871,10 +1195,40 @@
       "minPrice": 322,
       "maxPrice": 322,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand embroidered with Chikankari, a delicate floral stitching technique from Lucknow, India. Fine needlework forms the floral pattern on the fabric.",
+      "passport": [
+        [
+          "Craft",
+          "Fine floral needlework stitched by hand; Ornate, raised embroidery stitched by hand"
+        ],
+        [
+          "Technique",
+          "Hand embroidery"
+        ],
+        [
+          "Additional detail",
+          "Small metallic accents worked into the embroidery"
+        ],
+        [
+          "Material",
+          "silk"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "the-lyra-bijou-clutch",
+      "originalTitle": "The Lyra Bijou Clutch",
+      "crafts": [
+        "chikankari",
+        "zardozi"
+      ],
       "group": "bags",
       "groupName": "Bags",
       "type": "antique-handle-handbags",
@@ -918,10 +1272,40 @@
       "minPrice": 549,
       "maxPrice": 549,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand embroidered with Chikankari, a delicate floral stitching technique from Lucknow, India. Fine needlework forms the floral pattern on the fabric.",
+      "passport": [
+        [
+          "Craft",
+          "Fine floral needlework stitched by hand; Ornate, raised embroidery stitched by hand"
+        ],
+        [
+          "Technique",
+          "Hand embroidery"
+        ],
+        [
+          "Additional detail",
+          "Small metallic accents worked into the embroidery"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "Clasp",
+        "carry": "Crossbody strap, Short hand-carry strap"
+      },
+      "tier": "collector"
     },
     {
       "handle": "the-vega-bijou-clutch",
+      "originalTitle": "The Vega Bijou Clutch",
+      "crafts": [
+        "chikankari",
+        "zardozi"
+      ],
       "group": "bags",
       "groupName": "Bags",
       "type": "antique-handle-handbags",
@@ -965,10 +1349,40 @@
       "minPrice": 549,
       "maxPrice": 549,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand embroidered with Chikankari, a delicate floral stitching technique from Lucknow, India. Fine needlework forms the floral pattern on the fabric.",
+      "passport": [
+        [
+          "Craft",
+          "Fine floral needlework stitched by hand; Ornate, raised embroidery stitched by hand"
+        ],
+        [
+          "Technique",
+          "Hand embroidery"
+        ],
+        [
+          "Additional detail",
+          "Small metallic accents worked into the embroidery"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "Clasp",
+        "carry": "Crossbody strap, Short hand-carry strap"
+      },
+      "tier": "collector"
     },
     {
       "handle": "the-altair-bijou-clutch",
+      "originalTitle": "The Altair Bijou Clutch",
+      "crafts": [
+        "chikankari",
+        "zardozi"
+      ],
       "group": "bags",
       "groupName": "Bags",
       "type": "antique-handle-handbags",
@@ -1012,10 +1426,44 @@
       "minPrice": 549,
       "maxPrice": 549,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Raw silk, hand embroidered with fine floral stitches, raised detailing, and small metallic accents. An antique-style frame and clasp give the bag its shape.",
+      "cardName": "Altair",
+      "cardDetail": "Raw silk clutch · Sage green",
+      "stylingNote": "Use the short strap to carry it in hand. Attach the longer strap to wear it across the body.",
+      "pairWith": [],
+      "passport": [
+        [
+          "Craft",
+          "Fine floral needlework stitched by hand; Ornate, raised embroidery stitched by hand"
+        ],
+        [
+          "Technique",
+          "Hand embroidery"
+        ],
+        [
+          "Additional detail",
+          "Small metallic accents worked into the embroidery"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "Clasp",
+        "carry": "Crossbody strap, Short hand-carry strap"
+      },
+      "tier": "collector"
     },
     {
       "handle": "the-mayura-noir-heirloom",
+      "originalTitle": "The Mayura Noir Heirloom Minaudière",
+      "crafts": [
+        "chikankari",
+        "zardozi"
+      ],
       "group": "bags",
       "groupName": "Bags",
       "type": "round-bags",
@@ -1055,14 +1503,43 @@
       "minPrice": 675,
       "maxPrice": 675,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand embroidered with Chikankari, a delicate floral stitching technique from Lucknow, India. Fine needlework forms the floral pattern on the fabric.",
+      "passport": [
+        [
+          "Craft",
+          "Fine floral needlework stitched by hand; Ornate, raised embroidery stitched by hand"
+        ],
+        [
+          "Technique",
+          "Hand embroidery"
+        ],
+        [
+          "Additional detail",
+          "Small metallic accents worked into the embroidery"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": "Circular handle, Crossbody strap"
+      },
+      "tier": "collector"
     },
     {
       "handle": "the-moonlight-pearl-pochette",
+      "originalTitle": "The Moonlight Pearl Pochette",
+      "crafts": [
+        "chikankari"
+      ],
       "group": "bags",
       "groupName": "Bags",
       "type": "potli",
-      "typeName": "Potli bags",
+      "typeName": "Potli (Pochette) bags",
       "materials": [
         "silk"
       ],
@@ -1071,7 +1548,7 @@
       "attributes": [
         [
           "Category",
-          "Potli bags"
+          "Potli (Pochette) bags"
         ],
         [
           "Material",
@@ -1103,10 +1580,37 @@
       "minPrice": 245,
       "maxPrice": 245,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand embroidered with Chikankari, a delicate floral stitching technique from Lucknow, India. Fine needlework forms the floral pattern on the fabric.",
+      "cardName": "Moonlight Pearl · Potli (Pochette) bag",
+      "passport": [
+        [
+          "Craft",
+          "Fine floral needlework stitched by hand"
+        ],
+        [
+          "Technique",
+          "Hand embroidery"
+        ],
+        [
+          "Material",
+          "silk"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "the-vallari-noir-clutch",
+      "originalTitle": "The Vallari Noir Clutch",
+      "crafts": [
+        "chikankari",
+        "zardozi"
+      ],
       "group": "bags",
       "groupName": "Bags",
       "type": "clutches-full-flap",
@@ -1146,10 +1650,39 @@
       "minPrice": 322,
       "maxPrice": 322,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand embroidered with Chikankari, a delicate floral stitching technique from Lucknow, India. Fine needlework forms the floral pattern on the fabric.",
+      "passport": [
+        [
+          "Craft",
+          "Fine floral needlework stitched by hand; Ornate, raised embroidery stitched by hand"
+        ],
+        [
+          "Technique",
+          "Hand embroidery"
+        ],
+        [
+          "Additional detail",
+          "Small metallic accents worked into the embroidery"
+        ],
+        [
+          "Material",
+          "silk"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "the-aurelia-noir-envelope",
+      "originalTitle": "The Aurelia Noir Envelope",
+      "crafts": [
+        "chikankari"
+      ],
       "group": "bags",
       "groupName": "Bags",
       "type": "jute-clutches",
@@ -1190,10 +1723,36 @@
       "minPrice": 225,
       "maxPrice": 225,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand embroidered with Chikankari, a delicate floral stitching technique from Lucknow, India. Fine needlework forms the floral pattern on the fabric.",
+      "passport": [
+        [
+          "Craft",
+          "Fine floral needlework stitched by hand"
+        ],
+        [
+          "Technique",
+          "Hand embroidery"
+        ],
+        [
+          "Material",
+          "jute"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "the-maia-bijou-clutch",
+      "originalTitle": "The Maia Bijou Clutch",
+      "crafts": [
+        "chikankari",
+        "zardozi"
+      ],
       "group": "bags",
       "groupName": "Bags",
       "type": "antique-handle-handbags",
@@ -1238,10 +1797,37 @@
       "minPrice": 549,
       "maxPrice": 549,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand embroidered with Chikankari, a delicate floral stitching technique from Lucknow, India. Fine needlework forms the floral pattern on the fabric.",
+      "passport": [
+        [
+          "Craft",
+          "Fine floral needlework stitched by hand; Ornate, raised embroidery stitched by hand"
+        ],
+        [
+          "Technique",
+          "Hand embroidery"
+        ],
+        [
+          "Additional detail",
+          "Small metallic accents worked into the embroidery"
+        ],
+        [
+          "Material",
+          "raw silk"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "Clasp",
+        "carry": "Crossbody strap, Short hand-carry strap"
+      },
+      "tier": "collector"
     },
     {
       "handle": "keshamrit-anti-dandruff-shampoo-lemon-250ml",
+      "originalTitle": "Keshamrit Anti Dandruff Shampoo Lemon 250ml",
+      "crafts": [],
       "group": "wellness",
       "groupName": "Wellness",
       "type": "shampoo",
@@ -1271,14 +1857,26 @@
         "1": "Size"
       },
       "subtitle": "250 ml",
-      "text": "A blend of aloe vera, lemon, vitamin E and almond oil, the Lemon Anti-Dandruff Shampoo is naturally hair-friendly. Lemon balances the pH level of the scalp, reducing dryness, flakes and dandruff, while aloevera is excellent for conditioning and restoring hair. The shampoo is light & fragrant and will keep your scalp fresh throughout the day.",
+      "text": "A shampoo blend with lemon, aloe vera, vitamin E, and almond oil.",
       "minPrice": 28,
       "maxPrice": 28,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A shampoo blend with lemon, aloe vera, vitamin E, and almond oil.",
+      "passport": [],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover",
+      "cardName": "Keshamrit Lemon Shampoo · 250 ml",
+      "cardDetail": "Shampoo"
     },
     {
       "handle": "keshamrit-conditioning-cleansing-shampoo-coconut-milk-250ml",
+      "originalTitle": "Keshamrit Conditioning & Cleansing Shampoo Coconut Milk 250ml",
+      "crafts": [],
       "group": "wellness",
       "groupName": "Wellness",
       "type": "shampoo",
@@ -1308,14 +1906,28 @@
         "1": "Size"
       },
       "subtitle": "250 ml",
-      "text": "The Keshamrit Coconut Milk Conditioning Shampoo is a sulphate-free, blend, infused with coconut milk, aloe vera, sandalwood and rose water. Packed with natural hair growth minerals such as iron, selenium & calcium, it deeply moisturizes the hair and prevents split-ends. Its gentle ingredients restore dry & damaged hair back to its natural smoothness.",
+      "text": "A shampoo with coconut milk, aloe vera, sandalwood, and rose water.",
       "minPrice": 30,
       "maxPrice": 30,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A shampoo with coconut milk, aloe vera, sandalwood, and rose water.",
+      "passport": [],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover",
+      "cardName": "Keshamrit Coconut Milk Shampoo · 250 ml",
+      "cardDetail": "Shampoo"
     },
     {
       "handle": "blush-garden-3-layer-throw",
+      "originalTitle": "Blush Garden 3-Layer Throw",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "throw",
@@ -1355,10 +1967,39 @@
       "minPrice": 155,
       "maxPrice": 155,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Three layers of cotton muslin, with block-printed motifs inside arched borders. A light layer for a cool room or the end of the bed.",
+      "cardName": "Blush Garden",
+      "cardDetail": "Three-layer muslin throw",
+      "stylingNote": "",
+      "pairWith": [],
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Material",
+          "muslin cotton"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "indigo-peacock-3-layer-throw",
+      "originalTitle": "Indigo Peacock 3-Layer Throw",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "throw",
@@ -1398,10 +2039,35 @@
       "minPrice": 155,
       "maxPrice": 155,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Material",
+          "muslin cotton"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "lavender-bloom-3-layer-throw",
+      "originalTitle": "Lavender Bloom 3-Layer Throw",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "throw",
@@ -1435,10 +2101,31 @@
       "minPrice": 155,
       "maxPrice": 155,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "vintage-garden-3-layer-throw",
+      "originalTitle": "Vintage Garden 3-Layer Throw",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "throw",
@@ -1472,10 +2159,31 @@
       "minPrice": 155,
       "maxPrice": 155,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "sage-botanica-3-layer-throw",
+      "originalTitle": "Sage Botanica 3-Layer Throw",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "throw",
@@ -1515,10 +2223,35 @@
       "minPrice": 155,
       "maxPrice": 155,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Material",
+          "muslin cotton"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "gulnaar-floral-linen-cushion-cover-earth-brown",
+      "originalTitle": "Gulnaar Floral Linen Cushion Cover – Earth Brown",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "cushion-cover",
@@ -1558,10 +2291,42 @@
       "minPrice": 118,
       "maxPrice": 118,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Red florals and muted green leaves, block printed by hand on textured brown linen. The red-and-ivory twisted piping is the detail to look for.",
+      "cardName": "Gulnaar",
+      "cardDetail": "Linen cushion cover · Earth brown",
+      "stylingNote": "Let the brown linen sit against a pale sofa. Pick up the green in the print with Cypress Row.",
+      "pairWith": [
+        "cypress-row-lumbar-cushion-cover",
+        "terracotta-bloom-quilted-cushion-cover"
+      ],
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Material",
+          "linen"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "Invisible zipper",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "indigo-garden-waffle-hand-towels-set-of-2",
+      "originalTitle": "Indigo Garden Waffle Hand Towels (Set of 2)",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "handtowel-set-of-2",
@@ -1605,10 +2370,43 @@
       "minPrice": 116,
       "maxPrice": 116,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Jaipur, Rajasthan"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "Machine wash cold on a gentle cycle. Tumble dry low.",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "olive-cypress-waffle-hand-towels-set-of-2",
+      "originalTitle": "Olive Cypress Waffle Hand Towels (Set of 2)",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "handtowel-set-of-2",
@@ -1652,10 +2450,43 @@
       "minPrice": 116,
       "maxPrice": 116,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Jaipur, Rajasthan"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "ruby-cypress-waffle-hand-towels-set-of-2",
+      "originalTitle": "Ruby Cypress Waffle Hand Towels (Set of 2)",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "handtowel-set-of-2",
@@ -1699,10 +2530,43 @@
       "minPrice": 116,
       "maxPrice": 116,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Jaipur, Rajasthan"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "scarlet-garden-waffle-hand-towels-set-of-2",
+      "originalTitle": "Scarlet Garden Waffle Hand Towels (Set of 2)",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "handtowel-set-of-2",
@@ -1746,10 +2610,43 @@
       "minPrice": 116,
       "maxPrice": 116,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Jaipur, Rajasthan"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "crimson-tulip-waffle-hand-towels-set-of-2",
+      "originalTitle": "Crimson Tulip Waffle Hand Towels (Set of 2)",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "handtowel-set-of-2",
@@ -1793,10 +2690,41 @@
       "minPrice": 116,
       "maxPrice": 116,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Jaipur, Rajasthan"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "cypress-grove-round-tote",
+      "originalTitle": "Cypress Grove Round Tote",
+      "crafts": [],
       "group": "bags",
       "groupName": "Bags",
       "type": "tote-bag",
@@ -1834,10 +2762,29 @@
       "minPrice": 110,
       "maxPrice": 110,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A woven cotton tote for everyday use.",
+      "passport": [
+        [
+          "Technique",
+          "Handcrafted"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "indigo-palm-round-tote",
+      "originalTitle": "Indigo Palm Round Tote",
+      "crafts": [],
       "group": "bags",
       "groupName": "Bags",
       "type": "tote-bag",
@@ -1875,10 +2822,29 @@
       "minPrice": 110,
       "maxPrice": 110,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A woven cotton tote for everyday use.",
+      "passport": [
+        [
+          "Technique",
+          "Handcrafted"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "indigo-bloom-round-tote",
+      "originalTitle": "Indigo Bloom Round Tote",
+      "crafts": [],
       "group": "bags",
       "groupName": "Bags",
       "type": "tote-bag",
@@ -1916,10 +2882,29 @@
       "minPrice": 110,
       "maxPrice": 110,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A woven cotton tote for everyday use.",
+      "passport": [
+        [
+          "Technique",
+          "Handcrafted"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "black-tulip-square-tote",
+      "originalTitle": "Black Tulip Square Tote",
+      "crafts": [],
       "group": "bags",
       "groupName": "Bags",
       "type": "tote-bag",
@@ -1957,10 +2942,29 @@
       "minPrice": 110,
       "maxPrice": 110,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A woven cotton tote for everyday use.",
+      "passport": [
+        [
+          "Technique",
+          "Handcrafted"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "botanical-grove-square-tote",
+      "originalTitle": "Botanical Grove Square Tote",
+      "crafts": [],
       "group": "bags",
       "groupName": "Bags",
       "type": "tote-bag",
@@ -1998,10 +3002,29 @@
       "minPrice": 110,
       "maxPrice": 110,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A woven cotton tote for everyday use.",
+      "passport": [
+        [
+          "Technique",
+          "Handcrafted"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "rose-garden-square-tote",
+      "originalTitle": "Rose Garden Square Tote",
+      "crafts": [],
       "group": "bags",
       "groupName": "Bags",
       "type": "tote-bag",
@@ -2039,10 +3062,29 @@
       "minPrice": 110,
       "maxPrice": 110,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A woven cotton tote for everyday use.",
+      "passport": [
+        [
+          "Technique",
+          "Handcrafted"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "garden-arch-square-tote",
+      "originalTitle": "Garden Arch Square Tote",
+      "crafts": [],
       "group": "bags",
       "groupName": "Bags",
       "type": "tote-bag",
@@ -2080,10 +3122,29 @@
       "minPrice": 110,
       "maxPrice": 110,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A woven cotton tote for everyday use.",
+      "passport": [
+        [
+          "Technique",
+          "Handcrafted"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "blush-sprig-square-tote",
+      "originalTitle": "Blush Sprig Square Tote",
+      "crafts": [],
       "group": "bags",
       "groupName": "Bags",
       "type": "tote-bag",
@@ -2121,10 +3182,31 @@
       "minPrice": 110,
       "maxPrice": 110,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A woven cotton tote for everyday use.",
+      "passport": [
+        [
+          "Technique",
+          "Handcrafted"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "scarlet-garden-waffle-face-towels-set-of-4",
+      "originalTitle": "Scarlet Garden Waffle Face Towels (Set of 4)",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "facetowel-set-of-4",
@@ -2168,10 +3250,43 @@
       "minPrice": 118,
       "maxPrice": 118,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Jaipur, Rajasthan"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "cypress-duo-waffle-face-towels-set-of-4",
+      "originalTitle": "Cypress Duo Waffle Face Towels (Set of 4)",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "facetowel-set-of-4",
@@ -2215,10 +3330,43 @@
       "minPrice": 118,
       "maxPrice": 118,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Jaipur, Rajasthan"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "indigo-garden-waffle-face-towels-set-of-4",
+      "originalTitle": "Indigo Garden Waffle Face Towels (Set of 4)",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "facetowel-set-of-4",
@@ -2262,10 +3410,43 @@
       "minPrice": 118,
       "maxPrice": 118,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Jaipur, Rajasthan"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "crimson-botanica-waffle-face-towels-set-of-4",
+      "originalTitle": "Crimson Botanica Waffle Face Towels (Set of 4)",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "facetowel-set-of-4",
@@ -2309,10 +3490,43 @@
       "minPrice": 118,
       "maxPrice": 118,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Jaipur, Rajasthan"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "botanical-quartet-waffle-face-towels-set-of-4",
+      "originalTitle": "Botanical Quartet Waffle Face Towels (Set of 4)",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "facetowel-set-of-4",
@@ -2356,10 +3570,43 @@
       "minPrice": 118,
       "maxPrice": 118,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Jaipur, Rajasthan"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "royal-cypress-table-cover",
+      "originalTitle": "Royal Cypress Table Cover",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "table-cover",
@@ -2408,10 +3655,43 @@
       "minPrice": 151,
       "maxPrice": 168,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "palace-elephant-table-cover",
+      "originalTitle": "Palace Elephant Table Cover",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "table-cover",
@@ -2460,10 +3740,43 @@
       "minPrice": 151,
       "maxPrice": 168,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "imperial-garden-table-cover",
+      "originalTitle": "Imperial Garden Table Cover",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "table-cover",
@@ -2512,10 +3825,43 @@
       "minPrice": 151,
       "maxPrice": 168,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "raspberry-bloom-cocktail-napkins-set-of-6",
+      "originalTitle": "Raspberry Bloom Cocktail Napkins (Set of 6)",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "cock-tail-napkin-set-of-12",
@@ -2559,10 +3905,35 @@
       "minPrice": 125,
       "maxPrice": 125,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "olive-willow-cocktail-napkins-set-of-6",
+      "originalTitle": "Olive Willow Cocktail Napkins (Set of 6)",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "cock-tail-napkin-set-of-12",
@@ -2606,10 +3977,35 @@
       "minPrice": 125,
       "maxPrice": 125,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "botanical-garden-quilted-cushion-cover",
+      "originalTitle": "Botanical Garden Quilted Cushion Cover",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "cushion-cover",
@@ -2661,10 +4057,50 @@
       "minPrice": 118,
       "maxPrice": 118,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Olive foliage and deep red flowers, framed by a hand-block printed border. Cotton percale and hand-stitched quilting keep the surface softly textured.",
+      "cardName": "Botanical Garden",
+      "cardDetail": "Quilted percale cover · Olive & red",
+      "stylingNote": "Use the red flowers as a link to Gulnaar. The white ground keeps the two prints from feeling too close.",
+      "pairWith": [
+        "gulnaar-floral-linen-cushion-cover-earth-brown",
+        "cypress-row-lumbar-cushion-cover"
+      ],
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton percale"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "cypress-bloom-quilted-cushion-cover",
+      "originalTitle": "Cypress & Bloom Quilted Cushion Cover",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "cushion-cover",
@@ -2717,10 +4153,50 @@
       "minPrice": 111,
       "maxPrice": 111,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Cypress trees, little flowers, and leafy sprigs on ivory cotton. Olive, burgundy, and orange meet in a hand-block printed pattern with twisted piping.",
+      "cardName": "Cypress Bloom",
+      "cardDetail": "Cotton cushion cover · Olive & burgundy",
+      "stylingNote": "Repeat the green with Cypress Row, or bring out the orange with Terracotta Bloom.",
+      "pairWith": [
+        "cypress-row-lumbar-cushion-cover",
+        "terracotta-bloom-quilted-cushion-cover"
+      ],
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "lavender-garden-quilted-cushion-cover",
+      "originalTitle": "Lavender Garden Quilted Cushion Cover",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "cushion-cover",
@@ -2772,10 +4248,43 @@
       "minPrice": 111,
       "maxPrice": 111,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "flamingo-quilted-cushion-cover",
+      "originalTitle": "Flamingo Quilted Cushion Cover",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "cushion-cover",
@@ -2828,10 +4337,35 @@
       "minPrice": 116,
       "maxPrice": 116,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Material",
+          "cotton percale"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "sage-coral-garden-quilted-cushion-cover",
+      "originalTitle": "Sage & Coral Garden Quilted Cushion Cover",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "cushion-cover",
@@ -2883,10 +4417,43 @@
       "minPrice": 114,
       "maxPrice": 114,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "aqua-bloom-meadow-quilted-cushion-cover",
+      "originalTitle": "Aqua Bloom Meadow Quilted Cushion Cover",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "cushion-cover",
@@ -2938,10 +4505,43 @@
       "minPrice": 114,
       "maxPrice": 114,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "terracotta-bloom-quilted-cushion-cover",
+      "originalTitle": "Terracotta Bloom Quilted Cushion Cover",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "cushion-cover",
@@ -2994,10 +4594,50 @@
       "minPrice": 114,
       "maxPrice": 114,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A terracotta flower with green leaves and a touch of aqua, block printed by hand on white cotton. The front is quilted by hand.",
+      "cardName": "Terracotta Bloom",
+      "cardDetail": "Quilted cotton cover · Terracotta & green",
+      "stylingNote": "Give the large flower a little space. Pair it with the smaller trees in Cypress Row.",
+      "pairWith": [
+        "cypress-row-lumbar-cushion-cover",
+        "gulnaar-floral-linen-cushion-cover-earth-brown"
+      ],
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "elephant-parade-quilted-cushion-cover",
+      "originalTitle": "Elephant Parade Quilted Cushion Cover",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "cushion-cover",
@@ -3048,10 +4688,43 @@
       "minPrice": 114,
       "maxPrice": 114,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "indigo-blossom-cocktail-napkins-set-of-12",
+      "originalTitle": "Indigo Blossom Cocktail Napkins (Set of 12)",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "cock-tail-napkin-set-of-12",
@@ -3089,10 +4762,31 @@
       "minPrice": 133,
       "maxPrice": 133,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "indigo-vine-cocktail-napkins-set-of-12",
+      "originalTitle": "Indigo Vine Cocktail Napkins (Set of 12)",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "cock-tail-napkin-set-of-12",
@@ -3130,10 +4824,31 @@
       "minPrice": 133,
       "maxPrice": 133,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "coral-bloom-cocktail-napkins-set-of-12",
+      "originalTitle": "Coral Bloom Cocktail Napkins (Set of 12)",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "cock-tail-napkin-set-of-12",
@@ -3171,10 +4886,29 @@
       "minPrice": 133,
       "maxPrice": 133,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "berry-olive-table-mat-dinner-napkin-set",
+      "originalTitle": "Berry & Olive Table Mat & Dinner Napkin Set",
+      "crafts": [],
       "group": "home",
       "groupName": "Home & Living",
       "type": "table-mats-dinner-napkins",
@@ -3221,10 +4955,35 @@
       "minPrice": 135,
       "maxPrice": 135,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "",
+      "passport": [
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "sage-blossom-table-mat-dinner-napkin-set",
+      "originalTitle": "Sage Blossom Table Mat & Dinner Napkin Set",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "table-mats-dinner-napkins",
@@ -3274,10 +5033,43 @@
       "minPrice": 145,
       "maxPrice": 145,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "blush-garden-table-mat-dinner-napkin-set",
+      "originalTitle": "Blush Garden Table Mat & Dinner Napkin Set",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "table-mats-dinner-napkins",
@@ -3327,10 +5119,43 @@
       "minPrice": 145,
       "maxPrice": 145,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "blush-cypress-waffle-bath-towel",
+      "originalTitle": "Blush Cypress Waffle Bath Towel",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "bathtowel",
@@ -3370,10 +5195,43 @@
       "minPrice": 118,
       "maxPrice": 118,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Jaipur, Rajasthan"
+        ],
+        [
+          "Material",
+          "organic waffle cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "crimson-vine-waffle-bath-towel",
+      "originalTitle": "Crimson Vine Waffle Bath Towel",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "bathtowel",
@@ -3413,10 +5271,43 @@
       "minPrice": 118,
       "maxPrice": 118,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Jaipur, Rajasthan"
+        ],
+        [
+          "Material",
+          "organic waffle cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "sage-garden-waffle-bath-towel",
+      "originalTitle": "Sage Garden Waffle Bath Towel",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "bathtowel",
@@ -3456,10 +5347,43 @@
       "minPrice": 118,
       "maxPrice": 118,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Jaipur, Rajasthan"
+        ],
+        [
+          "Material",
+          "organic waffle cotton"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "fuchsia-sage-reversible-table-runner",
+      "originalTitle": "Fuchsia & Sage Reversible Table Runner",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "table-runner",
@@ -3507,10 +5431,43 @@
       "minPrice": 126,
       "maxPrice": 126,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "fuchsia-vine-reversible-table-runner",
+      "originalTitle": "Fuchsia Vine Reversible Table Runner",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "table-runner",
@@ -3558,10 +5515,43 @@
       "minPrice": 126,
       "maxPrice": 126,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "sage-vine-reversible-table-runner",
+      "originalTitle": "Sage Vine Reversible Table Runner",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "table-runner",
@@ -3610,10 +5600,43 @@
       "minPrice": 126,
       "maxPrice": 126,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "spice-garden-table-runner",
+      "originalTitle": "Spice Garden Table Runner",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "table-runner",
@@ -3663,10 +5686,47 @@
       "minPrice": 126,
       "maxPrice": 126,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Floral vines on ivory cotton cambric, bordered with stripes of red, ochre, olive, and orange. Block printed by hand in Rajasthan, India.",
+      "cardName": "Spice Garden",
+      "cardDetail": "Cotton table runner · Red & ochre",
+      "stylingNote": "",
+      "pairWith": [],
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Place of making",
+          "Rajasthan"
+        ],
+        [
+          "Material",
+          "cotton cambric"
+        ],
+        [
+          "Made in",
+          "India"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "emerald-cypress-waffle-bath-sheet",
+      "originalTitle": "Emerald Cypress Waffle Bath Sheet",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "bathsheet",
@@ -3706,10 +5766,35 @@
       "minPrice": 125,
       "maxPrice": 125,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "blush-cypress-waffle-bath-sheet",
+      "originalTitle": "Blush Cypress Waffle Bath Sheet",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "bathsheet",
@@ -3749,10 +5834,35 @@
       "minPrice": 125,
       "maxPrice": 125,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "crimson-bloom-waffle-bath-sheet",
+      "originalTitle": "Crimson Bloom Waffle Bath Sheet",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "bathsheet",
@@ -3792,10 +5902,35 @@
       "minPrice": 125,
       "maxPrice": 125,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "sage-garden-waffle-bath-sheet",
+      "originalTitle": "Sage Garden Waffle Bath Sheet",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "bathsheet",
@@ -3835,10 +5970,33 @@
       "minPrice": 125,
       "maxPrice": 125,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "Hand-block printed using carved wooden blocks. Small variations between impressions are a natural part of block printing.",
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Material",
+          "waffle cotton"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "mystic-hair-oil-100ml",
+      "originalTitle": "Mystic Hair Oil 100ml",
+      "crafts": [],
       "group": "wellness",
       "groupName": "Wellness",
       "type": "hair-oil",
@@ -3868,14 +6026,26 @@
         "1": "Size"
       },
       "subtitle": "100 ml",
-      "text": "An ancient Himalayan recipe made with Indic hair growth herbs, Mystic Hair Oil is our bestseller. A botanical blend of neem, amla, hibiscus & marjoram, it helps reduce hairfall & balding, stimulates dormant hair follicles & and is guaranteed to make the hair thick, long and lustrous.",
+      "text": "A botanical hair oil blend with neem, amla, hibiscus, and marjoram.",
       "minPrice": 25,
       "maxPrice": 25,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A botanical hair oil blend with neem, amla, hibiscus, and marjoram.",
+      "passport": [],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover",
+      "cardName": "Mystic Hair Oil · 100 ml",
+      "cardDetail": "Hair oils"
     },
     {
       "handle": "hibiscus-hair-oil-100ml",
+      "originalTitle": "Hibiscus Hair Oil 100ml",
+      "crafts": [],
       "group": "wellness",
       "groupName": "Wellness",
       "type": "hair-oil",
@@ -3905,14 +6075,26 @@
         "1": "Size"
       },
       "subtitle": "100 ml",
-      "text": "Hibiscus has been revered in Ayurveda for its hair strengthening properties This hair oil fights premature greying, revives dull hair and cleanses the scalp. An herbal infusion in a blend of premium oils, it is rich in amino acids that builds strong hair, restores its natural colour and provides deep conditioning.",
+      "text": "A hair oil with a hibiscus herbal infusion, in a 100 ml size.",
       "minPrice": 25,
       "maxPrice": 25,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A hair oil with a hibiscus herbal infusion, in a 100 ml size.",
+      "passport": [],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover",
+      "cardName": "Hibiscus Hair Oil · 100 ml",
+      "cardDetail": "Hair oils"
     },
     {
       "handle": "snanamrit-ubtan-natural-bathing-powder-250gm",
+      "originalTitle": "Snanamrit Ubtan Natural Bathing Powder 250gm",
+      "crafts": [],
       "group": "wellness",
       "groupName": "Wellness",
       "type": "bathing-powder",
@@ -3942,14 +6124,28 @@
         "1": "Size"
       },
       "subtitle": "250 g",
-      "text": "The Anahata Snanamrit Bathing Powder and Scrub is a handcrafted beauty blend, made from traditional, skin friendly ingredients. Infused with healing herbs, pulses and flowers, it smoothens the skin, reduces inflammation and keeps the skin blemish free, elastic and young. An excellent alternative to soaps and body wash, this powder is a fully organic mixture, that nourishes and cleanses the body.",
+      "text": "A bathing powder and scrub with herbs, pulses, and flowers.",
       "minPrice": 29,
       "maxPrice": 29,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A bathing powder and scrub with herbs, pulses, and flowers.",
+      "passport": [],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "discover",
+      "cardName": "Snanamrit Ubtan Bathing Powder · 250 g",
+      "cardDetail": "Bathing powder"
     },
     {
       "handle": "cypress-row-lumbar-cushion-cover",
+      "originalTitle": "Cypress Row Lumbar Cushion Cover",
+      "crafts": [
+        "block-printing"
+      ],
       "group": "home",
       "groupName": "Home & Living",
       "type": "cushion-cover",
@@ -4002,10 +6198,40 @@
       "minPrice": 116,
       "maxPrice": 116,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A row of teal and green cypress trees, block printed by hand on off-white cotton percale. Hand-stitched quilting adds texture across the front.",
+      "cardName": "Cypress Row",
+      "cardDetail": "Quilted lumbar cover · Teal & green",
+      "stylingNote": "Put this long, narrow cover in front of a square cushion. Its smaller tree print works beside Gulnaar’s larger flowers.",
+      "pairWith": [
+        "gulnaar-floral-linen-cushion-cover-earth-brown",
+        "cypress-bloom-quilted-cushion-cover"
+      ],
+      "passport": [
+        [
+          "Craft",
+          "Patterns pressed onto cloth by hand with carved wooden blocks"
+        ],
+        [
+          "Technique",
+          "Hand-block printing"
+        ],
+        [
+          "Material",
+          "cotton percale"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     },
     {
       "handle": "meadow-bloom-round-tote",
+      "originalTitle": "Meadow Bloom Round Tote",
+      "crafts": [],
       "group": "bags",
       "groupName": "Bags",
       "type": "tote-bag",
@@ -4043,7 +6269,24 @@
       "minPrice": 110,
       "maxPrice": 110,
       "available": true,
-      "source": "data/products.json: title, description, options and variants"
+      "source": "data/products.json: title, description, options and variants",
+      "editorialDescription": "A woven cotton tote for everyday use.",
+      "passport": [
+        [
+          "Technique",
+          "Handcrafted"
+        ],
+        [
+          "Material",
+          "cotton piqué"
+        ]
+      ],
+      "evidence": {
+        "care": "",
+        "closure": "",
+        "carry": ""
+      },
+      "tier": "signature"
     }
   ]
 }
