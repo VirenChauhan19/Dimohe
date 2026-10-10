@@ -152,7 +152,7 @@ console.log('Passed: all three craft collections, evidence-based craft assignmen
 const {chapters,curatedCollections,editHandles}=await import('../lib/commerce.mjs');
 for(const chapter of chapters){const response=await fetch(base+'/pages/chapter-'+chapter.slug);assert.equal(response.status,200);const doc=load(await response.text());assert.ok(doc('h1').text().includes(chapter.title));assert.equal(doc('[data-product-handle]').length,Math.min(8,enriched.filter(chapter.match).length));}
 for(const collection of curatedCollections){const doc=load(await(await fetch(base+'/collections/'+collection.handle)).text());assert.deepEqual(doc('#product-card-grid [data-product-handle]').map((i,e)=>doc(e).attr('data-product-handle')).get().sort(),enriched.filter(collection.match).map(p=>p.handle).sort());}
-const home=load(await(await fetch(base+'/')).text());assert.equal(home('[data-product-handle]').length,8);assert.deepEqual(home('[data-product-handle]').map((i,e)=>home(e).attr('data-product-handle')).get().sort(),[...editHandles].sort());
+const home=load(await(await fetch(base+'/')).text());assert.equal(home('.edit-section [data-product-handle]').length,8);assert.deepEqual(home('.edit-section [data-product-handle]').map((i,e)=>home(e).attr('data-product-handle')).get().sort(),[...editHandles].sort());
 for(const p of enriched){const doc=load(await(await fetch(base+'/products/'+p.handle)).text());const graph=JSON.parse(doc('script[type="application/ld+json"]').text())['@graph'];const schema=graph.find(x=>x['@type']==='Product');assert.equal(schema.name,p.title);assert.deepEqual(schema.offers.map(v=>v.price),p.variants.map(v=>Number(v.price)));assert.equal(doc('.craft-passport').length,p.merch.group==='wellness'?0:1);if(p.merch.group==='wellness'){
  const source=load(await fs.readFile('public/products/'+p.handle+'/index.html','utf8'));
  const normalized=text=>text.replace(/\s*[—–]\s*|\s*--\s*/g,', ').replace(/\s+/g,'').trim();
@@ -180,10 +180,14 @@ const filmCraftPage=load(await (await fetch(base+'/pages/our-craft')).text());
 assert.equal(filmCraftPage('#craft-film video source').attr('src'),brandFilm.src);
 assert.equal(filmCraftPage('[data-film-toggle]').length,0);
 assert.ok(!filmCraftPage('video').is('[data-autoplay]'));
-assert.ok(home('.chapter-panel').first().index()<home('.embroidery-showcase').index());
-assert.ok(home('.embroidery-showcase').index()<home('.chapter-panel').last().index());
-assert.ok(home('.chapter-panel').first().next().is('.embroidery-showcase'));
-assert.equal(home('.chapter-panel').first().find('img').attr('src'),'/cdn/shop/files/AVAHSG_1.png');
+assert.equal(filmCraftPage('.craft-reel video source').attr('src'),'/media/block-printing-story.mp4');
+assert.ok(home('.embroidery-showcase').index()<home('.chapter-panel').first().index());
+assert.equal(home('.chapter-panel').length,3);
+assert.equal(home('[data-hero-slide]').length,4);
+assert.equal(home('.desktop-nav summary').first().text(),'Bags');
+assert.ok(home('.desktop-nav summary').toArray().some(el=>home(el).text()==='Home & Living'));
+assert.equal(home('.desktop-nav summary span').length,0);
+assert.equal(home('.department-products').length,2);
 const blogs=load(await (await fetch(base+'/blogs/news')).text());
 assert.equal(blogs('.journal-card').length,2);
 assert.equal(blogs('.journal-card h2').length,2);
@@ -220,7 +224,7 @@ const wellnessMenu=home('.desktop-nav .nav-wellness');
 for(const type of types.filter(t=>t.group==='wellness'))assert.equal(wellnessMenu.find('a[href="/collections/'+type.handle+'"]').length,1);
 for(const handle of ['hair-care','bath-body']){
  const doc=load(await(await fetch(base+'/collections/'+handle)).text());
- assert.equal(doc('.desktop-nav summary.current').text().trim(),'Wellness ⌄');
+ assert.equal(doc('.desktop-nav summary.current').text().trim(),'Wellness');
  assert.equal(doc('.filter-fields select[name="material"]').length,0);
 }
 console.log('Passed: persistent department categories, filtered empty states, active category links, all wellness product navigation, and complete wellness menus.');
@@ -229,7 +233,7 @@ console.log('Passed: persistent department categories, filtered empty states, ac
 const {embroideryShowcase}=await import('../lib/commerce.mjs');
 assert.equal(home('.explore-dimohe').length,0);assert.equal(home('.embroidery-panel').length,5);
 for(const item of embroideryShowcase){const doc=load(await(await fetch(base+'/collections/'+item.handle)).text());const handles=doc('#product-card-grid [data-product-handle]').map((i,e)=>doc(e).attr('data-product-handle')).get();assert.ok(handles.length>0);assert.ok(handles.every(h=>enriched.find(p=>p.handle===h).merch.crafts.some(c=>['chikankari','zardozi'].includes(c))));}
-const homeMarkup=home.html();assert.ok(homeMarkup.indexOf('embroidery-showcase-heading')>homeMarkup.indexOf('Chikankari hand embroidery.'));
+const homeMarkup=home.html();assert.equal(home('.embroidery-showcase').length,1);
 console.log('Passed: Explore Dimohe removed, five bag shapes, hand-embroidered bag destinations, and homepage section placement.');
 
 const updatedHome=load(await(await fetch(base+'/')).text());
@@ -237,11 +241,13 @@ assert.equal(updatedHome('.site-header .wordmark img').attr('src'),'/cdn/shop/fi
 assert.equal(updatedHome('.hero-copy>.eyebrow').length,0);
 assert.match(updatedHome('.hero h1').text(),/Ayurveda/);
 assert.equal(updatedHome('.hero-copy a[href="/pages/our-craft"]').length,0);
-assert.equal(updatedHome('.film-copy a[href="/pages/our-craft"]').text().trim(),'Discover the craft');
+assert.equal(updatedHome('.film-copy a').length,0);
+assert.equal(updatedHome('#film-preview figcaption a').attr('href'),'/pages/our-craft#craft-film');
+updatedHome('.chapter-panel').each((i,panel)=>{const node=updatedHome(panel),target='/collections/'+chapters[i+1].collection;assert.equal(node.find('.chapter-photo').attr('href'),target);assert.equal(node.find('h2 a').attr('href'),target);assert.equal(node.find('.chapter-copy>.text-link').length,1);assert.equal(node.find('a[href^="/pages/chapter-"]').length,0);});
 assert.equal(updatedHome('.desktop-nav .founder-nav a[href="/pages/our-story"]').length,2);
 assert.equal(updatedHome('.desktop-nav .founder-nav a[href="/pages/our-founder"]').text(),'Founder Story');
 assert.equal(updatedHome('.embroidery-panel').first().find('a').first().attr('href'),'/collections/round-bags');
-assert.equal(updatedHome('.embroidery-showcase .section-title>div>.text-link').text(),'Explore bags');
+assert.equal(updatedHome('.embroidery-showcase .section-title>div>.text-link').last().text(),'Explore bags');
 const desert=load(await(await fetch(base+'/products/the-desert-pearl-pochette')).text());
 assert.equal((desert('.product-info').text().match(/tan[ -]yellow/gi)||[]).length,1);
 assert.doesNotMatch(desert('.product-summary').text(),/inches|measures|9\.0|9 by 9/i);
