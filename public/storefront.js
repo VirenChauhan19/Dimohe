@@ -10,7 +10,14 @@
   function openDialog(id){const dialog=document.getElementById(id);if(dialog.open)return;focusBeforeDialog=document.activeElement;dialogs.filter(d=>d.open).forEach(d=>d.close());dialog.showModal();}
   for(const d of dialogs){d.addEventListener('click',event=>{if(event.target===d){const r=d.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)d.close();}});d.addEventListener('close',()=>focusBeforeDialog?.focus());}
   document.querySelectorAll('[data-close-dialog]').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));
-  document.querySelector('[data-menu-toggle]')?.addEventListener('click',event=>{const nav=document.querySelector('.mobile-nav');nav.hidden=!nav.hidden;event.currentTarget.setAttribute('aria-expanded',String(!nav.hidden));event.currentTarget.setAttribute('aria-label',nav.hidden?'Open menu':'Close menu');});
+  document.querySelector('[data-menu-toggle]')?.addEventListener('click',event=>{const nav=document.querySelector('.mobile-nav');nav.hidden=!nav.hidden;document.querySelectorAll('main,.site-footer').forEach(el=>el.inert=!nav.hidden);if(!nav.hidden){nav.querySelectorAll('details').forEach(group=>group.open=false);nav.scrollTop=0;}event.currentTarget.setAttribute('aria-expanded',String(!nav.hidden));event.currentTarget.setAttribute('aria-label',nav.hidden?'Open menu':'Close menu');});
+  function closeMobileNavigation(){const nav=document.querySelector('.mobile-nav'),toggle=document.querySelector('[data-menu-toggle]');if(!nav||nav.hidden)return false;nav.hidden=true;document.querySelectorAll('main,.site-footer').forEach(el=>el.inert=false);toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open menu');return true;}
+  document.querySelector('.mobile-nav')?.addEventListener('click',event=>{if(event.target.closest('a'))closeMobileNavigation();});
+  const desktopLayout=window.matchMedia('(min-width: 900px)');
+  desktopLayout.addEventListener('change',event=>{if(event.matches)closeMobileNavigation();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&closeMobileNavigation())document.querySelector('[data-menu-toggle]').focus();});
+  const mobileGroups=[...document.querySelectorAll('.mobile-nav>details')];
+  mobileGroups.forEach(group=>group.addEventListener('toggle',()=>{if(group.open)mobileGroups.forEach(other=>{if(other!==group)other.open=false;});}));
   const navGroups=[...document.querySelectorAll('.desktop-nav .nav-group')];
   const hoverNavigation=window.matchMedia('(hover: hover) and (pointer: fine)');
   let navCloseTimer,navOpenTimer;

@@ -237,6 +237,11 @@ const homeMarkup=home.html();assert.equal(home('.embroidery-showcase').length,1)
 console.log('Passed: Explore Dimohe removed, five bag shapes, hand-embroidered bag destinations, and homepage section placement.');
 
 const updatedHome=load(await(await fetch(base+'/')).text());
+assert.equal(updatedHome('.product-caption .product-craft').length,0);
+const potliCards=load(await(await fetch(base+'/collections/potli')).text());
+assert.match(potliCards('.collection-intro>p').last().text(),/hand embroidery/i);
+assert.equal(potliCards('.product-caption .product-craft').length,0);
+assert.doesNotMatch(potliCards('.product-subtitle').text(),/hand embroidered/i);
 assert.equal(updatedHome('.site-header .wordmark img').attr('src'),'/cdn/shop/files/1_8f26be1f-aae1-4e55-af0a-9903f2de5213.png');
 assert.equal(updatedHome('.hero-copy>.eyebrow').length,0);
 assert.match(updatedHome('.hero h1').text(),/Ayurveda/);
