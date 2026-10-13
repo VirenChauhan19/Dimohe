@@ -218,3 +218,5 @@
 /* Keep photographic framing and content scale consistent on wide displays. */
 .hero{max-width:1440px;margin-inline:auto}
 @media(min-width:1600px){.hero-copy{padding-left:9%;padding-right:6%}}
+
+@media(max-width:899px){.mobile-home-links>.nav-room:last-child{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px}.mobile-home-links>.nav-room:last-child>h3{grid-column:1/-1}}
