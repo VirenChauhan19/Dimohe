@@ -1,0 +1,46 @@
+{
+  "checks": [
+    {
+      "route": "/",
+      "result": "pass"
+    },
+    {
+      "route": "/collections/kids-clothing",
+      "result": "pass"
+    },
+    {
+      "route": "/products/rosemary-hair-masque-150gm",
+      "result": "pass"
+    },
+    {
+      "route": "/pages/our-founder",
+      "result": "pass"
+    },
+    {
+      "route": "/cart",
+      "result": "pass"
+    }
+  ],
+  "categoryCarousels": 1,
+  "distinctPhotos": 5,
+  "connectedSocialLinks": [
+    "Instagram",
+    "LinkedIn"
+  ],
+  "videoSeconds": 22,
+  "themeCheckErrors": 0,
+  "themeCheckWarnings": 0,
+  "welcomeDelayMs": 1500,
+  "welcomeModal": false,
+  "desktopOfferSize": [
+    360,
+    383
+  ],
+  "mobileOfferSize": [
+    350,
+    382
+  ],
+  "filmAspectRatio": "5:8",
+  "carouselIntervalMs": 4500,
+  "bagsInCarousel": false
+}
