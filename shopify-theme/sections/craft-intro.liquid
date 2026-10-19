@@ -1,0 +1,25 @@
+<section class="section craft-intro"><p class="breadcrumbs"><a href="{{ routes.root_url }}">Home</a> / The craft stories</p><h1>{{ section.settings.heading | escape }}</h1><p>{{ section.settings.intro | escape }}</p></section>
+{% schema %}
+{
+  "name": "Craft introduction",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The craft stories"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Introduction",
+      "default": "Wooden blocks, needle and thread, ingredients prepared with care. Explore hand-block printing, Chikankari, raised hand embroidery and Ayurveda, and meet the processes behind the pieces you bring home."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Craft introduction"
+    }
+  ]
+}
+{% endschema %}

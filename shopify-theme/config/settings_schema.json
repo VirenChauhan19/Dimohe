@@ -1,0 +1,97 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Dimohe Refined Demo",
+    "theme_version": "1.2.0",
+    "theme_author": "Dimohe",
+    "theme_documentation_url": "https://github.com/virenchauhan19/Dimohe",
+    "theme_support_url": "https://dimohe.com/pages/contact"
+  },
+  {
+    "name": "Colours",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "#f8f6ef"
+      },
+      {
+        "type": "color",
+        "id": "text",
+        "label": "Text",
+        "default": "#243e32"
+      },
+      {
+        "type": "color",
+        "id": "accent",
+        "label": "Accent",
+        "default": "#975a47"
+      }
+    ]
+  },
+  {
+    "name": "Collection navigation",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "collection_menu",
+        "label": "Optional category-chip menu",
+        "info": "Leave blank for the matching original department categories. Only existing Shopify collections are shown."
+      }
+    ]
+  },
+  {
+    "name": "Brand stories",
+    "settings": [
+      {
+        "type": "text",
+        "id": "story_heading",
+        "label": "Our story heading",
+        "default": "Our story"
+      },
+      {
+        "type": "text",
+        "id": "founder_heading",
+        "label": "Founder heading",
+        "default": "Meet Diksha."
+      },
+      {
+        "type": "richtext",
+        "id": "brand_story",
+        "label": "Our story",
+        "default": "<p>Dimohe brings Indian block-printed textiles, hand embroidery, and everyday essentials to the United States.</p><p>Our collection moves from the home to the wardrobe: block-printed cushions and table linens, Chikankari and Zardozi bags, children’s occasionwear, and hair and body care.</p><p>The details are the reason we choose these pieces. Gulnaar’s red-and-ivory piping. A line of cypress trees on quilted cotton. The stitched vines across Noor Bagh’s raw silk. We want you to be able to see those details, understand how a piece is made, and decide where it fits in your life.</p><p>You don’t need a whole new room or a special occasion. Start with the piece you like.</p>"
+      },
+      {
+        "type": "richtext",
+        "id": "founder_story",
+        "label": "Founder story",
+        "default": "<p>Diksha Agrawal founded Dimohe after moving from India to the United States.</p><p>She grew up around Indian craft and wanted to make it easier to find pieces that worked in a modern home and wardrobe. That became the idea behind Dimohe.</p><p>With a background in sales and strategy, Diksha brings that interest in craft to the way she builds the collection. Home textiles, hand-embroidered bags, wellness, and children’s clothing sit together here because they are all part of how we live.</p>"
+      }
+    ]
+  },
+  {
+    "name": "Shipping & returns copy",
+    "settings": [
+      {
+        "type": "text",
+        "id": "delivery_copy",
+        "label": "Delivery estimate",
+        "default": "Standard delivery: 5–7 business days."
+      },
+      {
+        "type": "text",
+        "id": "returns_copy",
+        "label": "Return window",
+        "default": "Returns accepted within 10 days of delivery."
+      },
+      {
+        "type": "textarea",
+        "id": "shipping_cost_copy",
+        "label": "U.S. shipping and return fees",
+        "default": "U.S. orders: free shipping over $49; $7.99 shipping otherwise. A $7.99 restocking fee applies to returns.",
+        "info": "Display copy only. Shipping rates and return fees are controlled by Shopify settings, not the theme."
+      }
+    ]
+  }
+]

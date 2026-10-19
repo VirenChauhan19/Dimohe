@@ -1,0 +1,448 @@
+{
+  "productsChecked": 88,
+  "withFilm": 20,
+  "nativeOverride": true,
+  "noAutoplayOnProductPages": true,
+  "products": [
+    {
+      "handle": "boy-dhola-maru-embroidery-bundy-set-beige",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "boy-3-pc-royal-zardozi-bundy-set-white",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "boy-stripe-zari-embroidered-kurta-set-teal-blue",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "boy-stripe-zari-embroidered-kurta-set-minty-green",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "girl-dhola-maru-floral-embroidered-skirt-top-set-beige-green",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "girl-striped-fancy-zari-embroidered-top-with-cowl-dhoti-pants-minty-green",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "girl-panelled-bandhani-skirt-set-red",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "boy-3-pc-embroidery-bundy-set-beige-1",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "boy-3-pc-embroidery-bundy-set-beige",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "himalayan-hair-repair-shampoo-deodhar-hibiscus-250ml",
+      "asset": "hair-care-film.mp4",
+      "passed": true
+    },
+    {
+      "handle": "rosemary-hair-masque-150gm",
+      "asset": "hair-care-film.mp4",
+      "passed": true
+    },
+    {
+      "handle": "nava-pre-shower-body-glow-oil-rose-almond-100ml",
+      "asset": "pre-shower-massage-oils.mp4",
+      "passed": true
+    },
+    {
+      "handle": "protein-building-hair-mask-150gm",
+      "asset": "hair-care-film.mp4",
+      "passed": true
+    },
+    {
+      "handle": "lavender-smoothening-conditioner-150gm-glass-jar",
+      "asset": "hair-care-film.mp4",
+      "passed": true
+    },
+    {
+      "handle": "the-desert-pearl-pochette",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "the-rose-pearl-pochette",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "the-midnight-pearl-pochette",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "the-noor-bagh-heirloom-minaudi",
+      "asset": "embroidery-needlework.mp4",
+      "passed": true
+    },
+    {
+      "handle": "the-noor-e-sahar-clutch",
+      "asset": "embroidery-needlework.mp4",
+      "passed": true
+    },
+    {
+      "handle": "the-lyra-bijou-clutch",
+      "asset": "embroidery-needlework.mp4",
+      "passed": true
+    },
+    {
+      "handle": "the-vega-bijou-clutch",
+      "asset": "embroidery-needlework.mp4",
+      "passed": true
+    },
+    {
+      "handle": "the-altair-bijou-clutch",
+      "asset": "embroidery-needlework.mp4",
+      "passed": true
+    },
+    {
+      "handle": "the-mayura-noir-heirloom",
+      "asset": "embroidery-needlework.mp4",
+      "passed": true
+    },
+    {
+      "handle": "the-moonlight-pearl-pochette",
+      "asset": "embroidery-needlework.mp4",
+      "passed": true
+    },
+    {
+      "handle": "the-vallari-noir-clutch",
+      "asset": "embroidery-needlework.mp4",
+      "passed": true
+    },
+    {
+      "handle": "the-aurelia-noir-envelope",
+      "asset": "embroidery-needlework.mp4",
+      "passed": true
+    },
+    {
+      "handle": "the-maia-bijou-clutch",
+      "asset": "embroidery-needlework.mp4",
+      "passed": true
+    },
+    {
+      "handle": "keshamrit-anti-dandruff-shampoo-lemon-250ml",
+      "asset": "hair-care-film.mp4",
+      "passed": true
+    },
+    {
+      "handle": "keshamrit-conditioning-cleansing-shampoo-coconut-milk-250ml",
+      "asset": "coconut-shampoo.mp4",
+      "passed": true
+    },
+    {
+      "handle": "blush-garden-3-layer-throw",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "indigo-peacock-3-layer-throw",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "lavender-bloom-3-layer-throw",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "vintage-garden-3-layer-throw",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "sage-botanica-3-layer-throw",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "gulnaar-floral-linen-cushion-cover-earth-brown",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "indigo-garden-waffle-hand-towels-set-of-2",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "olive-cypress-waffle-hand-towels-set-of-2",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "ruby-cypress-waffle-hand-towels-set-of-2",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "scarlet-garden-waffle-hand-towels-set-of-2",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "crimson-tulip-waffle-hand-towels-set-of-2",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "cypress-grove-round-tote",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "indigo-palm-round-tote",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "indigo-bloom-round-tote",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "black-tulip-square-tote",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "botanical-grove-square-tote",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "rose-garden-square-tote",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "garden-arch-square-tote",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "blush-sprig-square-tote",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "scarlet-garden-waffle-face-towels-set-of-4",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "cypress-duo-waffle-face-towels-set-of-4",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "indigo-garden-waffle-face-towels-set-of-4",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "crimson-botanica-waffle-face-towels-set-of-4",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "botanical-quartet-waffle-face-towels-set-of-4",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "royal-cypress-table-cover",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "palace-elephant-table-cover",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "imperial-garden-table-cover",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "raspberry-bloom-cocktail-napkins-set-of-6",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "olive-willow-cocktail-napkins-set-of-6",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "botanical-garden-quilted-cushion-cover",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "cypress-bloom-quilted-cushion-cover",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "lavender-garden-quilted-cushion-cover",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "flamingo-quilted-cushion-cover",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "sage-coral-garden-quilted-cushion-cover",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "aqua-bloom-meadow-quilted-cushion-cover",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "terracotta-bloom-quilted-cushion-cover",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "elephant-parade-quilted-cushion-cover",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "indigo-blossom-cocktail-napkins-set-of-12",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "indigo-vine-cocktail-napkins-set-of-12",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "coral-bloom-cocktail-napkins-set-of-12",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "berry-olive-table-mat-dinner-napkin-set",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "sage-blossom-table-mat-dinner-napkin-set",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "blush-garden-table-mat-dinner-napkin-set",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "blush-cypress-waffle-bath-towel",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "crimson-vine-waffle-bath-towel",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "sage-garden-waffle-bath-towel",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "fuchsia-sage-reversible-table-runner",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "fuchsia-vine-reversible-table-runner",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "sage-vine-reversible-table-runner",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "spice-garden-table-runner",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "emerald-cypress-waffle-bath-sheet",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "blush-cypress-waffle-bath-sheet",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "crimson-bloom-waffle-bath-sheet",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "sage-garden-waffle-bath-sheet",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "mystic-hair-oil-100ml",
+      "asset": "mystic-hair-oil.mp4",
+      "passed": true
+    },
+    {
+      "handle": "hibiscus-hair-oil-100ml",
+      "asset": "hibiscus-hair-oil.mp4",
+      "passed": true
+    },
+    {
+      "handle": "snanamrit-ubtan-natural-bathing-powder-250gm",
+      "asset": "ubtan.mp4",
+      "passed": true
+    },
+    {
+      "handle": "cypress-row-lumbar-cushion-cover",
+      "asset": null,
+      "passed": true
+    },
+    {
+      "handle": "meadow-bloom-round-tote",
+      "asset": null,
+      "passed": true
+    }
+  ]
+}

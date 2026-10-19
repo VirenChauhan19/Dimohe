@@ -1,0 +1,485 @@
+{
+  "careCoverage": [
+    {
+      "handle": "boy-dhola-maru-embroidery-bundy-set-beige",
+      "group": "kids",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "boy-3-pc-royal-zardozi-bundy-set-white",
+      "group": "kids",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "boy-stripe-zari-embroidered-kurta-set-teal-blue",
+      "group": "kids",
+      "care": false,
+      "wellness": false
+    },
+    {
+      "handle": "boy-stripe-zari-embroidered-kurta-set-minty-green",
+      "group": "kids",
+      "care": false,
+      "wellness": false
+    },
+    {
+      "handle": "girl-dhola-maru-floral-embroidered-skirt-top-set-beige-green",
+      "group": "kids",
+      "care": false,
+      "wellness": false
+    },
+    {
+      "handle": "girl-striped-fancy-zari-embroidered-top-with-cowl-dhoti-pants-minty-green",
+      "group": "kids",
+      "care": false,
+      "wellness": false
+    },
+    {
+      "handle": "girl-panelled-bandhani-skirt-set-red",
+      "group": "kids",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "boy-3-pc-embroidery-bundy-set-beige-1",
+      "group": "kids",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "boy-3-pc-embroidery-bundy-set-beige",
+      "group": "kids",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "the-desert-pearl-pochette",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "the-rose-pearl-pochette",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "the-midnight-pearl-pochette",
+      "group": "bags",
+      "care": false,
+      "wellness": false
+    },
+    {
+      "handle": "the-noor-bagh-heirloom-minaudi",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "the-noor-e-sahar-clutch",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "the-lyra-bijou-clutch",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "the-vega-bijou-clutch",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "the-altair-bijou-clutch",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "the-mayura-noir-heirloom",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "the-moonlight-pearl-pochette",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "the-vallari-noir-clutch",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "the-aurelia-noir-envelope",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "the-maia-bijou-clutch",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "blush-garden-3-layer-throw",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "indigo-peacock-3-layer-throw",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "lavender-bloom-3-layer-throw",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "vintage-garden-3-layer-throw",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "sage-botanica-3-layer-throw",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "gulnaar-floral-linen-cushion-cover-earth-brown",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "indigo-garden-waffle-hand-towels-set-of-2",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "olive-cypress-waffle-hand-towels-set-of-2",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "ruby-cypress-waffle-hand-towels-set-of-2",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "scarlet-garden-waffle-hand-towels-set-of-2",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "crimson-tulip-waffle-hand-towels-set-of-2",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "cypress-grove-round-tote",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "indigo-palm-round-tote",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "indigo-bloom-round-tote",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "black-tulip-square-tote",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "botanical-grove-square-tote",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "rose-garden-square-tote",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "garden-arch-square-tote",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "blush-sprig-square-tote",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "scarlet-garden-waffle-face-towels-set-of-4",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "cypress-duo-waffle-face-towels-set-of-4",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "indigo-garden-waffle-face-towels-set-of-4",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "crimson-botanica-waffle-face-towels-set-of-4",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "botanical-quartet-waffle-face-towels-set-of-4",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "royal-cypress-table-cover",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "palace-elephant-table-cover",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "imperial-garden-table-cover",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "raspberry-bloom-cocktail-napkins-set-of-6",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "olive-willow-cocktail-napkins-set-of-6",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "botanical-garden-quilted-cushion-cover",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "cypress-bloom-quilted-cushion-cover",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "lavender-garden-quilted-cushion-cover",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "flamingo-quilted-cushion-cover",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "sage-coral-garden-quilted-cushion-cover",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "aqua-bloom-meadow-quilted-cushion-cover",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "terracotta-bloom-quilted-cushion-cover",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "elephant-parade-quilted-cushion-cover",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "indigo-blossom-cocktail-napkins-set-of-12",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "indigo-vine-cocktail-napkins-set-of-12",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "coral-bloom-cocktail-napkins-set-of-12",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "berry-olive-table-mat-dinner-napkin-set",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "sage-blossom-table-mat-dinner-napkin-set",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "blush-garden-table-mat-dinner-napkin-set",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "blush-cypress-waffle-bath-towel",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "crimson-vine-waffle-bath-towel",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "sage-garden-waffle-bath-towel",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "fuchsia-sage-reversible-table-runner",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "fuchsia-vine-reversible-table-runner",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "sage-vine-reversible-table-runner",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "spice-garden-table-runner",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "emerald-cypress-waffle-bath-sheet",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "blush-cypress-waffle-bath-sheet",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "crimson-bloom-waffle-bath-sheet",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "sage-garden-waffle-bath-sheet",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "cypress-row-lumbar-cushion-cover",
+      "group": "home",
+      "care": true,
+      "wellness": false
+    },
+    {
+      "handle": "meadow-bloom-round-tote",
+      "group": "bags",
+      "care": true,
+      "wellness": false
+    }
+  ],
+  "wellnessProducts": [
+    "himalayan-hair-repair-shampoo-deodhar-hibiscus-250ml",
+    "rosemary-hair-masque-150gm",
+    "nava-pre-shower-body-glow-oil-rose-almond-100ml",
+    "protein-building-hair-mask-150gm",
+    "lavender-smoothening-conditioner-150gm-glass-jar",
+    "keshamrit-anti-dandruff-shampoo-lemon-250ml",
+    "keshamrit-conditioning-cleansing-shampoo-coconut-milk-250ml",
+    "mystic-hair-oil-100ml",
+    "hibiscus-hair-oil-100ml",
+    "snanamrit-ubtan-natural-bathing-powder-250gm"
+  ],
+  "craftTimeSource": "Awaiting merchant spreadsheet; no durations invented"
+}

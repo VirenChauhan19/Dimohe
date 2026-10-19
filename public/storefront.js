@@ -49,7 +49,7 @@
   document.addEventListener('submit',event=>{const form=event.target;if(form.matches('[data-product-form]')){event.preventDefault();addToBag(form);}});
   document.addEventListener('click',event=>{const button=event.target.closest('[data-quantity]');if(!button)return;const input=button.closest('form').querySelector('[name=quantity]');input.value=Math.max(1,Math.min(99,Number(input.value||1)+Number(button.dataset.quantity)));});
   const productScript=document.getElementById('product-data');
-  if(productScript){const product=JSON.parse(productScript.textContent);const form=document.querySelector('[data-product-form]');const initial=product.variants.find(v=>String(v.id)===form.querySelector('[name=id]').value);form.dataset.available=String(initial.available);form.addEventListener('change',event=>{if(!event.target.matches('[type=radio]'))return;const values=product.options.map(o=>form.querySelector(`input[name="option${o.position}"]:checked`)?.value);const v=product.variants.find(v=>values.every((value,i)=>!value||v['option'+(i+1)]===value));const button=form.querySelector('[data-add-button]');form.dataset.available=String(Boolean(v?.available));button.disabled=!v?.available;button.innerHTML=v?.available?'Add to bag':v?'Sold out':'Unavailable';form.querySelector('[name=id]').value=v?.id||'';document.querySelector('[data-product-actual-price]').textContent=v?money(Number(v.price)):'Unavailable';const stock=document.querySelector('[data-stock]');stock.textContent=v?.available?'In stock':v?'Sold out':'Unavailable';stock.classList.toggle('sold-out',!v?.available);product.options.forEach((o,i)=>{const label=form.querySelector(`[data-selected-option="${o.position}"]`);if(label)label.textContent=values[i]||'';});form.querySelector('[data-form-status]').textContent='';if(v){const url=new URL(location.href);url.searchParams.set('variant',v.id);history.replaceState({},'',url);if(v.featured_image?.src)document.querySelector('#main-product-image').src=imagePath(v.featured_image.src);}});
+  if(productScript){const product=JSON.parse(productScript.textContent);const form=document.querySelector('[data-product-form]');const initial=product.variants.find(v=>String(v.id)===form.querySelector('[name=id]').value);form.dataset.available=String(initial.available);form.addEventListener('change',event=>{if(!event.target.matches('[type=radio]'))return;const values=product.options.map(o=>form.querySelector(`input[name="option${o.position}"]:checked`)?.value);const v=product.variants.find(v=>values.every((value,i)=>!value||v['option'+(i+1)]===value));const button=form.querySelector('[data-add-button]');form.dataset.available=String(Boolean(v?.available));button.disabled=!v?.available;button.innerHTML=v?.available?'Add to bag':v?'Sold out':'Unavailable';form.querySelector('[name=id]').value=v?.id||'';document.querySelector('[data-product-actual-price]').textContent=v?money(Number(v.price)):'Unavailable';const stock=document.querySelector('[data-stock]');stock.textContent=v?.available?'Low stock':v?'Sold out':'Unavailable';stock.classList.toggle('sold-out',!v?.available);product.options.forEach((o,i)=>{const label=form.querySelector(`[data-selected-option="${o.position}"]`);if(label)label.textContent=values[i]||'';});form.querySelector('[data-form-status]').textContent='';if(v){const url=new URL(location.href);url.searchParams.set('variant',v.id);history.replaceState({},'',url);if(v.featured_image?.src)document.querySelector('#main-product-image').src=imagePath(v.featured_image.src);}});
     const sticky=document.querySelector('.mobile-purchase');
     const syncMobile=()=>{if(!sticky)return;const add=form.querySelector('[data-add-button]');sticky.querySelector('[data-mobile-price]').textContent=document.querySelector('[data-product-actual-price]').textContent;const mobile=sticky.querySelector('[data-mobile-add]');mobile.disabled=add.disabled;mobile.textContent=add.disabled?add.textContent.trim():'Add to bag';};
     syncMobile();form.addEventListener('change',syncMobile);form.addEventListener('purchase-state',syncMobile);
@@ -145,4 +145,40 @@
     motionPreference.addEventListener('change',()=>{if(motionPreference.matches&&autoplay)pauseFilm();else updateFilm();});
 
   }
+})();
+
+// Approved features use their own controls so the original storefront remains intact.
+(() => {
+  const offer=document.querySelector('[data-welcome-offer]');
+  if(offer){
+    offer.addEventListener('click',event=>{if(event.target===offer){const rect=offer.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)offer.close();}});
+    let shown=false;
+    const tryOpen=()=>{if(shown)return;if(document.hidden||document.querySelector('dialog[open]')){setTimeout(tryOpen,800);return;}shown=true;offer.showModal();};
+    setTimeout(tryOpen,1000);
+    offer.querySelector('form').addEventListener('submit',event=>{event.preventDefault();const status=offer.querySelector('[data-welcome-status]');status.hidden=false;status.textContent='This local preview is not connected to the mailing list yet. Your email has not been submitted.';});
+  }
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+  document.querySelectorAll('[data-review-carousel]').forEach(section=>{
+    const rail=section.querySelector('.product-rail'),prev=section.querySelector('[data-rail-prev]'),next=section.querySelector('[data-rail-next]'),pause=section.querySelector('[data-rail-pause]');
+    let paused=false,hovered=false,focused=false,visible=false,lastInteraction=0;
+    const update=()=>{prev.disabled=rail.scrollLeft<2;next.disabled=rail.scrollLeft>=rail.scrollWidth-rail.clientWidth-2;};
+    const move=dir=>rail.scrollBy({left:dir*((rail.firstElementChild?.getBoundingClientRect().width||rail.clientWidth)+parseFloat(getComputedStyle(rail).gap||0)),behavior:reduced.matches?'instant':'smooth'});
+    prev.addEventListener('click',()=>{lastInteraction=Date.now();move(-1);});next.addEventListener('click',()=>{lastInteraction=Date.now();move(1);});
+    rail.addEventListener('scroll',update,{passive:true});rail.addEventListener('pointerdown',()=>lastInteraction=Date.now(),{passive:true});rail.addEventListener('wheel',()=>lastInteraction=Date.now(),{passive:true});rail.addEventListener('keydown',event=>{lastInteraction=Date.now();if(['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();move(event.key==='ArrowLeft'?-1:1);}});
+    section.addEventListener('pointerenter',()=>hovered=true);section.addEventListener('pointerleave',()=>hovered=false);section.addEventListener('focusin',()=>focused=true);section.addEventListener('focusout',event=>{focused=section.contains(event.relatedTarget);});
+    if(pause){pause.addEventListener('click',()=>{paused=!paused;pause.textContent=paused?'Resume':'Pause';pause.setAttribute('aria-pressed',String(paused));pause.setAttribute('aria-label',paused?'Resume collection slideshow':'Pause collection slideshow');});pause.setAttribute('aria-label','Pause collection slideshow');
+      new IntersectionObserver(entries=>visible=entries[0].isIntersecting,{threshold:.3}).observe(section);
+      setInterval(()=>{if(paused||hovered||focused||!visible||document.hidden||reduced.matches||document.querySelector('dialog[open]')||Date.now()-lastInteraction<8000)return;if(next.disabled)rail.scrollTo({left:0,behavior:'smooth'});else move(1);},4500);
+    }
+    new ResizeObserver(update).observe(rail);update();
+  });
+  document.querySelectorAll('[data-share-product],[data-copy-product]').forEach(button=>button.addEventListener('click',async()=>{
+    const url=button.dataset.shareUrl||button.dataset.copyProduct,status=button.closest('.product-share').querySelector('.share-status');
+    try{if(button.dataset.shareProduct&&navigator.share){await navigator.share({title:document.title,url});status.textContent='';}else{await navigator.clipboard.writeText(url);status.textContent=button.dataset.shareProduct?`Link copied. Paste it into ${button.dataset.shareProduct} to share this piece.`:'Product link copied.';}}
+    catch(error){if(error.name!=='AbortError')status.textContent='Product link: '+url;}
+  }));
+  document.querySelectorAll('video').forEach(video=>{
+    const pauseWhenHidden=()=>{if(document.hidden||video.closest('details:not([open])'))video.pause();};
+    document.addEventListener('visibilitychange',pauseWhenHidden);video.closest('details')?.addEventListener('toggle',pauseWhenHidden);
+  });
 })();

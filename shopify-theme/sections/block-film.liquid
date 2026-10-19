@@ -1,0 +1,31 @@
+<section class="section film-section craft-reel"><figure class="film-media">{% if section.settings.video != blank %}{{ section.settings.video | video_tag: controls: true, preload: 'metadata' }}{% else %}<video controls playsinline preload="none" poster="{{ 'block-printing-poster.jpg' | asset_url }}" width="540" height="960" aria-label="The story behind our block-printed tableware"><source src="{{ 'block-printing-film.mp4' | asset_url }}" type="video/mp4"></video>{% endif %}<figcaption>A table, one impression at a time · 1 min 2 sec</figcaption></figure><div class="film-copy"><p class="eyebrow">BLOCK PRINTING</p><h2>{{ section.settings.heading | escape }}</h2><p>{{ section.settings.intro | escape }}</p></div></section>
+
+{% schema %}
+{
+  "name": "Block printing film",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "From the block to your table."
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Introduction",
+      "default": "A closer look at the handwork behind our table linens, and the pieces coming together at home."
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Replace the bundled film"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Block printing film"
+    }
+  ]
+}
+{% endschema %}

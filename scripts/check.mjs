@@ -187,8 +187,11 @@ assert.equal(home('[data-hero-slide]').length,4);
 assert.equal(home('.desktop-nav summary').first().text(),'Bags');
 assert.ok(home('.desktop-nav summary').toArray().some(el=>home(el).text()==='Home & Living'));
 assert.equal(home('.desktop-nav summary span').length,0);
-assert.equal(home('.department-products').length,3);
-assert.equal(home('.department-products').first().find('[data-product-handle]').length,3);
+assert.equal(home('.department-products').length,0);
+assert.equal(home('[data-review-carousel]').length,1);
+assert.equal(home('.rail-controls').length,0);
+assert.equal(home('.rail-stage>[data-rail-prev]').length,1);
+assert.equal(home('.rail-stage>[data-rail-next]').length,1);
 assert.equal(home('.desktop-nav').text().includes('Evening bags'),false);
 assert.ok(home('.desktop-nav').text().includes('Statement bags'));
 assert.equal(home('.desktop-nav').text().includes('Round evening bags'),false);
@@ -196,7 +199,7 @@ const blogs=load(await (await fetch(base+'/blogs/news')).text());
 assert.equal(blogs('.journal-card').length,2);
 assert.equal(blogs('.journal-card h2').length,2);
 assert.equal(blogs('.journal-image img').length,2);
-console.log('Passed: eight-second preview, full craft film, native controls, chapter order, and equal blog cards.');
+console.log('Passed: 22-second preview, full craft film, native controls, chapter order, and equal blog cards.');
 
 const previewHead=await fetch(base+'/media/craft-preview.mp4',{method:'HEAD'});assert.equal(previewHead.status,200);assert.equal(previewHead.headers.get('content-type'),'video/mp4');
 const filmSize=(await fs.stat('public'+brandFilm.src)).size;
@@ -268,5 +271,34 @@ assert.equal(desert('.craft-passport a').text().trim(),'Read about the product')
 assert.equal(desert('#shipping-returns a[href="/pages/shipping-returns"]').length,0);
 assert.match(desert('#shipping-returns').text(),/5-7 business days/);
 assert.match(desert('#shipping-returns').text(),/10 days of delivery/);
-assert.match(desert('#shipping-returns').text(),/\$9/);
+assert.match(desert('#shipping-returns').text(),/\$7\.99/);
 console.log('Passed: original logo, Ayurveda hero, craft banner, founder/story menu, round bags first, closer bag captions, single product color/dimensions, descriptive craft, and inline delivery/returns.');
+
+for(const product of enriched.filter(p=>p.merch.type==='tote-bag')){const doc=load(await(await fetch(base+'/products/'+product.handle)).text());assert.doesNotMatch(doc('#product-story').text(),/[\p{Extended_Pictographic}\p{Emoji_Presentation}\uFE0E\uFE0F]/u,product.handle+' uses plain product text without emoji bullets');}
+console.log('Passed: all nine tote descriptions use plain text and standard list bullets.');
+
+// Keep the approved additions alongside the original product content and page layouts.
+assert.equal(updatedHome('[data-welcome-offer]').length,1);
+assert.equal(updatedHome('.mixed-explore').length,1);
+assert.equal(updatedHome('.mixed-explore .product-card').length,5);
+assert.equal(updatedHome('.mixed-explore a[href*="bags"]').length,0);
+assert.equal(updatedHome('[data-auto-swipe]').length,1);
+assert.equal(updatedHome('.site-footer .footer-connect a').length,2);
+assert.equal(updatedHome('.site-footer>div').last().attr('class'),'footer-bottom');
+for(const href of ['https://www.instagram.com/dimohe.store/','https://www.linkedin.com/company/dimohe/'])assert.equal(updatedHome('.footer-connect a[href="'+href+'"]').length,1);
+assert.equal(filmCraftPage('#chikankari-film video').length,2);
+assert.equal(filmCraftPage('#ayurveda-film video').length,1);
+assert.match(filmCraftPage('#ayurveda-film').text(),/Ayurveda/);
+let films=0;
+for(const p of enriched){
+ const doc=load(await(await fetch(base+'/products/'+p.handle)).text());
+ assert.equal(doc('[data-welcome-offer]').length,0);
+ assert.equal(doc('.footer-connect a').length,2);
+ if(doc('.making-film').length){films++;for(const el of doc('.making-film source,.making-film video[poster]').toArray()){
+ const asset=doc(el).attr('src')||doc(el).attr('poster');assert.equal((await fetch(base+asset,{method:'HEAD'})).status,200,asset);
+ }}
+ if(['home','bags','kids'].includes(p.merch.group))assert.ok(doc('.craft-passport').length,p.handle+' retains the original Craft Passport');
+ if(p.merch.passport.some(([key])=>key==='Time behind the craft'))assert.match(doc('.craft-passport').text(),/Time behind the craft/);
+}
+assert.equal(films,20);
+console.log('Passed: centered home offer, integrated social footer, no duplicate department product rows, one automatic mixed-category row with side controls and without bags, and 20 contextual product films alongside original content.');

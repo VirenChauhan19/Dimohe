@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "gifts-under-100",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

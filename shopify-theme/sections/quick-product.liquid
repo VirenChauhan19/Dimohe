@@ -1,0 +1,8 @@
+{% assign variant = product.selected_or_first_available_variant %}<div class="quick-content">{% if product.featured_image %}{{ product.featured_image | image_url: width: 700 | image_tag: alt: product.title }}{% endif %}<div><p class="eyebrow">{{ product.type | escape }}</p><h2><a href="{{ product.url }}">{{ product.title | escape }}</a></h2><p class="price" data-product-price>{{ variant.price | money }}</p>{% if product.requires_selling_plan %}<p>Choose a purchase plan on the product page.</p>{% else %}{% assign form_id = 'QuickProduct-' | append: product.id %}{% form 'product', product, id: form_id, data-product-form: '' %}<label for="QuickVariant-{{ product.id }}">Options</label><select id="QuickVariant-{{ product.id }}" name="id" data-variant-select>{% for v in product.variants %}<option value="{{ v.id }}" data-price="{{ v.price | money | escape }}" data-available="{{ v.available }}"{% if v.id == variant.id %} selected{% endif %}>{{ v.title | escape }}{% unless v.available %} — Sold out{% endunless %}</option>{% endfor %}</select><input type="hidden" name="quantity" value="1"><button class="button" type="submit" data-add-button{% unless variant.available %} disabled{% endunless %}>{% if variant.available %}Add to bag{% else %}Sold out{% endif %}</button><p class="form-error" role="status"></p>{% endform %}{% endif %}<a class="text-link" href="{{ product.url }}">View full details</a></div></div>
+
+{% schema %}
+{
+  "name": "Quick product",
+  "settings": []
+}
+{% endschema %}

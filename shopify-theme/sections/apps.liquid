@@ -1,0 +1,4 @@
+<section class="section integration-section">{% if section.settings.heading != blank %}<h2>{{ section.settings.heading | escape }}</h2>{% endif %}{% for block in section.blocks %}{% render block %}{% endfor %}</section>
+{% schema %}
+{"name":"Apps & integrations","settings":[{"type":"text","id":"heading","label":"Heading"}],"blocks":[{"type":"@app"}],"presets":[{"name":"Apps & integrations"}]}
+{% endschema %}

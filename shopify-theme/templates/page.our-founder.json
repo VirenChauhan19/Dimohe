@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "heading": "Meet Diksha",
+        "body": "<p>Diksha Agrawal founded Dimohe after moving from India to the United States.</p><p>She grew up around Indian craft and wanted to make it easier to find pieces that worked in a modern home and wardrobe. That became the idea behind Dimohe.</p><p>With a background in sales and strategy, Diksha brings that interest in craft to the way she builds the collection. Home textiles, hand-embroidered bags, wellness, and children’s clothing sit together here because they are all part of how we live.</p>"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

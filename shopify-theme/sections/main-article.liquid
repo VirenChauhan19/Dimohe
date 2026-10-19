@@ -1,0 +1,8 @@
+<article class="section information-page prose"><p class="breadcrumbs"><a href="{{ blog.url }}">The blogs</a> / {{ article.title | escape }}</p><h1>{{ article.title | escape }}</h1>{% if article.image %}<div class="article-photo">{% if article.handle contains '5-ways-to-style-a-throw-blanket' %}<img src="{{ 'dimohe-069a885b05.png' | asset_url }}" alt="Lavender floral throw with striped edging" width="900" height="1125" loading="eager">{% else %}{{ article.image | image_url: width: 1200 | image_tag: loading: 'eager', alt: article.title }}{% endif %}</div>{% endif %}{{ article.content }}</article>
+
+{% schema %}
+{
+  "name": "Article",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,51 @@
+<section class="section worlds"><div class="section-title"><h2>{{ section.settings.heading | escape }}</h2></div><div class="category-grid">{% for block in section.blocks %}<a class="category-tile" href="{{ block.settings.collection.url | default: routes.all_products_collection_url }}" {{ block.shopify_attributes }}><div class="category-photo">{% render 'theme-image', image: block.settings.image, asset: block.settings.asset, alt: block.settings.title, loading: 'lazy', sizes: '(max-width: 767px) 46vw, 24vw' %}</div><div class="category-title"><h3>{{ block.settings.title | default: block.settings.collection.title | escape }}</h3></div></a>{% endfor %}</div></section>
+
+{% schema %}
+{
+  "name": "Shop by category",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by category"
+    }
+  ],
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Collection"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "asset",
+          "label": "Bundled image filename",
+          "default": "none"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop by category"
+    }
+  ]
+}
+{% endschema %}

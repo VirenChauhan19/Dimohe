@@ -1,0 +1,1 @@
+{%- if variant.available == false -%}Sold out{%- elsif variant.inventory_management != blank and variant.inventory_policy != 'continue' and variant.inventory_quantity > 0 and variant.inventory_quantity <= threshold -%}Low stock{%- else -%}Available{%- endif -%}

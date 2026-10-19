@@ -1,0 +1,349 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {},
+      "blocks": {
+        "slide0": {
+          "type": "slide",
+          "settings": {
+            "asset": "dimohe-828969c47e.png",
+            "title": "Home & Living",
+            "alt": "Block-printed cushion covers on a sofa beside a cup of tea",
+            "collection": "home-furnishing"
+          }
+        },
+        "slide1": {
+          "type": "slide",
+          "settings": {
+            "asset": "dimohe-307a46049b.jpg",
+            "title": "Hand-embroidered bags",
+            "alt": "Amy carrying a cream round hand-embroidered bag in New York",
+            "collection": "hand-bags"
+          }
+        },
+        "slide2": {
+          "type": "slide",
+          "settings": {
+            "asset": "dimohe-9547a6cb69.jpg",
+            "title": "Wellness",
+            "alt": "Ayurvedic hair oils for everyday care",
+            "collection": "wellness"
+          }
+        },
+        "slide3": {
+          "type": "slide",
+          "settings": {
+            "asset": "dimohe-7f85c6edf8.jpg",
+            "title": "Kidswear",
+            "alt": "Floral top and red Bandhani skirt for family celebrations",
+            "collection": "kids-clothing"
+          }
+        }
+      },
+      "block_order": [
+        "slide0",
+        "slide1",
+        "slide2",
+        "slide3"
+      ]
+    },
+    "categories": {
+      "type": "category-grid",
+      "settings": {},
+      "blocks": {
+        "home": {
+          "type": "category",
+          "settings": {
+            "title": "Home & Living",
+            "collection": "home-furnishing",
+            "asset": "dimohe-ac9322ebf5.jpg"
+          }
+        },
+        "bags": {
+          "type": "category",
+          "settings": {
+            "title": "Bags",
+            "collection": "hand-bags",
+            "asset": "dimohe-6e51633bd9.jpg"
+          }
+        },
+        "wellness": {
+          "type": "category",
+          "settings": {
+            "title": "Wellness",
+            "collection": "wellness",
+            "asset": "dimohe-17e65908a8.jpg"
+          }
+        },
+        "kids": {
+          "type": "category",
+          "settings": {
+            "title": "Kidswear",
+            "collection": "kids-clothing",
+            "asset": "dimohe-c3fb065664.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "home",
+        "bags",
+        "wellness",
+        "kids"
+      ]
+    },
+    "picks": {
+      "type": "our-picks",
+      "settings": {
+        "collection": "the-dimohe-edit"
+      },
+      "blocks": {
+        "home": {
+          "type": "tab",
+          "settings": {
+            "title": "Home & Living",
+            "collection": "home-furnishing",
+            "products": [
+              "gulnaar-floral-linen-cushion-cover-earth-brown",
+              "cypress-row-lumbar-cushion-cover"
+            ]
+          }
+        },
+        "bags": {
+          "type": "tab",
+          "settings": {
+            "title": "Bags",
+            "collection": "hand-bags",
+            "products": [
+              "the-altair-bijou-clutch",
+              "the-noor-bagh-heirloom-minaudi"
+            ]
+          }
+        },
+        "wellness": {
+          "type": "tab",
+          "settings": {
+            "title": "Wellness",
+            "collection": "wellness",
+            "products": [
+              "rosemary-hair-masque-150gm",
+              "nava-pre-shower-body-glow-oil-rose-almond-100ml"
+            ]
+          }
+        },
+        "kids": {
+          "type": "tab",
+          "settings": {
+            "title": "Kidswear",
+            "collection": "kids-clothing",
+            "products": [
+              "boy-dhola-maru-embroidery-bundy-set-beige"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "home",
+        "bags",
+        "wellness",
+        "kids"
+      ]
+    },
+    "film": {
+      "type": "film",
+      "settings": {
+        "preview": true,
+        "intro": "A close look at the needlework behind our hand-embroidered bags."
+      }
+    },
+    "bags": {
+      "type": "bag-gallery",
+      "settings": {
+        "collection": "hand-bags",
+        "eyebrow": "Stitch by stitch",
+        "products": [
+          "the-mayura-noir-heirloom",
+          "the-rose-pearl-pochette",
+          "the-lyra-bijou-clutch"
+        ],
+        "product_limit": 6
+      },
+      "blocks": {
+        "bag0": {
+          "type": "shape",
+          "settings": {
+            "title": "Round bags",
+            "detail": "A circular frame with a decorative handle.",
+            "collection": "round-bags",
+            "asset": "dimohe-c4d9498687.png"
+          }
+        },
+        "bag1": {
+          "type": "shape",
+          "settings": {
+            "title": "Antique-handle bags",
+            "detail": "Floral stitches framed by an ornate clasp.",
+            "collection": "antique-handle-handbags",
+            "asset": "dimohe-104b933982.png"
+          }
+        },
+        "bag2": {
+          "type": "shape",
+          "settings": {
+            "title": "Potli (Pochette) bags",
+            "detail": "Softly gathered fabric, finished with a drawstring.",
+            "collection": "potli",
+            "asset": "dimohe-94b2acda68.png"
+          }
+        },
+        "bag3": {
+          "type": "shape",
+          "settings": {
+            "title": "Full-flap clutches",
+            "detail": "A structured shape with embroidery across the flap.",
+            "collection": "clutches-full-flap",
+            "asset": "dimohe-b8a31b4383.png"
+          }
+        },
+        "bag4": {
+          "type": "shape",
+          "settings": {
+            "title": "Jute clutches",
+            "detail": "Floral hand embroidery against textured jute.",
+            "collection": "jute-clutches",
+            "asset": "dimohe-da30e8ba87.png"
+          }
+        }
+      },
+      "block_order": [
+        "bag0",
+        "bag1",
+        "bag2",
+        "bag3",
+        "bag4"
+      ]
+    },
+    "jaipur": {
+      "type": "department-feature",
+      "settings": {
+        "eyebrow": "Block by block",
+        "heading": "Block Printing for Home & Living",
+        "intro": "Artisans dip carved wooden blocks in color and press them onto cloth, one impression at a time. This hand-block printing tradition from Rajasthan, India, runs through our linens, cushions, and waffle towels.",
+        "link_label": "Shop block-printed linens",
+        "collection": "home-furnishing",
+        "asset": "dimohe-200207dbce.png",
+        "products": [
+          "terracotta-bloom-quilted-cushion-cover",
+          "blush-garden-3-layer-throw",
+          "sage-vine-reversible-table-runner"
+        ],
+        "product_limit": 6
+      }
+    },
+    "ritual": {
+      "type": "department-feature",
+      "settings": {
+        "eyebrow": "Ritual by ritual",
+        "heading": "A little time for yourself.",
+        "intro": "Hair masks, shampoo, and body oils. A small selection for the routines you already have.",
+        "link_label": "Shop wellness",
+        "collection": "wellness",
+        "asset": "dimohe-e66ef11fde.jpg",
+        "products": [
+          "mystic-hair-oil-100ml",
+          "snanamrit-ubtan-natural-bathing-powder-250gm",
+          "himalayan-hair-repair-shampoo-deodhar-hibiscus-250ml"
+        ],
+        "product_limit": 6
+      }
+    },
+    "little-celebrations": {
+      "type": "department-feature",
+      "settings": {
+        "eyebrow": "KIDSWEAR",
+        "heading": "Little celebrations.",
+        "intro": "Kurtas, bundi jackets, skirts, and embroidered sets for weddings, festivals, and family gatherings.",
+        "link_label": "Shop kidswear",
+        "collection": "kids-clothing",
+        "asset": "dimohe-c20a7f23d7.jpg",
+        "products": [
+          "boy-3-pc-royal-zardozi-bundy-set-white",
+          "girl-dhola-maru-floral-embroidered-skirt-top-set-beige-green",
+          "boy-stripe-zari-embroidered-kurta-set-minty-green"
+        ],
+        "product_limit": 6
+      }
+    },
+    "founder": {
+      "type": "founder-note",
+      "settings": {
+        "page": "our-founder"
+      }
+    },
+    "more-explore": {
+      "type": "more-to-explore",
+      "settings": {},
+      "blocks": {
+        "category0": {
+          "type": "collection",
+          "settings": {
+            "title": "Cushion covers",
+            "collection": "cushion-cover",
+            "asset": "explore-PJCCCQSD2_2.png"
+          }
+        },
+        "category2": {
+          "type": "collection",
+          "settings": {
+            "title": "Hair care",
+            "collection": "hair-oil",
+            "asset": "explore-ANHOHH_1.jpg"
+          }
+        },
+        "category3": {
+          "type": "collection",
+          "settings": {
+            "title": "Kidswear",
+            "collection": "kids-clothing",
+            "asset": "explore-0G6A0822.jpg"
+          }
+        },
+        "category4": {
+          "type": "collection",
+          "settings": {
+            "title": "Table linens",
+            "collection": "table-runner",
+            "asset": "explore-PJTRCCSD2_2.jpg"
+          }
+        },
+        "category5": {
+          "type": "collection",
+          "settings": {
+            "title": "Bath & body",
+            "collection": "bathing-powder",
+            "asset": "explore-ANBPSA_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "category0",
+        "category2",
+        "category3",
+        "category4",
+        "category5"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "categories",
+    "picks",
+    "film",
+    "bags",
+    "jaipur",
+    "ritual",
+    "little-celebrations",
+    "more-explore",
+    "founder"
+  ]
+}

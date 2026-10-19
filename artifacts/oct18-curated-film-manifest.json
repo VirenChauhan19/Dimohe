@@ -1,0 +1,68 @@
+{
+  "selectedFilms": [
+    {
+      "source": "Coconut Shampoo.mp4",
+      "asset": "coconut-shampoo.mp4",
+      "bytes": 1519282
+    },
+    {
+      "source": "Hibiscus Hair Oil.mp4",
+      "asset": "hibiscus-hair-oil.mp4",
+      "bytes": 856400
+    },
+    {
+      "source": "Mystic Hair Oil.mp4",
+      "asset": "mystic-hair-oil.mp4",
+      "bytes": 2206867
+    },
+    {
+      "source": "Pre-Shower Massage Oils.mp4",
+      "asset": "pre-shower-massage-oils.mp4",
+      "bytes": 723197
+    },
+    {
+      "source": "Ubtan.mp4",
+      "asset": "ubtan.mp4",
+      "bytes": 1472185
+    },
+    {
+      "source": "VIDEO-2026-07-25-08-40-15.mp4",
+      "asset": "embroidery-needlework.mp4",
+      "bytes": 1624489
+    },
+    {
+      "source": "VIDEO-2026-07-25-08-40-15 (1).mp4",
+      "asset": "embroidery-pattern.mp4",
+      "bytes": 1624527
+    },
+    {
+      "source": "existing hair-care-film.mp4",
+      "asset": "hair-care-film.mp4",
+      "bytes": 3187540
+    }
+  ],
+  "embroideryPrimary": "embroidery-needlework.mp4",
+  "embroiderySecondary": "embroidery-pattern.mp4",
+  "craftPageAyurveda": [
+    "coconut-shampoo",
+    "hibiscus-hair-oil",
+    "ubtan"
+  ],
+  "productSpecific": {
+    "keshamrit-conditioning-cleansing-shampoo-coconut-milk-250ml": "coconut-shampoo",
+    "hibiscus-hair-oil-100ml": "hibiscus-hair-oil",
+    "mystic-hair-oil-100ml": "mystic-hair-oil",
+    "nava-pre-shower-body-glow-oil-rose-almond-100ml": "pre-shower-massage-oils",
+    "snanamrit-ubtan-natural-bathing-powder-250gm": "ubtan"
+  },
+  "notSelected": [
+    {
+      "source": "Hair & Scalp Cleanser.mp4",
+      "reason": "No matching product in the current catalogue; not assigned to a different product."
+    },
+    {
+      "source": "9. Reel - Chikankari Product Making.mp4",
+      "reason": "The new workshop clips show the making more directly; finished-bag reel retained in the supplied source files."
+    }
+  ]
+}

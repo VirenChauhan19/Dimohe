@@ -1,0 +1,19 @@
+<article class="section brand-story information-page prose"><p class="breadcrumbs"><a href="{{ routes.root_url }}">Home</a> / {{ page.title | escape }}</p>{% assign page_heading = section.settings.heading | default: page.title %}{% if section.settings.heading == blank %}{% if page.handle == 'our-founder' %}{% assign page_heading = settings.founder_heading %}{% elsif page.handle == 'our-story' %}{% assign page_heading = settings.story_heading %}{% endif %}{% endif %}<h1>{{ page_heading | escape }}</h1>{% if section.settings.body != blank %}{{ section.settings.body }}{% elsif page.handle == 'our-story' %}{{ settings.brand_story }}{% elsif page.handle == 'our-founder' %}{{ settings.founder_story }}{% else %}{{ page.content }}{% endif %}</article>
+
+{% schema %}
+{
+  "name": "Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Optional heading override"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Optional content override"
+    }
+  ]
+}
+{% endschema %}

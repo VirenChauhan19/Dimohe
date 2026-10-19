@@ -1,0 +1,87 @@
+{
+  "sections": {
+    "intro": {
+      "type": "craft-intro",
+      "settings": {}
+    },
+    "film": {
+      "type": "film",
+      "settings": {
+        "preview": false,
+        "intro": "Spend a moment with the people, places, and handwork behind the collection."
+      }
+    },
+    "blockfilm": {
+      "type": "block-film",
+      "settings": {}
+    },
+    "crafts": {
+      "type": "craft-stories",
+      "settings": {},
+      "blocks": {
+        "block-printing": {
+          "type": "craft",
+          "settings": {
+            "title": "Hand-block printing",
+            "origin": "Rajasthan",
+            "story": "A carved wooden block is dipped in colour and pressed onto the cloth. The printer repeats the impression to build the pattern. Look closely at Gulnaar\u2019s flowers: small changes in colour and placement are part of block printing by hand.",
+            "collection": "home-furnishing",
+            "asset": "dimohe-d56af15228.png"
+          }
+        },
+        "chikankari": {
+          "type": "craft",
+          "settings": {
+            "title": "Chikankari hand embroidery",
+            "origin": "Lucknow",
+            "story": "Chikankari is a hand embroidery tradition from Lucknow, India. Artisans use a needle and thread to stitch delicate flowers and vines into the cloth. On Noor Bagh, fine stitches form vines and flowers across the raw silk. The ivory and gold-toned threads make the needlework easy to see against the beige fabric.",
+            "collection": "round-bags",
+            "asset": "dimohe-a2a85e5498.png"
+          }
+        },
+        "zardozi": {
+          "type": "craft",
+          "settings": {
+            "title": "Raised hand embroidery",
+            "origin": "Decorative hand embroidery",
+            "story": "Zardozi is a hand embroidery technique with ornate, raised stitching. Desert Pearl pairs this detailing with raw silk and a tasselled drawstring. The same technique appears on several of our statement bags and children\u2019s occasion sets.",
+            "collection": "potli",
+            "asset": "dimohe-b9b725782b.jpg"
+          }
+        },
+        "ayurveda": {
+          "type": "craft",
+          "settings": {
+            "title": "Ayurveda (Wellness)",
+            "origin": "Ritual by ritual",
+            "story": "Rooted in Indian traditions of everyday care, this collection brings together hair oils, shampoo, masks and body care. Take a little time to oil your hair before washing, or work a body oil into your routine. Explore the ingredients and directions on each product to find what fits your day.",
+            "collection": "wellness",
+            "asset": "dimohe-e66ef11fde.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "block-printing",
+        "chikankari",
+        "zardozi",
+        "ayurveda"
+      ]
+    },
+    "ayurvedafilm": {
+      "type": "ayurveda-film",
+      "settings": {}
+    },
+    "chikankarifilm": {
+      "type": "chikankari-film",
+      "settings": {}
+    }
+  },
+  "order": [
+    "intro",
+    "film",
+    "crafts",
+    "chikankarifilm",
+    "blockfilm",
+    "ayurvedafilm"
+  ]
+}

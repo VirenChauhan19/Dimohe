@@ -1,0 +1,560 @@
+{
+  "sourceFile": "DIMOHE_Time_to_Craft_69_Products.xlsx",
+  "sourceStatus": "Proposed estimates, not supplier-verified production logs",
+  "matched": 69,
+  "unmatched": [],
+  "products": [
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Aqua Bloom Meadow Quilted Cushion Cover",
+      "Time to craft (days)": 7,
+      "Product type": "Quilted cushion cover",
+      "Shopify handle": "aqua-bloom-meadow-quilted-cushion-cover",
+      "Product URL": "https://dimohe.com/products/aqua-bloom-meadow-quilted-cushion-cover"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Berry & Olive Table Mat & Dinner Napkin Set",
+      "Time to craft (days)": 5,
+      "Product type": "Table mat + napkin set",
+      "Shopify handle": "berry-olive-table-mat-dinner-napkin-set",
+      "Product URL": "https://dimohe.com/products/berry-olive-table-mat-dinner-napkin-set"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Blush Cypress Waffle Bath Sheet",
+      "Time to craft (days)": 5,
+      "Product type": "Waffle bath sheet",
+      "Shopify handle": "blush-cypress-waffle-bath-sheet",
+      "Product URL": "https://dimohe.com/products/blush-cypress-waffle-bath-sheet"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Blush Cypress Waffle Bath Towel",
+      "Time to craft (days)": 4,
+      "Product type": "Waffle bath towel",
+      "Shopify handle": "blush-cypress-waffle-bath-towel",
+      "Product URL": "https://dimohe.com/products/blush-cypress-waffle-bath-towel"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Blush Garden 3-Layer Throw",
+      "Time to craft (days)": 7,
+      "Product type": "Three-layer throw",
+      "Shopify handle": "blush-garden-3-layer-throw",
+      "Product URL": "https://dimohe.com/products/blush-garden-3-layer-throw"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Blush Garden Table Mat & Dinner Napkin Set",
+      "Time to craft (days)": 5,
+      "Product type": "Table mat + napkin set",
+      "Shopify handle": "blush-garden-table-mat-dinner-napkin-set",
+      "Product URL": "https://dimohe.com/products/blush-garden-table-mat-dinner-napkin-set"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Botanical Garden Quilted Cushion Cover",
+      "Time to craft (days)": 7,
+      "Product type": "Quilted cushion cover",
+      "Shopify handle": "botanical-garden-quilted-cushion-cover",
+      "Product URL": "https://dimohe.com/products/botanical-garden-quilted-cushion-cover"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Botanical Quartet Waffle Face Towels (Set of 4)",
+      "Time to craft (days)": 4,
+      "Product type": "Waffle face towel set",
+      "Shopify handle": "botanical-quartet-waffle-face-towels-set-of-4",
+      "Product URL": "https://dimohe.com/products/botanical-quartet-waffle-face-towels-set-of-4"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Coral Bloom Cocktail Napkins (Set of 12)",
+      "Time to craft (days)": 5,
+      "Product type": "Cocktail napkins \u2014 12",
+      "Shopify handle": "coral-bloom-cocktail-napkins-set-of-12",
+      "Product URL": "https://dimohe.com/products/coral-bloom-cocktail-napkins-set-of-12"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Crimson Bloom Waffle Bath Sheet",
+      "Time to craft (days)": 5,
+      "Product type": "Waffle bath sheet",
+      "Shopify handle": "crimson-bloom-waffle-bath-sheet",
+      "Product URL": "https://dimohe.com/products/crimson-bloom-waffle-bath-sheet"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Crimson Botanica Waffle Face Towels (Set of 4)",
+      "Time to craft (days)": 4,
+      "Product type": "Waffle face towel set",
+      "Shopify handle": "crimson-botanica-waffle-face-towels-set-of-4",
+      "Product URL": "https://dimohe.com/products/crimson-botanica-waffle-face-towels-set-of-4"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Crimson Tulip Waffle Hand Towels (Set of 2)",
+      "Time to craft (days)": 4,
+      "Product type": "Waffle hand towel set",
+      "Shopify handle": "crimson-tulip-waffle-hand-towels-set-of-2",
+      "Product URL": "https://dimohe.com/products/crimson-tulip-waffle-hand-towels-set-of-2"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Crimson Vine Waffle Bath Towel",
+      "Time to craft (days)": 4,
+      "Product type": "Waffle bath towel",
+      "Shopify handle": "crimson-vine-waffle-bath-towel",
+      "Product URL": "https://dimohe.com/products/crimson-vine-waffle-bath-towel"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Cypress & Bloom Quilted Cushion Cover",
+      "Time to craft (days)": 7,
+      "Product type": "Quilted cushion cover",
+      "Shopify handle": "cypress-bloom-quilted-cushion-cover",
+      "Product URL": "https://dimohe.com/products/cypress-bloom-quilted-cushion-cover"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Cypress Duo Waffle Face Towels (Set of 4)",
+      "Time to craft (days)": 4,
+      "Product type": "Waffle face towel set",
+      "Shopify handle": "cypress-duo-waffle-face-towels-set-of-4",
+      "Product URL": "https://dimohe.com/products/cypress-duo-waffle-face-towels-set-of-4"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Cypress Row Lumbar Cushion Cover",
+      "Time to craft (days)": 5,
+      "Product type": "Lumbar cushion cover",
+      "Shopify handle": "cypress-row-lumbar-cushion-cover",
+      "Product URL": "https://dimohe.com/products/cypress-row-lumbar-cushion-cover"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Elephant Parade Quilted Cushion Cover",
+      "Time to craft (days)": 7,
+      "Product type": "Quilted cushion cover",
+      "Shopify handle": "elephant-parade-quilted-cushion-cover",
+      "Product URL": "https://dimohe.com/products/elephant-parade-quilted-cushion-cover"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Emerald Cypress Waffle Bath Sheet",
+      "Time to craft (days)": 5,
+      "Product type": "Waffle bath sheet",
+      "Shopify handle": "emerald-cypress-waffle-bath-sheet",
+      "Product URL": "https://dimohe.com/products/emerald-cypress-waffle-bath-sheet"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Flamingo Quilted Cushion Cover",
+      "Time to craft (days)": 7,
+      "Product type": "Quilted cushion cover",
+      "Shopify handle": "flamingo-quilted-cushion-cover",
+      "Product URL": "https://dimohe.com/products/flamingo-quilted-cushion-cover"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Fuchsia & Sage Reversible Table Runner",
+      "Time to craft (days)": 6,
+      "Product type": "Reversible table runner",
+      "Shopify handle": "fuchsia-sage-reversible-table-runner",
+      "Product URL": "https://dimohe.com/products/fuchsia-sage-reversible-table-runner"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Fuchsia Vine Reversible Table Runner",
+      "Time to craft (days)": 6,
+      "Product type": "Reversible table runner",
+      "Shopify handle": "fuchsia-vine-reversible-table-runner",
+      "Product URL": "https://dimohe.com/products/fuchsia-vine-reversible-table-runner"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Gulnaar Floral Linen Cushion Cover \u2013 Earth Brown",
+      "Time to craft (days)": 4,
+      "Product type": "Linen cushion cover",
+      "Shopify handle": "gulnaar-floral-linen-cushion-cover-earth-brown",
+      "Product URL": "https://dimohe.com/products/gulnaar-floral-linen-cushion-cover-earth-brown"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Imperial Garden Table Cover",
+      "Time to craft (days)": 8,
+      "Product type": "Large table cover",
+      "Shopify handle": "imperial-garden-table-cover",
+      "Product URL": "https://dimohe.com/products/imperial-garden-table-cover"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Indigo Blossom Cocktail Napkins (Set of 12)",
+      "Time to craft (days)": 5,
+      "Product type": "Cocktail napkins \u2014 12",
+      "Shopify handle": "indigo-blossom-cocktail-napkins-set-of-12",
+      "Product URL": "https://dimohe.com/products/indigo-blossom-cocktail-napkins-set-of-12"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Indigo Garden Waffle Face Towels (Set of 4)",
+      "Time to craft (days)": 4,
+      "Product type": "Waffle face towel set",
+      "Shopify handle": "indigo-garden-waffle-face-towels-set-of-4",
+      "Product URL": "https://dimohe.com/products/indigo-garden-waffle-face-towels-set-of-4"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Indigo Garden Waffle Hand Towels (Set of 2)",
+      "Time to craft (days)": 4,
+      "Product type": "Waffle hand towel set",
+      "Shopify handle": "indigo-garden-waffle-hand-towels-set-of-2",
+      "Product URL": "https://dimohe.com/products/indigo-garden-waffle-hand-towels-set-of-2"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Indigo Peacock 3-Layer Throw",
+      "Time to craft (days)": 7,
+      "Product type": "Three-layer throw",
+      "Shopify handle": "indigo-peacock-3-layer-throw",
+      "Product URL": "https://dimohe.com/products/indigo-peacock-3-layer-throw"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Indigo Vine Cocktail Napkins (Set of 12)",
+      "Time to craft (days)": 5,
+      "Product type": "Cocktail napkins \u2014 12",
+      "Shopify handle": "indigo-vine-cocktail-napkins-set-of-12",
+      "Product URL": "https://dimohe.com/products/indigo-vine-cocktail-napkins-set-of-12"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Lavender Bloom 3-Layer Throw",
+      "Time to craft (days)": 7,
+      "Product type": "Three-layer throw",
+      "Shopify handle": "lavender-bloom-3-layer-throw",
+      "Product URL": "https://dimohe.com/products/lavender-bloom-3-layer-throw"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Lavender Garden Quilted Cushion Cover",
+      "Time to craft (days)": 7,
+      "Product type": "Quilted cushion cover",
+      "Shopify handle": "lavender-garden-quilted-cushion-cover",
+      "Product URL": "https://dimohe.com/products/lavender-garden-quilted-cushion-cover"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Olive Cypress Waffle Hand Towels (Set of 2)",
+      "Time to craft (days)": 4,
+      "Product type": "Waffle hand towel set",
+      "Shopify handle": "olive-cypress-waffle-hand-towels-set-of-2",
+      "Product URL": "https://dimohe.com/products/olive-cypress-waffle-hand-towels-set-of-2"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Olive Willow Cocktail Napkins Large (Set of 6)",
+      "Time to craft (days)": 4,
+      "Product type": "Cocktail napkins \u2014 6",
+      "Shopify handle": "olive-willow-cocktail-napkins-set-of-6",
+      "Product URL": "https://dimohe.com/products/olive-willow-cocktail-napkins-set-of-6"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Palace Elephant Table Cover",
+      "Time to craft (days)": 8,
+      "Product type": "Large table cover",
+      "Shopify handle": "palace-elephant-table-cover",
+      "Product URL": "https://dimohe.com/products/palace-elephant-table-cover"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Raspberry Bloom Cocktail Napkins Large (Set of 6)",
+      "Time to craft (days)": 4,
+      "Product type": "Cocktail napkins \u2014 6",
+      "Shopify handle": "raspberry-bloom-cocktail-napkins-set-of-6",
+      "Product URL": "https://dimohe.com/products/raspberry-bloom-cocktail-napkins-set-of-6"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Royal Cypress Table Cover",
+      "Time to craft (days)": 8,
+      "Product type": "Large table cover",
+      "Shopify handle": "royal-cypress-table-cover",
+      "Product URL": "https://dimohe.com/products/royal-cypress-table-cover"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Ruby Cypress Waffle Hand Towels (Set of 2)",
+      "Time to craft (days)": 4,
+      "Product type": "Waffle hand towel set",
+      "Shopify handle": "ruby-cypress-waffle-hand-towels-set-of-2",
+      "Product URL": "https://dimohe.com/products/ruby-cypress-waffle-hand-towels-set-of-2"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Sage & Coral Garden Quilted Cushion Cover",
+      "Time to craft (days)": 7,
+      "Product type": "Quilted cushion cover",
+      "Shopify handle": "sage-coral-garden-quilted-cushion-cover",
+      "Product URL": "https://dimohe.com/products/sage-coral-garden-quilted-cushion-cover"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Sage Blossom Table Mat & Dinner Napkin Set",
+      "Time to craft (days)": 5,
+      "Product type": "Table mat + napkin set",
+      "Shopify handle": "sage-blossom-table-mat-dinner-napkin-set",
+      "Product URL": "https://dimohe.com/products/sage-blossom-table-mat-dinner-napkin-set"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Sage Botanica 3-Layer Throw",
+      "Time to craft (days)": 8,
+      "Product type": "Three-layer throw with flange",
+      "Shopify handle": "sage-botanica-3-layer-throw",
+      "Product URL": "https://dimohe.com/products/sage-botanica-3-layer-throw"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Sage Garden Waffle Bath Sheet",
+      "Time to craft (days)": 5,
+      "Product type": "Waffle bath sheet",
+      "Shopify handle": "sage-garden-waffle-bath-sheet",
+      "Product URL": "https://dimohe.com/products/sage-garden-waffle-bath-sheet"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Sage Garden Waffle Bath Towel",
+      "Time to craft (days)": 4,
+      "Product type": "Waffle bath towel",
+      "Shopify handle": "sage-garden-waffle-bath-towel",
+      "Product URL": "https://dimohe.com/products/sage-garden-waffle-bath-towel"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Sage Vine Reversible Table Runner",
+      "Time to craft (days)": 6,
+      "Product type": "Reversible table runner",
+      "Shopify handle": "sage-vine-reversible-table-runner",
+      "Product URL": "https://dimohe.com/products/sage-vine-reversible-table-runner"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Scarlet Garden Waffle Face Towels (Set of 4)",
+      "Time to craft (days)": 4,
+      "Product type": "Waffle face towel set",
+      "Shopify handle": "scarlet-garden-waffle-face-towels-set-of-4",
+      "Product URL": "https://dimohe.com/products/scarlet-garden-waffle-face-towels-set-of-4"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Scarlet Garden Waffle Hand Towels (Set of 2)",
+      "Time to craft (days)": 4,
+      "Product type": "Waffle hand towel set",
+      "Shopify handle": "scarlet-garden-waffle-hand-towels-set-of-2",
+      "Product URL": "https://dimohe.com/products/scarlet-garden-waffle-hand-towels-set-of-2"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Spice Garden Table Runner",
+      "Time to craft (days)": 5,
+      "Product type": "Table runner",
+      "Shopify handle": "spice-garden-table-runner",
+      "Product URL": "https://dimohe.com/products/spice-garden-table-runner"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Terracotta Bloom Quilted Cushion Cover",
+      "Time to craft (days)": 7,
+      "Product type": "Quilted cushion cover",
+      "Shopify handle": "terracotta-bloom-quilted-cushion-cover",
+      "Product URL": "https://dimohe.com/products/terracotta-bloom-quilted-cushion-cover"
+    },
+    {
+      "Category": "Block print \u00b7 Home",
+      "Product title": "Vintage Garden 3-Layer Throw",
+      "Time to craft (days)": 7,
+      "Product type": "Three-layer throw",
+      "Shopify handle": "vintage-garden-3-layer-throw",
+      "Product URL": "https://dimohe.com/products/vintage-garden-3-layer-throw"
+    },
+    {
+      "Category": "Embroidered bags",
+      "Product title": "The Altair Bijou Clutch",
+      "Time to craft (days)": 9,
+      "Product type": "Antique-frame/handle clutch",
+      "Shopify handle": "the-altair-bijou-clutch",
+      "Product URL": "https://dimohe.com/products/the-altair-bijou-clutch"
+    },
+    {
+      "Category": "Embroidered bags",
+      "Product title": "The Aurelia Noir Envelope",
+      "Time to craft (days)": 4,
+      "Product type": "Embroidered envelope / flap clutch",
+      "Shopify handle": "the-aurelia-noir-envelope",
+      "Product URL": "https://dimohe.com/products/the-aurelia-noir-envelope"
+    },
+    {
+      "Category": "Embroidered bags",
+      "Product title": "The Desert Pearl Pochette",
+      "Time to craft (days)": 4,
+      "Product type": "Embroidered potli / pochette",
+      "Shopify handle": "the-desert-pearl-pochette",
+      "Product URL": "https://dimohe.com/products/the-desert-pearl-pochette"
+    },
+    {
+      "Category": "Embroidered bags",
+      "Product title": "The Lyra Bijou Clutch",
+      "Time to craft (days)": 9,
+      "Product type": "Antique-frame/handle clutch",
+      "Shopify handle": "the-lyra-bijou-clutch",
+      "Product URL": "https://dimohe.com/products/the-lyra-bijou-clutch"
+    },
+    {
+      "Category": "Embroidered bags",
+      "Product title": "The Maia Bijou Clutch",
+      "Time to craft (days)": 9,
+      "Product type": "Antique-frame/handle clutch",
+      "Shopify handle": "the-maia-bijou-clutch",
+      "Product URL": "https://dimohe.com/products/the-maia-bijou-clutch"
+    },
+    {
+      "Category": "Embroidered bags",
+      "Product title": "The Mayura Noir Heirloom Minaudi\u00e8re",
+      "Time to craft (days)": 9,
+      "Product type": "Round embroidered handle bag",
+      "Shopify handle": "the-mayura-noir-heirloom",
+      "Product URL": "https://dimohe.com/products/the-mayura-noir-heirloom"
+    },
+    {
+      "Category": "Embroidered bags",
+      "Product title": "The Midnight Pearl Pochette",
+      "Time to craft (days)": 4,
+      "Product type": "Embroidered potli / pochette",
+      "Shopify handle": "the-midnight-pearl-pochette",
+      "Product URL": "https://dimohe.com/products/the-midnight-pearl-pochette"
+    },
+    {
+      "Category": "Embroidered bags",
+      "Product title": "The Moonlight Pearl Pochette",
+      "Time to craft (days)": 4,
+      "Product type": "Embroidered potli / pochette",
+      "Shopify handle": "the-moonlight-pearl-pochette",
+      "Product URL": "https://dimohe.com/products/the-moonlight-pearl-pochette"
+    },
+    {
+      "Category": "Embroidered bags",
+      "Product title": "The Noor Bagh Heirloom Minaudi\u00e8re",
+      "Time to craft (days)": 9,
+      "Product type": "Round embroidered handle bag",
+      "Shopify handle": "the-noor-bagh-heirloom-minaudi",
+      "Product URL": "https://dimohe.com/products/the-noor-bagh-heirloom-minaudi"
+    },
+    {
+      "Category": "Embroidered bags",
+      "Product title": "The Noor-e-Sahar Clutch",
+      "Time to craft (days)": 4,
+      "Product type": "Embroidered flap clutch",
+      "Shopify handle": "the-noor-e-sahar-clutch",
+      "Product URL": "https://dimohe.com/products/the-noor-e-sahar-clutch"
+    },
+    {
+      "Category": "Embroidered bags",
+      "Product title": "The Rose Pearl Pochette",
+      "Time to craft (days)": 4,
+      "Product type": "Embroidered potli / pochette",
+      "Shopify handle": "the-rose-pearl-pochette",
+      "Product URL": "https://dimohe.com/products/the-rose-pearl-pochette"
+    },
+    {
+      "Category": "Embroidered bags",
+      "Product title": "The Vallari Noir Clutch",
+      "Time to craft (days)": 4,
+      "Product type": "Embroidered flap clutch",
+      "Shopify handle": "the-vallari-noir-clutch",
+      "Product URL": "https://dimohe.com/products/the-vallari-noir-clutch"
+    },
+    {
+      "Category": "Embroidered bags",
+      "Product title": "The Vega Bijou Clutch",
+      "Time to craft (days)": 9,
+      "Product type": "Antique-frame/handle clutch",
+      "Shopify handle": "the-vega-bijou-clutch",
+      "Product URL": "https://dimohe.com/products/the-vega-bijou-clutch"
+    },
+    {
+      "Category": "Kids festive wear",
+      "Product title": "Boy 3 Pc Embroidery Bundy Set - Beige",
+      "Time to craft (days)": 5,
+      "Product type": "Embroidered 3-piece bundy set",
+      "Shopify handle": "boy-3-pc-embroidery-bundy-set-beige-1",
+      "Product URL": "https://dimohe.com/products/boy-3-pc-embroidery-bundy-set-beige-1"
+    },
+    {
+      "Category": "Kids festive wear",
+      "Product title": "Boy 3 Pc Embroidery Bundy Set - Beige",
+      "Time to craft (days)": 5,
+      "Product type": "Embroidered 3-piece bundy set",
+      "Shopify handle": "boy-3-pc-embroidery-bundy-set-beige",
+      "Product URL": "https://dimohe.com/products/boy-3-pc-embroidery-bundy-set-beige"
+    },
+    {
+      "Category": "Kids festive wear",
+      "Product title": "Boy 3 Pc Royal Zardozi Bundy Set - White",
+      "Time to craft (days)": 5,
+      "Product type": "Zardozi 3-piece bundy set",
+      "Shopify handle": "boy-3-pc-royal-zardozi-bundy-set-white",
+      "Product URL": "https://dimohe.com/products/boy-3-pc-royal-zardozi-bundy-set-white"
+    },
+    {
+      "Category": "Kids festive wear",
+      "Product title": "Boy Dhola Maru Embroidery Bundy Set - Beige",
+      "Time to craft (days)": 5,
+      "Product type": "Embroidered bundy set",
+      "Shopify handle": "boy-dhola-maru-embroidery-bundy-set-beige",
+      "Product URL": "https://dimohe.com/products/boy-dhola-maru-embroidery-bundy-set-beige"
+    },
+    {
+      "Category": "Kids festive wear",
+      "Product title": "Boy Stripe Zari Embroidered Kurta Set - Minty Green",
+      "Time to craft (days)": 4,
+      "Product type": "Zari embroidered kurta set",
+      "Shopify handle": "boy-stripe-zari-embroidered-kurta-set-minty-green",
+      "Product URL": "https://dimohe.com/products/boy-stripe-zari-embroidered-kurta-set-minty-green"
+    },
+    {
+      "Category": "Kids festive wear",
+      "Product title": "Boy Stripe Zari Embroidered Kurta Set - Teal Blue",
+      "Time to craft (days)": 4,
+      "Product type": "Zari embroidered kurta set",
+      "Shopify handle": "boy-stripe-zari-embroidered-kurta-set-teal-blue",
+      "Product URL": "https://dimohe.com/products/boy-stripe-zari-embroidered-kurta-set-teal-blue"
+    },
+    {
+      "Category": "Kids festive wear",
+      "Product title": "Girl Dhola Maru Floral Embroidered Skirt Top Set - Beige & Green",
+      "Time to craft (days)": 5,
+      "Product type": "Embroidered skirt-top set",
+      "Shopify handle": "girl-dhola-maru-floral-embroidered-skirt-top-set-beige-green",
+      "Product URL": "https://dimohe.com/products/girl-dhola-maru-floral-embroidered-skirt-top-set-beige-green"
+    },
+    {
+      "Category": "Kids festive wear",
+      "Product title": "Girl Panelled Bandhani Skirt Set-Red",
+      "Time to craft (days)": 4,
+      "Product type": "Panelled Bandhani skirt set",
+      "Shopify handle": "girl-panelled-bandhani-skirt-set-red",
+      "Product URL": "https://dimohe.com/products/girl-panelled-bandhani-skirt-set-red"
+    },
+    {
+      "Category": "Kids festive wear",
+      "Product title": "Girl Striped Fancy Zari Embroidered Top with Cowl Dhoti Pants- Minty Green",
+      "Time to craft (days)": 5,
+      "Product type": "Embroidered top + dhoti pants",
+      "Shopify handle": "girl-striped-fancy-zari-embroidered-top-with-cowl-dhoti-pants-minty-green",
+      "Product URL": "https://dimohe.com/products/girl-striped-fancy-zari-embroidered-top-with-cowl-dhoti-pants-minty-green"
+    }
+  ]
+}

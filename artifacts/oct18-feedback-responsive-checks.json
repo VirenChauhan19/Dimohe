@@ -1,0 +1,137 @@
+[
+  {
+    "h1": "Block-printed linens.Hand-embroidered bags.Ayurveda for everyday.",
+    "overflow": false,
+    "path": "/",
+    "rows": [
+      {
+        "cards": 6,
+        "scrollable": true
+      },
+      {
+        "cards": 6,
+        "scrollable": true
+      },
+      {
+        "cards": 6,
+        "scrollable": true
+      },
+      {
+        "cards": 6,
+        "scrollable": true
+      },
+      {
+        "cards": 5,
+        "scrollable": true
+      }
+    ],
+    "wellnessSections": 0,
+    "width": 320
+  },
+  {
+    "h1": "Gift Bundles",
+    "overflow": false,
+    "path": "/?view=gift-bundles",
+    "rows": [],
+    "wellnessSections": 0,
+    "width": 320
+  },
+  {
+    "h1": "Himalayan Shampoo · Deodhar & Hibiscus",
+    "overflow": false,
+    "path": "/products/himalayan-hair-repair-shampoo-deodhar-hibiscus-250ml",
+    "rows": [],
+    "wellnessSections": 5,
+    "width": 320
+  },
+  {
+    "h1": "Block-printed linens.Hand-embroidered bags.Ayurveda for everyday.",
+    "overflow": false,
+    "path": "/",
+    "rows": [
+      {
+        "cards": 6,
+        "scrollable": true
+      },
+      {
+        "cards": 6,
+        "scrollable": true
+      },
+      {
+        "cards": 6,
+        "scrollable": true
+      },
+      {
+        "cards": 6,
+        "scrollable": true
+      },
+      {
+        "cards": 5,
+        "scrollable": true
+      }
+    ],
+    "wellnessSections": 0,
+    "width": 768
+  },
+  {
+    "h1": "Gift Bundles",
+    "overflow": false,
+    "path": "/?view=gift-bundles",
+    "rows": [],
+    "wellnessSections": 0,
+    "width": 768
+  },
+  {
+    "h1": "Himalayan Shampoo · Deodhar & Hibiscus",
+    "overflow": false,
+    "path": "/products/himalayan-hair-repair-shampoo-deodhar-hibiscus-250ml",
+    "rows": [],
+    "wellnessSections": 5,
+    "width": 768
+  },
+  {
+    "h1": "Block-printed linens.Hand-embroidered bags.Ayurveda for everyday.",
+    "overflow": false,
+    "path": "/",
+    "rows": [
+      {
+        "cards": 6,
+        "scrollable": true
+      },
+      {
+        "cards": 6,
+        "scrollable": true
+      },
+      {
+        "cards": 6,
+        "scrollable": true
+      },
+      {
+        "cards": 6,
+        "scrollable": true
+      },
+      {
+        "cards": 5,
+        "scrollable": true
+      }
+    ],
+    "wellnessSections": 0,
+    "width": 1280
+  },
+  {
+    "h1": "Gift Bundles",
+    "overflow": false,
+    "path": "/?view=gift-bundles",
+    "rows": [],
+    "wellnessSections": 0,
+    "width": 1280
+  },
+  {
+    "h1": "Himalayan Shampoo · Deodhar & Hibiscus",
+    "overflow": false,
+    "path": "/products/himalayan-hair-repair-shampoo-deodhar-hibiscus-250ml",
+    "rows": [],
+    "wellnessSections": 5,
+    "width": 1280
+  }
+]

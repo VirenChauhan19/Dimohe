@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "heading": "Our story",
+        "body": "<p>Dimohe brings Indian block-printed textiles, hand embroidery, and everyday essentials to the United States.</p><p>Our collection moves from the home to the wardrobe: block-printed cushions and table linens, Chikankari and Zardozi bags, children’s occasionwear, and hair and body care.</p><p>The details are the reason we choose these pieces. Gulnaar’s red-and-ivory piping. A line of cypress trees on quilted cotton. The stitched vines across Noor Bagh’s raw silk. We want you to be able to see those details, understand how a piece is made, and decide where it fits in your life.</p><p>You don’t need a whole new room or a special occasion. Start with the piece you like.</p>"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

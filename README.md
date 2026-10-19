@@ -2,6 +2,12 @@
 
 A redesigned local storefront built around Dimohe’s botanical textiles, artisan bags, wellness rituals, and children’s occasionwear. The design uses ivory, deep olive, terracotta, editorial typography, and original product photography.
 
+## Current review
+
+The active review uses the original storefront at **http://localhost:3000/**, implemented in `lib/storefront.mjs`, `public/storefront.css` and `public/storefront.js`. Its original page format has been restored, including the full craft passports and wellness usage, ingredients, benefits and FAQ sections. Tote descriptions use plain bullets. Approved changes are retained: the centered 10% welcome popup, integrated Instagram and LinkedIn footer links, navigation refinements, one automatic More to explore carousel without bags, swipe support and arrows beside the photographs, selected making videos, updated prices, care text and merchant-supplied craft-time estimates. The local signup form is a preview and does not submit emails; the Shopify theme uses its customer signup flow.
+
+The separate `shopify-theme` draft on port 3001 is not the current review version. ZIP preparation is on hold until the user has reviewed the restored storefront and the changes are complete.
+
 ## Run
 
 Requires Node.js 22 or newer.

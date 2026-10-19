@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "shipping_returns": "<p>Items must be unused and in their original condition and packaging. Original shipping charges are not refundable.</p>"
+      }
+    },
+    "recommendations": {
+      "type": "recommendations",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "recommendations"
+  ]
+}

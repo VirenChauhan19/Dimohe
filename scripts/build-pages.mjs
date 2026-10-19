@@ -72,7 +72,7 @@ await fs.writeFile(path.join(out, 'api/memberships.json'), JSON.stringify(Object
 for (const p of products) for (const src of [...p.images.map(i => i.src), ...p.variants.map(v => v.featured_image?.src)]) if (src) assets.add(imagePath(src));
 
 // Scripts and styles. Browser modules are published as .js so every host serves a JavaScript MIME type.
-for (const name of ['storefront.mjs', 'taxonomy.mjs', 'base-path.mjs', 'pages-runtime.mjs', 'editorial.mjs', 'commerce.mjs']) {
+for (const name of ['storefront.mjs', 'taxonomy.mjs', 'base-path.mjs', 'pages-runtime.mjs', 'editorial.mjs', 'commerce.mjs', 'review-features.mjs']) {
   const source = await fs.readFile(path.join('lib', name), 'utf8');
   await fs.mkdir(path.join(out, 'lib'), { recursive: true });
   await fs.writeFile(path.join(out, 'lib', name.replace(/\.mjs$/, '.js')), source.replace(/(from '\.\/[\w-]+)\.mjs'/g, "$1.js'"));

@@ -1,0 +1,43 @@
+<section id="{% if section.settings.preview %}film-preview{% else %}craft-film{% endif %}" class="section film-section"><figure class="film-media">{% if section.settings.video != blank %}{{ section.settings.video | video_tag: controls: true, muted: section.settings.preview, loop: section.settings.preview, playsinline: true, preload: 'metadata' }}{% else %}{% assign film_asset = 'craft-film.mp4' %}{% if section.settings.preview %}{% assign film_asset = 'embroidery-needlework.mp4' %}{% endif %}<video controls playsinline preload="metadata"{% if section.settings.preview %} muted loop data-autoplay{% endif %} width="606" height="1080" aria-label="{{ section.settings.heading | escape }}"><source src="{{ film_asset | asset_url }}" type="video/mp4"></video>{% endif %}<figcaption>{% if section.settings.preview %}<span>23-second film</span><a href="{% render 'craft-url' %}#chikankari-film">Explore the handwork</a>{% else %}<span>Dimohe · 1 min 36 sec</span>{% endif %}</figcaption></figure><div class="film-copy"><p class="eyebrow">{{ section.settings.eyebrow | escape }}</p><h2>{{ section.settings.heading | escape }}</h2><p>{{ section.settings.intro | escape }}</p></div></section>
+
+{% schema %}
+{
+  "name": "Craft film",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "A FILM BY DIMOHE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "A closer look."
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Introduction",
+      "default": "A glimpse of the hands, places, and details behind our collection. Watch the full film in Discover the craft."
+    },
+    {
+      "type": "checkbox",
+      "id": "preview",
+      "label": "Play short homepage preview",
+      "default": true
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Replace the bundled film"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Craft film"
+    }
+  ]
+}
+{% endschema %}
