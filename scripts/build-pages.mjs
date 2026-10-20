@@ -44,6 +44,8 @@ const pageRoutes = [
 
 await fs.rm(out, { recursive: true, force: true });
 const assets = new Set();
+const browserModules=['storefront.mjs', 'taxonomy.mjs', 'base-path.mjs', 'pages-runtime.mjs', 'editorial.mjs', 'commerce.mjs', 'review-features.mjs'];
+const scriptVersion=createHash('sha256').update(await fs.readFile('public/storefront.js')).update((await Promise.all(browserModules.map(name=>fs.readFile(path.join('lib',name),'utf8')))).join('\n')).digest('hex').slice(0,12);
 const stylesheetVersion=createHash('sha256').update(await fs.readFile('public/storefront.css')).digest('hex').slice(0,12);
 const collectAssets = html => {
   for (const [, url] of html.matchAll(/(?:src|href|data-image|poster)=["'](\/(?:cdn|external|media)\/[^"'?#]+)/g)) assets.add(url);
@@ -54,7 +56,7 @@ async function writePage(file, html) {
   html = html
     .replace('<link rel="stylesheet" href="/storefront.css">', `<link rel="stylesheet" href="/storefront.css?v=${stylesheetVersion}">`)
     .replace('<html lang="en">', `<html lang="en" data-base="${base}">`)
-    .replace('<script src="/storefront.js" defer></script>', '<script src="/lib/pages-runtime.js" type="module"></script>');
+    .replace('<script src="/storefront.js" defer></script>', `<script src="/lib/pages-runtime.js?v=${scriptVersion}" type="module"></script>`);
   const target = path.join(out, file);
   await fs.mkdir(path.dirname(target), { recursive: true });
   await fs.writeFile(target, withBase(html, base));
@@ -75,10 +77,10 @@ await fs.writeFile(path.join(out, 'api/memberships.json'), JSON.stringify(Object
 for (const p of products) for (const src of [...p.images.map(i => i.src), ...p.variants.map(v => v.featured_image?.src)]) if (src) assets.add(imagePath(src));
 
 // Scripts and styles. Browser modules are published as .js so every host serves a JavaScript MIME type.
-for (const name of ['storefront.mjs', 'taxonomy.mjs', 'base-path.mjs', 'pages-runtime.mjs', 'editorial.mjs', 'commerce.mjs', 'review-features.mjs']) {
+for (const name of browserModules) {
   const source = await fs.readFile(path.join('lib', name), 'utf8');
   await fs.mkdir(path.join(out, 'lib'), { recursive: true });
-  await fs.writeFile(path.join(out, 'lib', name.replace(/\.mjs$/, '.js')), source.replace(/(from '\.\/[\w-]+)\.mjs'/g, "$1.js'"));
+  await fs.writeFile(path.join(out, 'lib', name.replace(/\.mjs$/, '.js')), source.replace(/(from '\.\/[\w-]+)\.mjs'/g, "$1.js?v="+scriptVersion+"'").replace("src: base + '/storefront.js'", "src: base + '/storefront.js?v="+scriptVersion+"'"));
 }
 await fs.copyFile('public/welcome-signup.json', path.join(out, 'welcome-signup.json'));
 await fs.writeFile(path.join(out, 'storefront.js'), scriptWithBase(await fs.readFile('public/storefront.js', 'utf8'), base));
