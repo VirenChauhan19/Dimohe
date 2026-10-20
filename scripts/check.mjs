@@ -293,6 +293,7 @@ let films=0;
 for(const p of enriched){
  const doc=load(await(await fetch(base+'/products/'+p.handle)).text());
  assert.equal(doc('[data-welcome-offer]').length,0);
+ doc('figcaption').each((i,e)=>assert.doesNotMatch(doc(e).text(),/\d+\s*(?:min|sec)|second|minute/i));
  assert.equal(doc('.footer-connect a').length,2);
  if(doc('.making-film').length){films++;for(const el of doc('.making-film source,.making-film video[poster]').toArray()){
  const asset=doc(el).attr('src')||doc(el).attr('poster');assert.equal((await fetch(base+asset,{method:'HEAD'})).status,200,asset);
@@ -302,3 +303,9 @@ for(const p of enriched){
 }
 assert.equal(films,20);
 console.log('Passed: centered home offer, integrated social footer, no duplicate department product rows, one automatic mixed-category row with side controls and without bags, and 20 contextual product films alongside original content.');
+
+assert.equal(updatedHome('.homepage-products').length,2);
+assert.equal(updatedHome('.homepage-products [data-product-handle]').length,8);
+assert.equal(updatedHome('[data-loop]').length,1);
+for(const doc of [updatedHome,filmCraftPage])doc('figcaption').each((i,e)=>assert.doesNotMatch(doc(e).text(),/\d+\s*(?:min|sec)|second|minute/i));
+console.log('Passed: eight products beneath home/wellness, forward-loop carousel, and no video duration captions.');
