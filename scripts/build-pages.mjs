@@ -94,7 +94,7 @@ for (const asset of assets) {
   catch { missing.push(asset); }
 }
 if (missing.length) console.warn(`Missing ${missing.length} assets:\n  ${missing.join('\n  ')}`);
-const sitemapRoutes=[...new Set(pageRoutes)].filter(r=>!/^\/(search|cart|checkout|account|pages\/saved-pieces)$/.test(r));
+const sitemapRoutes=[...new Set(pageRoutes)].filter(r=>r!=='/pages/refund-returns-exchange-and-cancellations-policy'&&!/^\/(search|cart|checkout|account|pages\/saved-pieces)$/.test(r));
 await fs.writeFile(path.join(out,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+sitemapRoutes.map(r=>'<url><loc>'+siteURL+(r==='/'?'/':r+'/')+'</loc></url>').join('')+'</urlset>');
 await fs.writeFile(path.join(out,'robots.txt'),'User-agent: *\nAllow: /\nSitemap: '+siteURL+'/sitemap.xml\n');
 await fs.writeFile(path.join(out,'build-report.json'),JSON.stringify({base,pages:new Set(pageRoutes).size+1,assets:assets.size-missing.length,products:products.length},null,2));
