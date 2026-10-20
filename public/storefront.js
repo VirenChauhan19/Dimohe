@@ -7,17 +7,40 @@
   const dialogs=[...document.querySelectorAll('dialog')];
   let focusBeforeDialog=null,noticeTimer,cartBusy=false;
   function notice(message){const el=document.getElementById('status');el.textContent=message;el.hidden=false;clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>{el.hidden=true;},5000);}
-  function openDialog(id){const dialog=document.getElementById(id);if(dialog.open)return;focusBeforeDialog=document.activeElement;dialogs.filter(d=>d.open).forEach(d=>d.close());dialog.showModal();}
+  function openDialog(id){closeMobileNavigation({immediate:true});const dialog=document.getElementById(id);if(dialog.open)return;focusBeforeDialog=document.activeElement;dialogs.filter(d=>d.open).forEach(d=>d.close());dialog.showModal();}
   for(const d of dialogs){d.addEventListener('click',event=>{if(event.target===d){const r=d.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)d.close();}});d.addEventListener('close',()=>focusBeforeDialog?.focus());}
   document.querySelectorAll('[data-close-dialog]').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));
-  document.querySelector('[data-menu-toggle]')?.addEventListener('click',event=>{const nav=document.querySelector('.mobile-nav');nav.hidden=!nav.hidden;document.querySelectorAll('main,.site-footer').forEach(el=>el.inert=!nav.hidden);if(!nav.hidden){nav.querySelectorAll('details').forEach(group=>group.open=false);nav.scrollTop=0;}event.currentTarget.setAttribute('aria-expanded',String(!nav.hidden));event.currentTarget.setAttribute('aria-label',nav.hidden?'Open menu':'Close menu');});
-  function closeMobileNavigation(){const nav=document.querySelector('.mobile-nav'),toggle=document.querySelector('[data-menu-toggle]');if(!nav||nav.hidden)return false;nav.hidden=true;document.querySelectorAll('main,.site-footer').forEach(el=>el.inert=false);toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open menu');return true;}
-  document.querySelector('.mobile-nav')?.addEventListener('click',event=>{if(event.target.closest('a'))closeMobileNavigation();});
+  const mobileNav=document.querySelector('.mobile-nav'),menuToggle=document.querySelector('[data-menu-toggle]');
+  let menuCloseTimer;
+  function closeMobileNavigation({immediate=false}={}){
+    if(!mobileNav||menuToggle.getAttribute('aria-expanded')!=='true')return false;
+    clearTimeout(menuCloseTimer);
+    mobileNav.classList.remove('is-open');mobileNav.inert=true;
+    menuToggle.setAttribute('aria-expanded','false');menuToggle.setAttribute('aria-label','Open menu');
+    document.querySelectorAll('main,.site-footer').forEach(el=>el.inert=false);
+    const finish=()=>{if(menuToggle.getAttribute('aria-expanded')==='false')mobileNav.hidden=true;};
+    if(immediate||matchMedia('(prefers-reduced-motion: reduce)').matches)finish();else menuCloseTimer=setTimeout(finish,240);
+    return true;
+  }
+  menuToggle?.addEventListener('click',()=>{
+    if(menuToggle.getAttribute('aria-expanded')==='true'){closeMobileNavigation();return;}
+    clearTimeout(menuCloseTimer);mobileNav.hidden=false;mobileNav.inert=false;mobileNav.scrollTop=0;
+    mobileNav.querySelectorAll('details').forEach(group=>group.open=false);
+    document.querySelectorAll('main,.site-footer').forEach(el=>el.inert=true);
+    menuToggle.setAttribute('aria-expanded','true');menuToggle.setAttribute('aria-label','Close menu');
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{if(menuToggle.getAttribute('aria-expanded')==='true')mobileNav.classList.add('is-open');}));
+  });
+  mobileNav?.addEventListener('click',event=>{if(event.target.closest('a'))closeMobileNavigation({immediate:true});});
   const desktopLayout=window.matchMedia('(min-width: 900px)');
-  desktopLayout.addEventListener('change',event=>{if(event.matches)closeMobileNavigation();});
-  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&closeMobileNavigation())document.querySelector('[data-menu-toggle]').focus();});
+  desktopLayout.addEventListener('change',event=>{if(event.matches)closeMobileNavigation({immediate:true});});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&closeMobileNavigation())menuToggle.focus();});
   const mobileGroups=[...document.querySelectorAll('.mobile-nav>details')];
-  mobileGroups.forEach(group=>group.addEventListener('toggle',()=>{if(group.open)mobileGroups.forEach(other=>{if(other!==group)other.open=false;});}));
+  mobileGroups.forEach(group=>group.addEventListener('toggle',()=>{
+    if(group.open){
+      mobileGroups.forEach(other=>{if(other!==group)other.open=false;});
+      if(!matchMedia('(prefers-reduced-motion: reduce)').matches)[...group.children].filter(el=>el.tagName!=='SUMMARY').forEach(el=>el.animate([{opacity:0,transform:'translateY(-4px)'},{opacity:1,transform:'translateY(0)'}],{duration:180,easing:'ease-out'}));
+    }
+  }));
   const navGroups=[...document.querySelectorAll('.desktop-nav .nav-group')];
   const hoverNavigation=window.matchMedia('(hover: hover) and (pointer: fine)');
   let navCloseTimer,navOpenTimer;
@@ -155,7 +178,7 @@
     const isSubscribed=()=>{try{return localStorage.getItem(subscribedKey)==='confirmed';}catch{return false;}};
     offer.addEventListener('click',event=>{if(event.target===offer){const rect=offer.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)offer.close();}});
     let shown=false;
-    const tryOpen=()=>{if(shown||isSubscribed())return;if(document.hidden||document.querySelector('dialog[open]')){setTimeout(tryOpen,800);return;}shown=true;offer.showModal();};
+    const tryOpen=()=>{if(shown||isSubscribed())return;if(document.hidden||document.querySelector('dialog[open]')||document.querySelector('[data-menu-toggle][aria-expanded="true"]')){setTimeout(tryOpen,800);return;}shown=true;offer.showModal();};
     setTimeout(tryOpen,1000);
     window.addEventListener('storage',event=>{if(event.key===subscribedKey&&isSubscribed()&&offer.open)offer.close();});
     offer.querySelector('form').addEventListener('submit',async event=>{
