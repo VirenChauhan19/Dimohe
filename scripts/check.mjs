@@ -147,7 +147,7 @@ assert.notEqual(renamed.title,renamed.merch.originalTitle);
 const line=(await api('/cart/add.js',{id:renamed.variants.find(v=>v.available).id,quantity:1})).value.items[0];
 assert.equal(line.title,renamed.title,'Editorial names must be consistent in the cart');
 await api('/cart/clear.js',{});
-const craftPage=await fetch(base+'/pages/our-craft');assert.equal(craftPage.status,200);assert.match(await craftPage.text(),/Our craft traditions/);
+const craftPage=await fetch(base+'/pages/our-craft');assert.equal(craftPage.status,200);assert.match(await craftPage.text(),/Craft stories/);
 console.log('Passed: all three craft collections, evidence-based craft assignments, consistent editorial cart names, and craft story page.');
 const {chapters,curatedCollections,editHandles}=await import('../lib/commerce.mjs');
 for(const chapter of chapters){const response=await fetch(base+'/pages/chapter-'+chapter.slug);assert.equal(response.status,200);const doc=load(await response.text());assert.ok(doc('h1').text().includes(chapter.title));assert.equal(doc('[data-product-handle]').length,Math.min(8,enriched.filter(chapter.match).length));}
@@ -257,7 +257,7 @@ assert.equal(updatedHome('.film-copy a').length,0);
 assert.equal(updatedHome('#film-preview figcaption a').attr('href'),'/pages/our-craft#craft-film');
 updatedHome('.chapter-panel').each((i,panel)=>{const node=updatedHome(panel),target='/collections/'+chapters[i+1].collection;assert.equal(node.find('.chapter-photo').attr('href'),target);assert.equal(node.find('h2 a').attr('href'),target);assert.equal(node.find('.chapter-copy>.text-link').length,1);assert.equal(node.find('a[href^="/pages/chapter-"]').length,0);});
 assert.equal(updatedHome('.desktop-nav .founder-nav a[href="/pages/our-story"]').length,2);
-assert.equal(updatedHome('.desktop-nav .founder-nav a[href="/pages/our-founder"]').text(),'Founder Story');
+assert.equal(updatedHome('.desktop-nav .founder-nav a[href="/pages/our-founder"]').text(),'Meet our founder');
 assert.equal(updatedHome('.embroidery-panel').first().find('a').first().attr('href'),'/collections/round-bags');
 assert.equal(updatedHome('.embroidery-showcase .section-title>div>.text-link').last().text(),'Explore bags');
 const desert=load(await(await fetch(base+'/products/the-desert-pearl-pochette')).text());
