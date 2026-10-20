@@ -77,6 +77,7 @@ for (const name of ['storefront.mjs', 'taxonomy.mjs', 'base-path.mjs', 'pages-ru
   await fs.mkdir(path.join(out, 'lib'), { recursive: true });
   await fs.writeFile(path.join(out, 'lib', name.replace(/\.mjs$/, '.js')), source.replace(/(from '\.\/[\w-]+)\.mjs'/g, "$1.js'"));
 }
+await fs.copyFile('public/welcome-signup.json', path.join(out, 'welcome-signup.json'));
 await fs.writeFile(path.join(out, 'storefront.js'), scriptWithBase(await fs.readFile('public/storefront.js', 'utf8'), base));
 const css = await fs.readFile('public/storefront.css', 'utf8');
 for (const [, url] of css.matchAll(/url\(['"]?(\/[^'")]+)/g)) assets.add(url.split('?')[0]);
