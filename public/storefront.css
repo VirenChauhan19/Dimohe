@@ -260,3 +260,8 @@
 /* Equal side columns keep the mobile wordmark at the viewport center. */
 @media(max-width:899px){.site-header{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}.site-header>.mobile-menu-button{justify-self:start}.site-header>.wordmark{justify-self:center}.site-header>.header-actions{justify-self:end}}
 @media(max-width:340px){.site-header .wordmark,.site-header .wordmark img{width:104px}.site-header .header-actions{gap:0}}
+
+/* Stable photo layers avoid fractional scroll seams on touch browsers. */
+@media(max-width:899px),(hover:none),(pointer:coarse){.product-image>img,.main-photo>img{scale:none;translate:none;transform:none;transition:none}.product-image>.alternate{display:none}}
+/* Keep form focus from zooming the page in iPhone browsers. */
+@media(max-width:899px){.welcome-dialog input,.search-form input,.filter-fields select,.filter-fields input:not([type=checkbox]),.catalog-toolbar select,.quick-content select,.quantity-control input{font-size:16px}}
