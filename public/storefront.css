@@ -256,3 +256,7 @@
 .card-cart{width:46px;transition:width 200ms ease,background-color 180ms ease,color 180ms ease}.card-cart.has-quantity{width:112px}.card-cart button{flex-shrink:0}.card-cart .card-cart-count{width:22px;padding:0}
 @media(max-width:767px){.card-cart button{min-width:44px;width:44px}.card-cart .card-cart-count{min-width:22px;width:22px}}
 @media(prefers-reduced-motion:reduce){.card-cart{transition:none}}
+
+/* Equal side columns keep the mobile wordmark at the viewport center. */
+@media(max-width:899px){.site-header{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}.site-header>.mobile-menu-button{justify-self:start}.site-header>.wordmark{justify-self:center}.site-header>.header-actions{justify-self:end}}
+@media(max-width:340px){.site-header .wordmark,.site-header .wordmark img{width:104px}.site-header .header-actions{gap:0}}
