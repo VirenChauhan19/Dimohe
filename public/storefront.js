@@ -68,8 +68,8 @@
   document.querySelectorAll('[data-picks-category]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-picks-category]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));document.querySelectorAll('[data-pick-group]').forEach(card=>card.hidden=card.dataset.pickGroup!==button.dataset.picksCategory);animatePickedProducts();}));
   // Scroll motion stays inside image frames so layouts and click targets remain steady.
   const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
-  const photoFrames=[...document.querySelectorAll('.hero-photo,.chapter-photo,.category-photo,.product-image,.main-photo,.craft-tile>a:first-child')];
-  const revealItems=[...document.querySelectorAll('.section-title,.product-card,.category-tile,.chapter-copy,.film-copy,.founder-note,.craft-tile')];
+  const photoFrames=[...document.querySelectorAll('.hero-photo,.chapter-photo,.category-photo,.product-image,.main-photo,.craft-tile>a:first-child')].filter(element=>!element.closest('.mixed-explore'));
+  const revealItems=[...document.querySelectorAll('.section-title,.product-card,.category-tile,.chapter-copy,.film-copy,.founder-note,.craft-tile')].filter(element=>!element.closest('.mixed-explore'));
   const movingFrames=new Map();let motionFrame=0,motionMeasure=true,motionTime=0,photoObserver,revealObserver;
   function scheduleMotion(){if(motionPreference.matches||document.hidden||motionFrame)return;motionFrame=requestAnimationFrame(animatePhotos);}
   function animatePhotos(time){
@@ -151,26 +151,75 @@
 (() => {
   const offer=document.querySelector('[data-welcome-offer]');
   if(offer){
+    const subscribedKey='dimohe-newsletter-subscribed';
+    const isSubscribed=()=>{try{return localStorage.getItem(subscribedKey)==='confirmed';}catch{return false;}};
     offer.addEventListener('click',event=>{if(event.target===offer){const rect=offer.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)offer.close();}});
     let shown=false;
-    const tryOpen=()=>{if(shown)return;if(document.hidden||document.querySelector('dialog[open]')){setTimeout(tryOpen,800);return;}shown=true;offer.showModal();};
+    const tryOpen=()=>{if(shown||isSubscribed())return;if(document.hidden||document.querySelector('dialog[open]')){setTimeout(tryOpen,800);return;}shown=true;offer.showModal();};
     setTimeout(tryOpen,1000);
-    offer.querySelector('form').addEventListener('submit',event=>{event.preventDefault();const status=offer.querySelector('[data-welcome-status]');status.hidden=false;status.textContent='This local preview is not connected to the mailing list yet. Your email has not been submitted.';});
+    window.addEventListener('storage',event=>{if(event.key===subscribedKey&&isSubscribed()&&offer.open)offer.close();});
+    offer.querySelector('form').addEventListener('submit',async event=>{
+      event.preventDefault();
+      const form=event.currentTarget,status=offer.querySelector('[data-welcome-status]'),button=form.querySelector('[type=submit]');
+      if(button.disabled)return;
+      status.hidden=false;status.textContent='Joining…';button.disabled=true;
+      try{
+        const configResponse=await fetch('/welcome-signup.json',{cache:'no-store'});
+        if(!configResponse.ok)throw new Error('unavailable');
+        const config=await configResponse.json();
+        if(!config.endpoint)throw new Error('unavailable');
+        const endpoint=new URL(config.endpoint,location.href);
+        if(endpoint.protocol!=='https:'&&endpoint.origin!==location.origin)throw new Error('unavailable');
+        const response=await fetch(endpoint.href,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:form.elements.email.value.trim(),consent:true,source:'dimohe-welcome'})});
+        const result=await response.json();
+        if(!response.ok)throw new Error('unavailable');
+        if(result.subscribed!==true){
+          if(result.pending===true){status.textContent='Please check your inbox to confirm your subscription.';return;}
+          throw new Error('unavailable');
+        }
+        try{localStorage.setItem(subscribedKey,'confirmed');}catch{}
+        status.textContent='You’re on the list. Look out for your welcome email.';
+        form.querySelector('input[type=email]').disabled=true;
+        button.textContent='You’re signed up';
+      }catch{status.textContent='Signup is temporarily unavailable. Please try again later.';}
+      finally{if(!isSubscribed())button.disabled=false;}
+    });
   }
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   document.querySelectorAll('[data-review-carousel]').forEach(section=>{
     const rail=section.querySelector('.product-rail'),prev=section.querySelector('[data-rail-prev]'),next=section.querySelector('[data-rail-next]'),pause=section.querySelector('[data-rail-pause]');
-    let paused=false,hovered=false,focused=false,visible=false,lastInteraction=0;
-    const update=()=>{prev.disabled=rail.scrollLeft<2;next.disabled=rail.scrollLeft>=rail.scrollWidth-rail.clientWidth-2;};
-    const move=dir=>rail.scrollBy({left:dir*((rail.firstElementChild?.getBoundingClientRect().width||rail.clientWidth)+parseFloat(getComputedStyle(rail).gap||0)),behavior:reduced.matches?'instant':'smooth'});
-    prev.addEventListener('click',()=>{lastInteraction=Date.now();move(-1);});next.addEventListener('click',()=>{lastInteraction=Date.now();move(1);});
-    rail.addEventListener('scroll',update,{passive:true});rail.addEventListener('pointerdown',()=>lastInteraction=Date.now(),{passive:true});rail.addEventListener('wheel',()=>lastInteraction=Date.now(),{passive:true});rail.addEventListener('keydown',event=>{lastInteraction=Date.now();if(['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();move(event.key==='ArrowLeft'?-1:1);}});
-    section.addEventListener('pointerenter',()=>hovered=true);section.addEventListener('pointerleave',()=>hovered=false);section.addEventListener('focusin',()=>focused=true);section.addEventListener('focusout',event=>{focused=section.contains(event.relatedTarget);});
-    if(pause){pause.addEventListener('click',()=>{paused=!paused;pause.textContent=paused?'Resume':'Pause';pause.setAttribute('aria-pressed',String(paused));pause.setAttribute('aria-label',paused?'Resume collection slideshow':'Pause collection slideshow');});pause.setAttribute('aria-label','Pause collection slideshow');
-      new IntersectionObserver(entries=>visible=entries[0].isIntersecting,{threshold:.3}).observe(section);
-      setInterval(()=>{if(paused||hovered||focused||!visible||document.hidden||reduced.matches||document.querySelector('dialog[open]')||Date.now()-lastInteraction<8000)return;if(next.disabled)rail.scrollTo({left:0,behavior:'smooth'});else move(1);},4500);
+    const originals=[...rail.children],loop=section.hasAttribute('data-loop')&&originals.length>1;
+    let span=0,paused=false,hovered=false,focused=false,visible=false,lastInteraction=0,wrapTimer;
+    if(loop){
+      const copies=()=>originals.map(card=>{const clone=card.cloneNode(true);clone.setAttribute('aria-hidden','true');clone.querySelectorAll('a,button,[tabindex]').forEach(element=>element.tabIndex=-1);clone.dataset.loopCopy='';return clone;});
+      rail.prepend(...copies());rail.append(...copies());
     }
-    new ResizeObserver(update).observe(rail);update();
+    const step=()=>originals[0].getBoundingClientRect().width+parseFloat(getComputedStyle(rail).gap||0);
+    const update=()=>{prev.disabled=!loop&&rail.scrollLeft<2;next.disabled=!loop&&rail.scrollLeft>=rail.scrollWidth-rail.clientWidth-2;};
+    const wrap=()=>{
+      if(!loop||!span)return;
+      const x=rail.scrollLeft;
+      // Identical copies allow a forward transition across the last/first boundary.
+      if(x<span-1)rail.scrollTo({left:x+span,behavior:'instant'});
+      else if(x>=span*2-1)rail.scrollTo({left:x-span,behavior:'instant'});
+    };
+    const resize=()=>{if(loop){span=step()*originals.length;rail.scrollTo({left:span,behavior:'instant'});}update();};
+    const move=dir=>rail.scrollBy({left:dir*step(),behavior:reduced.matches?'instant':'smooth'});
+    prev.addEventListener('click',()=>{lastInteraction=Date.now();move(-1);});next.addEventListener('click',()=>{lastInteraction=Date.now();move(1);});
+    rail.addEventListener('scroll',()=>{update();clearTimeout(wrapTimer);wrapTimer=setTimeout(wrap,160);},{passive:true});
+    rail.addEventListener('scrollend',wrap);
+    rail.addEventListener('pointerdown',()=>lastInteraction=Date.now(),{passive:true});
+    rail.addEventListener('wheel',()=>lastInteraction=Date.now(),{passive:true});
+    rail.addEventListener('keydown',event=>{lastInteraction=Date.now();if(['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();move(event.key==='ArrowLeft'?-1:1);}});
+    section.addEventListener('pointerenter',()=>hovered=true);section.addEventListener('pointerleave',()=>hovered=false);
+    section.addEventListener('focusin',()=>focused=true);section.addEventListener('focusout',event=>{focused=section.contains(event.relatedTarget);});
+    if(pause){
+      pause.addEventListener('click',()=>{paused=!paused;pause.textContent=paused?'Resume':'Pause';pause.setAttribute('aria-pressed',String(paused));pause.setAttribute('aria-label',paused?'Resume collection slideshow':'Pause collection slideshow');});
+      pause.setAttribute('aria-label','Pause collection slideshow');
+      new IntersectionObserver(entries=>visible=entries[0].isIntersecting,{threshold:.3}).observe(section);
+      setInterval(()=>{if(paused||hovered||focused||!visible||document.hidden||reduced.matches||document.querySelector('dialog[open]')||Date.now()-lastInteraction<8000)return;move(1);},4500);
+    }
+    new ResizeObserver(resize).observe(rail);resize();
   });
   document.querySelectorAll('[data-share-product],[data-copy-product]').forEach(button=>button.addEventListener('click',async()=>{
     const url=button.dataset.shareUrl||button.dataset.copyProduct,status=button.closest('.product-share').querySelector('.share-status');
