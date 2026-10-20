@@ -2,6 +2,7 @@
 // PAGES_BASE_PATH is the sub-path the site is served from, for example "/Dimohe".
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { load } from 'cheerio';
 import { createStorefront, imagePath } from '../lib/storefront.mjs';
 import { merchandise, groups, types } from '../lib/merchandising.mjs';
@@ -43,6 +44,7 @@ const pageRoutes = [
 
 await fs.rm(out, { recursive: true, force: true });
 const assets = new Set();
+const stylesheetVersion=createHash('sha256').update(await fs.readFile('public/storefront.css')).digest('hex').slice(0,12);
 const collectAssets = html => {
   for (const [, url] of html.matchAll(/(?:src|href|data-image|poster)=["'](\/(?:cdn|external|media)\/[^"'?#]+)/g)) assets.add(url);
   for (const [, set] of html.matchAll(/srcset=["']([^"']+)/g)) for (const part of set.split(',')) { const url = part.trim().split(/\s+/)[0]; if (/^\/(cdn|external|media)\//.test(url)) assets.add(url.split('?')[0]); }
@@ -50,6 +52,7 @@ const collectAssets = html => {
 async function writePage(file, html) {
   collectAssets(html);
   html = html
+    .replace('<link rel="stylesheet" href="/storefront.css">', `<link rel="stylesheet" href="/storefront.css?v=${stylesheetVersion}">`)
     .replace('<html lang="en">', `<html lang="en" data-base="${base}">`)
     .replace('<script src="/storefront.js" defer></script>', '<script src="/lib/pages-runtime.js" type="module"></script>');
   const target = path.join(out, file);
