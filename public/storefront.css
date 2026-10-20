@@ -239,3 +239,7 @@
 /* Products sit with their department; collection photos only move horizontally. */
 .homepage-products{padding-top:30px;padding-bottom:50px}.homepage-products .product-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.mixed-explore .product-rail{overflow-y:hidden;align-items:flex-start}.mixed-explore .product-card,.mixed-explore .product-image,.mixed-explore .product-image>img{translate:none!important;scale:1!important;transform:none!important}.mixed-explore .product-image{box-shadow:none!important}.mixed-explore .product-image>img{transition:none}.welcome-dialog button:disabled{opacity:.65;cursor:default}
 @media(max-width:767px){.homepage-products{padding-top:25px;padding-bottom:35px}.homepage-products .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 14px}}
+
+/* The founder portrait appears only on the founder page. */
+.founder-story{max-width:1160px}.founder-layout{display:grid;grid-template-columns:minmax(220px,340px) minmax(0,1fr);gap:8%;align-items:start}.founder-portrait{margin:0}.founder-portrait img{display:block;width:100%;height:auto}.founder-copy h1{margin:0 0 24px}.founder-copy>p{font-size:14px;line-height:1.9;margin:20px 0}.founder-copy>.story-lead{font-size:21px;line-height:1.6;margin-top:0}.founder-copy>.text-link{margin-top:20px}
+@media(max-width:767px){.founder-layout{grid-template-columns:1fr;gap:28px}.founder-portrait{width:min(100%,280px);justify-self:center}.founder-copy>.story-lead{font-size:18px}.founder-copy h1{margin-bottom:20px}}
