@@ -71,3 +71,9 @@ npm run preview:pages
 The default preview is http://localhost:3001/Dimohe/. `PAGES_BASE_PATH` sets the repository path; the workflow uses GitHub’s own Pages configuration. The generated `dist/` directory is ignored and uploaded as a deployment artifact rather than committed.
 
 The public build preserves the redesigned pages, product options, search, filters, sorting, quick views, and bag totals. Its shopping bag is saved in the visitor’s browser rather than the local Node server. Checkout remains a preview until connected to Shopify. GitHub Pages does not run the Node server.
+
+## Welcome signup connection
+
+The popup opens after one second and remembers a confirmed subscription on this browser. Dismissals, errors, and pending email confirmations do not mark a visitor as subscribed. No email address is saved in browser storage.
+
+GitHub Pages cannot register subscribers by itself. Set `endpoint` in `public/welcome-signup.json` to an HTTPS signup service that allows the storefront origin through CORS. It receives POST JSON with `email`, `consent`, and `source`. Only a successful response containing `{"subscribed":true}` records signup completion; `{"pending":true}` prompts email confirmation. Connect the service to Dimohe’s existing welcome email and 10% offer. Do not put private API keys in this file. The endpoint remains unset until the merchant’s email provider is supplied.
