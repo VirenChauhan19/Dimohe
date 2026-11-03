@@ -1,0 +1,30 @@
+<div class="announcement">{{ section.settings.announcement | escape }}</div>
+{% capture navigation %}{% if section.settings.menu != blank %}{% render 'native-menu', menu: section.settings.menu %}{% else %}{% render 'default-navigation' %}{% endif %}{% endcapture %}
+{% assign navigation_parts = navigation | split: '<nav class="mobile-nav"' %}
+<header class="site-header"><button class="icon-button mobile-menu-button" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle>{% render 'icon-menu' %}</button><a class="wordmark" href="{{ routes.root_url }}" aria-label="Dimohe home">{% if section.settings.logo != blank %}{{ section.settings.logo | image_url: width: 300 | image_tag: width: 150, height: 34, alt: shop.name }}{% else %}<img src="{{ 'dimohe-e717eca92f.png' | asset_url }}" alt="{{ shop.name | escape }}" width="150" height="34">{% endif %}</a>{{ navigation_parts.first }}<div class="header-actions"><button class="icon-button" type="button" aria-label="Search" data-search-open>{% render 'icon-search' %}</button><a class="icon-button bag-button" href="{{ routes.cart_url }}" aria-label="Open shopping bag" data-bag-open>{% render 'icon-bag' %}<span data-bag-count>{{ cart.item_count }}</span></a></div></header>
+{% if navigation_parts.size > 1 %}{{ navigation_parts.last | prepend: '<nav class="mobile-nav"' }}{% endif %}
+
+{% schema %}
+{
+  "name": "Dimohe header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement",
+      "label": "Announcement",
+      "default": "Globally curated. Uniquely yours."
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigation menu",
+      "info": "Leave blank for the original Dimohe menus; choose a Shopify menu to replace them."
+    }
+  ]
+}
+{% endschema %}

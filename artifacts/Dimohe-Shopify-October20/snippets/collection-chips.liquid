@@ -1,0 +1,9 @@
+{%- assign menu = linklists[settings.collection_menu] -%}
+{%- if menu != blank -%}<nav class="category-chips" aria-label="Collection categories">{% for link in menu.links %}<a href="{{ link.url }}"{% if link.current %} aria-current="page" class="active"{% endif %}>{{ link.title | escape }}</a>{% endfor %}</nav>{%- else -%}
+{%- assign bags = 'hand-bags,bags,tote-bag,antique-handle-handbags,potli,round-bags,jute-clutches,clutches-full-flap,chikankari,zardozi' | split: ',' -%}
+{%- assign wellness = 'wellness,hair-care,bath-body,shampoo,conditioner,hair-oil,massage-oil,bathing-powder' | split: ',' -%}
+{%- assign home = 'home-furnishing,cushion-cover,throw,table-runner,table-cover,table-mats-dinner-napkins,cock-tail-napkin-set-of-12,bathtowel,bathsheet,handtowel-set-of-2,facetowel-set-of-4,hand-block-printing' | split: ',' -%}
+{%- assign kids = 'kids-clothing,boys,girls' | split: ',' -%}
+{%- if bags contains collection.handle -%}{%- assign handles = bags -%}{%- elsif wellness contains collection.handle -%}{%- assign handles = wellness -%}{%- elsif home contains collection.handle -%}{%- assign handles = home -%}{%- elsif kids contains collection.handle -%}{%- assign handles = kids -%}{%- endif -%}
+{% if handles != blank %}<nav class="category-chips" aria-label="Collection categories">{% for handle in handles %}{% assign item = collections[handle] %}{% if item != blank %}<a href="{{ item.url }}"{% if collection.handle == item.handle %} class="active" aria-current="page"{% endif %}>{% if handle == 'potli' %}Potli (Pochette) bags{% elsif handle == 'round-bags' %}Round bags{% elsif handle == 'hand-bags' %}Statement bags{% else %}{{ item.title | escape }}{% endif %}</a>{% endif %}{% endfor %}</nav>{% endif %}
+{%- endif -%}

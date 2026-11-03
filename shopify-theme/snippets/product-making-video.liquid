@@ -7,21 +7,21 @@
 {%- assign making_caption = '' -%}
 {%- assign making_context = '' -%}
 {%- case product.handle -%}
-{%- when 'keshamrit-conditioning-cleansing-shampoo-coconut-milk-250ml' -%}{%- assign making_film = 'coconut-shampoo' -%}{%- assign making_caption = 'Coconut shampoo · 23 sec' -%}{%- assign making_context = 'Watch coconut being grated and prepared for the shampoo.' -%}
-{%- when 'hibiscus-hair-oil-100ml' -%}{%- assign making_film = 'hibiscus-hair-oil' -%}{%- assign making_caption = 'Hibiscus hair oil · 12 sec' -%}{%- assign making_context = 'Hibiscus flowers and leaves, from preparation to the oil.' -%}
-{%- when 'mystic-hair-oil-100ml' -%}{%- assign making_film = 'mystic-hair-oil' -%}{%- assign making_caption = 'Mystic hair oil · 31 sec' -%}{%- assign making_context = 'From the preparation vessel to the bottle.' -%}
-{%- when 'nava-pre-shower-body-glow-oil-rose-almond-100ml' -%}{%- assign making_film = 'pre-shower-massage-oils' -%}{%- assign making_caption = 'Pre-shower massage oils · 10 sec' -%}{%- assign making_context = 'Rose petals and oil, from preparation to straining.' -%}
-{%- when 'snanamrit-ubtan-natural-bathing-powder-250gm' -%}{%- assign making_film = 'ubtan' -%}{%- assign making_summary = 'See it in use' -%}{%- assign making_caption = 'Ubtan bathing powder, in use · 21 sec' -%}{%- assign making_context = 'See ubtan being applied to the skin. Follow the product directions and precautions.' -%}
+{%- when 'keshamrit-conditioning-cleansing-shampoo-coconut-milk-250ml' -%}{%- assign making_film = 'coconut-shampoo' -%}{%- assign making_caption = 'Coconut shampoo' -%}{%- assign making_context = 'Watch coconut being grated and prepared for the shampoo.' -%}
+{%- when 'hibiscus-hair-oil-100ml' -%}{%- assign making_film = 'hibiscus-hair-oil' -%}{%- assign making_caption = 'Hibiscus hair oil' -%}{%- assign making_context = 'Hibiscus flowers and leaves, from preparation to the oil.' -%}
+{%- when 'mystic-hair-oil-100ml' -%}{%- assign making_film = 'mystic-hair-oil' -%}{%- assign making_caption = 'Mystic hair oil' -%}{%- assign making_context = 'From the preparation vessel to the bottle.' -%}
+{%- when 'nava-pre-shower-body-glow-oil-rose-almond-100ml' -%}{%- assign making_film = 'pre-shower-massage-oils' -%}{%- assign making_caption = 'Pre-shower massage oils' -%}{%- assign making_context = 'Rose petals and oil, from preparation to straining.' -%}
+{%- when 'snanamrit-ubtan-natural-bathing-powder-250gm' -%}{%- assign making_film = 'ubtan' -%}{%- assign making_summary = 'See it in use' -%}{%- assign making_caption = 'Ubtan bathing powder, in use' -%}{%- assign making_context = 'See ubtan being applied to the skin. Follow the product directions and precautions.' -%}
 {%- endcase -%}
 {%- assign custom_making_video = product.metafields.custom.making_video.value -%}
 {% if custom_making_video.media_type == 'video' or making_film != blank %}
 <details class="product-details making-film"><summary>{{ making_summary }} <span>+</span></summary>
 {% if custom_making_video.media_type == 'video' %}<figure class="making-film-player">{{ custom_making_video | video_tag: controls: true, playsinline: true, preload: 'none' }}</figure>
 {% elsif making_film == 'chikankari' %}
-{% render 'making-film-player', asset: 'embroidery-needlework.mp4', poster: 'embroidery-needlework-poster.jpg', title: 'Hand embroidery, up close', caption: 'Hand-embroidered bag collection · 23 sec', width: 480, height: 848 %}
+{% render 'making-film-player', asset: 'embroidery-needlework.mp4', poster: 'embroidery-needlework-poster.jpg', title: 'Hand embroidery, up close', caption: 'Hand-embroidered bag collection', width: 480, height: 848 %}
 <p class="making-film-context">A collection film showing the needlework behind our hand-embroidered bags.</p>
 {% elsif making_film == 'hair-care' %}
-{% render 'making-film-player', asset: 'hair-care-film.mp4', poster: 'hair-care-poster.jpg', title: 'Inside our hair care', caption: 'Inside our hair care · 38 sec' %}
+{% render 'making-film-player', asset: 'hair-care-film.mp4', poster: 'hair-care-poster.jpg', title: 'Inside our hair care', caption: 'Inside our hair care' %}
 <p class="making-film-context">A collection film showing ingredients and preparation behind our hair care.</p>
 {% else %}
 {% assign making_asset = making_film | append: '.mp4' %}{% assign making_poster = making_film | append: '-poster.jpg' %}

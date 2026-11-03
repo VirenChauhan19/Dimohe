@@ -9,7 +9,7 @@
     "welcome": {
       "type": "welcome-offer",
       "settings": {
-        "delay": 1.5
+        "delay": 1
       }
     }
   },

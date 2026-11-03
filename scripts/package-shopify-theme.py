@@ -6,7 +6,7 @@ import sys
 
 root = Path(__file__).resolve().parents[1]
 source = root / 'shopify-theme'
-output = root / 'artifacts' / 'Dimohe-Shopify-October18-Refined.zip'
+output = root / 'artifacts' / 'Dimohe-Shopify-October20.zip'
 folders = {'assets', 'config', 'layout', 'locales', 'sections', 'snippets', 'templates'}
 output.parent.mkdir(exist_ok=True)
 with ZipFile(output, 'w', ZIP_DEFLATED, compresslevel=9) as archive:

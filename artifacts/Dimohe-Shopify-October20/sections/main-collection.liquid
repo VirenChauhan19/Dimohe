@@ -1,0 +1,43 @@
+{% if collection.handle == 'gifts-under-100' %}{% render 'gift-collection', collection: collections['all'] %}{% else %}
+{% paginate collection.products by section.settings.page_size %}<div class="collection-intro section"><p class="breadcrumbs"><a href="{{ routes.root_url }}">Home</a> / {{ collection.title | escape }}</p>{% assign intro_heading = collection.title %}{% assign intro_copy = collection.description %}{% for block in section.blocks %}{% if block.settings.collection != blank and block.settings.collection.handle == collection.handle %}{% if block.settings.heading != blank %}{% assign intro_heading = block.settings.heading %}{% endif %}{% if block.settings.intro != blank %}{% assign intro_copy = block.settings.intro | escape %}{% endif %}{% endif %}{% endfor %}<h1>{{ intro_heading | escape }}</h1><div class="collection-description prose">{{ intro_copy }}</div>{% render 'collection-chips' %}</div><section class="section catalog-section">{% render 'facets', results: collection, count: collection.products_count %}<div class="product-grid" id="product-card-grid">{% for product in collection.products %}{% render 'product-card', product: product %}{% else %}<p>No products found. Try clearing your filters.</p>{% endfor %}</div>{% if paginate.pages > 1 %}<nav class="pagination" aria-label="Collection pages">{{ paginate | default_pagination }}</nav>{% endif %}</section>{% endpaginate %}
+
+{% endif %}
+{% schema %}
+{
+  "name": "Collection",
+  "settings": [
+    {
+      "type": "range",
+      "id": "page_size",
+      "label": "Products per page",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "default": 24
+    }
+  ],
+  "blocks": [
+    {
+      "type": "intro",
+      "name": "Collection introduction",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "intro",
+          "label": "Introduction"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

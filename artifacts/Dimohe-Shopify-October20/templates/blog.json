@@ -1,0 +1,23 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "settings": {},
+      "blocks": {
+        "throw": {
+          "type": "cover",
+          "settings": {
+            "article": "news/5-ways-to-style-a-throw-blanket-in-your-living-room",
+            "asset": "dimohe-069a885b05.png"
+          }
+        }
+      },
+      "block_order": [
+        "throw"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

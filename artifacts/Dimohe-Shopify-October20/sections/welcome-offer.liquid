@@ -1,0 +1,60 @@
+{% assign show_home_offer = false %}{% if request.page_type == 'index' and template.suffix == blank %}{% assign show_home_offer = true %}{% endif %}{% if show_home_offer or request.design_mode %}{% if section.settings.enabled %}{% if section.settings.use_welcome_email or section.settings.discount_code != blank or request.design_mode %}{% if request.design_mode or customer.accepts_marketing != true %}<dialog class="welcome-dialog" id="welcome-dialog" aria-labelledby="welcome-title" aria-describedby="welcome-intro" data-welcome-offer data-delay="{{ section.settings.delay | times: 1000 }}" data-design-mode="{{ request.design_mode }}"><button class="icon-button welcome-close" type="button" data-close-dialog aria-label="Close welcome offer">{% render 'icon-close' %}</button><p class="eyebrow">A little welcome</p><h2 id="welcome-title">{{ section.settings.heading | escape }}</h2><p id="welcome-intro">{{ section.settings.intro | escape }}</p>{% assign offer_form_id = 'WelcomeForm-' | append: section.id %}{% form 'customer', id: offer_form_id %}<input type="hidden" name="contact[tags]" value="newsletter"><input type="hidden" name="contact[accepts_marketing]" value="true">{% if form.posted_successfully? %}<div class="offer-success" data-offer-success><h3>Welcome to Dimohe.</h3>{% if section.settings.discount_code != blank %}<p>Your welcome code: <strong>{{ section.settings.discount_code | escape }}</strong></p>{% else %}<p>Thank you for joining our mailing list. Look out for your welcome email.</p>{% endif %}<p>{{ section.settings.terms | escape }}</p></div>{% else %}<label for="WelcomeEmail-{{ section.id }}">Email address</label><input type="email" id="WelcomeEmail-{{ section.id }}" name="contact[email]" value="{{ form.email | escape }}" autocomplete="email" required>{% if form.errors %}<div role="alert">{{ form.errors | default_errors }}</div>{% endif %}<button class="button" type="submit">Join & get 10% off</button><p class="welcome-consent">By signing up, you agree to receive Dimohe emails. Unsubscribe at any time. <a href="{{ routes.root_url }}policies/privacy-policy">Privacy policy</a>.</p>{% endif %}{% endform %}<button class="text-link" type="button" data-close-dialog>No, thank you</button></dialog>{% endif %}{% endif %}{% endif %}
+{% endif %}
+{% schema %}
+{
+  "name": "Welcome offer",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enabled",
+      "label": "Enable welcome signup offer",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "use_welcome_email",
+      "label": "Use existing welcome email flow",
+      "default": true,
+      "info": "Uses the same native newsletter signup as Dimohe\u2019s current 10% offer. Its welcome email/discount delivery must already be configured in Shopify. No automation or discount is created by the theme."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "10% off your first order"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Introduction",
+      "default": "Join our mailing list for new pieces, craft stories, and 10% off your first order."
+    },
+    {
+      "type": "text",
+      "id": "discount_code",
+      "label": "Existing 10% welcome discount code",
+      "info": "Optional existing valid Shopify discount code to display after signup. Leave blank to use your existing welcome-email delivery. This does not create or validate a code."
+    },
+    {
+      "type": "text",
+      "id": "terms",
+      "label": "Offer terms",
+      "default": "Welcome offer applies to your first order. Offer terms apply."
+    },
+    {
+      "type": "range",
+      "id": "delay",
+      "label": "Seconds before showing",
+      "min": 1,
+      "max": 10,
+      "step": 0.5,
+      "default": 1.5
+    }
+  ],
+  "presets": [
+    {
+      "name": "Welcome offer"
+    }
+  ]
+}
+{% endschema %}

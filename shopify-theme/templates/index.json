@@ -153,7 +153,7 @@
       "type": "film",
       "settings": {
         "preview": true,
-        "intro": "A close look at the needlework behind our hand-embroidered bags."
+        "intro": "A glimpse of the hands, places, and details behind our collection. Watch the full film in Explore by craft."
       }
     },
     "bags": {
@@ -235,7 +235,8 @@
         "products": [
           "terracotta-bloom-quilted-cushion-cover",
           "blush-garden-3-layer-throw",
-          "sage-vine-reversible-table-runner"
+          "sage-vine-reversible-table-runner",
+          "gulnaar-floral-linen-cushion-cover-earth-brown"
         ],
         "product_limit": 6
       }
@@ -252,7 +253,8 @@
         "products": [
           "mystic-hair-oil-100ml",
           "snanamrit-ubtan-natural-bathing-powder-250gm",
-          "himalayan-hair-repair-shampoo-deodhar-hibiscus-250ml"
+          "keshamrit-conditioning-cleansing-shampoo-coconut-milk-250ml",
+          "nava-pre-shower-body-glow-oil-rose-almond-100ml"
         ],
         "product_limit": 6
       }
@@ -266,11 +268,7 @@
         "link_label": "Shop kidswear",
         "collection": "kids-clothing",
         "asset": "dimohe-c20a7f23d7.jpg",
-        "products": [
-          "boy-3-pc-royal-zardozi-bundy-set-white",
-          "girl-dhola-maru-floral-embroidered-skirt-top-set-beige-green",
-          "boy-stripe-zari-embroidered-kurta-set-minty-green"
-        ],
+        "products": [],
         "product_limit": 6
       }
     },

@@ -1,0 +1,5 @@
+{%- if image and image != blank -%}
+  {{- image | image_url: width: 1800 | image_tag: loading: loading, widths: '320,480,640,960,1200,1800', sizes: sizes, alt: alt -}}
+{%- elsif asset and asset != blank and asset != 'none' -%}
+  <img src="{{ asset | asset_url }}" alt="{{ alt | escape }}" width="900" height="1125" loading="{{ loading | default: 'lazy' }}">
+{%- else -%}{{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}{%- endif -%}

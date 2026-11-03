@@ -1,0 +1,1 @@
+{%- if pages['our-craft'] != blank -%}{{- pages['our-craft'].url -}}?view=craft{%- elsif pages['our-story'] != blank -%}{{- pages['our-story'].url -}}?view=craft{%- else -%}{{- routes.root_url -}}?view=craft{%- endif -%}

@@ -1,0 +1,8 @@
+<section class="section contact-page"><h1>{{ page.title | default: 'Contact us' | escape }}</h1><div class="prose">{{ page.content }}</div>{% form 'contact', class: 'contact-form' %}{% if form.posted_successfully? %}<p role="status">Thank you. Your message has been sent.</p>{% endif %}{{ form.errors | default_errors }}<label for="ContactName">Name</label><input id="ContactName" type="text" name="contact[name]" autocomplete="name"><label for="ContactEmail">Email</label><input id="ContactEmail" type="email" name="contact[email]" autocomplete="email" required><label for="ContactMessage">Message</label><textarea id="ContactMessage" name="contact[body]" rows="6" required></textarea><button class="button" type="submit">Send message</button>{% endform %}</section>
+
+{% schema %}
+{
+  "name": "Contact",
+  "settings": []
+}
+{% endschema %}

@@ -4,8 +4,8 @@
   const initialized=new WeakSet(),cleanups=new Map();let focusBeforeDialog=null,cartBusy=false;
   const url=(path)=>new URL(path,location.origin);
   function notice(message){const el=document.getElementById('status');if(!el)return;el.textContent=message;el.hidden=false;clearTimeout(el.timer);el.timer=setTimeout(()=>el.hidden=true,5000);}
-  function openDialog(id){const el=document.getElementById(id);if(!el)return;focusBeforeDialog=document.activeElement;document.querySelectorAll('dialog[open]').forEach(d=>d.close());el.showModal();el.querySelector('input,button,a')?.focus();}
-  function mobile(open){const nav=document.querySelector('.mobile-nav'),toggle=document.querySelector('[data-menu-toggle]');if(!nav)return;document.documentElement.classList.toggle('dimohe-menu-open',open);nav.hidden=!open;toggle?.setAttribute('aria-expanded',String(open));toggle?.setAttribute('aria-label',open?'Close menu':'Open menu');document.querySelectorAll('main,.site-footer').forEach(el=>el.inert=open);if(open){nav.querySelectorAll('details').forEach(d=>d.open=false);nav.scrollTop=0;}}
+  function openDialog(id){const el=document.getElementById(id);if(!el)return;focusBeforeDialog=document.activeElement;document.querySelectorAll('dialog[open]').forEach(d=>d.close());mobile(false);el.showModal();el.querySelector('input,button,a')?.focus();}
+  function mobile(open){const nav=document.querySelector('.mobile-nav'),toggle=document.querySelector('[data-menu-toggle]');if(!nav)return;document.documentElement.classList.toggle('dimohe-menu-open',open);nav.hidden=!open;nav.classList.toggle('is-open',open);toggle?.setAttribute('aria-expanded',String(open));toggle?.setAttribute('aria-label',open?'Close menu':'Open menu');document.querySelectorAll('main,.site-footer').forEach(el=>el.inert=open);if(open){nav.querySelectorAll('details').forEach(d=>d.open=false);nav.scrollTop=0;}}
   function initialize(root=document){
     root.querySelectorAll('dialog').forEach(d=>{if(initialized.has(d))return;initialized.add(d);d.addEventListener('click',e=>{if(e.target!==d)return;const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();});d.addEventListener('close',()=>focusBeforeDialog?.focus());});
     root.querySelectorAll('.mobile-nav>details').forEach(d=>{if(initialized.has(d))return;initialized.add(d);d.addEventListener('toggle',()=>{if(d.open)d.parentElement.querySelectorAll(':scope>details').forEach(other=>{if(other!==d)other.open=false;});});});
@@ -19,7 +19,8 @@
     root.querySelectorAll('[data-saved-pieces]').forEach(el=>{if(initialized.has(el))return;initialized.add(el);const saved=readSaved();if(!saved.length){el.textContent='No saved pieces yet. Browse the collection to start your list.';return;}Promise.all(saved.map(s=>{const target=url(s.url);if(target.origin!==location.origin)return '';target.searchParams.set('section_id','product-card');return fetch(target).then(r=>r.ok?r.text():'');})).then(pages=>{el.innerHTML=pages.join('');initialize(el);});});
   }
   function readSaved(){try{const data=JSON.parse(localStorage.getItem('dimohe-saved-pieces')||'[]');return Array.isArray(data)?data.filter(s=>s&&typeof s.url==='string'&&typeof s.handle==='string').slice(0,40):[];}catch{return [];}}
-  async function refreshCart(){const target=url(routes.root);target.searchParams.set('section_id','cart-content');const response=await fetch(target,{headers:{Accept:'text/html'}});if(!response.ok)throw Error('Your bag could not be refreshed. Please open the bag page.');const html=await response.text(),doc=new DOMParser().parseFromString(html,'text/html'),content=doc.querySelector('.shopify-section');document.querySelectorAll('[data-cart-content]').forEach(el=>{const note=el.querySelector('textarea[name=note]')?.value;el.innerHTML=content?content.innerHTML:html;if(note!==undefined&&el.querySelector('textarea[name=note]'))el.querySelector('textarea[name=note]').value=note;});const json=await fetch(routes.cart+'.js').then(r=>r.json());document.querySelectorAll('[data-bag-count]').forEach(el=>el.textContent=json.item_count);}
+  async function refreshCart(){const target=url(routes.root);target.searchParams.set('section_id','cart-content');const response=await fetch(target,{headers:{Accept:'text/html'}});if(!response.ok)throw Error('Your bag could not be refreshed. Please open the bag page.');const html=await response.text(),doc=new DOMParser().parseFromString(html,'text/html'),content=doc.querySelector('.shopify-section');document.querySelectorAll('[data-cart-content]').forEach(el=>{const note=el.querySelector('textarea[name=note]')?.value;el.innerHTML=content?content.innerHTML:html;if(note!==undefined&&el.querySelector('textarea[name=note]'))el.querySelector('textarea[name=note]').value=note;});const json=await fetch(routes.cart+'.js').then(r=>r.json());document.querySelectorAll('[data-bag-count]').forEach(el=>el.textContent=json.item_count);document.dispatchEvent(new CustomEvent('dimohe:cart-updated',{detail:json}));return json;}
+  routes.refreshCart=refreshCart;
   async function changeCart(key,quantity){if(cartBusy)return;if(!Number.isInteger(quantity)||quantity<0){notice('Enter a whole quantity of zero or more.');return;}cartBusy=true;try{const r=await fetch(routes.change+'.js',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({id:key,quantity})}),data=await r.json();if(!r.ok)throw Error(data.description||'Your bag could not be updated.');await refreshCart();}catch(e){notice(e.message);await refreshCart().catch(()=>{});}finally{cartBusy=false;}}
   document.addEventListener('click',async e=>{
     if(e.target.closest('[data-menu-toggle]')){mobile(document.querySelector('.mobile-nav')?.hidden);return;}
@@ -74,16 +75,16 @@
     root.querySelectorAll('[data-welcome-offer]').forEach(dialog => {
       if (ready.has(dialog)) return; ready.add(dialog);
       let timer;
-      const seen = () => {try {return sessionStorage.getItem('dimohe-welcome-session-dismissed')==='true';} catch {return false;}};
+      const seen = () => {try {return localStorage.getItem('dimohe-newsletter-subscribed')==='confirmed';} catch {return false;}};
       const open = () => {
         if(!dialog.isConnected) return;
         if(document.hidden || document.querySelector('dialog[open]') || document.querySelector('.mobile-nav:not([hidden])') || document.activeElement?.matches('input,textarea,select,[contenteditable=true]')) { timer = setTimeout(open, 3000); return; }
         dialog.showModal();
       };
       const successful = dialog.querySelector('[data-offer-success]');
-      if(successful || dialog.querySelector('[role=alert]')) open();
+      if(successful){try{localStorage.setItem('dimohe-newsletter-subscribed','confirmed');}catch{}open();}else if(dialog.querySelector('[role=alert]')) open();
       else if(!seen() && dialog.dataset.designMode !== 'true') timer = setTimeout(open, Number(dialog.dataset.delay));
-      dialog.addEventListener('close', () => {try {sessionStorage.setItem('dimohe-welcome-session-dismissed', 'true');} catch {} });
+
       const escapeOffer=e=>{if(e.key==='Escape'&&dialog.open)dialog.close();};document.addEventListener('keydown',escapeOffer);
       dialog.addEventListener('dimohe:dispose', () => {clearTimeout(timer);document.removeEventListener('keydown',escapeOffer);}, {once:true});
     });

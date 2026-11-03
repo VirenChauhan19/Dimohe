@@ -1,0 +1,56 @@
+<section class="section craft-stories"><div class="craft-grid">{% for block in section.blocks %}<article class="craft-tile" {{ block.shopify_attributes }}><a href="{{ block.settings.collection.url | default: routes.all_products_collection_url }}">{% render 'theme-image', image: block.settings.image, asset: block.settings.asset, alt: block.settings.title, loading: 'lazy', sizes: '(max-width: 767px) 90vw, 30vw' %}</a><p class="eyebrow">{{ block.settings.origin | escape }}</p><h3><a href="{{ block.settings.collection.url | default: routes.all_products_collection_url }}">{{ block.settings.title | escape }}</a></h3><p>{{ block.settings.story | escape }}</p></article>{% endfor %}</div></section>
+
+{% schema %}
+{
+  "name": "Craft stories",
+  "settings": [],
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "craft",
+      "name": "Craft story",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Craft"
+        },
+        {
+          "type": "text",
+          "id": "origin",
+          "label": "Origin",
+          "default": "India"
+        },
+        {
+          "type": "textarea",
+          "id": "story",
+          "label": "Story",
+          "default": "Work done by hand, one detail at a time."
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "asset",
+          "label": "Bundled image filename",
+          "default": "none"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Craft stories"
+    }
+  ]
+}
+{% endschema %}

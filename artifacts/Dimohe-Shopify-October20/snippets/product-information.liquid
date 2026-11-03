@@ -1,0 +1,25 @@
+{%- capture product_group -%}{% render 'product-reference', product: product, field: 'group' %}{%- endcapture -%}
+{%- capture reference_craft -%}{% render 'product-reference', product: product, field: 'craft' %}{%- endcapture -%}
+{%- capture reference_material -%}{% render 'product-reference', product: product, field: 'material' %}{%- endcapture -%}
+{%- capture reference_care -%}{% render 'product-reference', product: product, field: 'care' %}{%- endcapture -%}
+{%- capture reference_craft_time -%}{% render 'product-reference', product: product, field: 'craft_time' %}{%- endcapture -%}
+{%- assign craft_time = product.metafields.custom.time_behind_the_craft | default: product.metafields.custom.making_time -%}
+{% if product.metafields.custom.craft != blank or reference_craft != blank or craft_time != blank or reference_craft_time != blank or reference_material != blank or product.metafields.custom.material != blank %}
+<details class="product-details craft-passport" open><summary>Craft passport <span>+</span></summary><dl>
+{% if product.metafields.custom.craft != blank %}<div><dt>Craft</dt><dd>{{ product.metafields.custom.craft | metafield_tag }}</dd></div>{% elsif reference_craft != blank %}<div><dt>Craft</dt><dd>{{ reference_craft }}</dd></div>{% endif %}
+{% if product.metafields.custom.material != blank %}<div><dt>Material</dt><dd>{{ product.metafields.custom.material | metafield_tag }}</dd></div>{% elsif reference_material != blank %}<div><dt>Material</dt><dd>{{ reference_material }}</dd></div>{% endif %}
+{% if craft_time != blank or reference_craft_time != blank %}<div><dt>Time behind the craft</dt><dd>{% if craft_time != blank %}{{ craft_time | metafield_tag }}{% else %}{{ reference_craft_time }}{% endif %}<small class="craft-time-note">Making time, excluding shipping.</small></dd></div>{% endif %}
+</dl></details>{% endif %}
+{% if product.metafields.custom.dimensions != blank %}
+<details class="product-details" open><summary>Dimensions <span>+</span></summary><dl>
+
+{% if product.metafields.custom.dimensions != blank %}<div><dt>Dimensions</dt><dd>{{ product.metafields.custom.dimensions | metafield_tag }}</dd></div>{% endif %}
+</dl></details>{% endif %}
+<details class="product-details" open><summary>{% if product_group == 'wellness' %}Product description{% else %}About this piece{% endif %} <span>+</span></summary><div class="prose">{{ product.description | replace: '—', ', ' | replace: '–', '-' }}</div></details>
+{% if product_group == 'wellness' %}
+{% if product.metafields.custom.how_to_use != blank %}<details class="product-details" open><summary>How to use <span>+</span></summary><div class="prose">{{ product.metafields.custom.how_to_use | metafield_tag }}</div></details>{% endif %}
+{% render 'product-reference', product: product, field: 'wellness' %}
+{% else %}
+{% if product.metafields.custom.care_instructions != blank or product.metafields.custom.care != blank or reference_care != blank or product_group == 'home' or product_group == 'bags' or product_group == 'kids' %}
+<details class="product-details"><summary>Care instructions <span>+</span></summary><div class="prose">{% if product.metafields.custom.care_instructions != blank %}{{ product.metafields.custom.care_instructions | metafield_tag }}{% elsif product.metafields.custom.care != blank %}{{ product.metafields.custom.care | metafield_tag }}{% elsif reference_care != blank %}{{ reference_care }}{% else %}<p>Follow the care label supplied with this piece. <a href="{{ routes.root_url }}pages/contact">Contact us</a> for product-specific care advice before cleaning.</p>{% endif %}</div></details>
+{% endif %}{% endif %}

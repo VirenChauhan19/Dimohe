@@ -1,0 +1,9 @@
+{%- assign target = collections[handle] -%}
+{%- if target == blank -%}
+{%- case handle -%}
+{%- when 'bags', 'chikankari', 'zardozi', 'collector-bags' -%}{%- assign target = collections['hand-bags'] -%}
+{%- when 'hand-block-printing', 'for-the-host' -%}{%- assign target = collections['home-furnishing'] -%}
+{%- when 'hair-care', 'bath-body' -%}{%- assign target = collections['wellness'] -%}
+{%- endcase -%}
+{%- endif -%}
+{%- if target != blank -%}{{- target.url -}}{%- else -%}{{- routes.all_products_collection_url -}}{%- endif -%}
