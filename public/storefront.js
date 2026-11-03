@@ -317,3 +317,15 @@
     document.addEventListener('visibilitychange',pauseWhenHidden);video.closest('details')?.addEventListener('toggle',pauseWhenHidden);
   });
 })();
+
+// These selectors preview a pairing only. Unapproved bundle SKUs never reach the bag.
+document.querySelectorAll('[data-gift-count]').forEach(button=>button.addEventListener('click',()=>{
+  const card=button.closest('[data-gift-bundle]'),count=Number(button.dataset.giftCount);
+  if(![2,4,6].includes(count))return;
+  card.querySelectorAll('[data-gift-count]').forEach(option=>option.setAttribute('aria-pressed',String(option===button)));
+  card.querySelector('[data-gift-count-label]').textContent=`${count} hand-block printed cocktail napkins (8 × 8 in)`;
+  const offer=JSON.parse(card.dataset.giftOffers||'{}')[count],link=card.querySelector('.gift-bundle-discover');
+  card.querySelector('.gift-launch-status').textContent=offer?new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(offer.price):'Coming soon';
+  link.hidden=!offer;if(offer)link.href=(document.documentElement.dataset.base||'')+offer.purchaseURL;
+  card.querySelector('.gift-bundle-availability').textContent=offer?`${count}-napkin pairing.`:`${count}-napkin pairing preview. Launch details to follow.`;
+}));

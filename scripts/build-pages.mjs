@@ -35,7 +35,7 @@ const storefront = createStorefront(products, memberships, snapshot, { load, sit
 const emptyCart = { items: [], item_count: 0, total_price: 0 };
 const collections = new Set(['all', 'table-linen', 'bath-linen', 'hand-bags', ...curatedCollections.map(c=>c.handle), ...crafts.map(c=>c.handle), ...groups.map(g => g.handle), ...types.map(t => t.handle), ...memberships.keys()]);
 const pageRoutes = [
-  '/', '/collections', '/search', '/cart', '/checkout', '/account', '/pages/contact', '/pages/our-craft', '/pages/saved-pieces',
+  '/', '/collections', '/search', '/cart', '/checkout', '/account', '/pages/contact', '/pages/gifting', '/pages/our-craft', '/pages/saved-pieces',
   ...chapters.map(c=>'/pages/chapter-'+c.slug),
   ...[...collections].map(h => '/collections/' + h),
   ...products.map(p => '/products/' + p.handle),
@@ -44,7 +44,7 @@ const pageRoutes = [
 
 await fs.rm(out, { recursive: true, force: true });
 const assets = new Set();
-const browserModules=['storefront.mjs', 'taxonomy.mjs', 'base-path.mjs', 'pages-runtime.mjs', 'editorial.mjs', 'commerce.mjs', 'review-features.mjs'];
+const browserModules=['storefront.mjs', 'gifting.mjs', 'taxonomy.mjs', 'base-path.mjs', 'pages-runtime.mjs', 'editorial.mjs', 'commerce.mjs', 'review-features.mjs'];
 const scriptVersion=createHash('sha256').update(await fs.readFile('public/storefront.js')).update((await Promise.all(browserModules.map(name=>fs.readFile(path.join('lib',name),'utf8')))).join('\n')).digest('hex').slice(0,12);
 const stylesheetVersion=createHash('sha256').update(await fs.readFile('public/storefront.css')).digest('hex').slice(0,12);
 const collectAssets = html => {
