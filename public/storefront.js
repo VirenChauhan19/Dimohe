@@ -271,6 +271,27 @@
       finally{if(!isSubscribed())button.disabled=false;}
     });
   }
+  // Follow the welcome offer only after a visitor dismisses it, never over another dialog.
+  const bundleOffer=document.querySelector('[data-bundle-offer]');
+  if(offer&&bundleOffer){
+    const seenKey='dimohe-bundle-offer-seen';let dismissed=false,pending=false,shown=false,timer,returnFocus;
+    const seen=()=>{try{return sessionStorage.getItem(seenKey)==='true';}catch{return false;}};
+    const showBundle=()=>{
+      if(!pending||shown||seen())return;
+      if(document.hidden||document.querySelector('dialog[open]')||document.querySelector('[data-menu-toggle][aria-expanded="true"]')||document.activeElement?.matches('input,textarea,select,[contenteditable=true]')){timer=setTimeout(showBundle,800);return;}
+      pending=false;shown=true;returnFocus=document.activeElement;
+      try{sessionStorage.setItem(seenKey,'true');}catch{}
+      bundleOffer.showModal();
+    };
+    offer.addEventListener('click',event=>{
+      if(event.target.closest('[data-close-dialog]'))dismissed=true;
+      if(event.target===offer){const r=offer.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dismissed=true;}
+    });
+    offer.addEventListener('cancel',()=>dismissed=true);
+    offer.addEventListener('close',()=>{if(dismissed&&!shown&&!seen()){pending=true;clearTimeout(timer);timer=setTimeout(showBundle,1000);}dismissed=false;});
+    bundleOffer.addEventListener('close',()=>{if(returnFocus?.isConnected)returnFocus.focus({preventScroll:true});});
+    window.addEventListener('pagehide',()=>{pending=false;clearTimeout(timer);});
+  }
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   document.querySelectorAll('[data-review-carousel]').forEach(section=>{
     const rail=section.querySelector('.product-rail'),prev=section.querySelector('[data-rail-prev]'),next=section.querySelector('[data-rail-next]'),pause=section.querySelector('[data-rail-pause]');
@@ -318,14 +339,15 @@
   });
 })();
 
-// These selectors preview a pairing only. Unapproved bundle SKUs never reach the bag.
+// Napkin choices update the contents and their exact 15% bundle saving together.
 document.querySelectorAll('[data-gift-count]').forEach(button=>button.addEventListener('click',()=>{
   const card=button.closest('[data-gift-bundle]'),count=Number(button.dataset.giftCount);
-  if(![2,4,6].includes(count))return;
+  const offer=JSON.parse(card.dataset.giftOffers||'{}')[count];
+  if(![2,4,6].includes(count)||!offer)return;
+  const format=cents=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(cents/100);
   card.querySelectorAll('[data-gift-count]').forEach(option=>option.setAttribute('aria-pressed',String(option===button)));
-  card.querySelector('[data-gift-count-label]').textContent=`${count} hand-block printed cocktail napkins (8 × 8 in)`;
-  const offer=JSON.parse(card.dataset.giftOffers||'{}')[count],link=card.querySelector('.gift-bundle-discover');
-  card.querySelector('.gift-launch-status').textContent=offer?new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(offer.price):'Coming soon';
-  link.hidden=!offer;if(offer)link.href=(document.documentElement.dataset.base||'')+offer.purchaseURL;
-  card.querySelector('.gift-bundle-availability').textContent=offer?`${count}-napkin pairing.`:`${count}-napkin pairing preview. Launch details to follow.`;
+  card.querySelector('[data-gift-count-label]').textContent=`${count} ${card.dataset.giftTextile} (8 × 8 in)`;
+  card.querySelector('[data-gift-price]').textContent=format(offer.priceCents);
+  card.querySelector('[data-gift-total]').textContent=format(offer.totalCents);
+  card.querySelector('[data-gift-saving]').textContent=`Save ${format(offer.savingCents)} · 15% bundle saving`;
 }));
