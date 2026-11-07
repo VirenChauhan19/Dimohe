@@ -1,47 +1,40 @@
-# Gifting page: product evidence and launch settings
+# Gifts: November 7, 2026
 
-Page: `/pages/gifting/`. The layout and product content live in `lib/gifting.mjs`; photography lives in `public/media/gifting-rose.svg` and `public/media/gifting-amethyst.svg`. Images are locally hosted, compressed copies of the supplied collaboration listings, not hotlinks or generated product photos.
+## Navigation and layout
 
-## Sources checked November 2; component prices rechecked November 4, 2026
+One **Gifts** dropdown/accordion in both desktop and mobile navigation contains all gifts, gifts under $100, hosting, bath and body, hair care, home, and jewellery sets. The footer links to the same gift destination. `/pages/gifting/` is retained so previously shared links continue to work.
 
-- [Rose Ritual listing](https://www.etsy.com/listing/4604070017/rose-quartz-necklace-gift-set-for-her): rose-quartz heart necklace, Nava Body Oil (100 ml), keepsake box and intention card. Seller: HeartsLinked by Exorti. Observed sale price $59.50; stated original price $70.00.
-- [Unwind listing](https://www.etsy.com/listing/4608107804/amethyst-gift-set-for-her-relaxation): amethyst heart necklace, Lavender Smoothening Conditioner (150 g), keepsake box and intention card. The listing title says hair mask, but its detailed contents and photographed jar specify conditioner. The page uses conditioner. Observed sale price $59.50; stated original price $70.00.
-- Both Etsy promotions stated that the sale ends in six days. The storefront deliberately says **Current price on Etsy** rather than presenting a temporary price as an evergreen offer. `observedPrice` records the research; `priceApprovedForDisplay` defaults to false.
-- Official Dimohe product data: `https://dimohe.com/products.json?limit=250`, plus individual `/products/{handle}.js` endpoints. Current prices already include the site's 15% promotion. Existing captured storefront prices were not used as current research values.
-- Nava Body Oil and Mystic Hair Oil: $23.80 each, currently available.
-- Snanamrit Ubtan: $24.65, currently available.
-- Crimson Botanica Waffle Face Towels, set of four: $67.15, currently available.
-- Raspberry Bloom Cocktail Napkins Large and Olive Willow Cocktail Napkins Large: current handles are `raspberry-bloom-cocktail-napkins` and `olive-willow-cocktail-napkins`. Their old `-set-of-6` URLs return 404 on the official store. Both now have **8x8 / Set of 2**, **8x8 / Set of 4**, and **8x8 / Set of 6** variants at $25.50, $46.75 and $67.15. The six-piece formats are 8 × 8 inches. We do not use the separate smaller 6/12-piece napkin line. Product descriptions still contain an inconsistent “4 Units” line; explicit variant titles establish the configurations. Confirm the physical packout before launch.
+The page groups six bundles into four sections. Two-column hosting and bathing cards become one column on phones. The single hair and home bundles use an image/copy split on larger screens and stack on mobile. Category links wrap rather than causing horizontal page overflow.
 
-## Approved bundle pricing, November 4
+## Fulfilment and jewellery sets
 
-The user approved a 15% reduction from the sum of the current individual selling prices. Calculations use integer cents: `round((wellness + textile pack) × 0.85)`. Savings are the separate-item total minus that rounded price. These component prices already reflect the original site's current promotion; the bundle calculation applies the requested further reduction to their sum. No welcome-code stacking terms are promised.
+Etsy links, external checkout and Etsy price text have been removed. The Rose Ritual and Unwind are presented as fulfilled by Dimohe. Both display the last recorded $59.50 selling price. A question was sent to the owner to confirm these are the intended Dimohe prices; update `priceCents` in `gifting.collaborations` if needed. No additional 10% reduction is applied to these fixed-price collaboration sets, because a separate-item necklace price is not established.
 
-| Bundle | Textile quantity | Individual items total | Bundle price | Saving |
-| --- | --- | ---: | ---: | ---: |
-| Ubtan & Waffle Cotton | 4 face towels | $91.80 | $78.03 | $13.77 |
-| Rose & Raspberry | 2 napkins | $49.30 | $41.91 | $7.39 |
-| Rose & Raspberry | 4 napkins | $70.55 | $59.97 | $10.58 |
-| Rose & Raspberry | 6 napkins | $90.95 | $77.31 | $13.64 |
-| Willow & Hair Oil | 2 napkins | $49.30 | $41.91 | $7.39 |
-| Willow & Hair Oil | 4 napkins | $70.55 | $59.97 | $10.58 |
-| Willow & Hair Oil | 6 napkins | $90.95 | $77.31 | $13.64 |
+Real Shopify gift products have not been supplied. All eight cards currently offer **Enquire with Dimohe**, opening a pre-addressed email with the selected set's name. This is not a checkout integration or an automatic order. When actual Shopify product URLs and variants are supplied, replace `purchaseURL: null` with verified product paths and wire variant selection to those products before enabling online bundle purchases. Never create fictitious variant IDs or imply that an unconfigured discount will be honoured in Shopify checkout.
 
-Pricing is now visible and selectors update contents, totals and savings together. All combinations remain below $100. The three bundles are explicitly labelled as previews / available at launch. Price approval does not create real Shopify SKUs, so preview controls still do not create purchasable cart items.
+## Component and bundle prices
 
-## Updating or launching
+Official source: `https://dimohe.com/products.json?limit=250`, read November 7, 2026. Current promotional component prices were verified by product and variant. The 11 components used on the page have also been refreshed in `data/products.json` so individual product prices match the bundle arithmetic. Titles, imagery, original content, and page formats are preserved.
 
-- Edit verified `componentPrices` in `lib/gifting.mjs` when individual selling prices change. `bundlePrice` derives the 15% price and exact cent-rounded saving; do not enter an unrelated price by hand.
-- Confirm actual packout, physical stock and packaging, then create the real Shopify bundle products and their 2/4/6 variants. SKU creation has not been performed by this GitHub Pages change.
-- Enable purchase links only when their real products, availability and prices match these bundle calculations. No fictional SKU or unconfigured checkout endpoint is presented.
-- Current imagery shows the actual individual products. The collaboration photos show their existing packaging. No free wrapping, personalisation or gift-note service is promised for Dimohe bundles.
+The older local napkin product URLs refer to six-piece packs. Their variant IDs were corrected to the official six-piece variants, rather than the old variant IDs that now represent two napkins. The bundle selectors separately offer verified two/four/six pack prices ($25.50/$46.75/$67.15). They do not manufacture cart variants.
 
-## Homepage offer sequence
+Every Dimohe bundle is `round(sum(current component prices in cents) * 90 / 100)`. The displayed saving is the combined total minus the rounded bundle price. This is 10% below current promotional prices, as requested. No welcome-offer stacking promise is made.
 
-- Existing 10% welcome signup stays first, with its existing confirmed-subscriber suppression.
-- A visitor's close button, backdrop dismissal or Escape dismissal queues the 15% bundle preview offer after 1,000 ms.
-- The follow-up is shown at most once per browser session and only on the homepage. It is not triggered by programmatic closes or by skipping the welcome offer for a subscriber.
-- Opening is deferred while another dialog/menu is open, a field is being edited, or the tab is hidden. Its CTA goes directly to the bundle section; no code redemption or discount stacking is implied.
-- The static welcome signup still needs the email provider endpoint configured separately. This change does not claim an email has been registered without a successful response.
+| Bundle | Contents / quantity | Combined current price | Bundle price |
+| --- | --- | ---: | ---: |
+| The Willow Table | Sage Vine runner + 2 / 4 / 6 Olive Willow napkins | $109.65 / $130.90 / $151.30 | $98.69 / $117.81 / $136.17 |
+| Rose & Raspberry | Nava oil + 2 / 4 / 6 Raspberry Bloom napkins | $49.30 / $70.55 / $90.95 | $44.37 / $63.50 / $81.86 |
+| The Bathing Set | Nava oil + Coconut Milk Shampoo + Ubtan | $73.95 | $66.56 |
+| Ubtan & Waffle Cotton | Ubtan + 4 Crimson Botanica face towels | $91.80 | $82.62 |
+| The Wash Day Set | Mystic oil + Coconut Milk Shampoo + Lavender Conditioner | $73.10 | $65.79 |
+| Blush & Terracotta | Blush Garden throw + Terracotta Bloom cushion cover | $227.80 | $205.02 |
 
-The original task document ends at “Functional Requirements / Implement:”.
+Cushion inserts are explicitly excluded. Real product photography is used; no generated bundle packaging or invented gift-note/wrapping service is shown. The generic catalogue note says packaging may vary. Collaboration sets retain their documented keepsake box and intention card.
+
+## Homepage offers
+
+The existing 10% welcome signup offer remains first. After a visitor dismisses it, the **10% bundle offer** is queued for 1,000 ms later. It shows once per session, waits for other dialogs/menus/typing/background tabs, and links to the gift bundles. The static welcome signup still needs an email-provider endpoint configured separately; no successful subscription is claimed without a confirmed response.
+
+## Validation
+
+`node scripts/check-gifting.mjs` checks exact 10% arithmetic, all napkin configurations, current component price agreement, the single Gifts navigation hierarchy, local image existence, displayed collaboration prices and the absence of Etsy checkout. Existing popup sequence, welcome persistence, storefront and static Pages checks remain applicable.

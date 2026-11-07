@@ -3,47 +3,48 @@ import fs from 'node:fs/promises';
 import { load } from 'cheerio';
 import { gifting, giftingPage, bundlePrice } from '../lib/gifting.mjs';
 import { merchandise } from '../lib/merchandising.mjs';
+import { createStorefront } from '../lib/storefront.mjs';
 import { withBase } from '../lib/base-path.mjs';
-
 const products=merchandise(JSON.parse(await fs.readFile('data/products.json','utf8')).products);
 const html=giftingPage(products),$=load(html);
-$('#gifting-title br').replaceWith(' ');
-assert.equal($('#gifting-title').text().replace(/\s+/g,' ').trim(),'Gifting');
+assert.equal($('#gifting-title').text(),'Gifts');
 assert.equal($('.gift-collaboration').length,2);
-assert.equal($('.gift-bundle').length,3);
-assert.equal($('.gift-bundle-availability').filter((i,e)=>$(e).text()==='Available at launch').length,3);
-assert.equal($('.gift-pricing').length,3);
-assert.deepEqual($('[data-gift-price]').map((i,e)=>$(e).text()).get(),['$78.03','$41.91','$41.91']);
-assert.equal($('.gift-bundle [data-add-button],.gift-bundle form,.gift-bundle [data-card-cart]').length,0);
-assert.equal($('.gift-bundle-discover').length,0);
-assert.equal($('.gift-collaboration .gift-set-action').text().includes('$'),false);
-assert.equal($('.gift-options').length,2);
-$('.gift-options').each((i,e)=>assert.deepEqual($(e).find('[data-gift-count]').map((i,b)=>Number($(b).attr('data-gift-count'))).get(),[2,4,6]));
+assert.equal($('.gift-bundle').length,6);
+assert.equal($('.gift-category-section').length,4);
+assert.equal(gifting.discountPercent,10);
+assert.deepEqual($('.gift-set-price').map((i,e)=>$(e).text()).get(),['$59.50','$59.50']);
+assert.equal(/etsy/i.test(html),false);
+assert.equal($('.gift-bundle form,.gift-bundle [data-card-cart]').length,0);
+assert.equal($('.gift-enquire').length,8);
+const expected={'willow-table':{2:9869,4:11781,6:13617},'rose-table':{2:4437,4:6350,6:8186},'bath-routine':{fixed:6656},'daily-pause':{fixed:8262},'hair-routine':{fixed:6579},'living-room':{fixed:20502}};
 for(const bundle of gifting.bundles){
-  assert.ok(products.some(p=>p.handle===bundle.wellness.handle));
-  assert.ok(products.some(p=>p.handle===bundle.textile.handle));
-  if(bundle.napkinCounts.length)assert.ok(bundle.textile.handle.endsWith('-set-of-6'));
+ const counts=bundle.napkinCounts.length?bundle.napkinCounts:['fixed'];
+ for(const count of counts){
+  const price=bundlePrice(bundle,count);
+  assert.equal(price.priceCents,expected[bundle.id][count]);
+  assert.equal(price.priceCents,Math.round(price.totalCents*.9));
+  assert.equal(price.savingCents,price.totalCents-price.priceCents);
+ }
+ for(const item of bundle.items){
+  const p=products.find(p=>p.handle===item.handle);assert.ok(p,`Missing ${item.handle}`);
+  const displayedPrice=Math.round(Number(p.variants[0].price)*100);
+  assert.equal(displayedPrice,item.prices?item.prices[6]:item.priceCents,`Product page price differs for ${item.handle}`);
+ }
+ assert.equal(bundle.purchaseURL,null);
 }
+assert.throws(()=>bundlePrice(gifting.bundles[0],12),/Missing verified component price/);
 for(const image of $('img').toArray()){
-  const src=$(image).attr('src');assert.ok(src.startsWith('/'));await fs.access('public'+src);assert.ok($(image).attr('alt'));
+ const src=$(image).attr('src');assert.ok(src.startsWith('/'));await fs.access('public'+src);assert.ok($(image).attr('alt'));
 }
-for(const link of $('a[target="_blank"]').toArray()){
-  assert.equal(new URL($(link).attr('href')).protocol,'https:');assert.match($(link).attr('rel'),/noopener/);assert.match($(link).attr('rel'),/noreferrer/);
-}
-assert.equal($('[href^="https://i.etsystatic.com"]').length,0);
+for(const link of $('a').toArray())assert.ok(!$(link).attr('href').includes('undefined'));
 assert.match(withBase(html,'/Dimohe'),/href="\/Dimohe\/collections\/gifts-under-100"/);
 assert.equal(/[—–]|--/.test($('body').text()),false);
-// Pricing approval does not manufacture a purchasable SKU.
-for(const bundle of gifting.bundles){
-  const counts=bundle.napkinCounts.length?bundle.napkinCounts:[4];
-  for(const count of counts){
-    const price=bundlePrice(bundle,count);
-    assert.equal(price.priceCents,Math.round(price.totalCents*0.85));
-    assert.equal(price.savingCents,price.totalCents-price.priceCents);
-    assert.ok(price.priceCents<10000);
-    if(bundle.napkinCounts.length)assert.equal(price.priceCents,{2:4191,4:5997,6:7731}[count]);
-  }
-  assert.equal(bundle.sku,null);
+const store=createStorefront(products,new Map(),async()=>null,{load});
+const shell=load(store.shell('Gifts',html,{items:[],item_count:0,total_price:0}));
+for(const root of ['.desktop-nav','#mobile-navigation']){
+ assert.equal(shell(root+' details').filter((i,e)=>shell(e).children('summary').text()==='Gifts').length,1);
+ assert.equal(shell(root+' > a[href="/collections/gifts-under-100"]').length,0);
+ assert.equal(shell(root+' > a[href="/pages/gifting"]').length,0);
+ assert.equal(shell(root+' .nav-room a[href="/collections/gifts-under-100"]').length,1);
 }
-assert.throws(()=>bundlePrice(gifting.bundles[1],12),/Missing verified component price/);
-console.log('Passed: current-price 15% bundle calculations, all 2/4/6 options, accurate savings and no checkout without real SKUs; sourced photos and safe links.');
+console.log('Passed: six bundles across four categories; exact 10% prices; component product price consistency; Dimohe contact links, two priced jewellery sets, unified Gifts navigation and valid local photography.');

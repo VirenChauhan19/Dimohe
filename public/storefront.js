@@ -339,7 +339,7 @@
   });
 })();
 
-// Napkin choices update the contents and their exact 15% bundle saving together.
+// Napkin choices update the contents and their exact bundle saving together.
 document.querySelectorAll('[data-gift-count]').forEach(button=>button.addEventListener('click',()=>{
   const card=button.closest('[data-gift-bundle]'),count=Number(button.dataset.giftCount);
   const offer=JSON.parse(card.dataset.giftOffers||'{}')[count];
@@ -349,5 +349,5 @@ document.querySelectorAll('[data-gift-count]').forEach(button=>button.addEventLi
   card.querySelector('[data-gift-count-label]').textContent=`${count} ${card.dataset.giftTextile} (8 × 8 in)`;
   card.querySelector('[data-gift-price]').textContent=format(offer.priceCents);
   card.querySelector('[data-gift-total]').textContent=format(offer.totalCents);
-  card.querySelector('[data-gift-saving]').textContent=`Save ${format(offer.savingCents)} · 15% bundle saving`;
+  card.querySelector('[data-gift-saving]').textContent=`Save ${format(offer.savingCents)} · ${offer.discountPercent}% bundle saving`;
 }));
