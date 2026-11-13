@@ -349,5 +349,53 @@ document.querySelectorAll('[data-gift-count]').forEach(button=>button.addEventLi
   card.querySelector('[data-gift-count-label]').textContent=`${count} ${card.dataset.giftTextile} (8 × 8 in)`;
   card.querySelector('[data-gift-price]').textContent=format(offer.priceCents);
   card.querySelector('[data-gift-total]').textContent=format(offer.totalCents);
-  card.querySelector('[data-gift-saving]').textContent=`Save ${format(offer.savingCents)} · ${offer.discountPercent}% bundle saving`;
+  card.querySelector('[data-gift-saving]').textContent=`Save ${format(offer.savingCents)} · ${offer.discountPercent}% gift-order saving`;
 }));
+
+// A gift enquiry list uses a single order tier, never stacked per-card discounts.
+(()=>{
+  const page=document.querySelector('[data-gift-policy]');if(!page)return;
+  const tiers=JSON.parse(page.dataset.giftPolicy),list=new Map(),catalogue=new Map(),storageKey='dimohe-gift-enquiry-v1';
+  const lines=page.querySelector('[data-gift-order-lines]'),totals=page.querySelector('[data-gift-order-totals]');
+  const format=c=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(c/100);
+  page.querySelectorAll('[data-gift-bundle]').forEach(card=>{
+    for(const [count,offer] of Object.entries(JSON.parse(card.dataset.giftOffers))){
+      const key=card.dataset.giftBundle+':'+count;
+      catalogue.set(key,{key,name:card.dataset.giftName,label:card.dataset.giftName+(count==='fixed'?'':` · ${count} cocktail napkins`),count,subtotal:offer.totalCents,card});
+    }
+  });
+  try{for(const [key,quantity] of JSON.parse(sessionStorage.getItem(storageKey)||'[]'))if(catalogue.has(key)&&Number.isInteger(quantity)&&quantity>0&&quantity<=20)list.set(key,quantity);}catch{}
+  const render=()=>{
+    const focus=document.activeElement,focusKey=focus?.dataset.giftLineKey,focusAction=focus?.dataset.giftLineAction;
+    lines.replaceChildren();let subtotal=0;const descriptions=[];
+    for(const [key,quantity] of list){
+      const set=catalogue.get(key);subtotal+=set.subtotal*quantity;descriptions.push(`${quantity} × ${set.label}: ${format(set.subtotal*quantity)} before offer`);
+      const li=document.createElement('li'),copy=document.createElement('div'),name=document.createElement('strong'),price=document.createElement('span'),controls=document.createElement('div');
+      name.textContent=set.label;price.textContent=format(set.subtotal*quantity)+' before offer';copy.append(name,price);controls.className='gift-order-quantity';
+      for(const [action,label,symbol] of [['remove','Remove one','−'],['add','Add one','+']]){
+        if(action==='add'){const value=document.createElement('span');value.textContent=quantity;value.setAttribute('aria-label',quantity+(quantity===1?' set':' sets'));controls.append(value);}
+        const button=document.createElement('button');button.type='button';button.dataset.giftLineKey=key;button.dataset.giftLineAction=action;button.setAttribute('aria-label',label+' '+set.label);button.textContent=symbol;if(action==='add'&&quantity>=20)button.disabled=true;controls.append(button);
+      }
+      li.append(copy,controls);lines.append(li);
+    }
+    const tier=subtotal?tiers.filter(t=>subtotal>=t.minCents).at(-1):{percent:0},total=Math.round(subtotal*(100-tier.percent)/100),saving=subtotal-total;
+    page.querySelector('[data-gift-order-empty]').hidden=Boolean(subtotal);totals.hidden=!subtotal;
+    page.querySelector('[data-gift-order-subtotal]').textContent=format(subtotal);
+    page.querySelector('[data-gift-order-tier]').textContent=tier.percent+'% gift-order saving';
+    page.querySelector('[data-gift-order-saving]').textContent='−'+format(saving);
+    page.querySelector('[data-gift-order-total]').textContent=format(total);
+    const next=tiers.find(t=>t.minCents>subtotal);
+    page.querySelector('[data-gift-order-next]').textContent=next?`${format(next.minCents-subtotal)} to the ${next.percent}% tier.`:'Your list qualifies for the highest tier.';
+    const body=['Hello Dimohe,','I would like to enquire about these gifts:','',...descriptions,'',`Items total: ${format(subtotal)}`,`Gift-order saving (${tier.percent}%): ${format(saving)}`,`Estimated total before shipping and tax: ${format(total)}`,'','Please confirm contents, availability, shipping and payment details.'].join('\n');
+    page.querySelector('[data-gift-order-email]').href='mailto:support@dimohe.com?subject='+encodeURIComponent('My Dimohe gift list')+'&body='+encodeURIComponent(body);
+    try{sessionStorage.setItem(storageKey,JSON.stringify([...list]));}catch{}
+    if(focusKey){const replacement=[...lines.querySelectorAll('button')].find(b=>b.dataset.giftLineKey===focusKey&&b.dataset.giftLineAction===focusAction&&!b.disabled);(replacement||page.querySelector(subtotal?'[data-gift-order-email]':'#gift-order-title')).focus({preventScroll:true});}
+  };
+  page.querySelectorAll('[data-gift-list-add]').forEach(button=>button.addEventListener('click',()=>{
+    const card=button.closest('[data-gift-bundle]'),count=card.querySelector('[data-gift-count][aria-pressed="true"]')?.dataset.giftCount||'fixed',key=card.dataset.giftBundle+':'+count,quantity=list.get(key)||0;
+    if(quantity>=20){card.querySelector('[data-gift-list-status]').textContent='For more than 20 sets, please contact Dimohe.';return;}
+    list.set(key,quantity+1);render();card.querySelector('[data-gift-list-status]').textContent=`Added to your gift list. ${quantity+1} of this set selected.`;
+  }));
+  lines.addEventListener('click',event=>{const button=event.target.closest('[data-gift-line-key]');if(!button)return;const key=button.dataset.giftLineKey,quantity=list.get(key);if(!quantity)return;const next=quantity+(button.dataset.giftLineAction==='add'?1:-1);if(next>20)return;if(next>0)list.set(key,next);else list.delete(key);render();page.querySelector('[data-gift-order-status]').textContent=next?'Gift list updated.':'Set removed from your gift list.';});
+  render();
+})();
