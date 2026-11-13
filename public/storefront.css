@@ -337,3 +337,28 @@
 .gift-order-summary dl{margin-top:20px}.gift-order-summary dl>div{display:flex;justify-content:space-between;gap:20px;font-size:13px;line-height:1.6;padding:7px 0}.gift-order-summary dd{margin:0;white-space:nowrap}.gift-order-summary dl>div:last-child{font-size:17px;padding-top:14px;border-top:1px solid var(--line);margin-top:8px}.gift-order-summary [data-gift-order-totals]>p{font-size:11px}.gift-order-summary .button{margin-top:16px;min-height:44px;font-size:12px}.gift-order [role=status]{font-size:11px}
 @media(max-width:767px){.gift-ladder{grid-template-columns:repeat(2,minmax(0,1fr))}.gift-ladder li{padding:17px 14px}.gift-ladder li:nth-child(2){border-right:0}.gift-ladder li:nth-child(-n+2){border-bottom:1px solid var(--line)}.gift-ladder strong{font-size:26px}.gift-order{grid-template-columns:1fr;gap:24px}.gift-order h2{font-size:29px}.gift-order-summary li{align-items:flex-start}.gift-order-summary .button{width:100%;text-align:center}}
 @media(min-width:768px){.gifts-current .gift-edit-grid:not(.gift-single)>.gift-bundle:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px;align-items:start}.gifts-current .gift-edit-grid:not(.gift-single)>.gift-bundle:last-child:nth-child(odd) .gift-bundle-copy{padding-top:0}}
+
+/* Match every gift photograph to its source ratio instead of letterboxing it. */
+.gifts-current .gift-pairing-photo,
+.gifts-current .gift-single .gift-pairing-photo,
+.gifts-current .gift-single .gift-photo-count-3{aspect-ratio:2/1;align-items:stretch;background:transparent;gap:8px;overflow:hidden}
+.gifts-current .gift-pairing-photo img{display:block;width:100%;height:100%;min-height:0;aspect-ratio:auto;object-fit:cover;mix-blend-mode:normal;padding:0;background:var(--cream)}
+.gifts-current .gift-photo-count-1{grid-template-columns:1fr}
+.gifts-current .gift-photo-count-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.gifts-current .gift-photo-count-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gifts-current .gift-bundle h3{font-size:clamp(23px,2.1vw,29px);line-height:1.3;margin-bottom:10px}
+.gifts-current .gift-bundle-copy>p{margin-top:0;line-height:1.65}
+.gifts-current .gift-bundle .gift-contents{margin:14px 0 12px;min-height:0;font-size:12px;line-height:1.65}
+.gifts-current .gift-bundle .gift-contents li,.gifts-current .gift-bundle .gift-contents li:last-child{border:0;padding:3px 0}
+.gifts-current .gift-bundle .gift-pricing{margin-top:14px;padding-top:14px}
+.gifts-current .gift-component-note{margin:0 0 10px;font-size:11px;line-height:1.6}
+.gifts-current .gift-options{margin-top:4px;margin-bottom:0}
+.gifts-current .gift-list-controls{margin-top:14px}
+.gifts-current .gift-list-controls [data-gift-list-status]:empty{display:none}
+.gifts-current .gift-list-controls p{min-height:0}
+.gifting-page section[id]{scroll-margin-top:calc(var(--gift-header-offset,96px) + 24px)}
+@media(max-width:899px){.gifting-page{--gift-header-offset:80px}}
+@media(max-width:767px){.gifting-page{--gift-header-offset:64px}.gifts-current .gift-pairing-photo{gap:5px}.gifts-current .gift-bundle h3{font-size:25px}.gifts-current .gift-bundle-copy{padding-top:16px}.gifts-current .gift-bundle .gift-contents{font-size:11px}}
+
+/* Product surfaces share the cream page colour, including transparent catalogue photos. */
+.product-image,.product-image>.alternate,.main-photo,.journal-image{background:var(--cream)}

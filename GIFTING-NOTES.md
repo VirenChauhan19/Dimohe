@@ -54,3 +54,14 @@ The original 10% welcome signup offer remains first. The follow-up is still queu
 ## Validation
 
 `check-gifting.mjs` verifies all eight bundle calculations, threshold boundaries, invalid totals, rounding, the combined-order rule, component price consistency, menu hierarchy, jewellery prices, enquiry markup, local photography and absence of Etsy checkout. Browser checks cover quantity changes, removal, selected napkin packs, persistence, mobile/tablet/desktop layouts and enquiry-link totals. Existing storefront/cart, welcome/offer-sequence and Pages asset checks remain applicable.
+
+
+## Photography and clarity refinement, November 13
+
+- Bundle names now state the contents: Runner & Table Linen Set; Complete Dining Set for Four; Cocktail Napkins & Body Oil; Bath Care & Towel Set; Ubtan & Face Towel Set; Shampoo, Conditioner & Hair Oil; Throw & Two Cushion Covers; Two Throws & Three Cushion Covers.
+- All contents, quantities, component prices, discount tiers and enquiry-list keys are unchanged. Existing session lists display the new names when restored.
+- Each bundle can select an explicit product-photo index. The two hosting sets and two living-room sets use disjoint source photographs. Every chosen image belongs to an included product.
+- The smaller living-room set uses the existing lifestyle photo showing its throw and both cushion designs. The larger set uses alternate throw and cushion views. No generated product imagery or changed packaging is introduced.
+- Gift image frames use a common 2:1 ratio and cover their cells with no grey letterbox bands. Transparent source photos sit on the existing cream page colour. Adjacent galleries and headings align; focal points retain the important product details.
+- Descriptions are shortened; included-product rows have no horizontal dividers. One price separator remains. Empty feedback messages no longer reserve blank rows. Section anchor offsets allow for the sticky header.
+- Standard product-card and gallery surfaces also use the page's cream colour. Original product formats, craft passports, wellness details and video controls remain unchanged.

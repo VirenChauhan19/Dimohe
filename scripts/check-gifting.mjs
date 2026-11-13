@@ -41,6 +41,17 @@ assert.throws(()=>bundlePrice(gifting.bundles[0],12),/Missing verified component
 for(const image of $('img').toArray()){
  const src=$(image).attr('src');assert.ok(src.startsWith('/'));await fs.access('public'+src);assert.ok($(image).attr('alt'));
 }
+// Similar sets must not reuse the same selected product photographs.
+for(const [first,second] of [['willow-table','dinner-table'],['living-room','living-collection']]){
+ const sources=id=>$(`[data-gift-bundle="${id}"] .gift-pairing-photo img`).map((i,e)=>$(e).attr('src')).get();
+ const left=sources(first),right=sources(second);assert.ok(left.length&&right.length);
+ assert.equal(left.some(src=>right.includes(src)),false,'Duplicate photography in neighbouring sets');
+}
+for(const bundle of gifting.bundles){
+ const photos=bundle.photos||bundle.items.slice(0,3).map((_,item)=>({item,index:0}));
+ for(const photo of photos){const source=products.find(p=>p.handle===bundle.items[photo.item].handle)?.images[photo.index];assert.ok(source,'Photograph must belong to an included product');}
+ assert.ok(bundle.description.split(/\s+/).length<=25,'Gift description should stay concise');
+}
 for(const link of $('a').toArray())assert.ok(!$(link).attr('href').includes('undefined'));
 assert.match(withBase(html,'/Dimohe'),/href="\/Dimohe\/collections\/gifts-under-100"/);
 assert.equal(/[—–]|--/.test($('body').text()),false);
