@@ -74,6 +74,6 @@ The public build preserves the redesigned pages, product options, search, filter
 
 ## Welcome signup connection
 
-The popup opens after one second and remembers a confirmed subscription on this browser. Dismissals, errors, and pending email confirmations do not mark a visitor as subscribed. No email address is saved in browser storage.
+The popup opens after one second for a new visitor and is shown only once per browser. Seeing or dismissing it is remembered across reloads and visits; session storage provides a fallback when persistent storage is blocked. Confirmed subscriptions are recorded separately. Dismissals, errors, and pending email confirmations do not mark a visitor as subscribed. No email address is saved in browser storage.
 
 GitHub Pages cannot register subscribers by itself. Set `endpoint` in `public/welcome-signup.json` to an HTTPS signup service that allows the storefront origin through CORS. It receives POST JSON with `email`, `consent`, and `source`. Only a successful response containing `{"subscribed":true}` records signup completion; `{"pending":true}` prompts email confirmation. Connect the service to Dimohe’s existing welcome email and 10% offer. Do not put private API keys in this file. The endpoint remains unset until the merchant’s email provider is supplied.

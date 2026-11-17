@@ -43,19 +43,88 @@
   }));
   const navGroups=[...document.querySelectorAll('.desktop-nav .nav-group')];
   const hoverNavigation=window.matchMedia('(hover: hover) and (pointer: fine)');
+  const navMotionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const navAnimations=new Map();
+  const navHeader=document.querySelector('.site-header');
+  const navSurface=document.createElement('div');
+  navSurface.className='nav-surface';navSurface.setAttribute('aria-hidden','true');
+  navHeader.append(navSurface);navHeader.classList.add('has-nav-surface');
   let navCloseTimer,navOpenTimer;
-  function closeNavigation(){clearTimeout(navOpenTimer);clearTimeout(navCloseTimer);navGroups.forEach(group=>group.open=false);}
-  function openNavigation(group){clearTimeout(navOpenTimer);clearTimeout(navCloseTimer);navGroups.forEach(other=>{other.open=other===group;});}
+  function updateNavigationSurface({immediate=false}={}){
+    const active=navGroups.find(group=>group.open&&!group.classList.contains('is-closing'));
+    if(immediate)navSurface.classList.add('is-instant');
+    navSurface.style.height=(active?active.querySelector('.nav-panel').offsetHeight:0)+'px';
+    navSurface.style.opacity=active?'1':'0';
+    if(immediate){navSurface.getBoundingClientRect();navSurface.classList.remove('is-instant');}
+  }
+  function transitionNavigation(group,visible,{immediate=false}={}){
+    const closing=group.classList.contains('is-closing');
+    if(!immediate&&(visible?group.open&&!closing:!group.open||closing))return;
+    const panel=group.querySelector('.nav-panel');
+    // Read the current frame before cancelling so a quick reversal never jumps.
+    const current=group.open?getComputedStyle(panel):null;
+    if(visible)group.open=true;
+    const height=panel.offsetHeight;
+    const surfaceHeight=navSurface.getBoundingClientRect().height;
+    const from={opacity:current?.opacity||'0',transform:current?.transform||'translateY(-10px)',
+      clipPath:current?.clipPath&&current.clipPath!=='none'?current.clipPath:
+        `inset(0px 0px ${current?0:Math.max(0,height-surfaceHeight)}px 0px)`};
+    navAnimations.get(group)?.cancel();navAnimations.delete(group);
+    group.classList.toggle('is-closing',!visible);
+    panel.inert=!visible;
+    if(immediate||navMotionPreference.matches||!panel.animate){
+      group.open=visible;group.classList.remove('is-closing');return;
+    }
+    const switching=navGroups.some(other=>other!==group&&other.open&&!other.classList.contains('is-closing'));
+    const animation=panel.animate([from,visible?{opacity:'1',transform:'translateY(0)',clipPath:'inset(0px 0px 0px 0px)'}:
+      {opacity:'0',transform:'translateY(-6px)',clipPath:switching?from.clipPath:`inset(0px 0px ${height}px 0px)`}],{
+      duration:visible?520:switching?240:420,easing:'cubic-bezier(.4,0,.2,1)',fill:'both'
+    });
+    navAnimations.set(group,animation);
+    animation.onfinish=()=>{
+      if(navAnimations.get(group)!==animation)return;
+      if(!visible)group.open=false;
+      group.classList.remove('is-closing');navAnimations.delete(group);animation.cancel();
+    };
+  }
+  function closeNavigation({immediate=false}={}){
+    clearTimeout(navOpenTimer);clearTimeout(navCloseTimer);
+    navGroups.forEach(group=>transitionNavigation(group,false,{immediate}));
+    updateNavigationSurface({immediate});
+  }
+  function openNavigation(group){
+    clearTimeout(navOpenTimer);clearTimeout(navCloseTimer);
+    transitionNavigation(group,true);
+    navGroups.filter(other=>other!==group).forEach(other=>transitionNavigation(other,false));
+    updateNavigationSurface();
+  }
+  function hideNavigationGroup(group){
+    transitionNavigation(group,false);updateNavigationSurface();
+  }
   navGroups.forEach(group=>{
-    group.addEventListener('pointerenter',()=>{clearTimeout(navCloseTimer);clearTimeout(navOpenTimer);if(hoverNavigation.matches)navOpenTimer=setTimeout(()=>openNavigation(group),180);});
-    group.addEventListener('pointerleave',()=>{clearTimeout(navOpenTimer);if(hoverNavigation.matches){clearTimeout(navCloseTimer);navCloseTimer=setTimeout(()=>{if(!group.contains(document.activeElement))group.open=false;},240);}});
+    group.addEventListener('pointerenter',()=>{clearTimeout(navCloseTimer);clearTimeout(navOpenTimer);if(hoverNavigation.matches)navOpenTimer=setTimeout(()=>openNavigation(group),140);});
+    group.addEventListener('pointerleave',()=>{clearTimeout(navOpenTimer);if(hoverNavigation.matches){clearTimeout(navCloseTimer);navCloseTimer=setTimeout(()=>{if(!group.contains(document.activeElement))hideNavigationGroup(group);},280);}});
     group.addEventListener('focusin',()=>clearTimeout(navCloseTimer));
-    group.addEventListener('focusout',event=>{if(!group.contains(event.relatedTarget))group.open=false;});
-    group.querySelector('summary').addEventListener('click',event=>{clearTimeout(navCloseTimer);if(hoverNavigation.matches&&event.detail>0){event.preventDefault();openNavigation(group);}else navGroups.forEach(other=>{if(other!==group)other.open=false;});});
+    group.addEventListener('focusout',event=>{if(!group.contains(event.relatedTarget))hideNavigationGroup(group);});
+    group.querySelector('summary').addEventListener('click',event=>{
+      event.preventDefault();
+      if(hoverNavigation.matches&&event.detail>0)openNavigation(group);
+      else if(group.open&&!group.classList.contains('is-closing'))closeNavigation();
+      else openNavigation(group);
+    });
   });
   document.addEventListener('click',event=>{if(!event.target.closest('.desktop-nav'))closeNavigation();});
-  document.addEventListener('keydown',event=>{if(event.key==='Escape'){const openGroup=navGroups.find(group=>group.open);if(openGroup){closeNavigation();if(openGroup.contains(document.activeElement))openGroup.querySelector('summary').focus();}}});
-  hoverNavigation.addEventListener('change',closeNavigation);
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'){const openGroup=navGroups.find(group=>group.open&&!group.classList.contains('is-closing'));if(openGroup){const restoreFocus=openGroup.contains(document.activeElement);closeNavigation();if(restoreFocus)openGroup.querySelector('summary').focus();}}});
+  hoverNavigation.addEventListener('change',()=>closeNavigation({immediate:true}));
+  navMotionPreference.addEventListener('change',()=>{
+    navGroups.forEach(group=>transitionNavigation(group,group.open&&!group.classList.contains('is-closing'),{immediate:true}));
+    updateNavigationSurface({immediate:true});
+  });
+  desktopLayout.addEventListener('change',()=>closeNavigation({immediate:true}));
+  if('ResizeObserver' in window){
+    const navResize=new ResizeObserver(()=>updateNavigationSurface());
+    navResize.observe(navHeader);navGroups.forEach(group=>navResize.observe(group.querySelector('.nav-panel')));
+  }
   document.querySelectorAll('a[href]').forEach(link=>{const url=new URL(link.href,location.href);if(url.pathname!==location.pathname||!['#shipping-returns','#product-story'].includes(url.hash))return;link.addEventListener('click',()=>{const panel=document.querySelector(url.hash);if(panel)panel.open=true;});});
   document.querySelector('[data-sort]')?.addEventListener('change',event=>event.target.form.requestSubmit());
   async function api(path,data){if(staticStore)return staticStore.api(path,data);const response=await fetch(path,{method:data?'POST':'GET',headers:data?{'Content-Type':'application/json'}:{},body:data?JSON.stringify(data):undefined});const value=await response.json();if(!response.ok)throw new Error(value.description||value.error||'We couldn’t complete that request. Please try again.');return value;}
@@ -238,12 +307,22 @@
   const offer=document.querySelector('[data-welcome-offer]');
   if(offer){
     const subscribedKey='dimohe-newsletter-subscribed';
+    const seenKey='dimohe-welcome-offer-seen';
     const isSubscribed=()=>{try{return localStorage.getItem(subscribedKey)==='confirmed';}catch{return false;}};
+    const hasSeenOffer=()=>{
+      try{if(localStorage.getItem(seenKey)==='true')return true;}catch{}
+      try{return sessionStorage.getItem(seenKey)==='true';}catch{return false;}
+    };
+    const rememberOffer=()=>{
+      try{localStorage.setItem(seenKey,'true');}catch{}
+      try{sessionStorage.setItem(seenKey,'true');}catch{}
+    };
+    offer.addEventListener('close',rememberOffer);
     offer.addEventListener('click',event=>{if(event.target===offer){const rect=offer.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)offer.close();}});
     let shown=false;
-    const tryOpen=()=>{if(shown||isSubscribed())return;if(document.hidden||document.querySelector('dialog[open]')||document.querySelector('[data-menu-toggle][aria-expanded="true"]')){setTimeout(tryOpen,800);return;}shown=true;offer.showModal();};
+    const tryOpen=()=>{if(shown||isSubscribed()||hasSeenOffer())return;if(document.hidden||document.querySelector('dialog[open]')||document.querySelector('[data-menu-toggle][aria-expanded="true"]')){setTimeout(tryOpen,800);return;}shown=true;offer.showModal();rememberOffer();};
     setTimeout(tryOpen,1000);
-    window.addEventListener('storage',event=>{if(event.key===subscribedKey&&isSubscribed()&&offer.open)offer.close();});
+    window.addEventListener('storage',event=>{if([subscribedKey,seenKey].includes(event.key)&&(isSubscribed()||hasSeenOffer())&&offer.open)offer.close();});
     offer.querySelector('form').addEventListener('submit',async event=>{
       event.preventDefault();
       const form=event.currentTarget,status=offer.querySelector('[data-welcome-status]'),button=form.querySelector('[type=submit]');

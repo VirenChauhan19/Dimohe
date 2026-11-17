@@ -362,3 +362,127 @@
 
 /* Product surfaces share the cream page colour, including transparent catalogue photos. */
 .product-image,.product-image>.alternate,.main-photo,.journal-image{background:var(--cream)}
+
+/* A shared motion rhythm: quick feedback for controls, slower movement for photography. */
+:root{
+  --motion-ease:cubic-bezier(.22,.61,.36,1);
+  --motion-quick:180ms;
+  --motion-control:260ms;
+  --motion-photo:650ms;
+}
+.button{
+  transition:background-color var(--motion-control) ease,border-color var(--motion-control) ease,
+    color var(--motion-control) ease,translate var(--motion-control) var(--motion-ease),
+    box-shadow var(--motion-control) ease;
+}
+.icon-button,.card-cart button,.quantity-label button,.cart-quantity button,.gift-order-quantity button{
+  transition:background-color var(--motion-quick) ease,color var(--motion-quick) ease,
+    scale var(--motion-quick) var(--motion-ease);
+}
+.text-link,.product-caption a,.journal-copy h2 a,.embroidery-caption a,
+.desktop-nav .nav-group>summary,.nav-panel a,.breadcrumbs a,
+.editorial-links a,.mobile-nav a,.mobile-nav summary{
+  transition:color var(--motion-quick) ease,border-color var(--motion-quick) ease;
+}
+.category-chips a,.selected-filters a,.piece-craft>div a,.thumbnails button{
+  transition:background-color var(--motion-control) ease,border-color var(--motion-control) ease,
+    color var(--motion-control) ease,box-shadow var(--motion-control) ease;
+}
+.site-footer a{transition:opacity var(--motion-quick) ease}
+
+/* The underline grows within the existing header height, without moving the menu. */
+.desktop-nav .nav-group>summary{position:relative}
+.desktop-nav .nav-group>summary::after{
+  content:'';position:absolute;left:0;right:0;bottom:25px;height:1px;
+  background:currentColor;transform:scaleX(0);transform-origin:left;
+  transition:transform var(--motion-control) var(--motion-ease);
+}
+.desktop-nav .nav-group[open]:not(.is-closing)>summary::after,
+.desktop-nav .nav-group>summary:focus-visible::after{transform:scaleX(1)}
+.desktop-nav .nav-group[open]>.nav-panel{z-index:2}
+.desktop-nav .nav-group.is-closing>.nav-panel{z-index:1;pointer-events:none}
+.desktop-nav .nav-group.is-closing>summary{color:var(--ink)}
+/* One continuous background glides between menu heights while the links crossfade. */
+.nav-surface{
+  position:absolute;top:100%;left:0;right:0;height:0;opacity:0;pointer-events:none;z-index:0;
+  background:var(--paper);box-shadow:0 12px 18px #243e3212;
+  transition:height 520ms cubic-bezier(.4,0,.2,1),opacity 420ms cubic-bezier(.4,0,.2,1);
+}
+.nav-surface.is-instant{transition:none}
+.has-nav-surface .desktop-nav .nav-panel{background:transparent;border-bottom:0;box-shadow:none}
+@media(max-width:899px){.nav-surface{display:none}}
+.text-link>span,.category-title>span{
+  display:inline-block;transition:translate var(--motion-control) var(--motion-ease);
+}
+.category-photo img,.product-image>img,.journal-image img,.craft-tile img,.chapter-photo img,
+.embroidery-photo img,.hero-slide img{
+  transition:transform var(--motion-photo) var(--motion-ease),opacity 400ms ease;
+}
+/* Keep the alternate photograph's existing crossfade and brief hover intent. */
+.product-image>.alternate{
+  transition:opacity 400ms ease 120ms,transform var(--motion-photo) var(--motion-ease);
+}
+
+@media(hover:hover) and (pointer:fine){
+  .button:not(:disabled):hover{
+    translate:0 -2px;box-shadow:0 7px 18px -10px #243e3266;
+  }
+  .icon-button:not(:disabled):hover{background-color:#243e320a}
+  .card-cart button:not(:disabled):hover{background-color:#975a471a}
+  .quantity-label button:not(:disabled):hover,.cart-quantity button:not(:disabled):hover,
+  .gift-order-quantity button:not(:disabled):hover{background-color:#243e3210}
+  .desktop-nav .nav-group>summary:hover::after{transform:scaleX(1)}
+  .text-link:hover>span,.category-tile:hover .category-title>span{translate:3px 0}
+  .product-caption a:hover,.journal-copy h2 a:hover,.embroidery-caption a:hover,
+  .nav-panel a:hover,.breadcrumbs a:hover,.editorial-links a:hover,.mobile-nav a:hover{
+    color:var(--rose);
+  }
+  .site-footer a:hover,.site-footer>div:not(.footer-intro) a:hover{opacity:1}
+  .selected-filters a:hover,.piece-craft>div a:hover{background-color:var(--olive);border-color:var(--ink)}
+  .thumbnails button:hover{border-color:var(--rose)}
+  .category-tile:hover .category-photo img,.product-image:hover>img,
+  .journal-card:hover .journal-image img,.craft-tile:hover>a:first-child img,
+  a.chapter-photo:hover img,.embroidery-photo:hover img,.hero-slide:hover img{
+    transform:scale(1.025);
+  }
+}
+
+@media(prefers-reduced-motion:no-preference){
+  .button:not(:disabled):active{translate:0 0;box-shadow:none}
+  .icon-button:not(:disabled):active,.card-cart button:not(:disabled):active{scale:.96}
+  .text-link:focus-visible>span,.category-tile:focus-visible .category-title>span{translate:3px 0}
+  .product-details[open]>:not(summary),.filter-details[open]>.filter-fields{
+    animation:dimohe-content-in 220ms var(--motion-ease) both;
+  }
+  dialog[open]{animation:dimohe-content-in 220ms ease both}
+  dialog[open]::backdrop{animation:dimohe-content-in 220ms ease both}
+
+  /* Native transitions preserve normal links, browser history and scroll restoration. */
+  @view-transition{navigation:auto}
+  #MainContent{view-transition-name:page-content}
+  ::view-transition-group(root),::view-transition-group(page-content){animation:none}
+  ::view-transition-old(root){display:none}
+  ::view-transition-new(root){animation:none;mix-blend-mode:normal}
+  ::view-transition-old(page-content){animation:dimohe-page-out 160ms ease both;mix-blend-mode:normal}
+  ::view-transition-new(page-content){animation:dimohe-page-in 280ms var(--motion-ease) both;mix-blend-mode:normal}
+}
+@keyframes dimohe-content-in{from{opacity:0}to{opacity:1}}
+@keyframes dimohe-page-out{from{opacity:1}to{opacity:0}}
+@keyframes dimohe-page-in{
+  from{opacity:0;transform:translateY(5px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* Touch has immediate feedback; it never relies on a persistent hover state. */
+@media(hover:none),(pointer:coarse){
+  .product-image:hover>.alternate{opacity:0}
+  .category-tile:hover img,.journal-image:hover img,.craft-tile>a:hover img{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .desktop-nav .nav-group>summary::after{transition:none}
+  .button,.text-link>span,.category-title>span{translate:none!important}
+  .category-photo img,.product-image>img,.journal-image img,.craft-tile img,
+  .chapter-photo img,.embroidery-photo img,.hero-slide img{transform:none!important}
+  dialog[open],dialog[open]::backdrop{animation:none}
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
+}
