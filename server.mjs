@@ -5,6 +5,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { load } from 'cheerio';
 import { createStorefront, searchSuggestions } from './lib/storefront.mjs';
+import { holidaySaleTotals } from './lib/holiday-sale.mjs';
 import { merchandise } from './lib/merchandising.mjs';
 
 const root = path.resolve('public');
@@ -64,12 +65,14 @@ function cartJSON(cart) {
     const price = Math.round(Number(v.price) * 100);
     return { id: Number(item.id), key: item.id, variant_id: Number(item.id), product_id: p.id, title: p.title, product_title: p.title, variant_title: v.title, quantity: item.quantity, price, final_price: price, line_price: price * item.quantity, final_line_price: price * item.quantity, original_line_price: price * item.quantity, url: '/products/' + p.handle + '?variant=' + item.id, image: localImage(p.images[0]?.src ?? ''), featured_image: { url: localImage(p.images[0]?.src ?? ''), alt: p.title }, options_with_values: p.options.map((o, i) => ({ name: o.name, value: v['option' + (i + 1)] })), discounts: [], line_level_discount_allocations: [], properties: {} };
   });
-  return { token: 'local', items, item_count: items.reduce((n, i) => n + i.quantity, 0), total_price: items.reduce((n, i) => n + i.line_price, 0), original_total_price: items.reduce((n, i) => n + i.line_price, 0), total_discount: 0, currency: 'USD', requires_shipping: true, cart_level_discount_applications: [], note: '' };
+  const subtotal = items.reduce((sum, item) => sum + item.line_price, 0);
+  return { token: 'local', items, item_count: items.reduce((n, i) => n + i.quantity, 0),
+    ...holidaySaleTotals(subtotal), currency: 'USD', requires_shipping: items.length > 0, note: '' };
 }
 function cartContent(cart, page = false) {
   const c = cartJSON(cart);
   if (!c.items.length) return `<div class="drawer-empty-wrapper"><div class="drawer-empty text-align-center"><h5 class="drawer-empty-heading">Your cart is currently empty.</h5><a href="/collections/all" class="button">Continue shopping</a></div></div>`;
-  return `<div class="replica-cart-items">${c.items.map(i => `<div class="replica-cart-item"><a href="${escape(i.url)}"><img src="${escape(i.image)}" alt="${escape(i.title)}" width="100" height="120"></a><div><a href="${escape(i.url)}">${escape(i.title)}</a>${i.variant_title !== 'Default Title' ? `<p>${escape(i.variant_title)}</p>` : ''}<p>${money(i.price)}</p><div class="replica-cart-quantity"><button type="button" data-cart-quantity="${i.quantity - 1}" data-variant="${i.id}" aria-label="Decrease ${escape(i.title)}">−</button><span>${i.quantity}</span><button type="button" data-cart-quantity="${i.quantity + 1}" data-variant="${i.id}" aria-label="Increase ${escape(i.title)}">+</button><button type="button" class="replica-remove" data-cart-quantity="0" data-variant="${i.id}">Remove</button></div></div><strong>${money(i.line_price)}</strong></div>`).join('')}</div><div class="replica-cart-footer"><div class="replica-cart-total"><strong>Subtotal</strong><strong>${money(c.total_price)}</strong></div><p>Taxes and <a href="/policies/shipping-policy">shipping</a> calculated at checkout.</p><a href="/checkout" class="button">Check out</a>${page ? '' : '<a href="/cart" class="replica-view-cart">View cart</a>'}</div>`;
+  return `<div class="replica-cart-items">${c.items.map(i => `<div class="replica-cart-item"><a href="${escape(i.url)}"><img src="${escape(i.image)}" alt="${escape(i.title)}" width="100" height="120"></a><div><a href="${escape(i.url)}">${escape(i.title)}</a>${i.variant_title !== 'Default Title' ? `<p>${escape(i.variant_title)}</p>` : ''}<p>${money(i.price)}</p><div class="replica-cart-quantity"><button type="button" data-cart-quantity="${i.quantity - 1}" data-variant="${i.id}" aria-label="Decrease ${escape(i.title)}">−</button><span>${i.quantity}</span><button type="button" data-cart-quantity="${i.quantity + 1}" data-variant="${i.id}" aria-label="Increase ${escape(i.title)}">+</button><button type="button" class="replica-remove" data-cart-quantity="0" data-variant="${i.id}">Remove</button></div></div><strong>${money(i.line_price)}</strong></div>`).join('')}</div><div class="replica-cart-footer"><div class="replica-cart-total"><span>Subtotal</span><span>${money(c.items_subtotal_price)}</span></div>${c.cart_level_discount_applications.map(discount=>`<div class="replica-cart-total"><span>${escape(discount.title)} (${escape(discount.value)}%)</span><span>-${money(discount.total_allocated_amount)}</span></div>`).join('')}<div class="replica-cart-total"><strong>Total before shipping and tax</strong><strong>${money(c.total_price)}</strong></div><p>Taxes and <a href="/policies/shipping-policy">shipping</a> calculated at checkout.</p><a href="/checkout" class="button">Check out</a>${page ? '' : '<a href="/cart" class="replica-view-cart">View cart</a>'}</div>`;
 }
 function hydrateCart($, cart) {
   const c = cartJSON(cart);

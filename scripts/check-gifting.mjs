@@ -32,8 +32,8 @@ for(const bundle of gifting.bundles){
  }
  for(const item of bundle.items){
   const p=products.find(p=>p.handle===item.handle);assert.ok(p,`Missing ${item.handle}`);
-  const displayedPrice=Math.round(Number(p.variants[0].price)*100);
-  assert.equal(displayedPrice,item.prices?item.prices[6]:item.priceCents,`Product page price differs for ${item.handle}`);
+  const bundlePrice=item.prices?item.prices[6]:item.priceCents;
+  assert.ok(p.variants.some(v=>Math.round(Number(v.price)*100)===bundlePrice),`Product page price differs for ${item.handle}`);
  }
  assert.equal(bundle.purchaseURL,null);
 }
@@ -65,8 +65,10 @@ assert.match(withBase(html,'/Dimohe'),/href="\/Dimohe\/collections\/gifts-under-
 assert.equal(/[—–]|--/.test($('body').text()),false);
 const store=createStorefront(products,new Map(),async()=>null,{load});
 const shell=load(store.shell('Gifts',html,{items:[],item_count:0,total_price:0}));
+assert.equal(shell('.desktop-nav .nav-primary[href="/pages/gifting"]').text(),'Gifts');
+assert.equal(shell('#mobile-navigation button[aria-controls="mobile-nav-gifts"]').text(),'Gifts');
+assert.equal(shell('#mobile-nav-gifts a[href="/pages/gifting"]').length,1);
 for(const root of ['.desktop-nav','#mobile-navigation']){
- assert.equal(shell(root+' .nav-primary[href="/pages/gifting"]').text(),'Gifts');
  assert.equal(shell(root+' > a[href="/collections/gifts-under-100"]').length,0);
  assert.equal(shell(root+' > a[href="/pages/gifting"]').length,0);
  assert.equal(shell(root+' .nav-room a[href="/collections/gifts-under-100"]').length,1);

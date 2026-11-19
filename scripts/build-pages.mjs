@@ -8,6 +8,7 @@ import { createStorefront, imagePath } from '../lib/storefront.mjs';
 import { merchandise, groups, types } from '../lib/merchandising.mjs';
 import { crafts } from '../lib/editorial.mjs';
 import { chapters, curatedCollections } from '../lib/commerce.mjs';
+import { holidaySaleHandle } from '../lib/holiday-sale.mjs';
 import { withBase, scriptWithBase } from '../lib/base-path.mjs';
 
 const base = (process.env.PAGES_BASE_PATH || '').replace(/\/+$/, '');
@@ -33,18 +34,18 @@ for (const r of routes.filter(r => /^\/collections\/[^/?]+(?:\?page=\d+)?$/.test
 const siteURL=(process.env.PAGES_SITE_URL||'https://virenchauhan19.github.io'+base).replace(/\/$/,'');
 const storefront = createStorefront(products, memberships, snapshot, { load, siteURL });
 const emptyCart = { items: [], item_count: 0, total_price: 0 };
-const collections = new Set(['all', 'table-linen', 'bath-linen', 'hand-bags', ...curatedCollections.map(c=>c.handle), ...crafts.map(c=>c.handle), ...groups.map(g => g.handle), ...types.map(t => t.handle), ...memberships.keys()]);
+const collections = new Set(['all', holidaySaleHandle, 'table-linen', 'bath-linen', 'hand-bags', ...curatedCollections.map(c=>c.handle), ...crafts.map(c=>c.handle), ...groups.map(g => g.handle), ...types.map(t => t.handle), ...memberships.keys()]);
 const pageRoutes = [
   '/', '/collections', '/search', '/cart', '/checkout', '/account', '/pages/contact', '/pages/gifting', '/pages/our-craft', '/pages/saved-pieces',
   ...chapters.map(c=>'/pages/chapter-'+c.slug),
   ...[...collections].map(h => '/collections/' + h),
-  ...products.map(p => '/products/' + p.handle),
+  ...products.flatMap(p => [p.handle, p.sale?.handle].filter(Boolean).map(handle => '/products/' + handle)),
   ...routes.map(r => r.route).filter(r => /^\/(pages|policies|blogs)\/[^?]+$/.test(r) && r !== '/pages/contact'),
 ];
 
 await fs.rm(out, { recursive: true, force: true });
 const assets = new Set();
-const browserModules=['storefront.mjs', 'gifting.mjs', 'taxonomy.mjs', 'base-path.mjs', 'pages-runtime.mjs', 'editorial.mjs', 'commerce.mjs', 'review-features.mjs'];
+const browserModules=['storefront.mjs', 'gifting.mjs', 'taxonomy.mjs', 'base-path.mjs', 'pages-runtime.mjs', 'editorial.mjs', 'commerce.mjs', 'review-features.mjs', 'holiday-sale.mjs'];
 const scriptVersion=createHash('sha256').update(await fs.readFile('public/storefront.js')).update((await Promise.all(browserModules.map(name=>fs.readFile(path.join('lib',name),'utf8')))).join('\n')).digest('hex').slice(0,12);
 const stylesheetVersion=createHash('sha256').update(await fs.readFile('public/storefront.css')).digest('hex').slice(0,12);
 const collectAssets = html => {

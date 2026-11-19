@@ -21,9 +21,13 @@ async function walk(dir){
 }
 await walk('dist');
 const catalog=JSON.parse(await fs.readFile('dist/api/products.json','utf8'));
-assert.equal(catalog.products.length,88);
+assert.equal(catalog.products.length,98);
 const home=load(await fs.readFile('dist/index.html','utf8'));
+const sale=load(await fs.readFile('dist/collections/holiday-sale/index.html','utf8'));
+assert.equal(home('[data-holiday-sale] .button').attr('href'),(home('html').attr('data-base')||'')+'/collections/all?sort_by=created-descending');
+assert.equal(sale('#MainContent .holiday-sale-tiers li').length,4);
+assert.equal(sale('#product-card-grid [data-product-handle]').length,catalog.products.length);
 assert.equal(home('.hero-copy>.eyebrow').length,0);
 assert.match(home('.hero h1').text(),/Ayurveda/);
 assert.equal(home('.embroidery-panel').first().find('a').first().attr('href').split('/').filter(Boolean).at(-1),'round-bags');
-console.log(`Passed: ${pages} static pages, ${references} local asset references, all 88 products, original wordmark, Ayurveda headline, and Round bags first.`);
+console.log(`Passed: ${pages} static pages, ${references} local asset references, all 98 products, original wordmark, Ayurveda headline, and Round bags first.`);

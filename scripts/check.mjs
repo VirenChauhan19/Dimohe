@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import { load } from 'cheerio';
 import { merchandise, groups, types } from '../lib/merchandising.mjs';
 import { crafts } from '../lib/editorial.mjs';
+import { holidaySaleTotals } from '../lib/holiday-sale.mjs';
 const base = process.env.CHECK_URL || 'http://localhost:3000';
 const routes = JSON.parse(await fs.readFile('data/routes.json', 'utf8'));
 const products = JSON.parse(await fs.readFile('data/products.json', 'utf8')).products;
@@ -53,7 +54,8 @@ const variant = available.variants.find(v => v.available);
 const cart = await api('/cart/add.js', { id: variant.id, quantity: 2, sections: 'cart-drawer' });
 assert.equal(cart.status, 200);
 assert.equal(cart.value.item_count, 2);
-assert.equal(cart.value.total_price, Math.round(Number(variant.price) * 100) * 2);
+assert.equal(cart.value.original_total_price, Math.round(Number(variant.price) * 100) * 2);
+assert.equal(cart.value.total_price, cart.value.original_total_price-cart.value.total_discount);
 assert.match(cart.value.sections['cart-drawer'], /Shopping bag/);
 assert.doesNotMatch(cart.value.sections['cart-drawer'], /What are you looking for/);
 assert.equal((await api('/cart.js')).value.item_count, 2);
@@ -65,9 +67,43 @@ assert.equal((await api('/cart/add.js', { items: [{ id: variant.id }] })).value.
 assert.equal((await api('/cart/add.js', { items: [{ id: variant.id, quantity: 99 }] })).status, 422);
 assert.equal((await api('/cart.js')).value.item_count, 1, 'Rejected additions must not change the cart');
 await api('/cart/clear.js', {});
+// Published tier boundaries and half-cent rounding must agree with the cart APIs.
+for(const [subtotal,percent,discount] of [
+ [0,0,0],[2,25,1],[19999,25,5000],[20000,30,6000],[34999,30,10500],
+ [35000,35,12250],[54999,35,19250],[55000,40,22000],
+]){
+ const totals=holidaySaleTotals(subtotal);
+ assert.equal(totals.holiday_sale.percent,percent);
+ assert.equal(totals.total_discount,discount);
+ assert.equal(totals.total_price,subtotal-discount);
+}
+const saleVariant=products.flatMap(p=>p.variants).find(v=>v.available&&Number(v.price)===28);
+await api('/cart/add.js',{id:saleVariant.id});
+for(const [quantity,percent,total] of [[1,25,2100],[8,30,15680],[13,35,23660],[20,40,33600],[1,25,2100]]){
+ const changed=await api('/cart/change.js',{id:saleVariant.id,quantity});
+ const result=changed.value;
+ assert.equal(changed.status,200);
+ assert.equal(result.items_subtotal_price,2800*quantity);
+ assert.equal(result.holiday_sale.percent,percent);
+ assert.equal(result.total_price,total);
+ assert.equal(result.items[0].line_price,result.items_subtotal_price);
+ assert.equal(result.cart_level_discount_applications[0].total_allocated_amount,result.items_subtotal_price-total);
+ assert.equal((await api('/cart.js')).value.total_price,total);
+}
+const checkout=load(await(await fetch(base+'/checkout',{headers:{Cookie:cookie}})).text());
+assert.equal(checkout('#MainContent h1').text(),'Checkout preview');
+assert.equal(checkout('[data-checkout-review][data-cart-content]').length,1);
+assert.deepEqual((await api('/cart/clear.js',{})).value.cart_level_discount_applications,[]);
 const imageUrls = new Set();
 for (const product of products) {
-  const added = await api('/cart/add.js', { id: product.variants.find(v => v.available).id, quantity: 1 });
+  const availableVariant=product.variants.find(v=>v.available);
+  if(!availableVariant){
+    assert.equal((await api('/cart/add.js',{id:product.variants[0].id})).status,422);
+    const page=load(await(await fetch(base+'/products/'+product.handle)).text());
+    imageUrls.add(page('#main-product-image').attr('src'));
+    continue;
+  }
+  const added = await api('/cart/add.js', { id: availableVariant.id, quantity: 1 });
   assert.equal(added.status, 200);
   imageUrls.add(added.value.items.at(-1).image);
 }
@@ -82,7 +118,7 @@ const searchTerm='table runner';
 const search = load(await (await fetch(base+'/search?q='+encodeURIComponent(searchTerm))).text());
 const searchHandles=search('#MainContent [data-product-handle]').map((_,el)=>search(el).attr('data-product-handle')).get();
 const suggestions=await (await fetch(base+'/api/search?q='+encodeURIComponent('  TABLE–RUNNER  '))).json();
-assert.match(search('#MainContent h1').text(),/Results for/);
+assert.equal(search('#MainContent h1').text(),`Results for \u201c${searchTerm}\u201d`);
 assert.ok(searchHandles.length>0);
 assert.equal(suggestions.total,searchHandles.length);
 assert.deepEqual(suggestions.products.map(product=>product.handle),searchHandles.slice(0,5));
@@ -142,7 +178,7 @@ for(const field of ['material','color','size']){
   assert.deepEqual(doc('#product-card-grid [data-product-handle]').map((i,el)=>doc(el).attr('data-product-handle')).get().sort(),expected,field);
   assert.equal(doc('select[name="'+field+'"]').val(),value);
 }
-console.log('Passed: all 88 products categorized once, all 23 subcategories, and material/color/size filters.',groupCounts);
+console.log('Passed: main departments, gift sets, and category/material/color/size filters.',groupCounts);
 for(const craft of crafts){
   const response=await fetch(base+'/collections/'+craft.handle);
   assert.equal(response.status,200);
@@ -202,18 +238,25 @@ const menuDestinations=new Map([
  ['Wellness','/collections/wellness'],['Kidswear','/collections/kids-clothing'],
  ['Gifts','/pages/gifting'],['Explore by craft','/pages/our-craft'],['About Dimohe','/pages/our-story'],
 ]);
-for(const nav of ['.desktop-nav','.mobile-nav']){
- const links=home(`${nav} .nav-primary`);
- assert.equal(links.length,menuDestinations.size);
- links.each((i,element)=>{
-  const link=home(element),toggle=link.next('button.nav-toggle');
-  assert.equal(link.attr('href'),menuDestinations.get(link.text()));
-  assert.equal(toggle.attr('aria-expanded'),'false');
-  const panel=link.parent().next('[hidden][inert]');
-  assert.equal(panel.attr('id'),toggle.attr('aria-controls'));
-  assert.ok(panel.find('a').length>0);
- });
-}
+const desktopLinks=home('.desktop-nav .nav-primary');
+assert.equal(desktopLinks.length,menuDestinations.size);
+desktopLinks.each((i,element)=>{
+ const link=home(element),toggle=link.next('button.nav-toggle');
+ assert.equal(link.attr('href'),menuDestinations.get(link.text()));
+ assert.equal(toggle.attr('aria-expanded'),'false');
+ const panel=link.parent().next('[hidden][inert]');
+ assert.equal(panel.attr('id'),toggle.attr('aria-controls'));
+ assert.ok(panel.find('a').length>0);
+});
+const mobileRows=home('.mobile-nav-group > button.mobile-nav-trigger');
+assert.equal(mobileRows.length,menuDestinations.size);
+mobileRows.each((i,element)=>{
+ const button=home(element),panel=button.next('[hidden][inert]');
+ assert.equal(panel.attr('id'),button.attr('aria-controls'));
+ assert.equal(button.attr('aria-expanded'),'false');
+ assert.equal(button.parent().children('a').length,0);
+ assert.ok(panel.find(`a[href="${menuDestinations.get(button.text())}"]`).length);
+});
 assert.equal(home('.department-products').length,0);
 assert.equal(home('[data-review-carousel]').length,1);
 assert.equal(home('.rail-controls').length,0);
@@ -313,8 +356,33 @@ assert.deepEqual(sale.find('.holiday-sale-tiers li').map((_,row)=>[
 const salePath='/collections/all?sort_by=created-descending';
 assert.equal(sale.find('.button').attr('href'),salePath);
 assert.equal(updatedHome('[data-holiday-open]').attr('href'),salePath);
+assert.equal(updatedHome('[data-holiday-open]').text(),'Holiday Sale \u00b7 Now Live: Save Up to 40%');
+assert.equal(updatedHome('[data-announcement-message]').length,3);
+assert.equal(updatedHome('[data-announcement-message]:not([hidden])').length,1);
+assert.equal(updatedHome('[data-announcement] button').length,0);
+assert.equal(updatedHome('.hero-shopping-links .button').text(),'Shop the collection');
 assert.equal(updatedHome('.hero-shopping-links .text-link').attr('href'),'/pages/gifting');
 const saleCatalog=load(await(await fetch(base+salePath)).text());
+assert.equal(saleCatalog('#MainContent h1').text(),'Holiday Sale');
+assert.equal(saleCatalog('#MainContent .holiday-sale-tiers li').length,4);
+assert.equal(saleCatalog('#product-card-grid [data-product-handle]').length,products.length);
+assert.equal(saleCatalog('.catalog-filters').attr('action'),'/collections/holiday-sale');
+const liveOrder=products.slice().sort((a,b)=>a.sale.order-b.sale.order);
+for(const [index,card] of saleCatalog('#product-card-grid .product-card').toArray().entries()){
+ const product=liveOrder[index];
+ const tile=saleCatalog(card);
+ assert.equal(tile.find('.product-caption h3').text(),product.sale.title);
+ assert.equal(tile.find('.product-image').attr('href'),'/products/'+product.sale.handle);
+ const price=Math.min(...product.variants.map(variant=>Math.round(Number(variant.price)*100)));
+ assert.equal(Number(tile.find('[data-sale-base]').attr('data-sale-base')),price);
+ assert.equal(tile.find('[data-sale-rate]').text(),'Buy at '+holidaySaleTotals(price).holiday_sale.percent+'% off');
+ assert.equal(tile.find('.tag').length,Number(!product.variants.some(variant=>variant.available)));
+}
+assert.equal((await fetch(base+'/products/desert-pearl-potli-bag')).status,200);
+const unwind=products.find(p=>p.handle==='unwind');
+const unwindCart=await api('/cart/add.js',{id:unwind.variants[0].id});
+assert.equal(unwindCart.value.total_price,5250);
+await api('/cart/clear.js',{});
 assert.equal(saleCatalog('[data-sort] option[selected]').attr('value'),'created-descending');
 assert.equal(saleCatalog('[data-holiday-sale]').length,1);
 assert.equal(saleCatalog('[data-holiday-auto]').length,0);

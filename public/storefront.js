@@ -39,7 +39,7 @@
   const mobileGroupAnimations=new Map();
   const mobileMotionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
   function transitionMobileGroup(group,visible,{immediate=false}={}){
-    const trigger=group.querySelector('.nav-trigger'),toggle=group.querySelector('.nav-toggle');
+    const toggle=group.querySelector('.nav-toggle');
     const panel=group.querySelector('.mobile-nav-panel');
     const previous=mobileGroupAnimations.get(group);
     if(!immediate&&(previous?previous.visible===visible:panel.hidden===!visible))return;
@@ -55,7 +55,10 @@
     }
     panel.hidden=false;
     const expandedHeight=group.getBoundingClientRect().height;
-    const collapsedHeight=trigger.getBoundingClientRect().height+parseFloat(getComputedStyle(group).borderBottomWidth||0);
+    const groupStyle=getComputedStyle(group);
+    const verticalInsets=['paddingTop','paddingBottom','borderTopWidth','borderBottomWidth']
+      .reduce((total,side)=>total+parseFloat(groupStyle[side]),0);
+    const collapsedHeight=toggle.getBoundingClientRect().height+verticalInsets;
     group.classList.add('is-transitioning');
     const options={duration:visible?320:260,easing:'cubic-bezier(.22,.61,.36,1)',fill:'both'};
     const state={visible,height:group.animate([{height:height+'px'},{height:(visible?expandedHeight:collapsedHeight)+'px'}],options),
@@ -175,14 +178,88 @@
     const navResize=new ResizeObserver(()=>updateNavigationSurface());
     navResize.observe(navHeader);navGroups.forEach(group=>navResize.observe(group.querySelector('.nav-panel')));
   }
+  const announcement=document.querySelector('[data-announcement]');
+  if(announcement){
+    const messages=[...announcement.querySelectorAll('[data-announcement-message]')];
+    const motion=matchMedia('(prefers-reduced-motion: reduce)');
+    let index=0,timer,focused=false;
+    function schedule(){
+      clearTimeout(timer);
+      if(!motion.matches&&!focused&&!document.hidden)timer=setTimeout(advance,5500);
+    }
+    function advance(){
+      if(!document.querySelector('dialog[open]')){
+        messages[index].hidden=true;
+        messages[index].classList.remove('is-entering');
+        index=(index+1)%messages.length;
+        messages[index].hidden=false;
+        messages[index].classList.add('is-entering');
+      }
+      schedule();
+    }
+    announcement.addEventListener('focusin',event=>{focused=event.target.matches(':focus-visible');schedule();});
+    announcement.addEventListener('focusout',event=>{
+      if(!announcement.contains(event.relatedTarget)){focused=false;schedule();}
+    });
+    document.addEventListener('visibilitychange',schedule);
+    motion.addEventListener('change',schedule);
+    schedule();
+  }
   document.querySelectorAll('a[href]').forEach(link=>{const url=new URL(link.href,location.href);if(url.pathname!==location.pathname||!['#shipping-returns','#product-story'].includes(url.hash))return;link.addEventListener('click',()=>{const panel=document.querySelector(url.hash);if(panel)panel.open=true;});});
   document.querySelector('[data-sort]')?.addEventListener('change',event=>event.target.form.requestSubmit());
   async function api(path,data){if(staticStore)return staticStore.api(path,data);const response=await fetch(path,{method:data?'POST':'GET',headers:data?{'Content-Type':'application/json'}:{},body:data?JSON.stringify(data):undefined});const value=await response.json();if(!response.ok)throw new Error(value.description||value.error||'We couldn’t complete that request. Please try again.');return value;}
   let currentCart=null,cartLoadPromise=null;
-  function renderCart(cart){currentCart=cart;syncCardCart();renderMiniLines();document.querySelectorAll('[data-bag-count]').forEach(el=>el.textContent=cart.item_count);const html=cart.items.length?`${cart.items.map(i=>`<article class="cart-item"><a href="${esc(i.url)}"><img src="${esc(i.image)}" alt="${esc(i.title)}" width="90" height="110"></a><div><a href="${esc(i.url)}"><h3>${esc(i.title)}</h3></a>${i.variant_title!=='Default Title'?`<p>${esc(i.variant_title)}</p>`:''}<p>${money(i.price/100)} <span>· ${money(i.line_price/100)} total</span></p><div class="cart-quantity"><button aria-label="Decrease ${esc(i.title)}" data-cart-id="${i.id}" data-cart-quantity="${i.quantity-1}">−</button><span>${i.quantity}</span><button aria-label="Increase ${esc(i.title)}" data-cart-id="${i.id}" data-cart-quantity="${i.quantity+1}"${i.quantity>=99?' disabled':''}>+</button><button class="remove" data-cart-id="${i.id}" data-cart-quantity="0">Remove</button></div></div></article>`).join('')}<div class="cart-footer"><div class="cart-subtotal"><span>Subtotal</span><span>${money(cart.total_price/100)}</span></div><p>Taxes and shipping calculated at checkout. Prices in USD.</p><a class="button" href="/checkout">Continue to checkout</a><a class="text-link" href="/cart">View shopping bag</a></div>`:`<div class="empty-state"><h2>Room for something lovely.</h2><p>Your shopping bag is empty.</p><a class="button" href="/collections/all">Explore the collection</a></div>`;document.querySelectorAll('[data-cart-content]').forEach(el=>el.innerHTML=decorate(html));}
+  function cartLine(item,review){
+    const quantity=review?`<p>Quantity: ${item.quantity}</p>`:`<div class="cart-quantity">
+      <button type="button" aria-label="Decrease ${esc(item.title)}" data-cart-id="${item.id}" data-cart-quantity="${item.quantity-1}">&minus;</button>
+      <span>${item.quantity}</span>
+      <button type="button" aria-label="Increase ${esc(item.title)}" data-cart-id="${item.id}" data-cart-quantity="${item.quantity+1}"${item.quantity>=99?' disabled':''}>+</button>
+      <button type="button" class="remove" data-cart-id="${item.id}" data-cart-quantity="0">Remove</button>
+    </div>`;
+    return `<article class="cart-item"><a href="${esc(item.url)}"><img src="${esc(item.image)}" alt="${esc(item.title)}" width="90" height="110"></a><div>
+      <a href="${esc(item.url)}">${esc(item.title)}</a>
+      ${item.variant_title!=='Default Title'?`<p>${esc(item.variant_title)}</p>`:''}
+      <p>${money(item.price/100)} <span>&middot; ${money(item.line_price/100)} total</span></p>${quantity}
+    </div></article>`;
+  }
+  function cartFooter(cart,review,fullPage){
+    const subtotal=cart.items_subtotal_price??cart.original_total_price??cart.total_price;
+    const discounts=(cart.cart_level_discount_applications||[]).map(discount=>{
+      const percent=discount.value_type==='percentage'?` (${esc(discount.value)}%)`:'';
+      return `<div class="cart-discount"><dt>${esc(discount.title)}${percent}</dt><dd>&minus;${money(discount.total_allocated_amount/100)}</dd></div>`;
+    }).join('');
+    const next=cart.holiday_sale?.next;
+    const nextMessage=next&&!review?`<p class="cart-next-tier">Add ${money(next.amount/100)} to reach ${next.percent}% off.</p>`:'';
+    return `<div class="cart-footer"><dl class="cart-costs">
+      <div><dt>Merchandise subtotal</dt><dd>${money(subtotal/100)}</dd></div>
+      ${discounts}
+      <div class="cart-total"><dt>Total before shipping and tax</dt><dd>${money(cart.total_price/100)}</dd></div>
+    </dl>${nextMessage}${review?'<a class="button" href="/cart">Return to your bag</a>':`<a class="button button--primary" href="/checkout">Continue to checkout</a>${fullPage?'':'<a class="text-link" href="/cart">View shopping bag</a>'}`}</div>`;
+  }
+  function renderCart(cart){
+    currentCart=cart;
+    syncCardCart();renderMiniLines();
+    const subtotal=cart.items_subtotal_price??cart.original_total_price??0;
+    document.querySelectorAll('[data-sale-prices]').forEach(label=>{
+      const orderValue=subtotal+Number(label.dataset.saleBase);
+      const tier=JSON.parse(label.dataset.salePrices).findLast(level=>level.minimum<=orderValue);
+      if(!tier)return;
+      label.querySelector('[data-sale-price]').textContent=money(tier.price/100);
+      label.querySelector('[data-sale-rate]').textContent=`Buy at ${tier.percent}% off`;
+    });
+    document.querySelectorAll('[data-bag-count]').forEach(el=>el.textContent=cart.item_count);
+    const salePath=document.querySelector('[data-holiday-open]')?.getAttribute('href')||'/collections/all';
+    document.querySelectorAll('[data-cart-content]').forEach(el=>{
+      const review=el.hasAttribute('data-checkout-review');
+      const fullPage=el.hasAttribute('data-cart-page');
+      const html=cart.items.length?cart.items.map(item=>cartLine(item,review)).join('')+cartFooter(cart,review,fullPage)
+        :`<div class="empty-state"><h2>Your shopping bag is empty.</h2><a class="button" href="${esc(salePath)}">Shop the Sale</a></div>`;
+      el.innerHTML=decorate(html);
+    });
+  }
   function loadCart(){return cartLoadPromise??=(async()=>{try{renderCart(await api('/cart.js'));}catch(error){notice(error.message);}})().finally(()=>cartLoadPromise=null);}
   document.querySelector('[data-bag-open]')?.addEventListener('click',()=>{openDialog('bag-dialog');loadCart();});
-  if(staticStore||document.querySelector('[data-cart-page]')||document.querySelector('[data-card-cart]'))loadCart();
+  if(staticStore||document.querySelector('[data-cart-page],[data-checkout-review],[data-card-cart]'))loadCart();
   document.addEventListener('click',async event=>{const b=event.target.closest('[data-cart-id]');if(!b||cartBusy)return;cartBusy=true;document.querySelectorAll('[data-cart-id]').forEach(x=>x.disabled=true);try{renderCart(await api('/cart/change.js',{id:b.dataset.cartId,quantity:Number(b.dataset.cartQuantity)}));}catch(error){notice(error.message);await loadCart();}finally{cartBusy=false;syncCardCart();renderMiniLines();}});
   window.addEventListener('storage',event=>{if(event.key==='dimohe-bag'&&!cartBusy)loadCart();});
   document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!cartBusy)loadCart();});
@@ -214,7 +291,7 @@
         suggestions.innerHTML='<p class="search-feedback">Type at least two characters for suggestions.</p>';
         return;
       }
-      suggestions.innerHTML='<p class="search-feedback">Searching?</p>';
+      suggestions.innerHTML='<p class="search-feedback">Searching&hellip;</p>';
       searchTimer=setTimeout(async()=>{
         try{
           const result=await api('/api/search?q='+encodeURIComponent(query));
@@ -232,7 +309,7 @@
             <span class="search-result-price">${product.variablePrice?'From ':''}${money(product.price)}</span>
           </a></li>`).join('');
           const count=`${result.total} ${result.total===1?'result':'results'}`;
-          suggestions.innerHTML=`<h3>Matching products</h3><ul class="search-result-list">${items}</ul><a class="search-all-results" href="${esc(allResults.href)}">View all ${count}<span aria-hidden="true">?</span></a>`;
+          suggestions.innerHTML=`<h3>Matching products</h3><ul class="search-result-list">${items}</ul><a class="search-all-results" href="${esc(allResults.href)}">View all ${count}<span aria-hidden="true">&rarr;</span></a>`;
           status.textContent=count+' found.';
         }catch{
           if(request!==requestId)return;
@@ -269,7 +346,7 @@
     const products=await catalog(),p=products.find(p=>p.handle===handle);
     if(!p)throw new Error('This product is unavailable.');
     const v=p.variants.find(v=>v.available)||p.variants[0],choose=mini&&p.variants.length>1,instant=choose&&p.options.length===1,available=!choose&&v.available;
-    document.querySelector('[data-quick-content]').innerHTML=decorate(`<div class="quick-content"><img src="${imagePath(p.images[0].src)}" alt="${esc(p.title)}" width="500" height="625"><div><p class="eyebrow">${esc(p.merch.typeName)}</p><h2>${esc(p.title)}</h2><p class="product-subtitle">${esc(p.merch.subtitle)}</p><p class="price" data-quick-price>${money(Number(v.price))}</p><form data-product-form ${mini?'data-mini-add':''} data-available="${available}"><input type="hidden" name="id" value="${choose?'':v.id}"><input type="hidden" name="quantity" value="1">${instant?`<fieldset class="mini-size-picker"><legend>Choose ${esc(p.merch.optionLabels[p.options[0].position]).toLowerCase()} to add to your bag</legend><div>${p.variants.map(variant=>`<button type="button" data-mini-variant="${variant.id}" aria-label="Add ${esc(variant.title)} to bag"${variant.available?'':' disabled'}>${esc(variant.title)}${Number(variant.price)!==Number(v.price)?`<small>${money(Number(variant.price))}</small>`:''}</button>`).join('')}</div></fieldset>`:p.variants.length>1?`<label>Choose ${esc(p.options.map(o=>p.merch.optionLabels[o.position]).join(' / ').toLowerCase())}<select data-quick-variant required>${choose?'<option value="" selected disabled>Choose an option</option>':''}${p.variants.map(variant=>`<option value="${variant.id}"${!choose&&variant.id===v.id?' selected':''}${variant.available?'':' disabled'}>${esc(variant.title)}${variant.available?'':' (Sold out)'}</option>`).join('')}</select></label>`:v.title!=='Default Title'?`<p>${esc(p.merch.optionLabels[p.options[0].position])}: ${esc(v.title)}</p>`:''}<button class="button" type="submit"${instant?' hidden':''}${available?'':' disabled'}>${choose?'Choose an option':v.available?'Add to bag':'Sold out'}</button><p data-form-status class="form-status" role="status"></p></form><a class="text-link" href="/products/${p.handle}">View all details</a></div></div>`);
+    document.querySelector('[data-quick-content]').innerHTML=decorate(`<div class="quick-content"><img src="${imagePath(p.images[0].src)}" alt="${esc(p.title)}" width="500" height="625"><div><p class="eyebrow">${esc(p.merch.typeName)}</p><h2>${esc(p.title)}</h2><p class="product-subtitle">${esc(p.merch.subtitle)}</p><p class="price" data-quick-price>${money(Number(v.price))}</p><form data-product-form ${mini?'data-mini-add':''} data-available="${available}"><input type="hidden" name="id" value="${choose?'':v.id}"><input type="hidden" name="quantity" value="1">${instant?`<fieldset class="mini-size-picker"><legend>Choose ${esc(p.merch.optionLabels[p.options[0].position]).toLowerCase()} to add to your bag</legend><div>${p.variants.map(variant=>`<button type="button" data-mini-variant="${variant.id}" aria-label="Add ${esc(variant.title)} to bag"${variant.available?'':' disabled'}>${esc(variant.title)}${Number(variant.price)!==Number(v.price)?`<small>${money(Number(variant.price))}</small>`:''}</button>`).join('')}</div></fieldset>`:p.variants.length>1?`<label>Choose ${esc(p.options.map(o=>p.merch.optionLabels[o.position]).join(' / ').toLowerCase())}<select data-quick-variant required>${choose?'<option value="" selected disabled>Choose an option</option>':''}${p.variants.map(variant=>`<option value="${variant.id}"${!choose&&variant.id===v.id?' selected':''}${variant.available?'':' disabled'}>${esc(variant.title)}${variant.available?'':' (Sold out)'}</option>`).join('')}</select></label>`:v.title!=='Default Title'?`<p>${esc(p.merch.optionLabels[p.options[0].position])}: ${esc(v.title)}</p>`:''}<button class="button button--primary" type="submit"${instant?' hidden':''}${available?'':' disabled'}>${choose?'Choose an option':v.available?'Add to bag':'Sold out'}</button><p data-form-status class="form-status" role="status"></p></form><a class="text-link" href="/products/${p.handle}">View all details</a></div></div>`);
     document.querySelector('[data-quick-variant]')?.addEventListener('change',event=>{
       const selected=p.variants.find(v=>String(v.id)===event.target.value),form=event.target.form;
       form.querySelector('[name=id]').value=selected?.id||'';form.dataset.available=String(Boolean(selected?.available));
