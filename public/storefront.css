@@ -730,16 +730,45 @@ a.announcement-message:focus-visible {outline-offset:-4px}
 .hero-shopping-links {display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px}
 .hero-copy .hero-shopping-links>.text-link {margin-top:0;font-size:12px}
 .holiday-sale-dialog {
-  width:650px;
+  width:740px;
   max-width:calc(100% - 24px);
-  max-height:calc(100% - 24px);
-  padding:42px 40px 30px;
+  max-height:calc(100dvh - 24px);
+  padding:0;
+  border-radius:12px;
+  box-shadow:0 24px 80px #182c2640;
+  overscroll-behavior:contain;
 }
-.holiday-sale-dialog::backdrop {background:#243e32aa;backdrop-filter:none}
-.holiday-sale-dialog .welcome-close {top:13px;right:13px;min-width:44px;min-height:44px;justify-content:center}
-.holiday-sale-dialog>.eyebrow {font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--rose)}
-.holiday-sale-dialog h2 {font-size:clamp(28px,5.5vw,40px);margin:15px 0 12px}
-.holiday-sale-dialog>p#holiday-sale-intro {max-width:none;margin-bottom:24px;font-size:clamp(14px,2.8vw,17px);font-weight:600;line-height:1.45}
+.holiday-sale-dialog::backdrop {background:#182c269e;backdrop-filter:blur(3px)}
+.holiday-sale-layout {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr)}
+.holiday-sale-art {
+  background:#e8ded1 url('/media/explore-PJTRCCSD2_2.jpg') center 56% / cover no-repeat;
+}
+.holiday-sale-copy {position:relative;min-width:0;padding:36px clamp(26px,5vw,46px) 34px;text-align:center}
+.holiday-sale-close {
+  position:absolute;
+  top:8px;
+  right:8px;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  color:var(--ink);
+}
+.holiday-sale-close:hover {background:#efeee5}
+.holiday-sale-copy>.eyebrow {
+  padding-inline:24px;
+  color:var(--rose);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.holiday-sale-copy h2 {
+  margin:9px 0 8px;
+  font:400 clamp(34px,6vw,52px)/1.08 var(--serif);
+  letter-spacing:-.035em;
+}
+.holiday-sale-copy h2 em {color:var(--rose);font-style:normal;white-space:nowrap}
+.holiday-sale-copy>p#holiday-sale-intro {margin-bottom:20px;color:#515b50;font-size:14px;line-height:1.5;text-wrap:pretty}
 .holiday-sale-tiers {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -753,7 +782,17 @@ a.announcement-message:focus-visible {outline-offset:-4px}
 .holiday-sale-tiers li {display:grid;align-content:center;gap:4px;padding:18px 8px;background:var(--paper)}
 .holiday-sale-tiers strong {font:400 clamp(21px,4vw,28px)/1.3 var(--serif);color:var(--rose)}
 .holiday-sale-tiers span {font-size:clamp(12px,2.8vw,15px)}
-.holiday-sale-dialog>.button {width:auto;margin:0;padding-inline:26px}
+.holiday-sale-copy .holiday-sale-tiers {gap:8px;margin-bottom:20px;border:0;background:none}
+.holiday-sale-copy .holiday-sale-tiers li {
+  border:1px solid #e8e4d9;
+  border-radius:6px;
+  padding:10px 6px;
+  background:#f7f4ed;
+}
+.holiday-sale-copy .holiday-sale-tiers li:last-child {border-color:#c8d3c3;background:#e9eee4}
+.holiday-sale-copy .holiday-sale-tiers strong {font-size:27px;line-height:1.15;color:var(--ink)}
+.holiday-sale-copy .holiday-sale-tiers span {font-size:13px;line-height:1.35;font-variant-numeric:tabular-nums}
+.holiday-sale-copy>.button {width:100%;min-height:48px;justify-content:center;gap:10px}
 .holiday-catalogue-tiers {
   margin-top:16px;
   max-width:880px;
@@ -796,11 +835,27 @@ a.announcement-message:focus-visible {outline-offset:-4px}
 .cart-footer>.cart-next-tier {font-size:12px}
 .checkout-review>p {margin-top:12px;color:var(--muted)}
 .checkout-review>[data-cart-content] {margin-top:22px}
+@media(max-width:600px) {
+  .holiday-sale-dialog {width:400px}
+  .holiday-sale-layout {grid-template-columns:minmax(0,1fr)}
+  .holiday-sale-art {height:clamp(64px,12dvh,104px);background-position:center 64%}
+  .holiday-sale-copy {padding:21px clamp(14px,5vw,26px) 22px}
+  .holiday-sale-close {top:4px;right:4px}
+  .holiday-sale-copy h2 {font-size:clamp(32px,9vw,42px)}
+}
+@media(max-height:460px) {
+  .holiday-sale-copy {padding-block:22px 18px}
+  .holiday-sale-copy h2 {margin:5px 0 6px;font-size:clamp(30px,6vw,38px)}
+  .holiday-sale-copy>p#holiday-sale-intro,.holiday-sale-copy .holiday-sale-tiers {margin-bottom:10px}
+  .holiday-sale-copy .holiday-sale-tiers li {padding-block:6px}
+  .holiday-sale-copy .holiday-sale-tiers strong {font-size:22px}
+  .holiday-sale-copy>.button {min-height:44px}
+}
+@media(max-width:600px) and (max-height:460px) {
+  .holiday-sale-art {display:none}
+}
 @media(max-width:540px) {
-  .holiday-sale-dialog {padding:38px 16px 24px}
-  .holiday-sale-dialog .welcome-close {top:4px;right:4px}
   .holiday-sale-tiers li {padding:13px 4px}
-  .holiday-sale-dialog>p#holiday-sale-intro,.holiday-sale-tiers {margin-bottom:20px}
   .holiday-catalogue-tiers>.holiday-sale-tiers {grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
