@@ -78,8 +78,20 @@ for (const image of imageUrls) {
 }
 await api('/cart/clear.js', {});
 console.log(`Passed: all ${products.length} product cart images and cart quantity validation.`);
-const search = await fetch(base + '/search?q=cushion');
-assert.match(await search.text(), /Results for/);
+const searchTerm='table runner';
+const search = load(await (await fetch(base+'/search?q='+encodeURIComponent(searchTerm))).text());
+const searchHandles=search('#MainContent [data-product-handle]').map((_,el)=>search(el).attr('data-product-handle')).get();
+const suggestions=await (await fetch(base+'/api/search?q='+encodeURIComponent('  TABLE–RUNNER  '))).json();
+assert.match(search('#MainContent h1').text(),/Results for/);
+assert.ok(searchHandles.length>0);
+assert.equal(suggestions.total,searchHandles.length);
+assert.deepEqual(suggestions.products.map(product=>product.handle),searchHandles.slice(0,5));
+assert.equal(search('#search-page-input').val(),searchTerm);
+assert.equal(search('#search-dialog [data-search-discovery] .search-terms a').length,4);
+assert.equal(search('#search-dialog [data-search-clear][hidden]').length,1);
+const noSearchResults=load(await (await fetch(base+'/search?q=zzzxxyy')).text());
+assert.match(noSearchResults('#MainContent .search-feedback').text(),/No products found/);
+assert.equal(noSearchResults('#MainContent .catalog-filters').length,0);
 const filtered = load(await (await fetch(base + '/collections/home-furnishing?sort_by=price-ascending&filter.v.price.lte=120')).text());
 const values = filtered('#product-card-grid [data-product-handle]').map((i, el) => {
   const handle = filtered(el).attr('data-product-handle');
@@ -184,9 +196,24 @@ assert.equal(filmCraftPage('.craft-reel video source').attr('src'),'/media/block
 assert.ok(home('.embroidery-showcase').index()<home('.chapter-panel').first().index());
 assert.equal(home('.chapter-panel').length,3);
 assert.equal(home('[data-hero-slide]').length,4);
-assert.equal(home('.desktop-nav summary').first().text(),'Bags');
-assert.ok(home('.desktop-nav summary').toArray().some(el=>home(el).text()==='Home & Living'));
-assert.equal(home('.desktop-nav summary span').length,0);
+assert.equal(home('.desktop-nav .nav-primary').first().text(),'Bags');
+const menuDestinations=new Map([
+ ['Bags','/collections/bags'],['Home & Living','/collections/home-furnishing'],
+ ['Wellness','/collections/wellness'],['Kidswear','/collections/kids-clothing'],
+ ['Gifts','/pages/gifting'],['Explore by craft','/pages/our-craft'],['About Dimohe','/pages/our-story'],
+]);
+for(const nav of ['.desktop-nav','.mobile-nav']){
+ const links=home(`${nav} .nav-primary`);
+ assert.equal(links.length,menuDestinations.size);
+ links.each((i,element)=>{
+  const link=home(element),toggle=link.next('button.nav-toggle');
+  assert.equal(link.attr('href'),menuDestinations.get(link.text()));
+  assert.equal(toggle.attr('aria-expanded'),'false');
+  const panel=link.parent().next('[hidden][inert]');
+  assert.equal(panel.attr('id'),toggle.attr('aria-controls'));
+  assert.ok(panel.find('a').length>0);
+ });
+}
 assert.equal(home('.department-products').length,0);
 assert.equal(home('[data-review-carousel]').length,1);
 assert.equal(home('.rail-controls').length,0);
@@ -231,7 +258,7 @@ const wellnessMenu=home('.desktop-nav .nav-wellness');
 for(const type of types.filter(t=>t.group==='wellness'))assert.equal(wellnessMenu.find('a[href="/collections/'+type.handle+'"]').length,1);
 for(const handle of ['hair-care','bath-body']){
  const doc=load(await(await fetch(base+'/collections/'+handle)).text());
- assert.equal(doc('.desktop-nav summary.current').text().trim(),'Wellness');
+ assert.equal(doc('.desktop-nav .nav-primary.current').text().trim(),'Wellness');
  assert.equal(doc('.filter-fields select[name="material"]').length,0);
 }
 console.log('Passed: persistent department categories, filtered empty states, active category links, all wellness product navigation, and complete wellness menus.');
@@ -256,7 +283,7 @@ assert.equal(updatedHome('.hero-copy a[href="/pages/our-craft"]').length,0);
 assert.equal(updatedHome('.film-copy a').length,0);
 assert.equal(updatedHome('#film-preview figcaption a').attr('href'),'/pages/our-craft#craft-film');
 updatedHome('.chapter-panel').each((i,panel)=>{const node=updatedHome(panel),target='/collections/'+chapters[i+1].collection;assert.equal(node.find('.chapter-photo').attr('href'),target);assert.equal(node.find('h2 a').attr('href'),target);assert.equal(node.find('.chapter-copy>.text-link').length,1);assert.equal(node.find('a[href^="/pages/chapter-"]').length,0);});
-assert.equal(updatedHome('.desktop-nav .founder-nav a[href="/pages/our-story"]').length,2);
+assert.equal(updatedHome('.desktop-nav .founder-nav .nav-panel a[href="/pages/our-story"]').length,2);
 assert.equal(updatedHome('.desktop-nav .founder-nav a[href="/pages/our-founder"]').text(),'Meet our founder');
 assert.equal(updatedHome('.embroidery-panel').first().find('a').first().attr('href'),'/collections/round-bags');
 assert.equal(updatedHome('.embroidery-showcase .section-title>div>.text-link').last().text(),'Explore bags');
@@ -279,6 +306,18 @@ console.log('Passed: all nine tote descriptions use plain text and standard list
 
 // Keep the approved additions alongside the original product content and page layouts.
 assert.equal(updatedHome('[data-welcome-offer]').length,1);
+const sale=updatedHome('[data-holiday-sale][data-holiday-auto]');
+assert.deepEqual(sale.find('.holiday-sale-tiers li').map((_,row)=>[
+ updatedHome(row).find('strong').text(),updatedHome(row).find('span').text(),
+]).get(),['25% off','Below $200','30% off','$200 to $349.99','35% off','$350 to $549.99','40% off','$550 & above']);
+const salePath='/collections/all?sort_by=created-descending';
+assert.equal(sale.find('.button').attr('href'),salePath);
+assert.equal(updatedHome('[data-holiday-open]').attr('href'),salePath);
+assert.equal(updatedHome('.hero-shopping-links .text-link').attr('href'),'/pages/gifting');
+const saleCatalog=load(await(await fetch(base+salePath)).text());
+assert.equal(saleCatalog('[data-sort] option[selected]').attr('value'),'created-descending');
+assert.equal(saleCatalog('[data-holiday-sale]').length,1);
+assert.equal(saleCatalog('[data-holiday-auto]').length,0);
 assert.equal(updatedHome('.mixed-explore').length,1);
 assert.equal(updatedHome('.mixed-explore .product-card').length,5);
 assert.equal(updatedHome('.mixed-explore a[href*="bags"]').length,0);

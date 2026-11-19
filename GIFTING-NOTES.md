@@ -65,3 +65,7 @@ The original 10% welcome signup offer remains first. The follow-up is still queu
 - Gift image frames use a common 2:1 ratio and cover their cells with no grey letterbox bands. Transparent source photos sit on the existing cream page colour. Adjacent galleries and headings align; focal points retain the important product details.
 - Descriptions are shortened; included-product rows have no horizontal dividers. One price separator remains. Empty feedback messages no longer reserve blank rows. Section anchor offsets allow for the sticky header.
 - Standard product-card and gallery surfaces also use the page's cream colour. Original product formats, craft passports, wellness details and video controls remain unchanged.
+
+## Gift-box photography, November 19
+
+All ten merchant-supplied JPEGs from the attachments folder are now stored in `public/media/gifts/` with descriptive filenames. Each of the eight bundles and two jewellery/care sets uses its matching boxed-gift photograph. The Rose Ritual photograph also appears in the Gifts hero. Full gift boxes are kept visible using 4:3 bundle frames, contained jewellery photos and the hero photograph's original ratio. Product contents, pricing and enquiry controls are unchanged.

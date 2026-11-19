@@ -4,7 +4,7 @@ import { createReadStream } from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { load } from 'cheerio';
-import { createStorefront } from './lib/storefront.mjs';
+import { createStorefront, searchSuggestions } from './lib/storefront.mjs';
 import { merchandise } from './lib/merchandising.mjs';
 
 const root = path.resolve('public');
@@ -174,6 +174,7 @@ const server = http.createServer(async (req, res) => {
       return json({ ...cartJSON(cart), ...(data.sections ? { sections: await sections(cart, data.sections) } : {}) });
     }
     if (pathname === '/api/products') return json({ products: storefront.products });
+    if (pathname === '/api/search' && req.method === 'GET') return json(searchSuggestions(storefront.products,url.searchParams.get('q')));
     if (/^\/products\/[^/]+\.(js|json)$/.test(pathname)) {
       const p = productMap.get(pathname.split('/')[2].replace(/\.(js|json)$/, ''));
       if (!p) return json({ error: 'Not found' }, 404);

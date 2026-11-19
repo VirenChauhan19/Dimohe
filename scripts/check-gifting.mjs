@@ -47,9 +47,17 @@ for(const [first,second] of [['willow-table','dinner-table'],['living-room','liv
  const left=sources(first),right=sources(second);assert.ok(left.length&&right.length);
  assert.equal(left.some(src=>right.includes(src)),false,'Duplicate photography in neighbouring sets');
 }
+const giftSets=[...gifting.bundles,...gifting.collaborations];
+assert.equal(new Set(giftSets.map(g=>g.image)).size,10,'Each gift set has its own supplied photograph');
+assert.equal($('.gift-box-photo img').length,8);
+assert.equal($('.gift-hero-photo img').attr('src'),gifting.collaborations[0].image);
+for(const gift of giftSets){
+ assert.match(gift.image,/^\/media\/gifts\/[\w-]+\.jpg$/);
+ const bytes=await fs.readFile('public'+gift.image);
+ assert.equal(bytes.readUInt16BE(0),0xffd8,'Gift photograph must be a JPEG');
+ assert.ok(gift.width>0&&gift.height>0);
+}
 for(const bundle of gifting.bundles){
- const photos=bundle.photos||bundle.items.slice(0,3).map((_,item)=>({item,index:0}));
- for(const photo of photos){const source=products.find(p=>p.handle===bundle.items[photo.item].handle)?.images[photo.index];assert.ok(source,'Photograph must belong to an included product');}
  assert.ok(bundle.description.split(/\s+/).length<=25,'Gift description should stay concise');
 }
 for(const link of $('a').toArray())assert.ok(!$(link).attr('href').includes('undefined'));
@@ -58,7 +66,7 @@ assert.equal(/[—–]|--/.test($('body').text()),false);
 const store=createStorefront(products,new Map(),async()=>null,{load});
 const shell=load(store.shell('Gifts',html,{items:[],item_count:0,total_price:0}));
 for(const root of ['.desktop-nav','#mobile-navigation']){
- assert.equal(shell(root+' details').filter((i,e)=>shell(e).children('summary').text()==='Gifts').length,1);
+ assert.equal(shell(root+' .nav-primary[href="/pages/gifting"]').text(),'Gifts');
  assert.equal(shell(root+' > a[href="/collections/gifts-under-100"]').length,0);
  assert.equal(shell(root+' > a[href="/pages/gifting"]').length,0);
  assert.equal(shell(root+' .nav-room a[href="/collections/gifts-under-100"]').length,1);
