@@ -460,11 +460,42 @@
   /* Native transitions preserve normal links, browser history and scroll restoration. */
   @view-transition{navigation:auto}
   #MainContent{view-transition-name:page-content}
-  ::view-transition-group(root),::view-transition-group(page-content){animation:none}
+  .site-header{view-transition-name:site-header}
+  ::view-transition-group(root),::view-transition-group(page-content),::view-transition-group(site-header){animation:none}
   ::view-transition-old(root){display:none}
   ::view-transition-new(root){animation:none;mix-blend-mode:normal}
+  ::view-transition-old(site-header){display:none}
+  ::view-transition-new(site-header){animation:none;mix-blend-mode:normal}
+  ::view-transition-group(site-header){z-index:1}
   ::view-transition-old(page-content){animation:dimohe-page-out 160ms ease both;mix-blend-mode:normal}
   ::view-transition-new(page-content){animation:dimohe-page-in 280ms var(--motion-ease) both;mix-blend-mode:normal}
+}
+
+/* Phone categories glide to their natural height and remain reversible mid-tap. */
+@media(max-width:899px){
+  .mobile-nav{overflow-anchor:none}
+  .mobile-nav>details.is-transitioning{overflow:hidden;overflow:clip}
+  .mobile-nav .mobile-nav-panel>a{padding-left:10px}
+  .mobile-nav>details>summary{
+    padding-inline:10px;border-radius:3px;
+    transition:background-color 180ms ease,color 180ms ease;
+  }
+  .mobile-nav>details>summary[aria-expanded=true]{background-color:var(--olive);color:var(--ink)}
+  .mobile-nav>details>summary:after{
+    content:'+';font-size:21px;font-weight:400;line-height:1;
+    transform:rotate(0);transition:transform 260ms var(--motion-ease);
+  }
+  .mobile-nav>details[open]>summary[aria-expanded]:after{content:'+'}
+  .mobile-nav>details>summary[aria-expanded=true]:after{transform:rotate(45deg)}
+  .mobile-nav a{transition:background-color 180ms ease,color 180ms ease}
+  .mobile-nav a:active,.mobile-nav>details>summary:active{background-color:var(--olive);color:var(--rose)}
+}
+@media(max-width:899px) and (prefers-reduced-motion:no-preference){
+  ::view-transition-old(page-content){animation-duration:120ms}
+  ::view-transition-new(page-content){animation-duration:240ms}
+}
+@media(prefers-reduced-motion:reduce){
+  .mobile-nav>details>summary,.mobile-nav>details>summary:after,.mobile-nav a{transition:none}
 }
 @keyframes dimohe-content-in{from{opacity:0}to{opacity:1}}
 @keyframes dimohe-page-out{from{opacity:1}to{opacity:0}}

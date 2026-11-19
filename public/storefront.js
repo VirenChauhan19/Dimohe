@@ -25,7 +25,7 @@
   menuToggle?.addEventListener('click',()=>{
     if(menuToggle.getAttribute('aria-expanded')==='true'){closeMobileNavigation();return;}
     clearTimeout(menuCloseTimer);mobileNav.hidden=false;mobileNav.inert=false;mobileNav.scrollTop=0;
-    mobileNav.querySelectorAll('details').forEach(group=>group.open=false);
+    mobileGroups.forEach(group=>transitionMobileGroup(group,false,{immediate:true}));
     document.querySelectorAll('main,.site-footer').forEach(el=>el.inert=true);
     menuToggle.setAttribute('aria-expanded','true');menuToggle.setAttribute('aria-label','Close menu');
     requestAnimationFrame(()=>requestAnimationFrame(()=>{if(menuToggle.getAttribute('aria-expanded')==='true')mobileNav.classList.add('is-open');}));
@@ -35,12 +35,52 @@
   desktopLayout.addEventListener('change',event=>{if(event.matches)closeMobileNavigation({immediate:true});});
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&closeMobileNavigation())menuToggle.focus();});
   const mobileGroups=[...document.querySelectorAll('.mobile-nav>details')];
-  mobileGroups.forEach(group=>group.addEventListener('toggle',()=>{
-    if(group.open){
-      mobileGroups.forEach(other=>{if(other!==group)other.open=false;});
-      if(!matchMedia('(prefers-reduced-motion: reduce)').matches)[...group.children].filter(el=>el.tagName!=='SUMMARY').forEach(el=>el.animate([{opacity:0,transform:'translateY(-4px)'},{opacity:1,transform:'translateY(0)'}],{duration:180,easing:'ease-out'}));
+  const mobileGroupAnimations=new Map();
+  const mobileMotionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
+  function transitionMobileGroup(group,visible,{immediate=false}={}){
+    const summary=group.querySelector('summary'),panel=group.querySelector('.mobile-nav-panel');
+    const previous=mobileGroupAnimations.get(group);
+    if(!immediate&&(previous?previous.visible===visible:group.open===visible))return;
+    // Capture the rendered height before cancelling, including a half-finished tap.
+    const height=group.getBoundingClientRect().height;
+    const current=group.open?getComputedStyle(panel):null;
+    const from={opacity:current?.opacity||'0',transform:current?.transform||'translateY(-6px)'};
+    previous?.height.cancel();previous?.content.cancel();mobileGroupAnimations.delete(group);
+    group.classList.remove('is-transitioning');
+    summary.setAttribute('aria-expanded',String(visible));panel.inert=!visible;
+    if(immediate||mobileMotionPreference.matches||!group.animate){
+      group.open=visible;return;
     }
-  }));
+    group.open=true;
+    const expandedHeight=group.getBoundingClientRect().height;
+    const collapsedHeight=summary.getBoundingClientRect().height+parseFloat(getComputedStyle(group).borderBottomWidth||0);
+    group.classList.add('is-transitioning');
+    const options={duration:visible?320:260,easing:'cubic-bezier(.22,.61,.36,1)',fill:'both'};
+    const state={visible,height:group.animate([{height:height+'px'},{height:(visible?expandedHeight:collapsedHeight)+'px'}],options),
+      content:panel.animate([from,visible?{opacity:'1',transform:'translateY(0)'}:{opacity:'0',transform:'translateY(-4px)'}],options)};
+    mobileGroupAnimations.set(group,state);
+    state.height.onfinish=()=>{
+      if(mobileGroupAnimations.get(group)!==state)return;
+      group.open=visible;group.classList.remove('is-transitioning');
+      mobileGroupAnimations.delete(group);state.height.cancel();state.content.cancel();
+    };
+  }
+  mobileGroups.forEach((group,index)=>{
+    const summary=group.querySelector('summary'),panel=document.createElement('div');
+    panel.className='mobile-nav-panel';panel.id='mobile-nav-panel-'+index;
+    [...group.children].filter(el=>el!==summary).forEach(el=>panel.append(el));group.append(panel);
+    summary.setAttribute('aria-controls',panel.id);summary.setAttribute('aria-expanded',String(group.open));panel.inert=!group.open;
+    summary.addEventListener('click',event=>{
+      event.preventDefault();
+      const visible=summary.getAttribute('aria-expanded')!=='true';
+      mobileGroups.forEach(other=>transitionMobileGroup(other,other===group&&visible));
+    });
+  });
+  function settleMobileGroups(){
+    mobileGroups.forEach(group=>transitionMobileGroup(group,group.querySelector('summary').getAttribute('aria-expanded')==='true',{immediate:true}));
+  }
+  mobileMotionPreference.addEventListener('change',settleMobileGroups);
+  desktopLayout.addEventListener('change',settleMobileGroups);
   const navGroups=[...document.querySelectorAll('.desktop-nav .nav-group')];
   const hoverNavigation=window.matchMedia('(hover: hover) and (pointer: fine)');
   const navMotionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
