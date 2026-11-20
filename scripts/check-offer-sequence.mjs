@@ -32,6 +32,7 @@ returning.advance(1000);assert.equal(returning.bundle.open,true);
 returning.bundle.close();returning.announcement.emit('click',{preventDefault(){}});
 assert.equal(returning.bundle.shows,2,'Announcement can reopen the sale');
 const otherPage=preview({returning:true,home:false});
+otherPage.offer.open=true;otherPage.dismiss();
 otherPage.advance(1000);assert.equal(otherPage.bundle.open,false);
 otherPage.announcement.emit('click',{preventDefault(){}});assert.equal(otherPage.bundle.open,true);
 console.log('Passed: holiday sale timing, welcome sequence, session suppression, announcement on all pages, and deferral during typing, menu, dialog, and background use.');

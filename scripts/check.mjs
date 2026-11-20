@@ -348,7 +348,11 @@ for(const product of enriched.filter(p=>p.merch.type==='tote-bag')){const doc=lo
 console.log('Passed: all nine tote descriptions use plain text and standard list bullets.');
 
 // Keep the approved additions alongside the original product content and page layouts.
-assert.equal(updatedHome('[data-welcome-offer]').length,1);
+assert.equal(updatedHome('[data-welcome-offer][data-welcome-auto]').length,1);
+assert.equal(updatedHome('.site-footer [data-welcome-open]').text(),'Sign up for 10% off');
+const signupConfig=await fetch(base+'/welcome-signup.json');
+assert.equal(signupConfig.status,200);
+assert.ok(Object.hasOwn(await signupConfig.json(),'endpoint'));
 const sale=updatedHome('[data-holiday-sale][data-holiday-auto]');
 assert.deepEqual(sale.find('.holiday-sale-tiers li').map((_,row)=>[
  updatedHome(row).find('strong').text(),updatedHome(row).find('span').text(),
@@ -357,9 +361,11 @@ const salePath='/collections/all?sort_by=created-descending';
 assert.equal(sale.find('.button').attr('href'),salePath);
 assert.equal(updatedHome('[data-holiday-open]').attr('href'),salePath);
 assert.equal(updatedHome('[data-holiday-open]').text(),'Holiday Sale \u00b7 Now Live: Save Up to 40%');
-assert.equal(updatedHome('[data-announcement-message]').length,3);
+assert.equal(updatedHome('[data-announcement-message]').length,4);
 assert.equal(updatedHome('[data-announcement-message]:not([hidden])').length,1);
-assert.equal(updatedHome('[data-announcement] button').length,0);
+const headerSignup=updatedHome('[data-announcement] button[data-announcement-message][data-welcome-open]');
+assert.equal(headerSignup.text(),'Sign up for 10% off');
+assert.equal(headerSignup.attr('aria-controls'),updatedHome('[data-welcome-offer]').attr('id'));
 assert.equal(updatedHome('.hero-shopping-links .button').text(),'Shop the collection');
 assert.equal(updatedHome('.hero-shopping-links .text-link').attr('href'),'/pages/gifting');
 const saleCatalog=load(await(await fetch(base+salePath)).text());
@@ -399,7 +405,8 @@ assert.match(filmCraftPage('#ayurveda-film').text(),/Ayurveda/);
 let films=0;
 for(const p of enriched){
  const doc=load(await(await fetch(base+'/products/'+p.handle)).text());
- assert.equal(doc('[data-welcome-offer]').length,0);
+ assert.equal(doc('[data-welcome-offer]:not([data-welcome-auto])').length,1);
+ assert.equal(doc('.site-footer [data-welcome-open]').attr('aria-controls'),doc('[data-welcome-offer]').attr('id'));
  doc('figcaption').each((i,e)=>assert.doesNotMatch(doc(e).text(),/\d+\s*(?:min|sec)|second|minute/i));
  assert.equal(doc('.footer-connect a').length,2);
  if(doc('.making-film').length){films++;for(const el of doc('.making-film source,.making-film video[poster]').toArray()){

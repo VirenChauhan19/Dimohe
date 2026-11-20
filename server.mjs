@@ -133,7 +133,7 @@ const server = http.createServer(async (req, res) => {
     const pathname = decodeURIComponent(url.pathname).replace(/\/$/, '') || '/';
     if(pathname==='/pages/refund-returns-exchange-and-cancellations-policy'){res.writeHead(301,{Location:'/pages/shipping-returns/'});return res.end();}
     // Assets never create a cart session. Paths are constrained to the public directory.
-    if (/^\/(cdn|external|media)\//.test(pathname) || /^\/(replica.*|storefront)\.(js|css)$/.test(pathname)) {
+    if (pathname === '/welcome-signup.json' || /^\/(cdn|external|media)\//.test(pathname) || /^\/(replica.*|storefront)\.(js|css)$/.test(pathname)) {
       const file = path.resolve(root, '.' + pathname);
       if (!file.startsWith(root + path.sep)) return html('Not found', 404);
       if(path.extname(file)==='.mp4'){

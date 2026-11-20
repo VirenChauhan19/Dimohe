@@ -228,6 +228,7 @@
 @media(max-width:767px){.product-rail{gap:14px}.product-rail>.product-card,.mixed-explore .product-rail>.product-card{flex-basis:76%}.site-footer{padding-top:36px;row-gap:27px}.footer-policy{font-size:11px}.footer-bottom{flex-direction:row}.footer-social-links a{min-height:36px}.rail-controls button{width:40px;height:40px}.welcome-dialog{padding:32px 26px 22px}.welcome-dialog h2{font-size:32px}#film-preview .film-media{max-width:330px}#film-preview .film-media video{max-height:65svh}.department-products{padding-top:15px}.making-film-player{max-width:310px}}
 @media(prefers-reduced-motion:reduce){.product-rail{scroll-behavior:auto}}
 .welcome-dialog>.text-link{background:transparent;border:0;border-bottom:1px solid var(--line);padding:0;color:var(--ink);cursor:pointer}
+.footer-welcome{min-height:44px;margin-top:6px;padding:0;border:0;background:none;color:inherit;font-size:13px;font-weight:500;text-decoration:underline;text-underline-offset:4px}
 
 
 /* One category carousel, with controls at the outside edges of its photographs. */
@@ -718,8 +719,9 @@
   line-height:1.35;
 }
 .announcement-message[hidden] {display:none}
-a.announcement-message:hover {text-decoration:underline;text-underline-offset:3px}
-a.announcement-message:focus-visible {outline-offset:-4px}
+button.announcement-message {width:100%;border:0;background:none;letter-spacing:inherit}
+:is(a,button).announcement-message:hover {text-decoration:underline;text-underline-offset:3px}
+.announcement-message:focus-visible {outline-offset:-4px}
 @media(prefers-reduced-motion:no-preference) {
   .announcement-message.is-entering {animation:announcement-in 280ms var(--motion-ease) both}
 }

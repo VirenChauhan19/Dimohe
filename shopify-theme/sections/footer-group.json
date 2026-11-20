@@ -8,7 +8,10 @@
     },
     "welcome": {
       "type": "welcome-offer",
+      "disabled": false,
       "settings": {
+        "enabled": true,
+        "use_welcome_email": true,
         "delay": 1
       }
     }

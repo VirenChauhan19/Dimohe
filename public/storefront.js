@@ -188,10 +188,10 @@
       if(!motion.matches&&!focused&&!document.hidden)timer=setTimeout(advance,5500);
     }
     function advance(){
-      if(!document.querySelector('dialog[open]')){
+      if(messages[index].disabled||!document.querySelector('dialog[open]')){
         messages[index].hidden=true;
         messages[index].classList.remove('is-entering');
-        index=(index+1)%messages.length;
+        do{index=(index+1)%messages.length;}while(messages[index].disabled);
         messages[index].hidden=false;
         messages[index].classList.add('is-entering');
       }
@@ -200,6 +200,9 @@
     announcement.addEventListener('focusin',event=>{focused=event.target.matches(':focus-visible');schedule();});
     announcement.addEventListener('focusout',event=>{
       if(!announcement.contains(event.relatedTarget)){focused=false;schedule();}
+    });
+    announcement.addEventListener('dimohe:announcement-change',()=>{
+      if(messages[index].disabled)advance();
     });
     document.addEventListener('visibilitychange',schedule);
     motion.addEventListener('change',schedule);
@@ -497,9 +500,23 @@
   const offer=document.querySelector('[data-welcome-offer]');
   let welcomePending=false;
   if(offer){
+    const triggers=document.querySelectorAll('[data-welcome-open]');
     const subscribedKey='dimohe-newsletter-subscribed';
     const seenKey='dimohe-welcome-offer-seen';
-    const isSubscribed=()=>{try{return localStorage.getItem(subscribedKey)==='confirmed';}catch{return false;}};
+    let subscribed=false;
+    const isSubscribed=()=>{
+      if(subscribed)return true;
+      try{return localStorage.getItem(subscribedKey)==='confirmed';}catch{return false;}
+    };
+    const updateTriggers=()=>{
+      const confirmed=isSubscribed();
+      for(const trigger of triggers){
+        if(trigger.hasAttribute('data-announcement-message')){
+          trigger.disabled=confirmed;
+          trigger.dispatchEvent(new Event('dimohe:announcement-change',{bubbles:true}));
+        }else trigger.hidden=confirmed;
+      }
+    };
     const hasSeenOffer=()=>{
       try{if(localStorage.getItem(seenKey)==='true')return true;}catch{}
       try{return sessionStorage.getItem(seenKey)==='true';}catch{return false;}
@@ -511,15 +528,29 @@
     offer.addEventListener('close',rememberOffer);
     offer.addEventListener('click',event=>{if(event.target===offer){const rect=offer.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)offer.close();}});
     let shown=false;
+    const showOffer=()=>{
+      offer.showModal();
+      shown=true;
+      rememberOffer();
+    };
+    for(const trigger of triggers){
+      trigger.addEventListener('click',()=>{
+        if(!isSubscribed()&&!offer.open)showOffer();
+      });
+    }
+    updateTriggers();
     const tryOpen=()=>{
       if(shown)return;
       if(isSubscribed()||hasSeenOffer()){welcomePending=false;return;}
       if(document.hidden||document.querySelector('dialog[open]')||document.querySelector('[data-menu-toggle][aria-expanded="true"]')){setTimeout(tryOpen,800);return;}
-      shown=true;offer.showModal();rememberOffer();
+      showOffer();
     };
-    welcomePending=!isSubscribed()&&!hasSeenOffer();
-    setTimeout(tryOpen,1000);
-    window.addEventListener('storage',event=>{if([subscribedKey,seenKey].includes(event.key)&&(isSubscribed()||hasSeenOffer())&&offer.open)offer.close();});
+    welcomePending=offer.hasAttribute('data-welcome-auto')&&!isSubscribed()&&!hasSeenOffer();
+    if(welcomePending)setTimeout(tryOpen,1000);
+    window.addEventListener('storage',event=>{
+      if(event.key===subscribedKey)updateTriggers();
+      if([subscribedKey,seenKey].includes(event.key)&&(isSubscribed()||hasSeenOffer())&&offer.open)offer.close();
+    });
     offer.querySelector('form').addEventListener('submit',async event=>{
       event.preventDefault();
       const form=event.currentTarget,status=offer.querySelector('[data-welcome-status]'),button=form.querySelector('[type=submit]');
@@ -539,7 +570,9 @@
           if(result.pending===true){status.textContent='Please check your inbox to confirm your subscription.';return;}
           throw new Error('unavailable');
         }
+        subscribed=true;
         try{localStorage.setItem(subscribedKey,'confirmed');}catch{}
+        updateTriggers();
         status.textContent='You’re on the list. Look out for your welcome email.';
         form.querySelector('input[type=email]').disabled=true;
         button.textContent='You’re signed up';
@@ -550,6 +583,7 @@
   // Show the season's offer once on the homepage. The announcement can reopen it.
   const sale=document.querySelector('[data-holiday-sale]');
   if(sale){
+    const auto=sale.hasAttribute('data-holiday-auto');
     const seenKey='dimohe-holiday-sale-2026-seen';
     let dismissed=false,shown=false,timer,returnFocus;
     const seen=()=>{try{return sessionStorage.getItem(seenKey)==='true';}catch{return false;}};
@@ -568,7 +602,7 @@
       }
       showSale();
     };
-    if(sale.hasAttribute('data-holiday-auto')&&!welcomePending&&!seen())timer=setTimeout(trySale,1000);
+    if(auto&&!welcomePending&&!seen())timer=setTimeout(trySale,1000);
     document.querySelector('[data-holiday-open]')?.addEventListener('click',event=>{
       if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||document.querySelector('dialog[open]')||typeof sale.showModal!=='function')return;
       event.preventDefault();
@@ -580,7 +614,10 @@
     });
     offer?.addEventListener('cancel',()=>dismissed=true);
     offer?.addEventListener('close',()=>{
-      if(dismissed&&!shown&&!seen())timer=setTimeout(trySale,1000);
+      if(dismissed&&auto&&welcomePending&&!shown&&!seen()){
+        welcomePending=false;
+        timer=setTimeout(trySale,1000);
+      }
       dismissed=false;
     });
     sale.addEventListener('close',()=>{if(returnFocus?.isConnected)returnFocus.focus({preventScroll:true});});
