@@ -3,6 +3,8 @@ name: Deploy storefront to GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: '3-58/5 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -17,25 +19,46 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      publish: ${{ steps.publish.outputs.run }}
+    env:
+      INSTAGRAM_REELS_ENDPOINT: ${{ vars.INSTAGRAM_REELS_ENDPOINT }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
       - id: pages
         uses: actions/configure-pages@v5
+      - name: Refresh the Instagram reel
+        id: instagram
+        run: node scripts/sync-instagram-reel.mjs
+        env:
+          PAGES_BASE_URL: ${{ steps.pages.outputs.base_url }}
+          INSTAGRAM_REELS_SNAPSHOT: ${{ runner.temp }}/dimohe-instagram-reel.json
+          INSTAGRAM_USER_ID: '17841475318145110'
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+      - name: Decide whether to publish
+        id: publish
+        if: github.event_name != 'schedule' || steps.instagram.outputs.changed == 'true'
+        run: echo 'run=true' >> "$GITHUB_OUTPUT"
+      - run: npm ci
+        if: steps.publish.outputs.run == 'true'
       - name: Build static site
+        if: steps.publish.outputs.run == 'true'
         run: npm run build:pages
         env:
           PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          INSTAGRAM_REELS_SNAPSHOT: ${{ runner.temp }}/dimohe-instagram-reel.json
       - uses: actions/upload-pages-artifact@v4
+        if: steps.publish.outputs.run == 'true'
         with:
           path: dist
 
   deploy:
     needs: build
+    if: needs.build.outputs.publish == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

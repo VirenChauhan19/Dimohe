@@ -41,7 +41,10 @@ await Promise.all(Array.from({ length: 5 }, async () => {
   }
 }));
 console.log(`Passed: ${routes.length} pages and ${localLinks.size} local asset references.`);
-for(const asset of renderedAssets) await fs.access(path.resolve('public','.'+asset));
+for (const asset of renderedAssets) {
+  const directory = /^\/instagram-reels\.(css|js)$/.test(asset) ? 'shopify-theme/assets' : 'public';
+  await fs.access(path.resolve(directory, '.' + asset));
+}
 console.log(`Passed: ${renderedAssets.size} rendered image/script/style assets exist locally.`);
 let cookie = '';
 async function api(route, data) {

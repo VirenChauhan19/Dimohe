@@ -32,7 +32,15 @@ for (const r of routes.filter(r => /^\/collections\/[^/?]+(?:\?page=\d+)?$/.test
 }
 
 const siteURL=(process.env.PAGES_SITE_URL||'https://virenchauhan19.github.io'+base).replace(/\/$/,'');
-const storefront = createStorefront(products, memberships, snapshot, { load, siteURL });
+const hostedReelsEndpoint = process.env.INSTAGRAM_REELS_ENDPOINT?.trim();
+if (hostedReelsEndpoint) {
+  const endpoint = new URL(hostedReelsEndpoint);
+  if (endpoint.protocol !== 'https:' || endpoint.username || endpoint.password) {
+    throw new Error('INSTAGRAM_REELS_ENDPOINT must be a public HTTPS URL.');
+  }
+}
+const instagramReelsEndpoint = hostedReelsEndpoint || base + '/api/instagram-reels.json';
+const storefront = createStorefront(products, memberships, snapshot, { load, siteURL, instagramReelsEndpoint });
 const emptyCart = { items: [], item_count: 0, total_price: 0 };
 const collections = new Set(['all', holidaySaleHandle, 'table-linen', 'bath-linen', 'hand-bags', ...curatedCollections.map(c=>c.handle), ...crafts.map(c=>c.handle), ...groups.map(g => g.handle), ...types.map(t => t.handle), ...memberships.keys()]);
 const pageRoutes = [
@@ -75,6 +83,10 @@ await writePage('404.html', storefront.shell('Page not found', `<section class="
 await fs.mkdir(path.join(out, 'api'), { recursive: true });
 await fs.writeFile(path.join(out, 'api/products.json'), JSON.stringify({ products }));
 await fs.writeFile(path.join(out, 'api/memberships.json'), JSON.stringify(Object.fromEntries([...memberships].map(([k, v]) => [k, [...v]]))));
+if (!hostedReelsEndpoint) {
+  const reelSnapshot = process.env.INSTAGRAM_REELS_SNAPSHOT || 'data/instagram-reel.json';
+  await fs.copyFile(reelSnapshot, path.join(out, 'api/instagram-reels.json'));
+}
 for (const p of products) for (const src of [...p.images.map(i => i.src), ...p.variants.map(v => v.featured_image?.src)]) if (src) assets.add(imagePath(src));
 
 // Scripts and styles. Browser modules are published as .js so every host serves a JavaScript MIME type.
@@ -84,6 +96,9 @@ for (const name of browserModules) {
   await fs.writeFile(path.join(out, 'lib', name.replace(/\.mjs$/, '.js')), source.replace(/(from '\.\/[\w-]+)\.mjs'/g, "$1.js?v="+scriptVersion+"'").replace("src: base + '/storefront.js'", "src: base + '/storefront.js?v="+scriptVersion+"'"));
 }
 await fs.copyFile('public/welcome-signup.json', path.join(out, 'welcome-signup.json'));
+for (const name of ['instagram-reels.js', 'instagram-reels.css']) {
+  await fs.copyFile(path.join('shopify-theme/assets', name), path.join(out, name));
+}
 await fs.writeFile(path.join(out, 'storefront.js'), scriptWithBase(await fs.readFile('public/storefront.js', 'utf8'), base));
 const css = await fs.readFile('public/storefront.css', 'utf8');
 for (const [, url] of css.matchAll(/url\(['"]?(\/[^'")]+)/g)) assets.add(url.split('?')[0]);

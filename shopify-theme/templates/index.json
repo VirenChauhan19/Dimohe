@@ -330,6 +330,10 @@
         "category4",
         "category5"
       ]
+    },
+    "instagram": {
+      "type": "instagram",
+      "settings": {}
     }
   },
   "order": [
@@ -342,6 +346,7 @@
     "ritual",
     "little-celebrations",
     "more-explore",
-    "founder"
+    "founder",
+    "instagram"
   ]
 }

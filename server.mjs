@@ -1,12 +1,15 @@
 import http from 'node:http';
 import fs from 'node:fs/promises';
-import { createReadStream } from 'node:fs';
+import { createReadStream, existsSync } from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { load } from 'cheerio';
 import { createStorefront, searchSuggestions } from './lib/storefront.mjs';
 import { holidaySaleTotals } from './lib/holiday-sale.mjs';
 import { merchandise } from './lib/merchandising.mjs';
+import { createInstagramReelsFeed } from './lib/instagram-reels.mjs';
+
+if (existsSync('.env')) process.loadEnvFile();
 
 const root = path.resolve('public');
 const products = JSON.parse(await fs.readFile('data/products.json', 'utf8')).products;
@@ -45,7 +48,10 @@ for (const r of routes.filter(r => /^\/collections\/[^/?]+(?:\?page=\d+)?$/.test
     if (handle) memberships.get(collectionHandle).add(handle);
   });
 }
-const storefront = createStorefront(merchandise(products), memberships, snapshot, { load });
+const instagramReels = createInstagramReelsFeed();
+const storefront = createStorefront(merchandise(products), memberships, snapshot, {
+  load, instagramReelsEndpoint: instagramReels.enabled ? '/api/instagram-reels' : '',
+});
 for(const p of storefront.products) for(const variant of p.variants) variants.set(String(variant.id),{product:p,variant});
 function card(p) {
   return cards.get(p.handle) ?? `<product-card-item class="product-card-item"><a href="/products/${escape(p.handle)}"><img src="${escape(localImage(p.images[0]?.src ?? ''))}" alt="${escape(p.title)}"><h6>${escape(p.title)}</h6></a><span>${money(Math.round(Number(p.variants[0].price) * 100))}</span></product-card-item>`;
@@ -131,6 +137,12 @@ const server = http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, 'http://localhost');
     const pathname = decodeURIComponent(url.pathname).replace(/\/$/, '') || '/';
+    if (pathname === '/api/instagram-reels') return await instagramReels.respond(req, res);
+    if (pathname === '/instagram-reels.js' || pathname === '/instagram-reels.css') {
+      const content = await fs.readFile(path.join('shopify-theme/assets', pathname.slice(1)));
+      res.writeHead(200, { 'Content-Type': mime[path.extname(pathname)], 'Cache-Control': 'no-store' });
+      return res.end(req.method === 'HEAD' ? undefined : content);
+    }
     if(pathname==='/pages/refund-returns-exchange-and-cancellations-policy'){res.writeHead(301,{Location:'/pages/shipping-returns/'});return res.end();}
     // Assets never create a cart session. Paths are constrained to the public directory.
     if (pathname === '/welcome-signup.json' || /^\/(cdn|external|media)\//.test(pathname) || /^\/(replica.*|storefront)\.(js|css)$/.test(pathname)) {
